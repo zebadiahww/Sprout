@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>6670911681-k96vn2d5qfjef14orr4jgq55acbni9uo.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.6670911681-k96vn2d5qfjef14orr4jgq55acbni9uo</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAXC7b2MsvA9U5fpG7Xu7mYbUREMOSLH_w</string>
+	<key>GCM_SENDER_ID</key>
+	<string>6670911681</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>me.Sprout</string>
+	<key>PROJECT_ID</key>
+	<string>sprout-mentorship-application</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sprout-mentorship-application.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:6670911681:ios:22c0049c8080dcebe02c40</string>
+	<key>DATABASE_URL</key>
+	<string>https://sprout-mentorship-application.firebaseio.com</string>
+</dict>
+</plist>
