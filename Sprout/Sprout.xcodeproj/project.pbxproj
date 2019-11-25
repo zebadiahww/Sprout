@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19F050B7238C526D00858EDC /* Mentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050B6238C526D00858EDC /* Mentor.swift */; };
+		19F050B9238C536300858EDC /* Pupil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050B8238C536300858EDC /* Pupil.swift */; };
+		19F050BB238C538A00858EDC /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BA238C538A00858EDC /* Tags.swift */; };
+		19F050BD238C53A700858EDC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BC238C53A700858EDC /* Request.swift */; };
+		19F050BF238C56E600858EDC /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BE238C56E600858EDC /* Goals.swift */; };
+		19F050C1238C575F00858EDC /* Messaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050C0238C575F00858EDC /* Messaging.swift */; };
 		85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB571238C449000CA9A62 /* AppDelegate.swift */; };
 		85AFB574238C449000CA9A62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB573238C449000CA9A62 /* SceneDelegate.swift */; };
 		85AFB579238C449000CA9A62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AFB577238C449000CA9A62 /* Main.storyboard */; };
@@ -31,6 +37,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19F050B6238C526D00858EDC /* Mentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mentor.swift; sourceTree = SOURCE_ROOT; };
+		19F050B8238C536300858EDC /* Pupil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pupil.swift; sourceTree = SOURCE_ROOT; };
+		19F050BA238C538A00858EDC /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = SOURCE_ROOT; };
+		19F050BC238C53A700858EDC /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = SOURCE_ROOT; };
+		19F050BE238C56E600858EDC /* Goals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = SOURCE_ROOT; };
+		19F050C0238C575F00858EDC /* Messaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messaging.swift; sourceTree = SOURCE_ROOT; };
 		85AFB56E238C449000CA9A62 /* Sprout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sprout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AFB571238C449000CA9A62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85AFB573238C449000CA9A62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +139,12 @@
 		85AFB588238C44ED00CA9A62 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				19F050B6238C526D00858EDC /* Mentor.swift */,
+				19F050B8238C536300858EDC /* Pupil.swift */,
+				19F050BA238C538A00858EDC /* Tags.swift */,
+				19F050BC238C53A700858EDC /* Request.swift */,
+				19F050BE238C56E600858EDC /* Goals.swift */,
+				19F050C0238C575F00858EDC /* Messaging.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,6 +297,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19F050C1238C575F00858EDC /* Messaging.swift in Sources */,
+				19F050BF238C56E600858EDC /* Goals.swift in Sources */,
+				19F050B9238C536300858EDC /* Pupil.swift in Sources */,
+				19F050BD238C53A700858EDC /* Request.swift in Sources */,
+				19F050B7238C526D00858EDC /* Mentor.swift in Sources */,
+				85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */,
+				19F050BB238C538A00858EDC /* Tags.swift in Sources */,
 				85AFB5AD238C520300CA9A62 /* MessagingHomeViewController.swift in Sources */,
 				85AFB59B238C4FA300CA9A62 /* LongTermViewController.swift in Sources */,
 				85AFB59D238C4FB300CA9A62 /* DailyGoalsViewController.swift in Sources */,
