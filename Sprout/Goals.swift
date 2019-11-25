@@ -23,6 +23,13 @@ class GoalsShortTerm {
     var body: String
     var isComplete: Bool
     var isPupil: Bool
+    
+    init(title: String, body: String, isComplete: Bool, isPupil: Bool) {
+        self.title = title
+        self.body = body
+        self.isComplete = isComplete
+        self.isPupil = isPupil
+    }
 }
 
 class GoalsLongTerm {
@@ -30,5 +37,13 @@ class GoalsLongTerm {
     var body: String
     var isComplete: Bool
     var isPupil: Bool
+    var date: Date
     
+    init(title: String, body: String, isComplete: Bool, isPupil: Bool, date: Date) {
+        self.title = title
+        self.body = body
+        self.isComplete = isComplete
+        self.isPupil = isPupil
+        self.date = date
+    }
 }

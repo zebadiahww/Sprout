@@ -16,8 +16,10 @@ class Mentor {
     var pupil: [Pupil]
     var tags: [Tags]
     var request: Request
+    var linkedIn: Bool
+    var facebook: Bool
     
-    init(name: String, bio: String, isMentor: Bool, profileImage: UIImage, pupil: [Pupil], tags: [Tags], request: Request) {
+    init(name: String, bio: String, isMentor: Bool, profileImage: UIImage, pupil: [Pupil], tags: [Tags], request: Request, linkedIn: Bool, facebook: Bool) {
     self.name = name
     self.bio = bio
     self.isMentor = isMentor
@@ -25,5 +27,7 @@ class Mentor {
     self.pupil = pupil
     self.tags = tags
     self.request = request
+    self.linkedIn = linkedIn
+    self.facebook = facebook
     }
 }
