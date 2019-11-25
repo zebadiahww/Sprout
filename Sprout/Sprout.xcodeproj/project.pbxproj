@@ -12,6 +12,22 @@
 		85AFB579238C449000CA9A62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AFB577238C449000CA9A62 /* Main.storyboard */; };
 		85AFB57B238C449000CA9A62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AFB57A238C449000CA9A62 /* Assets.xcassets */; };
 		85AFB57E238C449000CA9A62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AFB57C238C449000CA9A62 /* LaunchScreen.storyboard */; };
+		85AFB58E238C4D0700CA9A62 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB58D238C4D0700CA9A62 /* LoginViewController.swift */; };
+		85AFB590238C4EB800CA9A62 /* CreateEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB58F238C4EB800CA9A62 /* CreateEditProfileViewController.swift */; };
+		85AFB592238C4EEF00CA9A62 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB591238C4EEF00CA9A62 /* HomePageViewController.swift */; };
+		85AFB594238C4F0100CA9A62 /* MentorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB593238C4F0100CA9A62 /* MentorProfileViewController.swift */; };
+		85AFB596238C4F2600CA9A62 /* GoalsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB595238C4F2600CA9A62 /* GoalsHomeViewController.swift */; };
+		85AFB598238C4F5800CA9A62 /* AddGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB597238C4F5800CA9A62 /* AddGoalsViewController.swift */; };
+		85AFB59B238C4FA300CA9A62 /* LongTermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB59A238C4FA300CA9A62 /* LongTermViewController.swift */; };
+		85AFB59D238C4FB300CA9A62 /* DailyGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB59C238C4FB300CA9A62 /* DailyGoalsViewController.swift */; };
+		85AFB5A1238C504000CA9A62 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5A0238C504000CA9A62 /* SettingsViewController.swift */; };
+		85AFB5A3238C50B000CA9A62 /* PupilProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5A2238C50B000CA9A62 /* PupilProfileViewController.swift */; };
+		85AFB5A7238C512E00CA9A62 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5A6238C512E00CA9A62 /* NotificationsViewController.swift */; };
+		85AFB5A9238C516000CA9A62 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5A8238C516000CA9A62 /* ContactUsViewController.swift */; };
+		85AFB5AD238C520300CA9A62 /* MessagingHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5AC238C520300CA9A62 /* MessagingHomeViewController.swift */; };
+		85AFB5AF238C521400CA9A62 /* MessagingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5AE238C521400CA9A62 /* MessagingScreenViewController.swift */; };
+		85AFB5B1238C524C00CA9A62 /* MentorRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5B0238C524C00CA9A62 /* MentorRequestsViewController.swift */; };
+		85AFB5B3238C528000CA9A62 /* MentorsPupilsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5B2238C528000CA9A62 /* MentorsPupilsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +38,22 @@
 		85AFB57A238C449000CA9A62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85AFB57D238C449000CA9A62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85AFB57F238C449000CA9A62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85AFB58D238C4D0700CA9A62 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		85AFB58F238C4EB800CA9A62 /* CreateEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEditProfileViewController.swift; sourceTree = "<group>"; };
+		85AFB591238C4EEF00CA9A62 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		85AFB593238C4F0100CA9A62 /* MentorProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorProfileViewController.swift; sourceTree = "<group>"; };
+		85AFB595238C4F2600CA9A62 /* GoalsHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsHomeViewController.swift; sourceTree = "<group>"; };
+		85AFB597238C4F5800CA9A62 /* AddGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalsViewController.swift; sourceTree = "<group>"; };
+		85AFB59A238C4FA300CA9A62 /* LongTermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTermViewController.swift; sourceTree = "<group>"; };
+		85AFB59C238C4FB300CA9A62 /* DailyGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalsViewController.swift; sourceTree = "<group>"; };
+		85AFB5A0238C504000CA9A62 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		85AFB5A2238C50B000CA9A62 /* PupilProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupilProfileViewController.swift; sourceTree = "<group>"; };
+		85AFB5A6238C512E00CA9A62 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		85AFB5A8238C516000CA9A62 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		85AFB5AC238C520300CA9A62 /* MessagingHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingHomeViewController.swift; sourceTree = "<group>"; };
+		85AFB5AE238C521400CA9A62 /* MessagingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingScreenViewController.swift; sourceTree = "<group>"; };
+		85AFB5B0238C524C00CA9A62 /* MentorRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorRequestsViewController.swift; sourceTree = "<group>"; };
+		85AFB5B2238C528000CA9A62 /* MentorsPupilsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorsPupilsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +118,8 @@
 		85AFB587238C44E500CA9A62 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				85AFB58A238C450100CA9A62 /* View Controllers */,
 				85AFB589238C44FB00CA9A62 /* Model Controllers */,
+				85AFB58A238C450100CA9A62 /* View Controllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -109,6 +141,15 @@
 		85AFB58A238C450100CA9A62 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				85AFB58D238C4D0700CA9A62 /* LoginViewController.swift */,
+				85AFB58F238C4EB800CA9A62 /* CreateEditProfileViewController.swift */,
+				85AFB591238C4EEF00CA9A62 /* HomePageViewController.swift */,
+				85AFB5A6238C512E00CA9A62 /* NotificationsViewController.swift */,
+				85AFB5AB238C519A00CA9A62 /* Messaging View Controllers */,
+				85AFB5AA238C516F00CA9A62 /* Settings View Controller */,
+				85AFB59E238C4FEF00CA9A62 /* Mentor View Controller */,
+				85AFB599238C4F8300CA9A62 /* Goals View Controllers */,
+				85AFB59F238C4FFB00CA9A62 /* Pupil View Controller */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -118,6 +159,53 @@
 			children = (
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		85AFB599238C4F8300CA9A62 /* Goals View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				85AFB595238C4F2600CA9A62 /* GoalsHomeViewController.swift */,
+				85AFB597238C4F5800CA9A62 /* AddGoalsViewController.swift */,
+				85AFB59A238C4FA300CA9A62 /* LongTermViewController.swift */,
+				85AFB59C238C4FB300CA9A62 /* DailyGoalsViewController.swift */,
+			);
+			path = "Goals View Controllers";
+			sourceTree = "<group>";
+		};
+		85AFB59E238C4FEF00CA9A62 /* Mentor View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				85AFB593238C4F0100CA9A62 /* MentorProfileViewController.swift */,
+				85AFB5B0238C524C00CA9A62 /* MentorRequestsViewController.swift */,
+				85AFB5B2238C528000CA9A62 /* MentorsPupilsViewController.swift */,
+			);
+			path = "Mentor View Controller";
+			sourceTree = "<group>";
+		};
+		85AFB59F238C4FFB00CA9A62 /* Pupil View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				85AFB5A2238C50B000CA9A62 /* PupilProfileViewController.swift */,
+			);
+			path = "Pupil View Controller";
+			sourceTree = "<group>";
+		};
+		85AFB5AA238C516F00CA9A62 /* Settings View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				85AFB5A0238C504000CA9A62 /* SettingsViewController.swift */,
+				85AFB5A8238C516000CA9A62 /* ContactUsViewController.swift */,
+			);
+			path = "Settings View Controller";
+			sourceTree = "<group>";
+		};
+		85AFB5AB238C519A00CA9A62 /* Messaging View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				85AFB5AC238C520300CA9A62 /* MessagingHomeViewController.swift */,
+				85AFB5AE238C521400CA9A62 /* MessagingScreenViewController.swift */,
+			);
+			path = "Messaging View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,8 +279,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85AFB5AD238C520300CA9A62 /* MessagingHomeViewController.swift in Sources */,
+				85AFB59B238C4FA300CA9A62 /* LongTermViewController.swift in Sources */,
+				85AFB59D238C4FB300CA9A62 /* DailyGoalsViewController.swift in Sources */,
+				85AFB5B1238C524C00CA9A62 /* MentorRequestsViewController.swift in Sources */,
+				85AFB5B3238C528000CA9A62 /* MentorsPupilsViewController.swift in Sources */,
+				85AFB5AF238C521400CA9A62 /* MessagingScreenViewController.swift in Sources */,
+				85AFB5A1238C504000CA9A62 /* SettingsViewController.swift in Sources */,
+				85AFB5A7238C512E00CA9A62 /* NotificationsViewController.swift in Sources */,
+				85AFB58E238C4D0700CA9A62 /* LoginViewController.swift in Sources */,
 				85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */,
+				85AFB590238C4EB800CA9A62 /* CreateEditProfileViewController.swift in Sources */,
+				85AFB594238C4F0100CA9A62 /* MentorProfileViewController.swift in Sources */,
+				85AFB592238C4EEF00CA9A62 /* HomePageViewController.swift in Sources */,
+				85AFB5A9238C516000CA9A62 /* ContactUsViewController.swift in Sources */,
+				85AFB598238C4F5800CA9A62 /* AddGoalsViewController.swift in Sources */,
 				85AFB574238C449000CA9A62 /* SceneDelegate.swift in Sources */,
+				85AFB5A3238C50B000CA9A62 /* PupilProfileViewController.swift in Sources */,
+				85AFB596238C4F2600CA9A62 /* GoalsHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
