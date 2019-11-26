@@ -33,14 +33,6 @@
 		85AFB5AF238C521400CA9A62 /* MessagingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5AE238C521400CA9A62 /* MessagingScreenViewController.swift */; };
 		85AFB5B1238C524C00CA9A62 /* MentorRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5B0238C524C00CA9A62 /* MentorRequestsViewController.swift */; };
 		85AFB5B3238C528000CA9A62 /* MentorsPupilsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5B2238C528000CA9A62 /* MentorsPupilsViewController.swift */; };
-		E80816A9238DA2F600C35B9F /* GuidedTourOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80816A8238DA2F600C35B9F /* GuidedTourOneViewController.swift */; };
-		E80816AB238DA30800C35B9F /* GuidedTourTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80816AA238DA30800C35B9F /* GuidedTourTwoViewController.swift */; };
-		E80816AD238DA31200C35B9F /* GuidedTourThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80816AC238DA31200C35B9F /* GuidedTourThreeViewController.swift */; };
-		E80816AF238DA31D00C35B9F /* GuidedTourFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80816AE238DA31D00C35B9F /* GuidedTourFourViewController.swift */; };
-		E80816B2238DA4DE00C35B9F /* HomepagePupilMentors.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E80816B1238DA4DE00C35B9F /* HomepagePupilMentors.storyboard */; };
-		E8D228D2238C963100CC2A84 /* PupilCreation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D228D1238C963100CC2A84 /* PupilCreation.storyboard */; };
-		E8D228D4238C9A7A00CC2A84 /* MentorCreation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D228D3238C9A7A00CC2A84 /* MentorCreation.storyboard */; };
-		E8D228D8238C9BC400CC2A84 /* GuidedTour.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D228D7238C9BC400CC2A84 /* GuidedTour.storyboard */; };
 		85AFB5C1238C5EE700CA9A62 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5C0238C5EE700CA9A62 /* UserController.swift */; };
 		85AFB5C5238C5EFF00CA9A62 /* TagsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5C4238C5EFF00CA9A62 /* TagsController.swift */; };
 		85AFB5C7238C5F1000CA9A62 /* RequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5C6238C5F1000CA9A62 /* RequestController.swift */; };
@@ -79,14 +71,6 @@
 		85AFB5AE238C521400CA9A62 /* MessagingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingScreenViewController.swift; sourceTree = "<group>"; };
 		85AFB5B0238C524C00CA9A62 /* MentorRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorRequestsViewController.swift; sourceTree = "<group>"; };
 		85AFB5B2238C528000CA9A62 /* MentorsPupilsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorsPupilsViewController.swift; sourceTree = "<group>"; };
-		E80816A8238DA2F600C35B9F /* GuidedTourOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidedTourOneViewController.swift; sourceTree = "<group>"; };
-		E80816AA238DA30800C35B9F /* GuidedTourTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidedTourTwoViewController.swift; sourceTree = "<group>"; };
-		E80816AC238DA31200C35B9F /* GuidedTourThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidedTourThreeViewController.swift; sourceTree = "<group>"; };
-		E80816AE238DA31D00C35B9F /* GuidedTourFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidedTourFourViewController.swift; sourceTree = "<group>"; };
-		E80816B1238DA4DE00C35B9F /* HomepagePupilMentors.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomepagePupilMentors.storyboard; sourceTree = "<group>"; };
-		E8D228D1238C963100CC2A84 /* PupilCreation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PupilCreation.storyboard; sourceTree = "<group>"; };
-		E8D228D3238C9A7A00CC2A84 /* MentorCreation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MentorCreation.storyboard; sourceTree = "<group>"; };
-		E8D228D7238C9BC400CC2A84 /* GuidedTour.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GuidedTour.storyboard; sourceTree = "<group>"; };
 		85AFB5C0238C5EE700CA9A62 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		85AFB5C4238C5EFF00CA9A62 /* TagsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsController.swift; sourceTree = "<group>"; };
 		85AFB5C6238C5F1000CA9A62 /* RequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestController.swift; sourceTree = "<group>"; };
@@ -140,7 +124,6 @@
 				85AFB588238C44ED00CA9A62 /* Models */,
 				85AFB587238C44E500CA9A62 /* Controllers */,
 				85AFB586238C44DB00CA9A62 /* Views */,
-				E8D228CE238C611500CC2A84 /* UI */,
 				85AFB58B238C451500CA9A62 /* Helpers */,
 				85AFB585238C44CA00CA9A62 /* Resources */,
 			);
@@ -162,7 +145,7 @@
 		85AFB586238C44DB00CA9A62 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				85AFB589238C44FB00CA9A62 /* Model View Controllers */,
+				85AFB577238C449000CA9A62 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,6 +153,8 @@
 		85AFB587238C44E500CA9A62 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				85AFB589238C44FB00CA9A62 /* Model Controllers */,
+				85AFB58A238C450100CA9A62 /* View Controllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -186,23 +171,21 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		85AFB589238C44FB00CA9A62 /* Model View Controllers */ = {
+		85AFB589238C44FB00CA9A62 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				85AFB58A238C450100CA9A62 /* View Controllers */,
 				85AFB5C0238C5EE700CA9A62 /* UserController.swift */,
 				85AFB5C4238C5EFF00CA9A62 /* TagsController.swift */,
 				85AFB5C6238C5F1000CA9A62 /* RequestController.swift */,
 				85AFB5C8238C5F1D00CA9A62 /* GoalController.swift */,
 				85AFB5CA238C5F3200CA9A62 /* MessagingController.swift */,
 			);
-			path = "Model View Controllers";
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 		85AFB58A238C450100CA9A62 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E80816A7238DA2CE00C35B9F /* Guided tour Controllers */,
 				85AFB58D238C4D0700CA9A62 /* LoginViewController.swift */,
 				85AFB58F238C4EB800CA9A62 /* CreateEditProfileViewController.swift */,
 				85AFB591238C4EEF00CA9A62 /* HomePageViewController.swift */,
@@ -270,59 +253,6 @@
 			path = "Messaging View Controllers";
 			sourceTree = "<group>";
 		};
-		E80816A7238DA2CE00C35B9F /* Guided tour Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				E80816A8238DA2F600C35B9F /* GuidedTourOneViewController.swift */,
-				E80816AA238DA30800C35B9F /* GuidedTourTwoViewController.swift */,
-				E80816AC238DA31200C35B9F /* GuidedTourThreeViewController.swift */,
-				E80816AE238DA31D00C35B9F /* GuidedTourFourViewController.swift */,
-			);
-			path = "Guided tour Controllers";
-			sourceTree = "<group>";
-		};
-		E80816B0238DA49F00C35B9F /* Homepage Pupil */ = {
-			isa = PBXGroup;
-			children = (
-				E80816B1238DA4DE00C35B9F /* HomepagePupilMentors.storyboard */,
-			);
-			path = "Homepage Pupil";
-			sourceTree = "<group>";
-		};
-		E8D228CE238C611500CC2A84 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				E8D228CF238C612500CC2A84 /* Storyboards */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		E8D228CF238C612500CC2A84 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				85AFB577238C449000CA9A62 /* Main.storyboard */,
-				E8D228D0238C961C00CC2A84 /* Create A Profile */,
-				E8D228D6238C9B7900CC2A84 /* Guided Tour */,
-				E80816B0238DA49F00C35B9F /* Homepage Pupil */,
-			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		E8D228D0238C961C00CC2A84 /* Create A Profile */ = {
-			isa = PBXGroup;
-			children = (
-				E8D228D1238C963100CC2A84 /* PupilCreation.storyboard */,
-				E8D228D3238C9A7A00CC2A84 /* MentorCreation.storyboard */,
-			);
-			path = "Create A Profile";
-			sourceTree = "<group>";
-		};
-		E8D228D6238C9B7900CC2A84 /* Guided Tour */ = {
-			isa = PBXGroup;
-			children = (
-				E8D228D7238C9BC400CC2A84 /* GuidedTour.storyboard */,
-			);
-			path = "Guided Tour";
 		A6B11932BB5D577B2DC959EC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,12 +322,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E80816B2238DA4DE00C35B9F /* HomepagePupilMentors.storyboard in Resources */,
 				85AFB57E238C449000CA9A62 /* LaunchScreen.storyboard in Resources */,
-				E8D228D4238C9A7A00CC2A84 /* MentorCreation.storyboard in Resources */,
-				E8D228D8238C9BC400CC2A84 /* GuidedTour.storyboard in Resources */,
 				85AFB57B238C449000CA9A62 /* Assets.xcassets in Resources */,
-				E8D228D2238C963100CC2A84 /* PupilCreation.storyboard in Resources */,
 				85AFB579238C449000CA9A62 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,9 +378,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				19F050C1238C575F00858EDC /* Messaging.swift in Sources */,
-				19F050BF238C56E600858EDC /* Goals.swift in Sources */,
-				19F050B9238C536300858EDC /* Pupil.swift in Sources */,
-				E80816AF238DA31D00C35B9F /* GuidedTourFourViewController.swift in Sources */,
 				19F050BF238C56E600858EDC /* Goal.swift in Sources */,
 				19F050BD238C53A700858EDC /* Request.swift in Sources */,
 				19F050B7238C526D00858EDC /* User.swift in Sources */,
@@ -469,7 +392,6 @@
 				85AFB5AF238C521400CA9A62 /* MessagingScreenViewController.swift in Sources */,
 				85AFB5C5238C5EFF00CA9A62 /* TagsController.swift in Sources */,
 				85AFB5A1238C504000CA9A62 /* SettingsViewController.swift in Sources */,
-				E80816AB238DA30800C35B9F /* GuidedTourTwoViewController.swift in Sources */,
 				85AFB5A7238C512E00CA9A62 /* NotificationsViewController.swift in Sources */,
 				85AFB58E238C4D0700CA9A62 /* LoginViewController.swift in Sources */,
 				85AFB5CB238C5F3200CA9A62 /* MessagingController.swift in Sources */,
@@ -477,7 +399,6 @@
 				85AFB590238C4EB800CA9A62 /* CreateEditProfileViewController.swift in Sources */,
 				85AFB594238C4F0100CA9A62 /* MentorProfileViewController.swift in Sources */,
 				85AFB592238C4EEF00CA9A62 /* HomePageViewController.swift in Sources */,
-				E80816AD238DA31200C35B9F /* GuidedTourThreeViewController.swift in Sources */,
 				85AFB5A9238C516000CA9A62 /* ContactUsViewController.swift in Sources */,
 				85AFB5C9238C5F1D00CA9A62 /* GoalController.swift in Sources */,
 				85AFB598238C4F5800CA9A62 /* AddGoalsViewController.swift in Sources */,
@@ -485,7 +406,6 @@
 				85AFB574238C449000CA9A62 /* SceneDelegate.swift in Sources */,
 				85AFB5A3238C50B000CA9A62 /* PupilProfileViewController.swift in Sources */,
 				85AFB596238C4F2600CA9A62 /* GoalsHomeViewController.swift in Sources */,
-				E80816A9238DA2F600C35B9F /* GuidedTourOneViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
