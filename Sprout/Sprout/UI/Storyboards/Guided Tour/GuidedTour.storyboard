@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Guided Tour One View Controller-->
         <scene sceneID="Klc-ix-5Lf">
             <objects>
-                <viewController id="DGN-Xf-dLX" sceneMemberID="viewController">
+                <viewController id="DGN-Xf-dLX" customClass="GuidedTourOneViewController" customModule="Sprout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Pd-QF-Bns">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,6 +30,9 @@
                                 <rect key="frame" x="98" y="779" width="218" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="FXU-W4-Kvr" kind="presentation" modalPresentationStyle="fullScreen" id="gnf-WO-3MG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -40,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="168.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Guided Tour Two View Controller-->
         <scene sceneID="SiH-9j-4qp">
             <objects>
-                <viewController id="FXU-W4-Kvr" sceneMemberID="viewController">
+                <viewController id="FXU-W4-Kvr" customClass="GuidedTourTwoViewController" customModule="Sprout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hkP-Ds-J9I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,6 +66,9 @@
                                 <rect key="frame" x="98" y="779" width="218" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="dhC-4w-a4P" kind="presentation" modalPresentationStyle="fullScreen" id="EZS-jk-EbD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -73,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="984" y="169"/>
         </scene>
-        <!--View Controller-->
+        <!--Guided Tour Three View Controller-->
         <scene sceneID="XDm-ic-rFi">
             <objects>
-                <viewController id="dhC-4w-a4P" sceneMemberID="viewController">
+                <viewController id="dhC-4w-a4P" customClass="GuidedTourThreeViewController" customModule="Sprout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RPl-uE-2of">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,6 +102,9 @@
                                 <rect key="frame" x="98" y="779" width="218" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="SVZ-G3-tSZ" kind="presentation" modalPresentationStyle="fullScreen" id="sA3-Ax-baS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -106,10 +115,10 @@
             </objects>
             <point key="canvasLocation" x="1832" y="169"/>
         </scene>
-        <!--View Controller-->
+        <!--Guided Tour Four View Controller-->
         <scene sceneID="zwK-qq-kOq">
             <objects>
-                <viewController id="SVZ-G3-tSZ" sceneMemberID="viewController">
+                <viewController id="SVZ-G3-tSZ" customClass="GuidedTourFourViewController" customModule="Sprout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lc0-kM-vhC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,7 +137,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZJ-Q3-J0F">
                                 <rect key="frame" x="98" y="779" width="218" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Next"/>
+                                <state key="normal" title="Finish"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
