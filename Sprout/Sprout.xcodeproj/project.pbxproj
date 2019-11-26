@@ -3,13 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17DB28CDD2A59CDA4761D422 /* Pods_Sprout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E21996B960F3AFC3BF4A6D2 /* Pods_Sprout.framework */; };
-		19F050B7238C526D00858EDC /* Mentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050B6238C526D00858EDC /* Mentor.swift */; };
-		19F050B9238C536300858EDC /* Pupil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050B8238C536300858EDC /* Pupil.swift */; };
+
+		19F050B7238C526D00858EDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050B6238C526D00858EDC /* User.swift */; };
 		19F050BB238C538A00858EDC /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BA238C538A00858EDC /* Tags.swift */; };
 		19F050BD238C53A700858EDC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BC238C53A700858EDC /* Request.swift */; };
 		19F050BF238C56E600858EDC /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BE238C56E600858EDC /* Goals.swift */; };
@@ -19,16 +18,37 @@
 		85AFB579238C449000CA9A62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AFB577238C449000CA9A62 /* Main.storyboard */; };
 		85AFB57B238C449000CA9A62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AFB57A238C449000CA9A62 /* Assets.xcassets */; };
 		85AFB57E238C449000CA9A62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AFB57C238C449000CA9A62 /* LaunchScreen.storyboard */; };
+		85AFB58E238C4D0700CA9A62 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB58D238C4D0700CA9A62 /* LoginViewController.swift */; };
+		85AFB590238C4EB800CA9A62 /* CreateEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB58F238C4EB800CA9A62 /* CreateEditProfileViewController.swift */; };
+		85AFB592238C4EEF00CA9A62 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB591238C4EEF00CA9A62 /* HomePageViewController.swift */; };
+		85AFB594238C4F0100CA9A62 /* MentorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB593238C4F0100CA9A62 /* MentorProfileViewController.swift */; };
+		85AFB596238C4F2600CA9A62 /* GoalsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB595238C4F2600CA9A62 /* GoalsHomeViewController.swift */; };
+		85AFB598238C4F5800CA9A62 /* AddGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB597238C4F5800CA9A62 /* AddGoalsViewController.swift */; };
+		85AFB59B238C4FA300CA9A62 /* LongTermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB59A238C4FA300CA9A62 /* LongTermViewController.swift */; };
+		85AFB59D238C4FB300CA9A62 /* DailyGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB59C238C4FB300CA9A62 /* DailyGoalsViewController.swift */; };
+		85AFB5A1238C504000CA9A62 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5A0238C504000CA9A62 /* SettingsViewController.swift */; };
+		85AFB5A3238C50B000CA9A62 /* PupilProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5A2238C50B000CA9A62 /* PupilProfileViewController.swift */; };
+		85AFB5A7238C512E00CA9A62 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5A6238C512E00CA9A62 /* NotificationsViewController.swift */; };
+		85AFB5A9238C516000CA9A62 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5A8238C516000CA9A62 /* ContactUsViewController.swift */; };
+		85AFB5AD238C520300CA9A62 /* MessagingHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5AC238C520300CA9A62 /* MessagingHomeViewController.swift */; };
+		85AFB5AF238C521400CA9A62 /* MessagingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5AE238C521400CA9A62 /* MessagingScreenViewController.swift */; };
+		85AFB5B1238C524C00CA9A62 /* MentorRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5B0238C524C00CA9A62 /* MentorRequestsViewController.swift */; };
+		85AFB5B3238C528000CA9A62 /* MentorsPupilsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5B2238C528000CA9A62 /* MentorsPupilsViewController.swift */; };
+		85AFB5C1238C5EE700CA9A62 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5C0238C5EE700CA9A62 /* UserController.swift */; };
+		85AFB5C5238C5EFF00CA9A62 /* TagsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5C4238C5EFF00CA9A62 /* TagsController.swift */; };
+		85AFB5C7238C5F1000CA9A62 /* RequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5C6238C5F1000CA9A62 /* RequestController.swift */; };
+		85AFB5C9238C5F1D00CA9A62 /* GoalsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5C8238C5F1D00CA9A62 /* GoalsController.swift */; };
+		85AFB5CB238C5F3200CA9A62 /* MessagingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5CA238C5F3200CA9A62 /* MessagingController.swift */; };
+		F27115270416BC0065962AD3 /* Pods_Sprout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4748504B035A5B323388EC /* Pods_Sprout.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		19F050B6238C526D00858EDC /* Mentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mentor.swift; sourceTree = SOURCE_ROOT; };
-		19F050B8238C536300858EDC /* Pupil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pupil.swift; sourceTree = SOURCE_ROOT; };
+		19F050B6238C526D00858EDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = SOURCE_ROOT; };
 		19F050BA238C538A00858EDC /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = SOURCE_ROOT; };
 		19F050BC238C53A700858EDC /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = SOURCE_ROOT; };
 		19F050BE238C56E600858EDC /* Goals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = SOURCE_ROOT; };
 		19F050C0238C575F00858EDC /* Messaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messaging.swift; sourceTree = SOURCE_ROOT; };
-		4E21996B960F3AFC3BF4A6D2 /* Pods_Sprout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sprout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E7DA01AF0CFB380C1833C76 /* Pods-Sprout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sprout.release.xcconfig"; path = "Target Support Files/Pods-Sprout/Pods-Sprout.release.xcconfig"; sourceTree = "<group>"; };
 		85AFB56E238C449000CA9A62 /* Sprout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sprout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AFB571238C449000CA9A62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85AFB573238C449000CA9A62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,8 +56,29 @@
 		85AFB57A238C449000CA9A62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85AFB57D238C449000CA9A62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85AFB57F238C449000CA9A62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		965D391062DCD96BF7528123 /* Pods-Sprout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sprout.release.xcconfig"; path = "Target Support Files/Pods-Sprout/Pods-Sprout.release.xcconfig"; sourceTree = "<group>"; };
-		E5BE7EFEFE990FD1DD47A1FB /* Pods-Sprout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sprout.debug.xcconfig"; path = "Target Support Files/Pods-Sprout/Pods-Sprout.debug.xcconfig"; sourceTree = "<group>"; };
+		85AFB58D238C4D0700CA9A62 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		85AFB58F238C4EB800CA9A62 /* CreateEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEditProfileViewController.swift; sourceTree = "<group>"; };
+		85AFB591238C4EEF00CA9A62 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		85AFB593238C4F0100CA9A62 /* MentorProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorProfileViewController.swift; sourceTree = "<group>"; };
+		85AFB595238C4F2600CA9A62 /* GoalsHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsHomeViewController.swift; sourceTree = "<group>"; };
+		85AFB597238C4F5800CA9A62 /* AddGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalsViewController.swift; sourceTree = "<group>"; };
+		85AFB59A238C4FA300CA9A62 /* LongTermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTermViewController.swift; sourceTree = "<group>"; };
+		85AFB59C238C4FB300CA9A62 /* DailyGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalsViewController.swift; sourceTree = "<group>"; };
+		85AFB5A0238C504000CA9A62 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		85AFB5A2238C50B000CA9A62 /* PupilProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupilProfileViewController.swift; sourceTree = "<group>"; };
+		85AFB5A6238C512E00CA9A62 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		85AFB5A8238C516000CA9A62 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		85AFB5AC238C520300CA9A62 /* MessagingHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingHomeViewController.swift; sourceTree = "<group>"; };
+		85AFB5AE238C521400CA9A62 /* MessagingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingScreenViewController.swift; sourceTree = "<group>"; };
+		85AFB5B0238C524C00CA9A62 /* MentorRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorRequestsViewController.swift; sourceTree = "<group>"; };
+		85AFB5B2238C528000CA9A62 /* MentorsPupilsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorsPupilsViewController.swift; sourceTree = "<group>"; };
+		85AFB5C0238C5EE700CA9A62 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		85AFB5C4238C5EFF00CA9A62 /* TagsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsController.swift; sourceTree = "<group>"; };
+		85AFB5C6238C5F1000CA9A62 /* RequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestController.swift; sourceTree = "<group>"; };
+		85AFB5C8238C5F1D00CA9A62 /* GoalsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsController.swift; sourceTree = "<group>"; };
+		85AFB5CA238C5F3200CA9A62 /* MessagingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingController.swift; sourceTree = "<group>"; };
+		88AA0FC379E4A57B0DB10459 /* Pods-Sprout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sprout.debug.xcconfig"; path = "Target Support Files/Pods-Sprout/Pods-Sprout.debug.xcconfig"; sourceTree = "<group>"; };
+		9C4748504B035A5B323388EC /* Pods_Sprout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sprout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +86,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17DB28CDD2A59CDA4761D422 /* Pods_Sprout.framework in Frameworks */,
+				F27115270416BC0065962AD3 /* Pods_Sprout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		581F892278ED1C9FFA6EFF86 /* Frameworks */ = {
+		73351DB3B5523E7A11A59682 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4E21996B960F3AFC3BF4A6D2 /* Pods_Sprout.framework */,
+				9C4748504B035A5B323388EC /* Pods_Sprout.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -65,8 +106,8 @@
 			children = (
 				85AFB570238C449000CA9A62 /* Sprout */,
 				85AFB56F238C449000CA9A62 /* Products */,
-				EFAEF98D91EDC0498C1D72F8 /* Pods */,
-				581F892278ED1C9FFA6EFF86 /* Frameworks */,
+				A6B11932BB5D577B2DC959EC /* Pods */,
+				73351DB3B5523E7A11A59682 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,8 +154,8 @@
 		85AFB587238C44E500CA9A62 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				85AFB58A238C450100CA9A62 /* View Controllers */,
 				85AFB589238C44FB00CA9A62 /* Model Controllers */,
+				85AFB58A238C450100CA9A62 /* View Controllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -122,8 +163,7 @@
 		85AFB588238C44ED00CA9A62 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				19F050B6238C526D00858EDC /* Mentor.swift */,
-				19F050B8238C536300858EDC /* Pupil.swift */,
+				19F050B6238C526D00858EDC /* User.swift */,
 				19F050BA238C538A00858EDC /* Tags.swift */,
 				19F050BC238C53A700858EDC /* Request.swift */,
 				19F050BE238C56E600858EDC /* Goals.swift */,
@@ -135,6 +175,11 @@
 		85AFB589238C44FB00CA9A62 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				85AFB5C0238C5EE700CA9A62 /* UserController.swift */,
+				85AFB5C4238C5EFF00CA9A62 /* TagsController.swift */,
+				85AFB5C6238C5F1000CA9A62 /* RequestController.swift */,
+				85AFB5C8238C5F1D00CA9A62 /* GoalsController.swift */,
+				85AFB5CA238C5F3200CA9A62 /* MessagingController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -142,6 +187,15 @@
 		85AFB58A238C450100CA9A62 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				85AFB58D238C4D0700CA9A62 /* LoginViewController.swift */,
+				85AFB58F238C4EB800CA9A62 /* CreateEditProfileViewController.swift */,
+				85AFB591238C4EEF00CA9A62 /* HomePageViewController.swift */,
+				85AFB5A6238C512E00CA9A62 /* NotificationsViewController.swift */,
+				85AFB5AB238C519A00CA9A62 /* Messaging View Controllers */,
+				85AFB5AA238C516F00CA9A62 /* Settings View Controller */,
+				85AFB59E238C4FEF00CA9A62 /* Mentor View Controller */,
+				85AFB599238C4F8300CA9A62 /* Goals View Controllers */,
+				85AFB59F238C4FFB00CA9A62 /* Pupil View Controller */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -153,13 +207,59 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		EFAEF98D91EDC0498C1D72F8 /* Pods */ = {
+		85AFB599238C4F8300CA9A62 /* Goals View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E5BE7EFEFE990FD1DD47A1FB /* Pods-Sprout.debug.xcconfig */,
-				965D391062DCD96BF7528123 /* Pods-Sprout.release.xcconfig */,
+				85AFB595238C4F2600CA9A62 /* GoalsHomeViewController.swift */,
+				85AFB597238C4F5800CA9A62 /* AddGoalsViewController.swift */,
+				85AFB59A238C4FA300CA9A62 /* LongTermViewController.swift */,
+				85AFB59C238C4FB300CA9A62 /* DailyGoalsViewController.swift */,
 			);
-			name = Pods;
+			path = "Goals View Controllers";
+			sourceTree = "<group>";
+		};
+		85AFB59E238C4FEF00CA9A62 /* Mentor View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				85AFB593238C4F0100CA9A62 /* MentorProfileViewController.swift */,
+				85AFB5B0238C524C00CA9A62 /* MentorRequestsViewController.swift */,
+				85AFB5B2238C528000CA9A62 /* MentorsPupilsViewController.swift */,
+			);
+			path = "Mentor View Controller";
+			sourceTree = "<group>";
+		};
+		85AFB59F238C4FFB00CA9A62 /* Pupil View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				85AFB5A2238C50B000CA9A62 /* PupilProfileViewController.swift */,
+			);
+			path = "Pupil View Controller";
+			sourceTree = "<group>";
+		};
+		85AFB5AA238C516F00CA9A62 /* Settings View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				85AFB5A0238C504000CA9A62 /* SettingsViewController.swift */,
+				85AFB5A8238C516000CA9A62 /* ContactUsViewController.swift */,
+			);
+			path = "Settings View Controller";
+			sourceTree = "<group>";
+		};
+		85AFB5AB238C519A00CA9A62 /* Messaging View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				85AFB5AC238C520300CA9A62 /* MessagingHomeViewController.swift */,
+				85AFB5AE238C521400CA9A62 /* MessagingScreenViewController.swift */,
+			);
+			path = "Messaging View Controllers";
+			sourceTree = "<group>";
+		};
+		A6B11932BB5D577B2DC959EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				88AA0FC379E4A57B0DB10459 /* Pods-Sprout.debug.xcconfig */,
+				2E7DA01AF0CFB380C1833C76 /* Pods-Sprout.release.xcconfig */,
+			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -170,11 +270,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85AFB582238C449000CA9A62 /* Build configuration list for PBXNativeTarget "Sprout" */;
 			buildPhases = (
-				B448D0BE4C3B35C73629B9A8 /* [CP] Check Pods Manifest.lock */,
+				31E3C8F381E4C53334ED2937 /* [CP] Check Pods Manifest.lock */,
 				85AFB56A238C449000CA9A62 /* Sources */,
 				85AFB56B238C449000CA9A62 /* Frameworks */,
 				85AFB56C238C449000CA9A62 /* Resources */,
-				19DA084721869073377DB0E8 /* [CP] Embed Pods Frameworks */,
+				05B9D3FCBD2E545C3837E162 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,7 +332,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		19DA084721869073377DB0E8 /* [CP] Embed Pods Frameworks */ = {
+		05B9D3FCBD2E545C3837E162 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -249,7 +349,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sprout/Pods-Sprout-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B448D0BE4C3B35C73629B9A8 /* [CP] Check Pods Manifest.lock */ = {
+		31E3C8F381E4C53334ED2937 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -280,12 +380,33 @@
 			files = (
 				19F050C1238C575F00858EDC /* Messaging.swift in Sources */,
 				19F050BF238C56E600858EDC /* Goals.swift in Sources */,
-				19F050B9238C536300858EDC /* Pupil.swift in Sources */,
 				19F050BD238C53A700858EDC /* Request.swift in Sources */,
-				19F050B7238C526D00858EDC /* Mentor.swift in Sources */,
+				19F050B7238C526D00858EDC /* User.swift in Sources */,
 				85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */,
 				19F050BB238C538A00858EDC /* Tags.swift in Sources */,
+				85AFB5AD238C520300CA9A62 /* MessagingHomeViewController.swift in Sources */,
+				85AFB59B238C4FA300CA9A62 /* LongTermViewController.swift in Sources */,
+				85AFB5C7238C5F1000CA9A62 /* RequestController.swift in Sources */,
+				85AFB59D238C4FB300CA9A62 /* DailyGoalsViewController.swift in Sources */,
+				85AFB5B1238C524C00CA9A62 /* MentorRequestsViewController.swift in Sources */,
+				85AFB5B3238C528000CA9A62 /* MentorsPupilsViewController.swift in Sources */,
+				85AFB5AF238C521400CA9A62 /* MessagingScreenViewController.swift in Sources */,
+				85AFB5C5238C5EFF00CA9A62 /* TagsController.swift in Sources */,
+				85AFB5A1238C504000CA9A62 /* SettingsViewController.swift in Sources */,
+				85AFB5A7238C512E00CA9A62 /* NotificationsViewController.swift in Sources */,
+				85AFB58E238C4D0700CA9A62 /* LoginViewController.swift in Sources */,
+				85AFB5CB238C5F3200CA9A62 /* MessagingController.swift in Sources */,
+				85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */,
+				85AFB590238C4EB800CA9A62 /* CreateEditProfileViewController.swift in Sources */,
+				85AFB594238C4F0100CA9A62 /* MentorProfileViewController.swift in Sources */,
+				85AFB592238C4EEF00CA9A62 /* HomePageViewController.swift in Sources */,
+				85AFB5A9238C516000CA9A62 /* ContactUsViewController.swift in Sources */,
+				85AFB5C9238C5F1D00CA9A62 /* GoalsController.swift in Sources */,
+				85AFB598238C4F5800CA9A62 /* AddGoalsViewController.swift in Sources */,
+				85AFB5C1238C5EE700CA9A62 /* UserController.swift in Sources */,
 				85AFB574238C449000CA9A62 /* SceneDelegate.swift in Sources */,
+				85AFB5A3238C50B000CA9A62 /* PupilProfileViewController.swift in Sources */,
+				85AFB596238C4F2600CA9A62 /* GoalsHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,12 +548,13 @@
 		};
 		85AFB583238C449000CA9A62 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5BE7EFEFE990FD1DD47A1FB /* Pods-Sprout.debug.xcconfig */;
+			baseConfigurationReference = 88AA0FC379E4A57B0DB10459 /* Pods-Sprout.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GQHR9QPNK6;
-				INFOPLIST_FILE = Sprout/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sprout/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,12 +568,13 @@
 		};
 		85AFB584238C449000CA9A62 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 965D391062DCD96BF7528123 /* Pods-Sprout.release.xcconfig */;
+			baseConfigurationReference = 2E7DA01AF0CFB380C1833C76 /* Pods-Sprout.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GQHR9QPNK6;
-				INFOPLIST_FILE = Sprout/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sprout/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
