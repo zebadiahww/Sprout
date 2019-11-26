@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
 		19F050B7238C526D00858EDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050B6238C526D00858EDC /* User.swift */; };
-		19F050BB238C538A00858EDC /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BA238C538A00858EDC /* Tags.swift */; };
+		19F050BB238C538A00858EDC /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BA238C538A00858EDC /* Tag.swift */; };
 		19F050BD238C53A700858EDC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BC238C53A700858EDC /* Request.swift */; };
-		19F050BF238C56E600858EDC /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BE238C56E600858EDC /* Goals.swift */; };
+		19F050BF238C56E600858EDC /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BE238C56E600858EDC /* Goal.swift */; };
 		19F050C1238C575F00858EDC /* Messaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050C0238C575F00858EDC /* Messaging.swift */; };
 		85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB571238C449000CA9A62 /* AppDelegate.swift */; };
 		85AFB574238C449000CA9A62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB573238C449000CA9A62 /* SceneDelegate.swift */; };
@@ -37,16 +36,16 @@
 		85AFB5C1238C5EE700CA9A62 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5C0238C5EE700CA9A62 /* UserController.swift */; };
 		85AFB5C5238C5EFF00CA9A62 /* TagsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5C4238C5EFF00CA9A62 /* TagsController.swift */; };
 		85AFB5C7238C5F1000CA9A62 /* RequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5C6238C5F1000CA9A62 /* RequestController.swift */; };
-		85AFB5C9238C5F1D00CA9A62 /* GoalsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5C8238C5F1D00CA9A62 /* GoalsController.swift */; };
+		85AFB5C9238C5F1D00CA9A62 /* GoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5C8238C5F1D00CA9A62 /* GoalController.swift */; };
 		85AFB5CB238C5F3200CA9A62 /* MessagingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5CA238C5F3200CA9A62 /* MessagingController.swift */; };
 		F27115270416BC0065962AD3 /* Pods_Sprout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4748504B035A5B323388EC /* Pods_Sprout.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		19F050B6238C526D00858EDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = SOURCE_ROOT; };
-		19F050BA238C538A00858EDC /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = SOURCE_ROOT; };
+		19F050BA238C538A00858EDC /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = SOURCE_ROOT; };
 		19F050BC238C53A700858EDC /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = SOURCE_ROOT; };
-		19F050BE238C56E600858EDC /* Goals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = SOURCE_ROOT; };
+		19F050BE238C56E600858EDC /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = SOURCE_ROOT; };
 		19F050C0238C575F00858EDC /* Messaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messaging.swift; sourceTree = SOURCE_ROOT; };
 		2E7DA01AF0CFB380C1833C76 /* Pods-Sprout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sprout.release.xcconfig"; path = "Target Support Files/Pods-Sprout/Pods-Sprout.release.xcconfig"; sourceTree = "<group>"; };
 		85AFB56E238C449000CA9A62 /* Sprout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sprout.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,7 +74,7 @@
 		85AFB5C0238C5EE700CA9A62 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		85AFB5C4238C5EFF00CA9A62 /* TagsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsController.swift; sourceTree = "<group>"; };
 		85AFB5C6238C5F1000CA9A62 /* RequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestController.swift; sourceTree = "<group>"; };
-		85AFB5C8238C5F1D00CA9A62 /* GoalsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsController.swift; sourceTree = "<group>"; };
+		85AFB5C8238C5F1D00CA9A62 /* GoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalController.swift; sourceTree = "<group>"; };
 		85AFB5CA238C5F3200CA9A62 /* MessagingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingController.swift; sourceTree = "<group>"; };
 		88AA0FC379E4A57B0DB10459 /* Pods-Sprout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sprout.debug.xcconfig"; path = "Target Support Files/Pods-Sprout/Pods-Sprout.debug.xcconfig"; sourceTree = "<group>"; };
 		9C4748504B035A5B323388EC /* Pods_Sprout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sprout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,9 +163,9 @@
 			isa = PBXGroup;
 			children = (
 				19F050B6238C526D00858EDC /* User.swift */,
-				19F050BA238C538A00858EDC /* Tags.swift */,
+				19F050BA238C538A00858EDC /* Tag.swift */,
 				19F050BC238C53A700858EDC /* Request.swift */,
-				19F050BE238C56E600858EDC /* Goals.swift */,
+				19F050BE238C56E600858EDC /* Goal.swift */,
 				19F050C0238C575F00858EDC /* Messaging.swift */,
 			);
 			path = Models;
@@ -178,7 +177,7 @@
 				85AFB5C0238C5EE700CA9A62 /* UserController.swift */,
 				85AFB5C4238C5EFF00CA9A62 /* TagsController.swift */,
 				85AFB5C6238C5F1000CA9A62 /* RequestController.swift */,
-				85AFB5C8238C5F1D00CA9A62 /* GoalsController.swift */,
+				85AFB5C8238C5F1D00CA9A62 /* GoalController.swift */,
 				85AFB5CA238C5F3200CA9A62 /* MessagingController.swift */,
 			);
 			path = "Model Controllers";
@@ -379,11 +378,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				19F050C1238C575F00858EDC /* Messaging.swift in Sources */,
-				19F050BF238C56E600858EDC /* Goals.swift in Sources */,
+				19F050BF238C56E600858EDC /* Goal.swift in Sources */,
 				19F050BD238C53A700858EDC /* Request.swift in Sources */,
 				19F050B7238C526D00858EDC /* User.swift in Sources */,
 				85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */,
-				19F050BB238C538A00858EDC /* Tags.swift in Sources */,
+				19F050BB238C538A00858EDC /* Tag.swift in Sources */,
 				85AFB5AD238C520300CA9A62 /* MessagingHomeViewController.swift in Sources */,
 				85AFB59B238C4FA300CA9A62 /* LongTermViewController.swift in Sources */,
 				85AFB5C7238C5F1000CA9A62 /* RequestController.swift in Sources */,
@@ -401,7 +400,7 @@
 				85AFB594238C4F0100CA9A62 /* MentorProfileViewController.swift in Sources */,
 				85AFB592238C4EEF00CA9A62 /* HomePageViewController.swift in Sources */,
 				85AFB5A9238C516000CA9A62 /* ContactUsViewController.swift in Sources */,
-				85AFB5C9238C5F1D00CA9A62 /* GoalsController.swift in Sources */,
+				85AFB5C9238C5F1D00CA9A62 /* GoalController.swift in Sources */,
 				85AFB598238C4F5800CA9A62 /* AddGoalsViewController.swift in Sources */,
 				85AFB5C1238C5EE700CA9A62 /* UserController.swift in Sources */,
 				85AFB574238C449000CA9A62 /* SceneDelegate.swift in Sources */,
