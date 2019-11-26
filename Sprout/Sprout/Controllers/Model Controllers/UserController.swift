@@ -15,7 +15,7 @@ class UserController {
     
     var currentUser: User?
     
-    var firebasedb = Firestore.firestore()
+    var firebaseDB = Firestore.firestore()
     
     func createUser(email: String, password: String, completion: @escaping(Bool) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
@@ -62,23 +62,50 @@ class UserController {
             }
             if let data = data {
                 let downloadedimage = UIImage(data: data)
-                currentUser.profileImage = downloadedimage
+                currentUser.profilePicture = downloadedimage
                 print("succesfully fetched image")
                 completion(true)
             }
         }
     }
     
-    func signOutUser() {
-        
+    func signOutUser(user: User, completion: @escaping(_ success: Bool,_ error: Error? ) -> Void) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print("error signing out")
+            completion(false, signOutError)
+        }
+        completion(true, nil)
     }
     
-    func updatePassword() {
-        
+    func updatePassword(_ password: String, completion: @escaping(Bool) -> Void) {
+        Auth.auth().currentUser?.updateEmail(to: password, completion: { (error) in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                completion(false)
+            }
+        })
+        completion(true)
     }
     
-    func updateProfilePicture() {
-        
+    func updateProfilePicture(_ picture: UIImage, completion: @escaping(Bool) -> Void) {
+        guard let currentUser = currentUser else {completion(false); return }
+        let uploadRef = Storage.storage().reference(withPath: "profilepictures/\(currentUser.uid).jpg")
+        guard let imageData = picture.jpegData(compressionQuality: 0.5) else { completion(false); return }
+        let uploadMetaData = StorageMetadata.init()
+        uploadMetaData.contentType = "image/jpeg"
+        uploadRef.putData(imageData, metadata: uploadMetaData) { (downloadMetaData, error) in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                completion(false)
+            }
+            self.firebaseDB.collection("users").document(currentUser.uid).setData([ "profilePicture" : "profilepicture/\(currentUser.uid).jpg"])
+            currentUser.profilePicture = picture
+            print("picture successfully uploaded")
+            completion(true)
+        }
     }
     
     func fetchUser(with email: String, password: String, completion: @escaping(Bool) -> Void) {
@@ -90,7 +117,7 @@ class UserController {
             guard let user = authResult else { return }
             let loggedInUser = User(uid: user.user.uid, email: email)
             self.currentUser = loggedInUser
-            let ref = self.firebasedb.collection("users").document(user.user.uid)
+            let ref = self.firebaseDB.collection("users").document(user.user.uid)
             ref.getDocument { (snapshot, error) in
                 if let error = error {
                     print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
@@ -104,10 +131,20 @@ class UserController {
         }
     }
     
-    func updateUser() {
-        
+    func updateUser(with name: String, bio: String, completion: @escaping(Bool) -> Void) {
+        guard let userID = currentUser?.uid else { return }
+        firebaseDB.collection("users").document(userID).setData(["name" : name, "bio" : bio]) { (error) in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                completion(false)
+            }
+            self.currentUser?.name = name
+            self.currentUser?.bio = bio
+            print("updated user info")
+        }
     }
-    
+
+    // TO DO: do we need this???
     func deleteUser() {
         
     }

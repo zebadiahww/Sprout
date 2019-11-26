@@ -13,7 +13,7 @@ class User {
     var name: String
     var bio: String
     var isMentor: Bool
-    var profileImage: UIImage?
+    var profilePicture: UIImage?
     var pupil: [User : Tags]?
     var mentor: [User : Tags]?
     var tags: [Tags]?
@@ -30,7 +30,7 @@ class User {
         self.name = name
         self.bio = bio
         self.isMentor = isMentor
-        self.profileImage = profileImage
+        self.profilePicture = profileImage
         self.pupil = pupil
         self.mentor = mentor
         self.tags = tags
