@@ -14,10 +14,10 @@ class User {
     var bio: String
     var isMentor: Bool
     var profilePicture: UIImage?
-    var pupil: [User : Tags]?
-    var mentor: [User : Tags]?
-    var tags: [Tags]?
-    var goals: [Goals]?
+    var pupil: [User : Tag]?
+    var mentor: [User : Tag]?
+    var tags: [Tag]?
+    var goals: [Goal]?
     var requests: [Request]?
     var email: String
     var password: String
@@ -25,7 +25,7 @@ class User {
     var facebook: Bool
     var blockedUsers: [String]?
     
-    init(uid: String, name: String = "", bio: String = "", isMentor: Bool = false, profileImage: UIImage? = nil, pupil: [User : Tags]? = nil, mentor: [User : Tags]? = nil, tags: [Tags]? = nil, goals: [Goals]? = nil, request: [Request]? = nil, email: String, password: String = "", linkedIn: Bool = false, facebook: Bool = false, blockedUsers: [String]? = nil) {
+    init(uid: String, name: String = "", bio: String = "", isMentor: Bool = false, profileImage: UIImage? = nil, pupil: [User : Tag]? = nil, mentor: [User : Tag]? = nil, tags: [Tag]? = nil, goals: [Goal]? = nil, request: [Request]? = nil, email: String, password: String = "", linkedIn: Bool = false, facebook: Bool = false, blockedUsers: [String]? = nil) {
         self.uid = uid
         self.name = name
         self.bio = bio

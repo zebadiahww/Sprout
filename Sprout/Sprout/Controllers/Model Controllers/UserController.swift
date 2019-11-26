@@ -145,8 +145,16 @@ class UserController {
     }
 
     // TO DO: do we need this???
-    func deleteUser() {
-        
-    }
+//    func deleteUser(user: User, completion: @escaping(Bool) -> Void) {
+//        guard let user = Auth.auth().currentUser else { completion(false); return }
+//        user.delete { error in
+//            if let error = error {
+//                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+//            } else {
+//                self.firebaseDB.collection("users").document("\(user.uid)").delete()
+//                completion(true)
+//            }
+//        }
+//    }
     
 } // END OF CLASS
