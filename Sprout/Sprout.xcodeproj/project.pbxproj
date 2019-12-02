@@ -12,6 +12,7 @@
 		19F050BD238C53A700858EDC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BC238C53A700858EDC /* Request.swift */; };
 		19F050BF238C56E600858EDC /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BE238C56E600858EDC /* Goal.swift */; };
 		19F050C1238C575F00858EDC /* Messaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050C0238C575F00858EDC /* Messaging.swift */; };
+		853B92A4238F004600D3E5F0 /* MentorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853B92A3238F004600D3E5F0 /* MentorProfileViewController.swift */; };
 		85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB571238C449000CA9A62 /* AppDelegate.swift */; };
 		85AFB574238C449000CA9A62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB573238C449000CA9A62 /* SceneDelegate.swift */; };
 		85AFB579238C449000CA9A62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AFB577238C449000CA9A62 /* Main.storyboard */; };
@@ -20,7 +21,6 @@
 		85AFB58E238C4D0700CA9A62 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB58D238C4D0700CA9A62 /* LoginViewController.swift */; };
 		85AFB590238C4EB800CA9A62 /* CreateEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB58F238C4EB800CA9A62 /* CreateEditProfileViewController.swift */; };
 		85AFB592238C4EEF00CA9A62 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB591238C4EEF00CA9A62 /* HomePageViewController.swift */; };
-		85AFB594238C4F0100CA9A62 /* MentorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB593238C4F0100CA9A62 /* MentorProfileViewController.swift */; };
 		85AFB596238C4F2600CA9A62 /* GoalsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB595238C4F2600CA9A62 /* GoalsHomeViewController.swift */; };
 		85AFB598238C4F5800CA9A62 /* AddGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB597238C4F5800CA9A62 /* AddGoalsViewController.swift */; };
 		85AFB59B238C4FA300CA9A62 /* LongTermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB59A238C4FA300CA9A62 /* LongTermViewController.swift */; };
@@ -48,6 +48,7 @@
 		19F050BE238C56E600858EDC /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = SOURCE_ROOT; };
 		19F050C0238C575F00858EDC /* Messaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messaging.swift; sourceTree = SOURCE_ROOT; };
 		2E7DA01AF0CFB380C1833C76 /* Pods-Sprout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sprout.release.xcconfig"; path = "Target Support Files/Pods-Sprout/Pods-Sprout.release.xcconfig"; sourceTree = "<group>"; };
+		853B92A3238F004600D3E5F0 /* MentorProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorProfileViewController.swift; sourceTree = "<group>"; };
 		85AFB56E238C449000CA9A62 /* Sprout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sprout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AFB571238C449000CA9A62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85AFB573238C449000CA9A62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		85AFB58D238C4D0700CA9A62 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		85AFB58F238C4EB800CA9A62 /* CreateEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEditProfileViewController.swift; sourceTree = "<group>"; };
 		85AFB591238C4EEF00CA9A62 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
-		85AFB593238C4F0100CA9A62 /* MentorProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorProfileViewController.swift; sourceTree = "<group>"; };
 		85AFB595238C4F2600CA9A62 /* GoalsHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsHomeViewController.swift; sourceTree = "<group>"; };
 		85AFB597238C4F5800CA9A62 /* AddGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalsViewController.swift; sourceTree = "<group>"; };
 		85AFB59A238C4FA300CA9A62 /* LongTermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTermViewController.swift; sourceTree = "<group>"; };
@@ -220,9 +220,9 @@
 		85AFB59E238C4FEF00CA9A62 /* Mentor View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				85AFB593238C4F0100CA9A62 /* MentorProfileViewController.swift */,
 				85AFB5B0238C524C00CA9A62 /* MentorRequestsViewController.swift */,
 				85AFB5B2238C528000CA9A62 /* MentorsPupilsViewController.swift */,
+				853B92A3238F004600D3E5F0 /* MentorProfileViewController.swift */,
 			);
 			path = "Mentor View Controller";
 			sourceTree = "<group>";
@@ -397,11 +397,11 @@
 				85AFB5CB238C5F3200CA9A62 /* MessagingController.swift in Sources */,
 				85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */,
 				85AFB590238C4EB800CA9A62 /* CreateEditProfileViewController.swift in Sources */,
-				85AFB594238C4F0100CA9A62 /* MentorProfileViewController.swift in Sources */,
 				85AFB592238C4EEF00CA9A62 /* HomePageViewController.swift in Sources */,
 				85AFB5A9238C516000CA9A62 /* ContactUsViewController.swift in Sources */,
 				85AFB5C9238C5F1D00CA9A62 /* GoalController.swift in Sources */,
 				85AFB598238C4F5800CA9A62 /* AddGoalsViewController.swift in Sources */,
+				853B92A4238F004600D3E5F0 /* MentorProfileViewController.swift in Sources */,
 				85AFB5C1238C5EE700CA9A62 /* UserController.swift in Sources */,
 				85AFB574238C449000CA9A62 /* SceneDelegate.swift in Sources */,
 				85AFB5A3238C50B000CA9A62 /* PupilProfileViewController.swift in Sources */,
