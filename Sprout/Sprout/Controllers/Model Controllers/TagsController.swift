@@ -15,9 +15,9 @@ class TagsController {
     
     var firebaseDB = Firestore.firestore()
     
-    func createTag(with title: String, category: String, completion: @escaping(Bool) -> Void) {
-        let newTag = Tag(title: title, category: category)
-        let dataToSave:[String : Any] = ["title" : newTag.title, "category" : newTag.category, "tagID" : newTag.uuid]
+    func createTag(with title: String, completion: @escaping(Bool) -> Void) {
+        let newTag = Tag(title: title)
+        let dataToSave:[String : Any] = ["title" : newTag.title, "tagID" : newTag.uuid]
         let ref = firebaseDB.collection("Tag").document(newTag.uuid)
         ref.setData(dataToSave) { (error) in
             if let error = error {
@@ -39,10 +39,10 @@ class TagsController {
                 return
             }
             for document in snapshot!.documents {
-                let title = document.get("title") as! String
-                let category = document.get("category") as! String
-                let tagID = document.get("tagID") as! String
-                let fetchedTag = Tag(title: title, category: category, uuid: tagID)
+                guard let title = document.get("title") as? String,
+                let tagID = document.get("tagID") as? String
+                    else { return }
+                let fetchedTag = Tag(title: title, uuid: tagID)
                 self.tags.append(fetchedTag)
                 print(fetchedTag.title)
                 completion(true)
@@ -50,12 +50,11 @@ class TagsController {
         }
     }
     
-    func updateTag(tag: Tag, title: String, category: String, completion: @escaping(Bool) -> Void) {
-        let tagToUpdate: [String : Any] = ["title" : title, "category" : category ]
+    func updateTag(tag: Tag, title: String, completion: @escaping(Bool) -> Void) {
+        let tagToUpdate: [String : Any] = ["title" : title]
         let ref = firebaseDB.collection("Tag").document(tag.uuid)
         ref.updateData(tagToUpdate)
         tag.title = title
-        tag.category = category
         completion(true)
         
     }

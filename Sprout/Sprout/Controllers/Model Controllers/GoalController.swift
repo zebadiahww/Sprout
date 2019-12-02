@@ -15,10 +15,14 @@ class GoalController {
     
     var firebaseDB = Firestore.firestore()
     
-    
-    func createGoal(title: String, body: String, completion: @escaping(Bool) -> Void) {
-        let goalToSave = Goal(title: title, body: body)
-        let dataToSave: [String : Any] = ["title" : goalToSave.title, "body" : goalToSave.body, "GoalID" : goalToSave.uuid]
+    // TODO add new parameters into functions
+    func createGoal(title: String, body: String, isComplete: Bool, isPrivate: Bool, isDaily: Bool, date: Date?, uuid: String, icon: String, iconColor: String, completion: @escaping(Bool) -> Void) {
+        
+        let goalToSave = Goal(title: title, body: body, isComplete: isComplete, isPrivate: isPrivate, isDaily: isDaily, date: date, uuid: uuid, icon: icon, iconColor: iconColor)
+        var dataToSave: [String : Any] = ["title" : goalToSave.title, "body" : goalToSave.body, "isComplete" : goalToSave.isComplete, "isPrivate" : goalToSave.isPrivate, "isDaily" : goalToSave.isDaily, "GoalID" : goalToSave.uuid, "icon" : goalToSave.icon, "iconColor" : goalToSave.iconColor]
+        if let date = goalToSave.date {
+            dataToSave.updateValue(date, forKey: "date")
+        }
         let ref = firebaseDB.collection("Goal").document(goalToSave.uuid)
         ref.setData(dataToSave) { (error) in
             if let error = error {
@@ -32,12 +36,16 @@ class GoalController {
         }
     }
     
-    func updateGoal(goal: Goal, title: String, body: String, completion: @escaping(Bool) -> Void) {
-        let goalToUpdate: [String : Any] = ["title" : title, "body" : body]
+    func updateGoal(goal: Goal, title: String, date: Date?, body: String, completion: @escaping(Bool) -> Void) {
+        var goalToUpdate: [String : Any] = ["title" : title, "body" : body]
+        if let date = date {
+            goalToUpdate.updateValue(date, forKey: "date")
+        }
         let ref = firebaseDB.collection("Goal").document(goal.uuid)
         ref.updateData(goalToUpdate)
         goal.title = title
         goal.body = body
+        goal.date = date
         completion(true)
     }
     
@@ -55,10 +63,17 @@ class GoalController {
                 return
             }
             for document in snapshot!.documents {
-                let title = document.get("title") as! String
-                let body = document.get("body") as! String
-                let goalID = document.get("GoalID") as! String
-                let fetchedGoal = Goal(title: title, body: body, uuid: goalID)
+                guard let title = document.get("title") as? String,
+                    let body = document.get("body") as? String,
+                    let goalID = document.get("GoalID") as? String,
+                    let isComplete = document.get("isComplete") as? Bool,
+                    let isPrivate = document.get("isPrivate") as? Bool,
+                    let isDaily = document.get("isDaily") as? Bool,
+                    let icon = document.get("icon") as? String,
+                    let iconColor = document.get("iconColor") as? String
+                    else { return }
+                let date = document.get("date") as? Date
+                let fetchedGoal = Goal(title: title, body: body, isComplete: isComplete, isPrivate: isPrivate, isDaily: isDaily, date: date, uuid: goalID, icon: icon, iconColor: iconColor)
                 self.goals.append(fetchedGoal)
                 print(fetchedGoal.title)
                 completion(true)

@@ -123,7 +123,7 @@ class UserController {
                     print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                     completion(false)
                 }
-                let name = snapshot?.get("name") as! String
+                guard let name = snapshot?.get("name") as? String else { return }
                 self.currentUser?.name = name
                 print("successfully fetched user: \(name)")
                 completion(true)
