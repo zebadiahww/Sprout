@@ -11,6 +11,7 @@
 		19F050BB238C538A00858EDC /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BA238C538A00858EDC /* Tag.swift */; };
 		19F050BD238C53A700858EDC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BC238C53A700858EDC /* Request.swift */; };
 		19F050BF238C56E600858EDC /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BE238C56E600858EDC /* Goal.swift */; };
+		55BB57A12395C92D00962DA0 /* SignInSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */; };
 		853B92A4238F004600D3E5F0 /* MentorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853B92A3238F004600D3E5F0 /* MentorProfileViewController.swift */; };
 		853B92A623958B4C00D3E5F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 853B92A523958B4C00D3E5F0 /* GoogleService-Info.plist */; };
 		85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB571238C449000CA9A62 /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 		85AFB5C7238C5F1000CA9A62 /* RequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5C6238C5F1000CA9A62 /* RequestController.swift */; };
 		85AFB5C9238C5F1D00CA9A62 /* GoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5C8238C5F1D00CA9A62 /* GoalController.swift */; };
 		F27115270416BC0065962AD3 /* Pods_Sprout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4748504B035A5B323388EC /* Pods_Sprout.framework */; };
+		F312A56329994F1CC6CABC29 /* Pods_Sprout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389E15EEAE894E9970D3B5E0 /* Pods_Sprout.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		19F050BC238C53A700858EDC /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = SOURCE_ROOT; };
 		19F050BE238C56E600858EDC /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = SOURCE_ROOT; };
 		2E7DA01AF0CFB380C1833C76 /* Pods-Sprout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sprout.release.xcconfig"; path = "Target Support Files/Pods-Sprout/Pods-Sprout.release.xcconfig"; sourceTree = "<group>"; };
+		389E15EEAE894E9970D3B5E0 /* Pods_Sprout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sprout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInSignUp.storyboard; sourceTree = "<group>"; };
 		853B92A3238F004600D3E5F0 /* MentorProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorProfileViewController.swift; sourceTree = "<group>"; };
 		853B92A523958B4C00D3E5F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		85AFB56E238C449000CA9A62 /* Sprout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sprout.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F27115270416BC0065962AD3 /* Pods_Sprout.framework in Frameworks */,
+				F312A56329994F1CC6CABC29 /* Pods_Sprout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +110,7 @@
 				85AFB570238C449000CA9A62 /* Sprout */,
 				85AFB56F238C449000CA9A62 /* Products */,
 				A6B11932BB5D577B2DC959EC /* Pods */,
+				A5F292E9903DDFD77B8EE804 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				85AFB577238C449000CA9A62 /* Main.storyboard */,
+				55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,6 +258,14 @@
 			path = "Messaging View Controllers";
 			sourceTree = "<group>";
 		};
+		A5F292E9903DDFD77B8EE804 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				389E15EEAE894E9970D3B5E0 /* Pods_Sprout.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A6B11932BB5D577B2DC959EC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +339,7 @@
 				85AFB57B238C449000CA9A62 /* Assets.xcassets in Resources */,
 				85AFB579238C449000CA9A62 /* Main.storyboard in Resources */,
 				853B92A623958B4C00D3E5F0 /* GoogleService-Info.plist in Resources */,
+				55BB57A12395C92D00962DA0 /* SignInSignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

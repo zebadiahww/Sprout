@@ -13,18 +13,13 @@ class LoginViewController: UIViewController {
     
     
     //MARK: - Outlets
-    @IBOutlet weak var loginLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var passwordLabel: UILabel!
-    @IBOutlet weak var accountTypeLabel: UILabel!
-    
+ 
+    @IBOutlet weak var pageIDLabel: UILabel!
+    @IBOutlet weak var userTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var accountTypeButton: UIButton!
-    
-    @IBOutlet weak var sproutImageView: UIImageView!
+    @IBOutlet weak var actionButton: UIButton!
+    @IBOutlet weak var pageToggleButton: UIButton!
     
     
     //MARK: - View Did Load
@@ -54,7 +49,10 @@ class LoginViewController: UIViewController {
     }
     
     
-    @IBAction func accountTypeButtonTapped(_ sender: Any) {
+    @IBAction func accountTypeValueChanged(_ sender: UISegmentedControl) {
+    }
+    
+    @IBAction func pageToggleTapped(_ sender: UIButton) {
     }
     
     
