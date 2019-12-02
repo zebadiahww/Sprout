@@ -14,31 +14,31 @@ class User {
     var bio: String
     var isMentor: Bool
     var profilePicture: UIImage?
-    var pupil: [User : Tag]?
-    var mentor: [User : Tag]?
+    var pupils: [User : Tag]?
+    var mentors: [User : Tag]?
     var tags: [Tag]?
     var goals: [Goal]?
     var requests: [Request]?
     var email: String
     var password: String
-    var linkedIn: Bool
-    var facebook: Bool
+    var linkedInURL: String?
+    var website: String?
     var blockedUsers: [String]?
     
-    init(uid: String, name: String = "", bio: String = "", isMentor: Bool = false, profileImage: UIImage? = nil, pupil: [User : Tag]? = nil, mentor: [User : Tag]? = nil, tags: [Tag]? = nil, goals: [Goal]? = nil, request: [Request]? = nil, email: String, password: String = "", linkedIn: Bool = false, facebook: Bool = false, blockedUsers: [String]? = nil) {
+    init(uid: String, name: String = "", bio: String = "", isMentor: Bool = false, profileImage: UIImage? = nil, pupils: [User : Tag]? = nil, mentors: [User : Tag]? = nil, tags: [Tag]? = nil, goals: [Goal]? = nil, request: [Request]? = nil, email: String, password: String = "", linkedInURL: String? = "", website: String? = "", blockedUsers: [String]? = nil) {
         self.uid = uid
         self.name = name
         self.bio = bio
         self.isMentor = isMentor
         self.profilePicture = profileImage
-        self.pupil = pupil
-        self.mentor = mentor
+        self.pupils = pupils
+        self.mentors = mentors
         self.tags = tags
         self.requests = request
         self.email = email
         self.password = password
-        self.linkedIn = linkedIn
-        self.facebook = facebook
+        self.linkedInURL = linkedInURL
+        self.website = website
         self.blockedUsers = blockedUsers
     }
 }

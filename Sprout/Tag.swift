@@ -10,12 +10,10 @@ import Foundation
 
 class Tag {
     var title: String
-    var category: String
     var uuid: String
     
-    init(title: String, category: String, uuid: String = UUID().uuidString) {
+    init(title: String, uuid: String = UUID().uuidString) {
         self.title = title
-        self.category = category
         self.uuid = uuid
     }
 }

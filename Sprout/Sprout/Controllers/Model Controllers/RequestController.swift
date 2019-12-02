@@ -46,9 +46,10 @@ class RequestController {
                 return
             }
             for document in snapshot!.documents {
-                let title = document.get("title") as! String
-                let message = document.get("message") as! String
-                let requestID = document.get("requestID") as! String
+                guard let title = document.get("title") as? String,
+                    let message = document.get("message") as? String,
+                    let requestID = document.get("requestID") as? String
+                    else { return }
                 let fetchedRequest = Request(title: title, message: message, uuid: requestID)
                 self.requests.append(fetchedRequest)
                 print(fetchedRequest.title)
