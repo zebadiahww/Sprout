@@ -55,11 +55,7 @@ class LoginViewController: UIViewController {
         if !isSignUp {
             performSegue(withIdentifier: "toProfileCreation", sender: self)
         } else {
-            UserController.shared.fetchUser(with: email, password: password) { (success) in
-                if success {
-                    print("User successfully fetched")
-                }
-            }
+            
         }
     }
     
@@ -130,8 +126,12 @@ class LoginViewController: UIViewController {
     //    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toProfileCreation" {
-            guard let destinationVC = segue.destination as? CreateProfileTableViewController else {return}
+        if segue.identifier == "toEmailVerify" {
+            guard let email = emailTextField.text,
+                let destinationVC = segue.destination as? EmailVerifyViewController
+            else {return}
+            destinationVC.email = email
+            destinationVC.isMentor = isMentor
         }
     }
     

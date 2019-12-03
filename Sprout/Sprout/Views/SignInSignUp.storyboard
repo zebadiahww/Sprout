@@ -52,7 +52,7 @@
                                             <constraint firstAttribute="height" constant="35" id="vgh-7l-WH4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -115,7 +115,7 @@
                                             <constraint firstAttribute="height" constant="35" id="i1V-rp-RkL"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -178,11 +178,29 @@
                         <outlet property="passwordBorderLabel" destination="x8b-km-fRn" id="oXw-uq-Hwd"/>
                         <outlet property="passwordTextField" destination="jNC-Gc-kEi" id="eXy-fL-YnU"/>
                         <outlet property="userTypeSegmentedControl" destination="aMV-WU-Gqk" id="83D-8V-NYE"/>
+                        <segue destination="hVF-M9-1pe" kind="presentation" identifier="toEmailVerify" modalPresentationStyle="fullScreen" id="Tnz-UE-i2C"/>
+                        <segue destination="9xB-0v-DhY" kind="presentation" modalPresentationStyle="fullScreen" id="rSy-v2-wLp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJN-CS-yeI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+        </scene>
+        <!--EmailVerifyViewController-->
+        <scene sceneID="a5e-U5-P0c">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CreateProfile" referencedIdentifier="EmailVerifyViewController" id="hVF-M9-1pe" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8AI-5S-aaz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="853" y="84"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="zZc-rE-RFT">
+            <objects>
+                <viewControllerPlaceholder id="9xB-0v-DhY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BzY-3X-Qho" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="834" y="230"/>
         </scene>
     </scenes>
     <resources>

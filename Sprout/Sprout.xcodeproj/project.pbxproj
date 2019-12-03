@@ -12,6 +12,7 @@
 		19F050BD238C53A700858EDC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BC238C53A700858EDC /* Request.swift */; };
 		19F050BF238C56E600858EDC /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BE238C56E600858EDC /* Goal.swift */; };
 		5510C79C2396E03F00B86ED3 /* UserCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510C79B2396E03F00B86ED3 /* UserCheckViewController.swift */; };
+		5510C79E2397170600B86ED3 /* EmailVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510C79D2397170600B86ED3 /* EmailVerifyViewController.swift */; };
 		55BB57A12395C92D00962DA0 /* SignInSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */; };
 		55BB57A32395D39300962DA0 /* CreateProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BB57A22395D39300962DA0 /* CreateProfile.storyboard */; };
 		55BB57A52395D95300962DA0 /* CreateProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */; };
@@ -53,6 +54,7 @@
 		2E7DA01AF0CFB380C1833C76 /* Pods-Sprout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sprout.release.xcconfig"; path = "Target Support Files/Pods-Sprout/Pods-Sprout.release.xcconfig"; sourceTree = "<group>"; };
 		389E15EEAE894E9970D3B5E0 /* Pods_Sprout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sprout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5510C79B2396E03F00B86ED3 /* UserCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCheckViewController.swift; sourceTree = "<group>"; };
+		5510C79D2397170600B86ED3 /* EmailVerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerifyViewController.swift; sourceTree = "<group>"; };
 		55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInSignUp.storyboard; sourceTree = "<group>"; };
 		55BB57A22395D39300962DA0 /* CreateProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProfile.storyboard; sourceTree = "<group>"; };
 		55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */,
 				55BB57A62396C18200962DA0 /* PhotoSelectorViewController.swift */,
 				5510C79B2396E03F00B86ED3 /* UserCheckViewController.swift */,
+				5510C79D2397170600B86ED3 /* EmailVerifyViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				85AFB5A1238C504000CA9A62 /* SettingsViewController.swift in Sources */,
 				85AFB5A7238C512E00CA9A62 /* NotificationsViewController.swift in Sources */,
 				85AFB58E238C4D0700CA9A62 /* LoginViewController.swift in Sources */,
+				5510C79E2397170600B86ED3 /* EmailVerifyViewController.swift in Sources */,
 				85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */,
 				85AFB592238C4EEF00CA9A62 /* HomePageViewController.swift in Sources */,
 				85AFB5A9238C516000CA9A62 /* ContactUsViewController.swift in Sources */,
