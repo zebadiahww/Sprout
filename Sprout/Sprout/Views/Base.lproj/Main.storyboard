@@ -39,15 +39,15 @@
             </objects>
             <point key="canvasLocation" x="1104" y="358"/>
         </scene>
-        <!--CreateProfileTableViewController-->
+        <!--LoginViewController-->
         <scene sceneID="pZy-X3-9hH">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="CreateProfileTableViewController" storyboardName="CreateProfile" referencedIdentifier="CreateProfileTableViewController" id="0U4-Fs-aeN" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="SignInSignUp" referencedIdentifier="LoginViewController" id="0U4-Fs-aeN" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="qId-K2-xqz"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x3x-qR-7n9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1907" y="198"/>
+            <point key="canvasLocation" x="1907" y="194"/>
         </scene>
         <!--Storyboard Reference-->
         <scene sceneID="fKA-Zj-ChJ">
