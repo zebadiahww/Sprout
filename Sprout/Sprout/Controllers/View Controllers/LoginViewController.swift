@@ -13,6 +13,8 @@ class LoginViewController: UIViewController {
     
     var isSignUp: Bool = true
     
+    var isMentor = false
+    
     //MARK: - Outlets
     
     @IBOutlet weak var pageIDLabel: UILabel!
@@ -38,7 +40,8 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if Auth.auth().currentUser != nil {
-            Auth.auth().currentUser?.uid
+            // fetch userdata
+            //perform segue
         }
     }
     
@@ -47,29 +50,34 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonTapped(_ sender: Any) {
         guard let email = emailTextField.text, !email.isEmpty,
             let password = passwordTextField.text, !password.isEmpty else { return }
-        
-        UserController.shared.createUser(email: email, password: password) { (success) in
-            if success {
-                // do something here
+        if !isSignUp {
+            performSegue(withIdentifier: "toProfileCreation", sender: self)
+        } else {
+            UserController.shared.fetchUser(with: email, password: password) { (success) in
+                if success {
+                    print("User successfully fetched")
+                }
             }
         }
     }
     
     
     @IBAction func accountTypeValueChanged(_ sender: UISegmentedControl) {
+        isMentor = !isMentor
+        print(isMentor)
     }
     
     @IBAction func pageToggleTapped(_ sender: UIButton) {
         
-        if isSignUp == true {
+        if isSignUp == false {
             UIView.animate(withDuration: 0.2 ) {
                 self.toggleToSignUp()
-                self.isSignUp = false
+                self.isSignUp = true
             }
         } else {
             UIView.animate(withDuration: 0.2 ) {
                 self.toggleToLogin()
-                self.isSignUp = true
+                self.isSignUp = false
             }
         }
     }
@@ -92,6 +100,7 @@ class LoginViewController: UIViewController {
         self.passwordBorder.layer.cornerRadius = passwordBorder.frame.height/12
         self.passwordBorder.layer.borderWidth = 1
         self.actionButton.layer.cornerRadius = actionButton.frame.height/2
+        toggleToSignUp()
     }
     
     func toggleToLogin() {
@@ -117,5 +126,11 @@ class LoginViewController: UIViewController {
     //
     //        UserController.shared.fetchUser(with: <#T##String#>, password: <#T##String#>, completion: <#T##(Bool) -> Void#>)
     //    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toProfileCreation" {
+            guard let destinationVC = segue.destination as? CreateProfileTableViewController else {return}
+        }
+    }
     
 } // End Of Class
