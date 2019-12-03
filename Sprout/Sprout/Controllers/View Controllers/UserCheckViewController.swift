@@ -7,18 +7,19 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class UserCheckViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        
-    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        performSegue(withIdentifier: "toLogin", sender: self)
+        if Auth.auth().currentUser != nil {
+            // fetch userdata
+            UserController.shared.fetchUser(with: <#T##String#>, bio: <#T##String#>, isMentor: <#T##Bool#>, email: <#T##String#>, completion: <#T##(Bool) -> Void#>)
+
+            performSegue(withIdentifier: "toLogin", sender: self)
+            
+        }
     }
     
 
