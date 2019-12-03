@@ -31,22 +31,22 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if Auth.auth().currentUser != nil {
-            Auth.auth().currentUser?.uid
+//            Auth.auth().currentUser?.uid
         }
     }
     
     
     // MARK: - Actions
-    @IBAction func loginButtonTapped(_ sender: Any) {
-        guard let email = emailTextField.text, !email.isEmpty,
-            let password = passwordTextField.text, !password.isEmpty else { return }
-        
-        UserController.shared.createUser(email: email, password: password) { (success) in
-            if success {
-                // do something here
-            }
-        }
-    }
+//    @IBAction func loginButtonTapped(_ sender: Any) {
+//        guard let email = emailTextField.text, !email.isEmpty,
+//            let password = passwordTextField.text, !password.isEmpty else { return }
+//
+//        UserController.shared.createUser(email: email) { (success) in
+//            if success {
+//                // do something here
+//            }
+//        }
+//    }
     
     
     @IBAction func accountTypeValueChanged(_ sender: UISegmentedControl) {
