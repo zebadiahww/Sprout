@@ -9,6 +9,14 @@
 import Foundation
 import Firebase
 
+struct UserConstants {
+    fileprivate static let uidKey = "uid"
+    fileprivate static let nameKey = "name"
+    fileprivate static let bioKey = "bio"
+    fileprivate static let isMentorKey = "isMentor"
+    fileprivate static let emailKey = "email"
+}
+
 class UserController {
     
     static let shared = UserController()
@@ -99,7 +107,17 @@ class UserController {
     }
     
     func updatePassword(_ password: String, completion: @escaping(Bool) -> Void) {
-        Auth.auth().currentUser?.updateEmail(to: password, completion: { (error) in
+        Auth.auth().currentUser?.updatePassword(to: password, completion: { (error) in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                completion(false)
+            }
+        })
+        completion(true)
+    }
+    
+    func updateEmail(_ email: String, completion: @escaping(Bool) -> Void) {
+        Auth.auth().currentUser?.updateEmail(to: email, completion: { (error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 completion(false)
@@ -126,28 +144,47 @@ class UserController {
         }
     }
     
-    func fetchUser(with name: String, bio: String, isMentor: Bool, email: String, linkedInURL: String?, website: String?, completion: @escaping(Bool) -> Void) {
-        Auth.auth().signIn(withCustomToken: email) { (authResult, error) in
-            if let error = error {
-                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-                completion(false)
-            }
-            guard let user = authResult else { return }
-            let loggedInUser = User(uid: user.user.uid, name: name, bio: bio, isMentor: isMentor, email: email, linkedInURL: linkedInURL, website: website)
-            self.currentUser = loggedInUser
-            let ref = self.firebaseDB.collection("users").document(user.user.uid)
-            ref.getDocument { (snapshot, error) in
-                if let error = error {
-                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-                    completion(false)
-                }
-                guard let name = snapshot?.get("name") as? String else { return }
-                self.currentUser?.name = name
-                print("successfully fetched user: \(name)")
-                completion(true)
-            }
-        }
-    }
+//    func fetchUser(completion: @escaping(Bool) -> Void) {
+//        guard let userID = Auth.auth().currentUser?.uid else {
+//            completion(false)
+//            return
+//        }
+//        let ref = firebaseDB.collection("users").document(userID)
+//        ref.getDocument { (snapshot, error) in
+//            if let error = error {
+//                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+//                completion(false)
+//            }
+//            
+//            guard let document = snapshot else {
+//                completion(false)
+//                return
+//            }
+//            
+//            guard let uid = document["uid"] as? String,
+//                let name = document["name"] as? String,
+//            
+//            let user = User(uid: <#T##String#>, name: <#T##String#>, bio: <#T##String#>, isMentor: <#T##Bool#>, profileImage: <#T##UIImage?#>, pupils: <#T##[User : Tag]?#>, mentors: <#T##[User : Tag]?#>, tags: <#T##[Tag]?#>, goals: <#T##[Goal]?#>, request: <#T##[Request]?#>, email: <#T##String#>, linkedInURL: <#T##String?#>, website: <#T##String?#>, blockedUsers: <#T##[String]?#>)
+//        }
+//        Auth.auth().signIn(withCustomToken: email) { (authResult, error) in
+//            if let error = error {
+//            }
+//            guard let user = authResult else { return }
+//            let loggedInUser = User(uid: user.user.uid, name: name, bio: bio, isMentor: isMentor, email: email)
+//            self.currentUser = loggedInUser
+//            let ref = self.firebaseDB.collection("users").document(user.user.uid)
+//            ref.getDocument { (snapshot, error) in
+//                if let error = error {
+//                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+//                    completion(false)
+//                }
+//                guard let name = snapshot?.get("name") as? String else { return }
+//                self.currentUser?.name = name
+//                print("successfully fetched user: \(name)")
+//                completion(true)
+//            }
+//        }
+//    }
     
     func updateUser(with name: String, bio: String, completion: @escaping(Bool) -> Void) {
         guard let userID = currentUser?.uid else { return }
