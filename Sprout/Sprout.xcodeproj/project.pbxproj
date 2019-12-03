@@ -12,6 +12,9 @@
 		19F050BD238C53A700858EDC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BC238C53A700858EDC /* Request.swift */; };
 		19F050BF238C56E600858EDC /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BE238C56E600858EDC /* Goal.swift */; };
 		55BB57A12395C92D00962DA0 /* SignInSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */; };
+		55BB57A32395D39300962DA0 /* CreateProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BB57A22395D39300962DA0 /* CreateProfile.storyboard */; };
+		55BB57A52395D95300962DA0 /* CreateProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */; };
+		55BB57A72396C18200962DA0 /* PhotoSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BB57A62396C18200962DA0 /* PhotoSelectorViewController.swift */; };
 		853B92A4238F004600D3E5F0 /* MentorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853B92A3238F004600D3E5F0 /* MentorProfileViewController.swift */; };
 		853B92A623958B4C00D3E5F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 853B92A523958B4C00D3E5F0 /* GoogleService-Info.plist */; };
 		85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB571238C449000CA9A62 /* AppDelegate.swift */; };
@@ -20,7 +23,6 @@
 		85AFB57B238C449000CA9A62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AFB57A238C449000CA9A62 /* Assets.xcassets */; };
 		85AFB57E238C449000CA9A62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AFB57C238C449000CA9A62 /* LaunchScreen.storyboard */; };
 		85AFB58E238C4D0700CA9A62 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB58D238C4D0700CA9A62 /* LoginViewController.swift */; };
-		85AFB590238C4EB800CA9A62 /* CreateEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB58F238C4EB800CA9A62 /* CreateEditProfileViewController.swift */; };
 		85AFB592238C4EEF00CA9A62 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB591238C4EEF00CA9A62 /* HomePageViewController.swift */; };
 		85AFB596238C4F2600CA9A62 /* GoalsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB595238C4F2600CA9A62 /* GoalsHomeViewController.swift */; };
 		85AFB598238C4F5800CA9A62 /* AddGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB597238C4F5800CA9A62 /* AddGoalsViewController.swift */; };
@@ -50,6 +52,9 @@
 		2E7DA01AF0CFB380C1833C76 /* Pods-Sprout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sprout.release.xcconfig"; path = "Target Support Files/Pods-Sprout/Pods-Sprout.release.xcconfig"; sourceTree = "<group>"; };
 		389E15EEAE894E9970D3B5E0 /* Pods_Sprout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sprout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInSignUp.storyboard; sourceTree = "<group>"; };
+		55BB57A22395D39300962DA0 /* CreateProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProfile.storyboard; sourceTree = "<group>"; };
+		55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileTableViewController.swift; sourceTree = "<group>"; };
+		55BB57A62396C18200962DA0 /* PhotoSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorViewController.swift; sourceTree = "<group>"; };
 		853B92A3238F004600D3E5F0 /* MentorProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorProfileViewController.swift; sourceTree = "<group>"; };
 		853B92A523958B4C00D3E5F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		85AFB56E238C449000CA9A62 /* Sprout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sprout.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,7 +65,6 @@
 		85AFB57D238C449000CA9A62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85AFB57F238C449000CA9A62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85AFB58D238C4D0700CA9A62 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		85AFB58F238C4EB800CA9A62 /* CreateEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEditProfileViewController.swift; sourceTree = "<group>"; };
 		85AFB591238C4EEF00CA9A62 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		85AFB595238C4F2600CA9A62 /* GoalsHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsHomeViewController.swift; sourceTree = "<group>"; };
 		85AFB597238C4F5800CA9A62 /* AddGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalsViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 			children = (
 				85AFB577238C449000CA9A62 /* Main.storyboard */,
 				55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */,
+				55BB57A22395D39300962DA0 /* CreateProfile.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,7 +197,6 @@
 			isa = PBXGroup;
 			children = (
 				85AFB58D238C4D0700CA9A62 /* LoginViewController.swift */,
-				85AFB58F238C4EB800CA9A62 /* CreateEditProfileViewController.swift */,
 				85AFB591238C4EEF00CA9A62 /* HomePageViewController.swift */,
 				85AFB5A6238C512E00CA9A62 /* NotificationsViewController.swift */,
 				85AFB5AB238C519A00CA9A62 /* Messaging View Controllers */,
@@ -200,6 +204,8 @@
 				85AFB59E238C4FEF00CA9A62 /* Mentor View Controller */,
 				85AFB599238C4F8300CA9A62 /* Goals View Controllers */,
 				85AFB59F238C4FFB00CA9A62 /* Pupil View Controller */,
+				55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */,
+				55BB57A62396C18200962DA0 /* PhotoSelectorViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 			files = (
 				85AFB57E238C449000CA9A62 /* LaunchScreen.storyboard in Resources */,
 				85AFB57B238C449000CA9A62 /* Assets.xcassets in Resources */,
+				55BB57A32395D39300962DA0 /* CreateProfile.storyboard in Resources */,
 				85AFB579238C449000CA9A62 /* Main.storyboard in Resources */,
 				853B92A623958B4C00D3E5F0 /* GoogleService-Info.plist in Resources */,
 				55BB57A12395C92D00962DA0 /* SignInSignUp.storyboard in Resources */,
@@ -394,7 +401,9 @@
 			files = (
 				19F050BF238C56E600858EDC /* Goal.swift in Sources */,
 				19F050BD238C53A700858EDC /* Request.swift in Sources */,
+				55BB57A72396C18200962DA0 /* PhotoSelectorViewController.swift in Sources */,
 				19F050B7238C526D00858EDC /* User.swift in Sources */,
+				55BB57A52395D95300962DA0 /* CreateProfileTableViewController.swift in Sources */,
 				85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */,
 				19F050BB238C538A00858EDC /* Tag.swift in Sources */,
 				85AFB5AD238C520300CA9A62 /* MessagingHomeViewController.swift in Sources */,
@@ -409,7 +418,6 @@
 				85AFB5A7238C512E00CA9A62 /* NotificationsViewController.swift in Sources */,
 				85AFB58E238C4D0700CA9A62 /* LoginViewController.swift in Sources */,
 				85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */,
-				85AFB590238C4EB800CA9A62 /* CreateEditProfileViewController.swift in Sources */,
 				85AFB592238C4EEF00CA9A62 /* HomePageViewController.swift in Sources */,
 				85AFB5A9238C516000CA9A62 /* ContactUsViewController.swift in Sources */,
 				85AFB5C9238C5F1D00CA9A62 /* GoalController.swift in Sources */,
