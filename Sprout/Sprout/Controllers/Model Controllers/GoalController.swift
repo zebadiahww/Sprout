@@ -13,13 +13,15 @@ class GoalController {
     
     var goals: [Goal] = []
     
+    var currentUser: User?
+    
     var firebaseDB = Firestore.firestore()
     
     // TODO add new parameters into functions
-    func createGoal(title: String, body: String, isComplete: Bool, isPrivate: Bool, isDaily: Bool, date: Date?, uuid: String, icon: String, iconColor: String, completion: @escaping(Bool) -> Void) {
+    func createGoal(title: String, body: String, userID: String, isComplete: Bool, isPrivate: Bool, isDaily: Bool, date: Date?, uuid: String, icon: String, iconColor: String, completion: @escaping(Bool) -> Void) {
         
-        let goalToSave = Goal(title: title, body: body, isComplete: isComplete, isPrivate: isPrivate, isDaily: isDaily, date: date, uuid: uuid, icon: icon, iconColor: iconColor)
-        var dataToSave: [String : Any] = ["title" : goalToSave.title, "body" : goalToSave.body, "isComplete" : goalToSave.isComplete, "isPrivate" : goalToSave.isPrivate, "isDaily" : goalToSave.isDaily, "GoalID" : goalToSave.uuid, "icon" : goalToSave.icon, "iconColor" : goalToSave.iconColor]
+        let goalToSave = Goal(title: title, body: body, userID: userID, isComplete: isComplete, isPrivate: isPrivate, isDaily: isDaily, date: date, uuid: uuid, icon: icon, iconColor: iconColor)
+        var dataToSave: [String : Any] = ["title" : goalToSave.title, "body" : goalToSave.body, "userID" : goalToSave.userID, "isComplete" : goalToSave.isComplete, "isPrivate" : goalToSave.isPrivate, "isDaily" : goalToSave.isDaily, "GoalID" : goalToSave.uuid, "icon" : goalToSave.icon, "iconColor" : goalToSave.iconColor]
         if let date = goalToSave.date {
             dataToSave.updateValue(date, forKey: "date")
         }
@@ -56,7 +58,9 @@ class GoalController {
     }
     
     func fetchGoal( completion: @escaping(Bool) -> Void) {
-        firebaseDB.collection("Goal").getDocuments { (snapshot, error) in
+        guard let user = currentUser else { return }
+        let query = firebaseDB.collection("Goal").whereField("userID", isEqualTo: user.uid)
+            query.getDocuments { (snapshot, error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 completion(false)
@@ -65,6 +69,7 @@ class GoalController {
             for document in snapshot!.documents {
                 guard let title = document.get("title") as? String,
                     let body = document.get("body") as? String,
+                    let userID = document.get("userID") as? String,
                     let goalID = document.get("GoalID") as? String,
                     let isComplete = document.get("isComplete") as? Bool,
                     let isPrivate = document.get("isPrivate") as? Bool,
@@ -73,7 +78,7 @@ class GoalController {
                     let iconColor = document.get("iconColor") as? String
                     else { return }
                 let date = document.get("date") as? Date
-                let fetchedGoal = Goal(title: title, body: body, isComplete: isComplete, isPrivate: isPrivate, isDaily: isDaily, date: date, uuid: goalID, icon: icon, iconColor: iconColor)
+                let fetchedGoal = Goal(title: title, body: body, userID: userID, isComplete: isComplete, isPrivate: isPrivate, isDaily: isDaily, date: date, uuid: goalID, icon: icon, iconColor: iconColor)
                 self.goals.append(fetchedGoal)
                 print(fetchedGoal.title)
                 completion(true)

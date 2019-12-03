@@ -12,6 +12,7 @@ import UIKit
 class Goal {
     var title: String
     var body: String
+    var userID: String
     var isComplete: Bool
     var isPrivate: Bool
     var isDaily: Bool
@@ -20,9 +21,10 @@ class Goal {
     var icon: String
     var iconColor: String
     
-    init(title: String, body: String, isComplete: Bool = false, isPrivate: Bool, isDaily: Bool, date: Date?, uuid: String = UUID().uuidString, icon: String, iconColor: String) {
+    init(title: String, body: String, userID: String, isComplete: Bool = false, isPrivate: Bool, isDaily: Bool, date: Date?, uuid: String = UUID().uuidString, icon: String, iconColor: String) {
         self.title = title
         self.body = body
+        self.userID = userID
         self.isComplete = isComplete
         self.isPrivate = isPrivate
         self.isDaily = isDaily

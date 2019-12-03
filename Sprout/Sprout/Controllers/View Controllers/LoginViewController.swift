@@ -40,6 +40,7 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if Auth.auth().currentUser != nil {
+
             // fetch userdata
             //perform segue
         }
@@ -47,6 +48,7 @@ class LoginViewController: UIViewController {
     
     
     // MARK: - Actions
+
     @IBAction func loginButtonTapped(_ sender: Any) {
         guard let email = emailTextField.text, !email.isEmpty,
             let password = passwordTextField.text, !password.isEmpty else { return }

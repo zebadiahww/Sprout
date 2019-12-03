@@ -13,12 +13,14 @@ class Request {
     var message: String
     var isApproved: Bool
     var uuid: String
+    var userID: String
     
-    init(title: String, message: String, isApproved: Bool = false, uuid: String = UUID().uuidString) {
+    init(title: String, message: String, isApproved: Bool = false, uuid: String = UUID().uuidString, userID: String) {
         self.title = title
         self.message = message
         self.isApproved = isApproved
         self.uuid = uuid
+        self.userID = userID
     }
 }
 

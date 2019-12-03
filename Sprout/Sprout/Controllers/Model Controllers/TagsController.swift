@@ -13,11 +13,15 @@ class TagsController {
     
     var tags: [Tag] = []
     
+    var currentUser: User?
+    
+    static let shared = TagsController()
+    
     var firebaseDB = Firestore.firestore()
     
-    func createTag(with title: String, completion: @escaping(Bool) -> Void) {
-        let newTag = Tag(title: title)
-        let dataToSave:[String : Any] = ["title" : newTag.title, "tagID" : newTag.uuid]
+    func createTag(with title: String, category: String, userID: String, completion: @escaping(Bool) -> Void) {
+        let newTag = Tag(title: title, category: category, userID: [userID])
+        let dataToSave:[String : Any] = ["title" : newTag.title.lowercased(), "category" : newTag.category, "userIDs" : newTag.userIDs, "tagID" : newTag.uuid]
         let ref = firebaseDB.collection("Tag").document(newTag.uuid)
         ref.setData(dataToSave) { (error) in
             if let error = error {
@@ -31,8 +35,9 @@ class TagsController {
         }
     }
     
-    func fetchTag(completion: @escaping(Bool) -> Void) {
-        firebaseDB.collection("Tag").getDocuments { (snapshot, error) in
+    func searchAndFetchTag(with searchTerm: String, completion: @escaping(Bool) -> Void) {
+        let query = firebaseDB.collection("Tag").whereField("title", arrayContains: searchTerm.lowercased())
+        query.getDocuments { (snapshot, error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 completion(false)
@@ -40,10 +45,34 @@ class TagsController {
             }
             for document in snapshot!.documents {
                 guard let title = document.get("title") as? String,
+                    let category = document.get("category") as? String,
+                    let userIDs = document.get("userIDs") as? [String],
+                    let tagID = document.get("tagID") as? String
+                    else { return }
+                let fetchedTag = Tag(title: title, category: category, uuid: tagID, userID: userIDs)
+                self.tags.append(fetchedTag)
+            }
+            completion(true)
+        }
+    }
+    
+    func fetchTag(completion: @escaping(Bool) -> Void) {
+        guard let user = currentUser else { return }
+        let query = firebaseDB.collection("Tag").whereField("userIDs", arrayContains: user.uid)
+            query.getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                completion(false)
+                return
+            }
+            for document in snapshot!.documents {
+                guard let title = document.get("title") as? String,
+                    let category = document.get("category") as? String,
+                    let userID = document.get("userID") as? String,
                 let tagID = document.get("tagID") as? String
                     else { return }
-                let fetchedTag = Tag(title: title, uuid: tagID)
-                self.tags.append(fetchedTag)
+                let fetchedTag = Tag(title: title, category: category, uuid: tagID, userID: [userID])
+                user.tags?.append(fetchedTag)
                 print(fetchedTag.title)
                 completion(true)
             }

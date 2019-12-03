@@ -6,10 +6,24 @@
 //  Copyright © 2019 Zebadiah Watson. All rights reserved.
 //
 
+
+/**
+  1. search and fetch
+    a. if true append user.userID to the tags array of userIDs
+        - update the tag
+    b. if false, tag doesnt exist so call createTag()
+ 
+ */
 import UIKit
 
 class CreateProfileTableViewController: UITableViewController, PhotoSelectorViewControllerDelegate {
     
+    //MARK: Properties
+    var currentUser: User?
+    var email: String?
+    var isMentor: Bool?
+        
+    //MARK: - Outlets
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var bioTextView: UITextView!
     @IBOutlet weak var OccupationTextField: UITextField!
@@ -31,72 +45,37 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
 
     }
     
+    
+    
+    
+    //MARK: - Actions
     @IBAction func addTagButtonTapped(_ sender: UIButton) {
+        guard let newTag = tagTextField.text, !newTag.isEmpty,
+        let category = categoryTextField.text, !category.isEmpty,
+            let userID = currentUser?.uid
+            else { return }
+        
+        TagsController.shared.createTag(with: newTag, category: category, userID: userID) { (success) in
+            DispatchQueue.main.async {
+                self.tagCollectionView.reloadData()
+                print("successfully created new tag")
+            }
+        }
     }
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
+        guard let name = nameTextField.text, !name.isEmpty,
+            let bio = bioTextView.text, !bio.isEmpty
+        else { return }
+        
+        UserController.shared.updateUser(with: name, bio: bio) { (success) in
+            //
+        }
     }
     
     func photoSelectorViewControllerSelected(image: UIImage) {
         selectedImage = image
     }
-    
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     
     // MARK: - Navigation
@@ -108,4 +87,18 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
             destinationVC?.delegate = self
         }
     }
+}
+
+extension CreateProfileTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        //
+        return UICollectionViewCell()
+    }
+    
+    
 }

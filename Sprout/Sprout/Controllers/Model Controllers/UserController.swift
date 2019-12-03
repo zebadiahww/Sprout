@@ -17,16 +17,25 @@ class UserController {
     
     var firebaseDB = Firestore.firestore()
     
-    func createUser(email: String, password: String, completion: @escaping(Bool) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+    func authenticateUser(email: String, password: String, completion: @escaping (Bool) -> Void) {
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            
+        }
+    }
+    
+    func createUser(uid: String, name: String, bio: String, email: String, isMentor: Bool, completion: @escaping(Bool) -> Void) {
+        let newUser = User(uid: uid, name: name, bio: bio, isMentor: isMentor, email: email)
+        let userToSave : [String : Any] = ["uid" : newUser.uid, "name" : newUser.name, "bio" : newUser.bio, "email" : newUser.email, "isMentor" : newUser.isMentor]
+        let ref = firebaseDB.collection("Users").document(newUser.uid)
+        ref.setData(userToSave) { (error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 completion(false)
+            } else {
+                print("user created successfully")
+                self.currentUser = newUser
+                completion(true)
             }
-            guard let user = authResult else { return }
-            let newUser = User(uid: user.user.uid, email: email)
-            self.currentUser = newUser
-            completion(true)
         }
     }
     
@@ -108,14 +117,14 @@ class UserController {
         }
     }
     
-    func fetchUser(with email: String, password: String, completion: @escaping(Bool) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
+    func fetchUser(with name: String, bio: String, isMentor: Bool, email: String, completion: @escaping(Bool) -> Void) {
+        Auth.auth().signIn(withCustomToken: email) { (authResult, error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 completion(false)
             }
             guard let user = authResult else { return }
-            let loggedInUser = User(uid: user.user.uid, email: email)
+            let loggedInUser = User(uid: user.user.uid, name: name, bio: bio, isMentor: isMentor, email: email)
             self.currentUser = loggedInUser
             let ref = self.firebaseDB.collection("users").document(user.user.uid)
             ref.getDocument { (snapshot, error) in
