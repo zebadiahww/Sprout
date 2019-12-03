@@ -23,9 +23,18 @@ class UserController {
         }
     }
     
-    func createUser(uid: String, name: String, bio: String, email: String, isMentor: Bool, completion: @escaping(Bool) -> Void) {
-        let newUser = User(uid: uid, name: name, bio: bio, isMentor: isMentor, email: email)
-        let userToSave : [String : Any] = ["uid" : newUser.uid, "name" : newUser.name, "bio" : newUser.bio, "email" : newUser.email, "isMentor" : newUser.isMentor]
+    func createUser(uid: String, name: String, bio: String, email: String, isMentor: Bool, profileImage: UIImage?, website: String?, linkedInURL: String?, completion: @escaping(Bool) -> Void) {
+        let newUser = User(uid: uid, name: name, bio: bio, isMentor: isMentor, profileImage: profileImage, pupils: nil, mentors: nil, email: email, linkedInURL: linkedInURL, website: website)
+        var userToSave : [String : Any] = ["uid" : newUser.uid, "name" : newUser.name, "bio" : newUser.bio, "email" : newUser.email, "isMentor" : newUser.isMentor]
+        if let website = newUser.website {
+            userToSave.updateValue(website, forKey: "website")
+        }
+        if let linkedInURL = newUser.linkedInURL {
+            userToSave.updateValue(linkedInURL, forKey: "linkedInURL")
+        }
+        if let profilePicture = newUser.profilePicture {
+            userToSave.updateValue(profilePicture, forKey: "profilePicture")
+        }
         let ref = firebaseDB.collection("Users").document(newUser.uid)
         ref.setData(userToSave) { (error) in
             if let error = error {
@@ -117,14 +126,14 @@ class UserController {
         }
     }
     
-    func fetchUser(with name: String, bio: String, isMentor: Bool, email: String, completion: @escaping(Bool) -> Void) {
+    func fetchUser(with name: String, bio: String, isMentor: Bool, email: String, linkedInURL: String?, website: String?, completion: @escaping(Bool) -> Void) {
         Auth.auth().signIn(withCustomToken: email) { (authResult, error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 completion(false)
             }
             guard let user = authResult else { return }
-            let loggedInUser = User(uid: user.user.uid, name: name, bio: bio, isMentor: isMentor, email: email)
+            let loggedInUser = User(uid: user.user.uid, name: name, bio: bio, isMentor: isMentor, email: email, linkedInURL: linkedInURL, website: website)
             self.currentUser = loggedInUser
             let ref = self.firebaseDB.collection("users").document(user.user.uid)
             ref.getDocument { (snapshot, error) in
