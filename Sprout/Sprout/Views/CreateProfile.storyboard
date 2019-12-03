@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4oI-oe-mh8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5dc-tH-cf3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -8,6 +8,64 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Email Verify View Controller-->
+        <scene sceneID="dVB-hd-QVa">
+            <objects>
+                <viewController storyboardIdentifier="EmailVerifyViewController" id="5dc-tH-cf3" customClass="EmailVerifyViewController" customModule="Sprout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yEK-bi-a1f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="High Res Logo &amp; Copy" translatesAutoresizingMaskIntoConstraints="NO" id="iEj-4n-z89">
+                                <rect key="frame" x="124" y="257" width="166" height="211"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iEj-4n-z89" secondAttribute="height" multiplier="109:139" id="QTW-I3-5NV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We have sent a verification link to your email, please verify and return here." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V09-o0-lzd">
+                                <rect key="frame" x="41.5" y="488" width="331" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.12315379830000001" green="0.31275731330000001" blue="0.1883547008" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIx-Dn-nDR">
+                                <rect key="frame" x="124" y="544" width="166" height="30"/>
+                                <color key="backgroundColor" red="0.3921568627" green="0.63921568630000003" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="  Continue  ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwJ-zj-LEd">
+                                <rect key="frame" x="169" y="838" width="77" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                <state key="normal" title="Resend email.">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.88235294119999996" green="0.94509803920000002" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="iEj-4n-z89" firstAttribute="centerX" secondItem="pMg-g0-Ax5" secondAttribute="centerX" id="4fi-kj-Sdq"/>
+                            <constraint firstItem="V09-o0-lzd" firstAttribute="top" secondItem="iEj-4n-z89" secondAttribute="bottom" constant="20" id="5Hz-vV-NQW"/>
+                            <constraint firstItem="qIx-Dn-nDR" firstAttribute="centerX" secondItem="V09-o0-lzd" secondAttribute="centerX" id="A5N-G8-NAw"/>
+                            <constraint firstItem="iEj-4n-z89" firstAttribute="centerY" secondItem="pMg-g0-Ax5" secondAttribute="centerY" multiplier="0.8" id="Ecy-o9-DqI"/>
+                            <constraint firstItem="iEj-4n-z89" firstAttribute="width" secondItem="yEK-bi-a1f" secondAttribute="width" multiplier="0.4" id="Pib-66-UJD"/>
+                            <constraint firstItem="qIx-Dn-nDR" firstAttribute="width" secondItem="V09-o0-lzd" secondAttribute="width" multiplier="0.5" id="hrO-eH-CsB"/>
+                            <constraint firstItem="qIx-Dn-nDR" firstAttribute="top" secondItem="V09-o0-lzd" secondAttribute="bottom" constant="15" id="kYa-AU-egV"/>
+                            <constraint firstItem="V09-o0-lzd" firstAttribute="width" secondItem="yEK-bi-a1f" secondAttribute="width" multiplier="0.8" id="luy-pz-dW1"/>
+                            <constraint firstItem="V09-o0-lzd" firstAttribute="centerX" secondItem="iEj-4n-z89" secondAttribute="centerX" id="q8f-hc-LXq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pMg-g0-Ax5"/>
+                    </view>
+                    <connections>
+                        <segue destination="4oI-oe-mh8" kind="presentation" identifier="toProfileCreation" modalPresentationStyle="fullScreen" id="k8W-BJ-Ys7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wGY-GS-Cy0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1064" y="146"/>
+        </scene>
         <!--Create Profile Table View Controller-->
         <scene sceneID="QEi-gC-8jR">
             <objects>
@@ -232,6 +290,7 @@
                             <outlet property="delegate" destination="4oI-oe-mh8" id="lFQ-3b-Ctt"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Qfw-gD-pdT"/>
                     <connections>
                         <outlet property="InterestExpertiseLabel" destination="aBn-OL-hpI" id="1bR-N6-74d"/>
                         <outlet property="OccupationTextField" destination="Z9T-s7-M9f" id="wBF-rn-qH2"/>
@@ -299,6 +358,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="High Res Logo &amp; Copy" width="315" height="411"/>
         <image name="person" catalog="system" width="64" height="58"/>
     </resources>
 </document>
