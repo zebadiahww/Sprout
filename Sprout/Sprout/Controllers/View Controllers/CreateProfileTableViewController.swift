@@ -8,10 +8,10 @@
 
 
 /**
-  1. search and fetch
-    a. if true append user.userID to the tags array of userIDs
-        - update the tag
-    b. if false, tag doesnt exist so call createTag()
+ 1. search and fetch
+ a. if true append user.userID to the tags array of userIDs
+ - update the tag
+ b. if false, tag doesnt exist so call createTag()
  
  */
 import UIKit
@@ -22,7 +22,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     var currentUser: User?
     var email: String?
     var isMentor: Bool?
-        
+    
     //MARK: - Outlets
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var bioTextView: UITextView!
@@ -39,10 +39,10 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     @IBOutlet weak var saveButton: UIButton!
     
     var selectedImage: UIImage?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     
@@ -51,7 +51,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     //MARK: - Actions
     @IBAction func addTagButtonTapped(_ sender: UIButton) {
         guard let newTag = tagTextField.text, !newTag.isEmpty,
-        let category = categoryTextField.text, !category.isEmpty,
+            let category = categoryTextField.text, !category.isEmpty,
             let userID = currentUser?.uid
             else { return }
         
@@ -64,22 +64,32 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     }
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-        guard let name = nameTextField.text, !name.isEmpty,
-            let bio = bioTextView.text, !bio.isEmpty
-        else { return }
+        let linkedIn = linkedInTextField.text
+        let website = websiteTextField.text
+        guard let uid = currentUser?.uid,
+            let name = nameTextField.text, !name.isEmpty,
+            let bio = bioTextView.text, !bio.isEmpty,
+            let email = email,
+            let isMentor = isMentor
+            else { return }
         
-        UserController.shared.updateUser(with: name, bio: bio) { (success) in
-            //
+        UserController.shared.createUser(uid: uid , name: name, bio: bio, email: email, isMentor: isMentor, profileImage: selectedImage, website: website, linkedInURL: linkedIn) { (success) in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                print("User created successfully")
+            }
         }
     }
     
     func photoSelectorViewControllerSelected(image: UIImage) {
         selectedImage = image
     }
-
+    
+    
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "photoSelectionSegue" {
@@ -92,7 +102,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
 extension CreateProfileTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //
-        return 0
+        return TagsController.shared.tags.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
