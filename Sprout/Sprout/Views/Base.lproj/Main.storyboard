@@ -1,8 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eUX-ZD-F37">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--User Check View Controller-->
+        <scene sceneID="bwa-Q9-2MS">
+            <objects>
+                <viewController id="eUX-ZD-F37" customClass="UserCheckViewController" customModule="Sprout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RVf-NM-mxI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="High Res Logo &amp; Copy" translatesAutoresizingMaskIntoConstraints="NO" id="Y6n-Fe-ADS">
+                                <rect key="frame" x="124" y="347.5" width="166" height="211"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Y6n-Fe-ADS" secondAttribute="height" multiplier="109:139" id="1zb-nb-5aJ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.88235294119999996" green="0.94509803920000002" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Y6n-Fe-ADS" firstAttribute="width" secondItem="RVf-NM-mxI" secondAttribute="width" multiplier="0.4" id="JAN-eY-euo"/>
+                            <constraint firstItem="Y6n-Fe-ADS" firstAttribute="centerY" secondItem="w0e-bZ-iFA" secondAttribute="centerY" id="g9n-rc-VGu"/>
+                            <constraint firstItem="Y6n-Fe-ADS" firstAttribute="centerX" secondItem="w0e-bZ-iFA" secondAttribute="centerX" id="sG5-Gk-677"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="w0e-bZ-iFA"/>
+                    </view>
+                    <connections>
+                        <segue destination="0U4-Fs-aeN" kind="presentation" identifier="toLogin" modalPresentationStyle="fullScreen" id="XGt-lW-R7i"/>
+                        <segue destination="MFA-x9-FFU" kind="show" identifier="toHome" id="Thx-z4-CQw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GjL-db-4Nr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1104" y="358"/>
+        </scene>
+        <!--CreateProfileTableViewController-->
+        <scene sceneID="pZy-X3-9hH">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="CreateProfileTableViewController" storyboardName="CreateProfile" referencedIdentifier="CreateProfileTableViewController" id="0U4-Fs-aeN" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="qId-K2-xqz"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x3x-qR-7n9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1907" y="198"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="fKA-Zj-ChJ">
+            <objects>
+                <viewControllerPlaceholder id="MFA-x9-FFU" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ROL-SD-T2f"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y2b-qH-X7j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1907" y="528"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="High Res Logo &amp; Copy" width="315" height="411"/>
+    </resources>
 </document>
