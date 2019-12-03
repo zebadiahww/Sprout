@@ -31,9 +31,18 @@ class UserController {
         }
     }
     
-    func createUser(uid: String, name: String, bio: String, email: String, isMentor: Bool, completion: @escaping(Bool) -> Void) {
-        let newUser = User(uid: uid, name: name, bio: bio, isMentor: isMentor, email: email)
-        let userToSave : [String : Any] = ["uid" : newUser.uid, "name" : newUser.name, "bio" : newUser.bio, "email" : newUser.email, "isMentor" : newUser.isMentor]
+    func createUser(uid: String, name: String, bio: String, email: String, isMentor: Bool, profileImage: UIImage?, website: String?, linkedInURL: String?, completion: @escaping(Bool) -> Void) {
+        let newUser = User(uid: uid, name: name, bio: bio, isMentor: isMentor, profileImage: profileImage, pupils: nil, mentors: nil, email: email, linkedInURL: linkedInURL, website: website)
+        var userToSave : [String : Any] = ["uid" : newUser.uid, "name" : newUser.name, "bio" : newUser.bio, "email" : newUser.email, "isMentor" : newUser.isMentor]
+        if let website = newUser.website {
+            userToSave.updateValue(website, forKey: "website")
+        }
+        if let linkedInURL = newUser.linkedInURL {
+            userToSave.updateValue(linkedInURL, forKey: "linkedInURL")
+        }
+        if let profilePicture = newUser.profilePicture {
+            userToSave.updateValue(profilePicture, forKey: "profilePicture")
+        }
         let ref = firebaseDB.collection("Users").document(newUser.uid)
         ref.setData(userToSave) { (error) in
             if let error = error {

@@ -24,7 +24,7 @@ class User {
     var website: String?
     var blockedUsers: [String]?
     
-    init(uid: String, name: String, bio: String, isMentor: Bool, profileImage: UIImage?  = nil, pupils: [User : Tag]? = nil, mentors: [User : Tag]? = nil, tags: [Tag]? = nil, goals: [Goal]? = nil, request: [Request]? = nil, email: String, linkedInURL: String? = nil, website: String? = nil, blockedUsers: [String]? = nil) {
+    init(uid: String, name: String, bio: String, isMentor: Bool, profileImage: UIImage?  = nil, pupils: [User : Tag]? = nil, mentors: [User : Tag]? = nil, tags: [Tag]? = nil, goals: [Goal]? = nil, request: [Request]? = nil, email: String, linkedInURL: String?, website: String?, blockedUsers: [String]? = nil) {
         self.uid = uid
         self.name = name
         self.bio = bio
