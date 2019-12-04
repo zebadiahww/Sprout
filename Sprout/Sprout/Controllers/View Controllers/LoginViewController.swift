@@ -42,19 +42,20 @@ class LoginViewController: UIViewController {
         
     }
     
-    
     // MARK: - Actions
 
     @IBAction func loginButtonTapped(_ sender: Any) {
         guard let email = emailTextField.text, !email.isEmpty,
             let password = passwordTextField.text, !password.isEmpty else { return }
         if isSignUp {
+            UserController.shared.authenticateNewUser(email: email, password: password) { (success) in
+                
+            }
             performSegue(withIdentifier: "toEmailVerify", sender: self)
         } else {
             
         }
     }
-    
     
     @IBAction func accountTypeValueChanged(_ sender: UISegmentedControl) {
         isMentor = !isMentor
@@ -112,14 +113,6 @@ class LoginViewController: UIViewController {
         self.haveAnAccountLabel.text = "Already have an account?"
         self.pageToggleButton.setTitle("Login now.", for: .normal)
     }
-    
-    
-    //    func fetchUser() {
-    //        guard let username = Auth.auth().currentUser?.email,
-    //            let password = Auth.auth().currentUser
-    //
-    //        UserController.shared.fetchUser(with: <#T##String#>, password: <#T##String#>, completion: <#T##(Bool) -> Void#>)
-    //    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toEmailVerify" {

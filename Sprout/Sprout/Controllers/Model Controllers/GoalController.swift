@@ -59,7 +59,7 @@ class GoalController {
     
     func fetchGoal( completion: @escaping(Bool) -> Void) {
         guard let user = currentUser else { return }
-        let query = firebaseDB.collection("Goal").whereField("userID", isEqualTo: user.uid)
+        let query = firebaseDB.collection("Goal").whereField("userID", isEqualTo: user.uuid)
             query.getDocuments { (snapshot, error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")

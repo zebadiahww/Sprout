@@ -13,12 +13,17 @@ class UserCheckViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if Auth.auth().currentUser != nil {
+        if Auth.auth().currentUser == nil {
             // fetch userdata
-            UserController.shared.fetchUser(with: <#T##String#>, bio: <#T##String#>, isMentor: <#T##Bool#>, email: <#T##String#>, completion: <#T##(Bool) -> Void#>)
-
             performSegue(withIdentifier: "toLogin", sender: self)
-            
+        } else {
+            UserController.shared.signInCurrentUser { (success) in
+                if success {
+                    self.performSegue(withIdentifier: "toHomeScreen", sender: self)
+                } else {
+                    self.performSegue(withIdentifier: "toLogin", sender: self)
+                }
+            }
         }
     }
     
