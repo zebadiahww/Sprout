@@ -20,7 +20,7 @@ class TagsController {
     var firebaseDB = Firestore.firestore()
     
     func createTag(with title: String, category: String, userID: String, completion: @escaping(Bool) -> Void) {
-        let newTag = Tag(title: title, category: category, userID: [userID])
+        let newTag = Tag(title: title, category: category, userIDs: [userID])
         let dataToSave:[String : Any] = ["title" : newTag.title.lowercased(), "category" : newTag.category, "userIDs" : newTag.userIDs, "tagID" : newTag.uuid]
         let ref = firebaseDB.collection("Tag").document(newTag.uuid)
         ref.setData(dataToSave) { (error) in
@@ -49,7 +49,7 @@ class TagsController {
                     let userIDs = document.get("userIDs") as? [String],
                     let tagID = document.get("tagID") as? String
                     else { return }
-                let fetchedTag = Tag(title: title, category: category, uuid: tagID, userID: userIDs)
+                let fetchedTag = Tag(uuid: tagID, title: title, category: category, userIDs: userIDs)
                 self.tags.append(fetchedTag)
             }
             completion(true)
@@ -58,7 +58,7 @@ class TagsController {
     
     func fetchTag(completion: @escaping(Bool) -> Void) {
         guard let user = currentUser else { return }
-        let query = firebaseDB.collection("Tag").whereField("userIDs", arrayContains: user.uid)
+        let query = firebaseDB.collection("Tag").whereField("userIDs", arrayContains: user.uuid)
             query.getDocuments { (snapshot, error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
@@ -68,10 +68,10 @@ class TagsController {
             for document in snapshot!.documents {
                 guard let title = document.get("title") as? String,
                     let category = document.get("category") as? String,
-                    let userID = document.get("userID") as? String,
+                    let userIDs = document.get("userID") as? String,
                 let tagID = document.get("tagID") as? String
                     else { return }
-                let fetchedTag = Tag(title: title, category: category, uuid: tagID, userID: [userID])
+                let fetchedTag = Tag(uuid: tagID, title: title, category: category, userIDs: [userIDs])
                 user.tags?.append(fetchedTag)
                 print(fetchedTag.title)
                 completion(true)

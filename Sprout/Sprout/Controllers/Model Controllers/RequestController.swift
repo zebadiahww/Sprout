@@ -41,8 +41,9 @@ class RequestController {
     
     func fetchRequest(completion: @escaping(Bool) -> Void) {
         guard let user = currentUser else { return }
-        let query = firebaseDB.collection(RequestConstants.typeKey).whereField(RequestConstants.userIDKey, isEqualTo: user.uid)
-        query.getDocuments { (snapshot, error) in
+
+        let query = firebaseDB.collection("Request").whereField("userID", isEqualTo: user.uuid)
+            query.getDocuments { (snapshot, error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 completion(false)

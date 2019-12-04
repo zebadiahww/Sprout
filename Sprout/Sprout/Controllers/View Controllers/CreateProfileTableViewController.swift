@@ -52,7 +52,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     @IBAction func addTagButtonTapped(_ sender: UIButton) {
         guard let newTag = tagTextField.text, !newTag.isEmpty,
             let category = categoryTextField.text, !category.isEmpty,
-            let userID = currentUser?.uid
+            let userID = currentUser?.uuid
             else { return }
         
         TagsController.shared.createTag(with: newTag, category: category, userID: userID) { (success) in
@@ -66,7 +66,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         let linkedIn = linkedInTextField.text
         let website = websiteTextField.text
-        guard let uid = currentUser?.uid,
+        guard let uuid = currentUser?.uuid,
             let name = nameTextField.text, !name.isEmpty,
             let bio = bioTextView.text, !bio.isEmpty,
             let occupation = OccupationTextField.text, !occupation.isEmpty,
@@ -74,7 +74,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
             let isMentor = isMentor
             else { return }
         
-        UserController.shared.createUser(uid: uid , name: name, bio: bio, occupation: occupation, email: email, isMentor: isMentor, profileImage: selectedImage, website: website, linkedInURL: linkedIn) { (success) in
+        UserController.shared.createUser(uuid: uuid , name: name, bio: bio, occupation: occupation, isMentor: isMentor, profileImage: selectedImage, website: website, linkedInURL: linkedIn) { (success) in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 print("User created successfully")

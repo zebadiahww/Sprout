@@ -17,7 +17,8 @@ class UserController {
     
     var firebaseDB = Firestore.firestore()
     
-    func authenticateUser(email: String, password: String, completion: @escaping (Bool) -> Void) {
+    //Creates a user and sends verification email
+    func authenticateNewUser(email: String, password: String, completion: @escaping (Bool) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (result, _) in
             if result != nil {
                 completion(true)
@@ -27,19 +28,12 @@ class UserController {
         }
     }
     
-    func createUser(uid: String, name: String, bio: String, occupation: String?, email: String, isMentor: Bool, profileImage: UIImage?, website: String?, linkedInURL: String?, completion: @escaping(Bool) -> Void) {
-        let newUser = User(uid: uid, name: name, bio: bio, occupation: occupation, isMentor: isMentor, profileImage: profileImage, pupils: nil, mentors: nil, linkedInURL: linkedInURL, website: website)
-        var userToSave : [String : Any] = ["uid" : newUser.uid, "name" : newUser.name, "bio" : newUser.bio, "email" : newUser.email, "isMentor" : newUser.isMentor]
-        if let website = newUser.website {
-            userToSave.updateValue(website, forKey: "website")
-        }
-        if let linkedInURL = newUser.linkedInURL {
-            userToSave.updateValue(linkedInURL, forKey: "linkedInURL")
-        }
-        if let profilePicture = newUser.profilePicture {
-            userToSave.updateValue(profilePicture, forKey: "profilePicture")
-        }
-        let ref = firebaseDB.collection("Users").document(newUser.uid)
+    //Create new user
+    func createUser(uuid: String, name: String, bio: String, occupation: String?, isMentor: Bool, profileImage: UIImage?, website: String?, linkedInURL: String?, completion: @escaping(Bool) -> Void) {
+        let newUser = User(uuid: uuid, name: name, bio: bio, occupation: occupation, isMentor: isMentor, profileImage: profileImage, tags: TagsController.shared.tags, linkedInURL: linkedInURL, website: website)
+        let userToSave : [String : Any] = newUser.documentDictionary
+        
+        let ref = firebaseDB.collection("Users").document(newUser.uuid)
         ref.setData(userToSave) { (error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
@@ -52,6 +46,59 @@ class UserController {
         }
     }
     
+    func manualSignIn(withEmail email: String, password: String, completion: @escaping(Bool) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                completion(false)
+                return
+            }
+            
+            guard let user = result?.user else {return}
+            
+            let ref = self.firebaseDB.collection("users").document(user.uid)
+            ref.getDocument { (snapshot, error) in
+                if let error = error {
+                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                    completion(false)
+                    return
+                }
+                guard let document = snapshot,
+                    let documentDictionary = document.data()
+                    else {completion(false); return}
+                let currentUser = User(dictionary: documentDictionary)
+                self.currentUser = currentUser
+                completion(true)
+            }
+        }
+    }
+    
+    func signInCurrentUser(completion: @escaping(Bool) -> Void) {
+        
+        guard let user = Auth.auth().currentUser else {
+            completion(false)
+            return
+        }
+        let ref = firebaseDB.collection("users").document(user.uid)
+        ref.getDocument { (snapshot, error) in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                completion(false)
+            }
+            
+            guard let document = snapshot else {
+                completion(false)
+                return
+            }
+            if let documentDictionary = document.data() {
+                let user = User(dictionary: documentDictionary)
+                self.currentUser = user
+                completion(true)
+            }
+        }
+    }
+    
+    // resend email verification
     func sendEmailVerification(completion: @escaping (Bool) -> Void) {
         Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
             if let error = error {
@@ -76,7 +123,7 @@ class UserController {
     
     func fetchProfilePhoto(completion: @escaping(Bool) -> Void) {
         guard let currentUser = currentUser else { return }
-        let storageRef = Storage.storage().reference(withPath: "profilepictures/\(currentUser.uid).jpg")
+        let storageRef = Storage.storage().reference(withPath: "profilepictures/\(currentUser.uuid).jpg")
         storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
@@ -124,7 +171,7 @@ class UserController {
     
     func updateProfilePicture(_ picture: UIImage, completion: @escaping(Bool) -> Void) {
         guard let currentUser = currentUser else {completion(false); return }
-        let uploadRef = Storage.storage().reference(withPath: "profilepictures/\(currentUser.uid).jpg")
+        let uploadRef = Storage.storage().reference(withPath: "profilepictures/\(currentUser.uuid).jpg")
         guard let imageData = picture.jpegData(compressionQuality: 0.5) else { completion(false); return }
         let uploadMetaData = StorageMetadata.init()
         uploadMetaData.contentType = "image/jpeg"
@@ -133,57 +180,15 @@ class UserController {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 completion(false)
             }
-            self.firebaseDB.collection("users").document(currentUser.uid).setData([ "profilePicture" : "profilepicture/\(currentUser.uid).jpg"])
+            self.firebaseDB.collection("users").document(currentUser.uuid).setData([ "profilePicture" : "profilepicture/\(currentUser.uuid).jpg"])
             currentUser.profilePicture = picture
             print("picture successfully uploaded")
             completion(true)
         }
     }
-    
-//    func fetchUser(completion: @escaping(Bool) -> Void) {
-//        guard let userID = Auth.auth().currentUser?.uid else {
-//            completion(false)
-//            return
-//        }
-//        let ref = firebaseDB.collection("users").document(userID)
-//        ref.getDocument { (snapshot, error) in
-//            if let error = error {
-//                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-//                completion(false)
-//            }
-//            
-//            guard let document = snapshot else {
-//                completion(false)
-//                return
-//            }
-//            
-//            guard let uid = document["uid"] as? String,
-//                let name = document["name"] as? String,
-//            
-//            let user = User(uid: <#T##String#>, name: <#T##String#>, bio: <#T##String#>, isMentor: <#T##Bool#>, profileImage: <#T##UIImage?#>, pupils: <#T##[User : Tag]?#>, mentors: <#T##[User : Tag]?#>, tags: <#T##[Tag]?#>, goals: <#T##[Goal]?#>, request: <#T##[Request]?#>, email: <#T##String#>, linkedInURL: <#T##String?#>, website: <#T##String?#>, blockedUsers: <#T##[String]?#>)
-//        }
-//        Auth.auth().signIn(withCustomToken: email) { (authResult, error) in
-//            if let error = error {
-//            }
-//            guard let user = authResult else { return }
-//            let loggedInUser = User(uid: user.user.uid, name: name, bio: bio, isMentor: isMentor, email: email)
-//            self.currentUser = loggedInUser
-//            let ref = self.firebaseDB.collection("users").document(user.user.uid)
-//            ref.getDocument { (snapshot, error) in
-//                if let error = error {
-//                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-//                    completion(false)
-//                }
-//                guard let name = snapshot?.get("name") as? String else { return }
-//                self.currentUser?.name = name
-//                print("successfully fetched user: \(name)")
-//                completion(true)
-//            }
-//        }
-//    }
-    
+
     func updateUser(with name: String, bio: String, completion: @escaping(Bool) -> Void) {
-        guard let userID = currentUser?.uid else { return }
+        guard let userID = currentUser?.uuid else { return }
         firebaseDB.collection("users").document(userID).setData(["name" : name, "bio" : bio]) { (error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
@@ -194,18 +199,4 @@ class UserController {
             print("updated user info")
         }
     }
-
-    // TO DO: do we need this???
-//    func deleteUser(user: User, completion: @escaping(Bool) -> Void) {
-//        guard let user = Auth.auth().currentUser else { completion(false); return }
-//        user.delete { error in
-//            if let error = error {
-//                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-//            } else {
-//                self.firebaseDB.collection("users").document("\(user.uid)").delete()
-//                completion(true)
-//            }
-//        }
-//    }
-    
 } // END OF CLASS

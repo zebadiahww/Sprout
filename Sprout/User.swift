@@ -7,8 +7,9 @@
 //
 
 import UIKit
+
 struct UserConstants {
-    fileprivate static let uidKey = "uid"
+    fileprivate static let uuidKey = "uuid"
     fileprivate static let nameKey = "name"
     fileprivate static let bioKey = "bio"
     fileprivate static let isMentorKey = "isMentor"
@@ -19,7 +20,7 @@ struct UserConstants {
 }
 
 class User {
-    let uid: String
+    let uuid: String
     var name: String
     var bio: String
     var occupation: String?
@@ -35,7 +36,7 @@ class User {
     var blockedUsers: [String]?
     var documentDictionary: [String : Any] {
         var dict: [String : Any] = [
-            UserConstants.uidKey : uid,
+            UserConstants.uuidKey : uuid,
             UserConstants.nameKey : name,
             UserConstants.bioKey : bio,
             UserConstants.isMentorKey : isMentor
@@ -53,11 +54,12 @@ class User {
             dict.updateValue(blockedUsers, forKey: UserConstants.blockedUsersKey)
         }
         
+        return dict
     }
     
-    init(uid: String, name: String, bio: String, occupation: String?, isMentor: Bool, profileImage: UIImage? = nil, pupils: [User : Tag]? = nil, mentors: [User : Tag]? = nil, tags: [Tag]? = nil, goals: [Goal]? = nil, request: [Request]? = nil, linkedInURL: String?, website: String?, blockedUsers: [String]? = nil) {
+    init(uuid: String, name: String, bio: String, occupation: String?, isMentor: Bool, profileImage: UIImage? = nil, pupils: [User : Tag]? = nil, mentors: [User : Tag]? = nil, tags: [Tag]? = nil, goals: [Goal]? = nil, request: [Request]? = nil, linkedInURL: String?, website: String?, blockedUsers: [String]? = nil) {
         
-        self.uid = uid
+        self.uuid = uuid
         self.name = name
         self.bio = bio
         self.occupation = occupation
@@ -75,26 +77,26 @@ class User {
 
 extension User {
     convenience init?(dictionary: [String : Any]) {
-        guard let uid = dictionary[UserConstants.uidKey] as? String,
+        guard let uuid = dictionary[UserConstants.uuidKey] as? String,
             let name = dictionary[UserConstants.nameKey] as? String,
             let bio = dictionary[UserConstants.bioKey] as? String,
             let isMentor = dictionary[UserConstants.isMentorKey] as? Bool
-            else {return}
+            else {return nil}
         let occupation = dictionary[UserConstants.occupationKey] as? String
         let linkedInURL = dictionary[UserConstants.linkedInKey] as? String
         let website = dictionary[UserConstants.websiteKey] as? String
         let blockedUsers = dictionary[UserConstants.blockedUsersKey] as? [String]
         
-        self.init(uid: uid, name: name, bio: bio, occupation: occupation, isMentor: isMentor, linkedInURL: linkedInURL, website: website, blockedUsers: blockedUsers)
+        self.init(uuid: uuid, name: name, bio: bio, occupation: occupation, isMentor: isMentor, linkedInURL: linkedInURL, website: website, blockedUsers: blockedUsers)
     }
 }
 
 extension User: Hashable {
     static func == (lhs: User, rhs: User) -> Bool {
-        return lhs.uid == rhs.uid
+        return lhs.uuid == rhs.uuid
     }
     
     func hash(into hasher: inout Hasher) {
-        return hasher.combine(self.uid)
+        return hasher.combine(self.uuid)
     }
 }
