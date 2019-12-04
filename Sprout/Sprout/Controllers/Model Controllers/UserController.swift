@@ -9,14 +9,6 @@
 import Foundation
 import Firebase
 
-struct UserConstants {
-    fileprivate static let uidKey = "uid"
-    fileprivate static let nameKey = "name"
-    fileprivate static let bioKey = "bio"
-    fileprivate static let isMentorKey = "isMentor"
-    fileprivate static let emailKey = "email"
-}
-
 class UserController {
     
     static let shared = UserController()
@@ -26,13 +18,17 @@ class UserController {
     var firebaseDB = Firestore.firestore()
     
     func authenticateUser(email: String, password: String, completion: @escaping (Bool) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-            
+        Auth.auth().createUser(withEmail: email, password: password) { (result, _) in
+            if result != nil {
+                completion(true)
+            } else {
+                completion(false)
+            }
         }
     }
     
-    func createUser(uid: String, name: String, bio: String, email: String, isMentor: Bool, profileImage: UIImage?, website: String?, linkedInURL: String?, completion: @escaping(Bool) -> Void) {
-        let newUser = User(uid: uid, name: name, bio: bio, isMentor: isMentor, profileImage: profileImage, pupils: nil, mentors: nil, email: email, linkedInURL: linkedInURL, website: website)
+    func createUser(uid: String, name: String, bio: String, occupation: String?, email: String, isMentor: Bool, profileImage: UIImage?, website: String?, linkedInURL: String?, completion: @escaping(Bool) -> Void) {
+        let newUser = User(uid: uid, name: name, bio: bio, occupation: occupation, isMentor: isMentor, profileImage: profileImage, pupils: nil, mentors: nil, linkedInURL: linkedInURL, website: website)
         var userToSave : [String : Any] = ["uid" : newUser.uid, "name" : newUser.name, "bio" : newUser.bio, "email" : newUser.email, "isMentor" : newUser.isMentor]
         if let website = newUser.website {
             userToSave.updateValue(website, forKey: "website")
