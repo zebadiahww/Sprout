@@ -29,7 +29,6 @@ class EmailVerifyViewController: UIViewController {
             guard let email = email,
                 let isMentor = isMentor else {return}
             let destinationVC = segue.destination as? CreateProfileTableViewController
-            destinationVC?.email = email
             destinationVC?.isMentor = isMentor
         }
     }

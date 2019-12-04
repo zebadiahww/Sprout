@@ -9,30 +9,34 @@
 import Foundation
 
 struct TagConstants {
+    static let typeKey = "Tag"
     fileprivate static let uuidKey = "uuid"
-    fileprivate static let titleKey = "title"
+    static let titleKey = "title"
     fileprivate static let categoryKey = "category"
-    fileprivate static let userIDsKey = "userIDs"
+    static let userIDsKey = "userIDs"
 }
 
 class Tag {
     var uuid: String
     var title: String
     var category: String
-    var userIDs: [String]
+    var userIDs: [String]?
     
     var documentDictionary: [String:Any] {
-        let dict: [String:Any] = [
+        var dict: [String:Any] = [
             TagConstants.uuidKey : uuid,
             TagConstants.titleKey : title,
             TagConstants.categoryKey : category,
-            TagConstants.userIDsKey : userIDs
         ]
+        if let userIDs = userIDs {
+            dict.updateValue(userIDs, forKey: TagConstants.userIDsKey)
+        }
+            
         
         return dict
     }
     
-    init(uuid: String = UUID().uuidString, title: String, category: String, userIDs: [String]) {
+    init(uuid: String = UUID().uuidString, title: String, category: String, userIDs: [String]? = nil) {
         self.title = title
         self.category = category
         self.uuid = uuid
@@ -44,9 +48,9 @@ extension Tag {
     convenience init?(dictionary: [String:Any]) {
         guard let uuid = dictionary[TagConstants.uuidKey] as? String,
             let title = dictionary[TagConstants.titleKey] as? String,
-            let category = dictionary[TagConstants.categoryKey] as? String,
-            let userIDs = dictionary[TagConstants.userIDsKey] as? [String]
+            let category = dictionary[TagConstants.categoryKey] as? String
         else {return nil}
+        let userIDs = dictionary[TagConstants.userIDsKey] as? [String]
         
         self.init(uuid: uuid, title: title, category: category, userIDs: userIDs)
     }
