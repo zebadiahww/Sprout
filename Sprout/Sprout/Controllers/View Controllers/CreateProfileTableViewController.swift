@@ -20,7 +20,6 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     
     //MARK: Properties
     var currentUser: User?
-    var email: String?
     var isMentor: Bool?
     
     //MARK: - Outlets
@@ -42,6 +41,23 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tagCollectionView.delegate = self
+        tagCollectionView.dataSource = self
+        
+        TagsController.shared.tags = [
+            Tag(title: "test", category: "testing"),
+            Tag(title: "test1", category: "testing"),
+            Tag(title: "test123456789", category: "testing"),
+            Tag(title: "test34567892", category: "testing"),
+            Tag(title: "test2", category: "testing"),
+            Tag(title: "teertyst2", category: "testing"),
+            Tag(title: "test", category: "testing"),
+            Tag(title: "test1", category: "testing"),
+            Tag(title: "test123456789", category: "testing"),
+            Tag(title: "test34567892", category: "testing"),
+            Tag(title: "test2", category: "testing"),
+            Tag(title: "teertyst2", category: "testing")
+        ]
         
     }
     
@@ -70,7 +86,6 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
             let name = nameTextField.text, !name.isEmpty,
             let bio = bioTextView.text, !bio.isEmpty,
             let occupation = OccupationTextField.text, !occupation.isEmpty,
-            let email = email,
             let isMentor = isMentor
             else { return }
         
@@ -101,16 +116,27 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     }
 }
 
-extension CreateProfileTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CreateProfileTableViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //
         return TagsController.shared.tags.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //
-        return UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as? SkillsTagCollectionViewCell else { return UICollectionViewCell() }
+        
+        let tag = TagsController.shared.tags[indexPath.item]
+        cell.skillTagLabel.text = tag.title
+        cell.backgroundColor = .green
+        cell.layer.cornerRadius = 7
+        return cell
     }
+
     
     
 }

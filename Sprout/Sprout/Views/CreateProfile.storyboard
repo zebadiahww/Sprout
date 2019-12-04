@@ -173,65 +173,95 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Skill" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MKZ-Sz-nhs">
-                                                    <rect key="frame" x="41.5" y="144" width="331" height="45"/>
+                                                    <rect key="frame" x="41.5" y="143.5" width="331" height="45"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="78c-Lg-39S">
-                                                    <rect key="frame" x="41.5" y="254" width="331" height="128"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <rect key="frame" x="41.5" y="253.5" width="331" height="128"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="128" id="k5r-PX-OcN"/>
                                                     </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KsC-Do-gr9">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gr7-Pv-SBf">
                                                         <size key="itemSize" width="50" height="50"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fub-3u-fUy">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tagCell" id="fub-3u-fUy" customClass="SkillsTagCollectionViewCell" customModule="Sprout" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="71.5" height="38"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qo9-BQ-zt0">
-                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="38"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="eCo-ws-WJI">
+                                                                        <rect key="frame" x="4" y="8" width="63.5" height="22"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPe-gc-N95">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="42" height="22"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZU-v4-Pah">
+                                                                                <rect key="frame" x="46" y="0.0" width="17.5" height="22"/>
+                                                                                <state key="normal" image="xmark" catalog="system"/>
+                                                                                <connections>
+                                                                                    <action selector="deleteTagButtonTapped:" destination="fub-3u-fUy" eventType="touchUpInside" id="2YS-Q8-2Vm"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="eCo-ws-WJI" secondAttribute="trailing" constant="4" id="TEJ-FF-gY2"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="eCo-ws-WJI" secondAttribute="bottom" constant="8" id="VOl-5i-Xxb"/>
+                                                                    <constraint firstItem="eCo-ws-WJI" firstAttribute="top" secondItem="qo9-BQ-zt0" secondAttribute="top" constant="8" id="id4-f7-mei"/>
+                                                                    <constraint firstItem="eCo-ws-WJI" firstAttribute="leading" secondItem="qo9-BQ-zt0" secondAttribute="leading" constant="4" id="nix-IY-E9F"/>
+                                                                </constraints>
                                                             </collectionViewCellContentView>
+                                                            <connections>
+                                                                <outlet property="deleteTagButton" destination="HZU-v4-Pah" id="StV-DS-JMl"/>
+                                                                <outlet property="skillTagLabel" destination="dPe-gc-N95" id="JTQ-oM-iTg"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Social" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ye-bm-DhO">
-                                                    <rect key="frame" x="41.5" y="442" width="63" height="29"/>
+                                                    <rect key="frame" x="41.5" y="441.5" width="63" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="linkedIn Profile URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SPL-TY-CGi">
-                                                    <rect key="frame" x="41.5" y="501" width="331" height="45"/>
+                                                    <rect key="frame" x="41.5" y="500.5" width="331" height="45"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website/portfolio URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5l9-N5-BTL">
-                                                    <rect key="frame" x="41.5" y="556" width="331" height="45"/>
+                                                    <rect key="frame" x="41.5" y="555.5" width="331" height="45"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQT-4Z-xLF">
-                                                    <rect key="frame" x="41.5" y="199" width="331" height="45"/>
+                                                    <rect key="frame" x="41.5" y="198.5" width="331" height="45"/>
                                                     <state key="normal" title="Add +"/>
                                                     <connections>
                                                         <action selector="addTagButtonTapped:" destination="4oI-oe-mh8" eventType="touchUpInside" id="nMX-ph-ofH"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLe-x7-TL2">
-                                                    <rect key="frame" x="124" y="661" width="166" height="45"/>
+                                                    <rect key="frame" x="124" y="660.5" width="166" height="45"/>
                                                     <state key="normal" title="Button"/>
                                                     <connections>
                                                         <action selector="saveButtonTapped:" destination="4oI-oe-mh8" eventType="touchUpInside" id="Psu-gh-f8E"/>
                                                     </connections>
                                                 </button>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dh6-yh-Nd5">
-                                                    <rect key="frame" x="41.5" y="89" width="331" height="45"/>
+                                                    <rect key="frame" x="41.5" y="88.5" width="331" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="rN8-7b-eXD"/>
                                                     </constraints>
@@ -239,7 +269,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your areas of expertise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxI-Cf-7hv">
-                                                    <rect key="frame" x="41.5" y="58" width="220" height="21"/>
+                                                    <rect key="frame" x="41.5" y="58" width="220" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -360,5 +390,6 @@
     <resources>
         <image name="High Res Logo &amp; Copy" width="315" height="411"/>
         <image name="person" catalog="system" width="64" height="58"/>
+        <image name="xmark" catalog="system" width="64" height="56"/>
     </resources>
 </document>

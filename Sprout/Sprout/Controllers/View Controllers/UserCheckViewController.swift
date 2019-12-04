@@ -15,7 +15,7 @@ class UserCheckViewController: UIViewController {
         super.viewDidAppear(animated)
         if Auth.auth().currentUser == nil {
             // fetch userdata
-            performSegue(withIdentifier: "toLogin", sender: self)
+            performSegue(withIdentifier: "toHome", sender: self)
         } else {
             UserController.shared.signInCurrentUser { (success) in
                 if success {
