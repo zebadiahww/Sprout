@@ -51,7 +51,7 @@ extension Request {
             let isApproved = dictionary[RequestConstants.isApprovedKey] as? Bool,
             let uuid = dictionary[RequestConstants.uuidKey] as? String,
             let userID = dictionary[RequestConstants.userIDKey] as? String
-            else {return}
+            else {return nil}
         
         self.init(title: title, message: message, isApproved: isApproved, uuid: uuid, userID: userID )
     }

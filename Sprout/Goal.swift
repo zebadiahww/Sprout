@@ -48,6 +48,7 @@ class Goal {
         if let date = date {
             dict.updateValue(date, forKey: GoalConstants.dateKey)
         }
+        return dict
     }
     
     init(title: String, body: String, userID: String, isComplete: Bool = false, isPrivate: Bool, isDaily: Bool, date: Date?, uuid: String = UUID().uuidString, icon: String, iconColor: String) {
@@ -75,7 +76,7 @@ extension Goal {
             let uuid = dictionay[GoalConstants.uuidKey] as? String,
             let icon = dictionay[GoalConstants.iconKey] as? String,
             let iconColor = dictionay[GoalConstants.iconColorKey] as? String
-            else {return}
+            else {return nil}
         let date = dictionay[GoalConstants.dateKey] as? Date
         
         self.init(title: title, body: body, userID: userID, isComplete: isComplete, isPrivate: isPrivate, isDaily: isDaily, date: date, uuid: uuid, icon: icon, iconColor: iconColor)
