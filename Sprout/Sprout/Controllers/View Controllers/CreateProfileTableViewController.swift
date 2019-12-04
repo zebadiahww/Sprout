@@ -69,11 +69,12 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         guard let uid = currentUser?.uid,
             let name = nameTextField.text, !name.isEmpty,
             let bio = bioTextView.text, !bio.isEmpty,
+            let occupation = OccupationTextField.text, !occupation.isEmpty,
             let email = email,
             let isMentor = isMentor
             else { return }
         
-        UserController.shared.createUser(uid: uid , name: name, bio: bio, email: email, isMentor: isMentor, profileImage: selectedImage, website: website, linkedInURL: linkedIn) { (success) in
+        UserController.shared.createUser(uid: uid , name: name, bio: bio, occupation: occupation, email: email, isMentor: isMentor, profileImage: selectedImage, website: website, linkedInURL: linkedIn) { (success) in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 print("User created successfully")
@@ -84,6 +85,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     func photoSelectorViewControllerSelected(image: UIImage) {
         selectedImage = image
     }
+    
     
     
     
