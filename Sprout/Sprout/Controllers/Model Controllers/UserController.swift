@@ -40,7 +40,6 @@ class UserController {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 completion(false)
             } else {
-                print("user created successfully")
                 self.currentUser = newUser
                 completion(true)
             }

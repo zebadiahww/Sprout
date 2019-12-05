@@ -15,6 +15,7 @@
  
  */
 import UIKit
+import FirebaseAuth
 
 class CreateProfileTableViewController: UITableViewController, PhotoSelectorViewControllerDelegate {
     
@@ -59,7 +60,6 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
             Tag(title: "test2", category: "testing"),
             Tag(title: "teertyst2", category: "testing")
         ]
-        
     }
     
     
@@ -89,7 +89,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         let linkedIn = linkedInTextField.text
         let website = websiteTextField.text
-        guard let uuid = currentUser?.uuid,
+        guard let uuid = Auth.auth().currentUser?.uid,
             let name = nameTextField.text, !name.isEmpty,
             let bio = bioTextView.text, !bio.isEmpty,
             let occupation = OccupationTextField.text, !occupation.isEmpty,
@@ -98,7 +98,6 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         
         UserController.shared.createUser(uuid: uuid , name: name, bio: bio, occupation: occupation, isMentor: isMentor, profileImage: selectedImage, website: website, linkedInURL: linkedIn) { (success) in
             DispatchQueue.main.async {
-                self.tableView.reloadData()
                 print("User created successfully")
             }
         }
@@ -107,6 +106,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     func photoSelectorViewControllerSelected(image: UIImage) {
         selectedImage = image
     }
+    
     
     
     // MARK: - Navigation
@@ -136,7 +136,7 @@ extension CreateProfileTableViewController: UICollectionViewDelegateFlowLayout, 
         
         let tag = TagsController.shared.tags[indexPath.item]
         cell.skillTagLabel.text = tag.title
-        cell.tintColor = .middleGreen
+        cell.backgroundColor = .middleGreen
         cell.layer.cornerRadius = 4
         return cell
     }
