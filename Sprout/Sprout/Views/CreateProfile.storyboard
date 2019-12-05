@@ -34,6 +34,9 @@
                                 <state key="normal" title="  Continue  ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="continueButtonTapped:" destination="5dc-tH-cf3" eventType="touchUpInside" id="T9J-Iz-d8c"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwJ-zj-LEd">
                                 <rect key="frame" x="169" y="838" width="77" height="26"/>
@@ -42,15 +45,27 @@
                                 <state key="normal" title="Resend email.">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="resendEmailButtonTapped:" destination="5dc-tH-cf3" eventType="touchUpInside" id="MaF-tJ-6hO"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iO9-wU-bcC">
+                                <rect key="frame" x="41.5" y="617" width="331" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.88235294119999996" green="0.94509803920000002" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="iO9-wU-bcC" firstAttribute="top" secondItem="qIx-Dn-nDR" secondAttribute="bottom" constant="43" id="1Ma-ZV-RtA"/>
                             <constraint firstItem="iEj-4n-z89" firstAttribute="centerX" secondItem="pMg-g0-Ax5" secondAttribute="centerX" id="4fi-kj-Sdq"/>
                             <constraint firstItem="V09-o0-lzd" firstAttribute="top" secondItem="iEj-4n-z89" secondAttribute="bottom" constant="20" id="5Hz-vV-NQW"/>
                             <constraint firstItem="qIx-Dn-nDR" firstAttribute="centerX" secondItem="V09-o0-lzd" secondAttribute="centerX" id="A5N-G8-NAw"/>
                             <constraint firstItem="iEj-4n-z89" firstAttribute="centerY" secondItem="pMg-g0-Ax5" secondAttribute="centerY" multiplier="0.8" id="Ecy-o9-DqI"/>
                             <constraint firstItem="iEj-4n-z89" firstAttribute="width" secondItem="yEK-bi-a1f" secondAttribute="width" multiplier="0.4" id="Pib-66-UJD"/>
+                            <constraint firstItem="iO9-wU-bcC" firstAttribute="centerX" secondItem="V09-o0-lzd" secondAttribute="centerX" id="QHm-Eh-Y5W"/>
+                            <constraint firstItem="iO9-wU-bcC" firstAttribute="width" secondItem="V09-o0-lzd" secondAttribute="width" id="SZA-J9-Gvv"/>
                             <constraint firstItem="qIx-Dn-nDR" firstAttribute="width" secondItem="V09-o0-lzd" secondAttribute="width" multiplier="0.5" id="hrO-eH-CsB"/>
                             <constraint firstItem="qIx-Dn-nDR" firstAttribute="top" secondItem="V09-o0-lzd" secondAttribute="bottom" constant="15" id="kYa-AU-egV"/>
                             <constraint firstItem="V09-o0-lzd" firstAttribute="width" secondItem="yEK-bi-a1f" secondAttribute="width" multiplier="0.8" id="luy-pz-dW1"/>
@@ -59,12 +74,15 @@
                         <viewLayoutGuide key="safeArea" id="pMg-g0-Ax5"/>
                     </view>
                     <connections>
+                        <outlet property="actionLabel" destination="iO9-wU-bcC" id="f2J-pU-Zoh"/>
+                        <outlet property="continueButton" destination="qIx-Dn-nDR" id="dOZ-rq-0su"/>
+                        <outlet property="resendEmailButton" destination="cwJ-zj-LEd" id="iu3-KT-KlP"/>
                         <segue destination="4oI-oe-mh8" kind="presentation" identifier="toProfileCreation" modalPresentationStyle="fullScreen" id="k8W-BJ-Ys7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGY-GS-Cy0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1064" y="146"/>
+            <point key="canvasLocation" x="-1065.217391304348" y="145.98214285714286"/>
         </scene>
         <!--Create Profile Table View Controller-->
         <scene sceneID="QEi-gC-8jR">
@@ -208,6 +226,7 @@
                                                                             </label>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZU-v4-Pah">
                                                                                 <rect key="frame" x="46" y="0.0" width="17.5" height="22"/>
+                                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <state key="normal" image="xmark" catalog="system"/>
                                                                                 <connections>
                                                                                     <action selector="deleteTagButtonTapped:" destination="fub-3u-fUy" eventType="touchUpInside" id="2YS-Q8-2Vm"/>
