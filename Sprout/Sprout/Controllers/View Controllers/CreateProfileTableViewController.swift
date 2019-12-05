@@ -21,6 +21,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     //MARK: Properties
     var currentUser: User?
     var isMentor: Bool?
+    var tags: Tag?
     
     //MARK: - Outlets
     @IBOutlet weak var nameTextField: UITextField!
@@ -68,13 +69,19 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     @IBAction func addTagButtonTapped(_ sender: UIButton) {
         guard let newTag = tagTextField.text, !newTag.isEmpty,
             let category = categoryTextField.text, !category.isEmpty,
-            let userID = currentUser?.uuid
+            let userIDs = currentUser?.uuid
             else { return }
         
-        TagsController.shared.createTag(with: newTag, category: category, userID: userID) { (success) in
-            DispatchQueue.main.async {
-                self.tagCollectionView.reloadData()
-                print("successfully created new tag")
+        TagsController.shared.searchAndFetchTag(with: newTag) { (success) in
+            if success {
+                self.tags?.userIDs?.append(userIDs)
+            } else {
+                TagsController.shared.createTag(with: newTag, category: category, userID: userIDs) { (success) in
+                    DispatchQueue.main.async {
+                        self.tagCollectionView.reloadData()
+                        print("successfully created new tag")
+                    }
+                }
             }
         }
     }
@@ -102,9 +109,6 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     }
     
     
-    
-    
-    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -114,7 +118,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
             destinationVC?.delegate = self
         }
     }
-}
+} // End Of Class
 
 extension CreateProfileTableViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
@@ -132,11 +136,8 @@ extension CreateProfileTableViewController: UICollectionViewDelegateFlowLayout, 
         
         let tag = TagsController.shared.tags[indexPath.item]
         cell.skillTagLabel.text = tag.title
-        cell.backgroundColor = .green
-        cell.layer.cornerRadius = 7
+        cell.tintColor = .middleGreen
+        cell.layer.cornerRadius = 4
         return cell
     }
-
-    
-    
 }

@@ -21,6 +21,8 @@
 		853B92A623958B4C00D3E5F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 853B92A523958B4C00D3E5F0 /* GoogleService-Info.plist */; };
 		8592EA2423985105001FD702 /* SkillsTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8592EA2323985105001FD702 /* SkillsTagCollectionViewCell.swift */; };
 		85A024AB23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A024AA23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift */; };
+		85A024AD239969C0009E8FC9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85A024AC239969C0009E8FC9 /* Colors.xcassets */; };
+		85A024AF23996AAE009E8FC9 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A024AE23996AAE009E8FC9 /* StyleGuide.swift */; };
 		85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB571238C449000CA9A62 /* AppDelegate.swift */; };
 		85AFB574238C449000CA9A62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB573238C449000CA9A62 /* SceneDelegate.swift */; };
 		85AFB579238C449000CA9A62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AFB577238C449000CA9A62 /* Main.storyboard */; };
@@ -65,6 +67,8 @@
 		853B92A523958B4C00D3E5F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8592EA2323985105001FD702 /* SkillsTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		85A024AA23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		85A024AC239969C0009E8FC9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		85A024AE23996AAE009E8FC9 /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StyleGuide.swift; path = Sprout/Resources/StyleGuide.swift; sourceTree = SOURCE_ROOT; };
 		85AFB56E238C449000CA9A62 /* Sprout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sprout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AFB571238C449000CA9A62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85AFB573238C449000CA9A62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 				85AFB57A238C449000CA9A62 /* Assets.xcassets */,
 				85AFB57C238C449000CA9A62 /* LaunchScreen.storyboard */,
 				85AFB57F238C449000CA9A62 /* Info.plist */,
+				85A024AC239969C0009E8FC9 /* Colors.xcassets */,
 				73351DB3B5523E7A11A59682 /* Frameworks */,
 				853B92A523958B4C00D3E5F0 /* GoogleService-Info.plist */,
 			);
@@ -233,6 +238,7 @@
 		85AFB58B238C451500CA9A62 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				85A024AE23996AAE009E8FC9 /* StyleGuide.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -367,6 +373,7 @@
 				85AFB579238C449000CA9A62 /* Main.storyboard in Resources */,
 				853B92A623958B4C00D3E5F0 /* GoogleService-Info.plist in Resources */,
 				55BB57A12395C92D00962DA0 /* SignInSignUp.storyboard in Resources */,
+				85A024AD239969C0009E8FC9 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +443,7 @@
 				85AFB5AF238C521400CA9A62 /* MessagingScreenViewController.swift in Sources */,
 				85AFB5C5238C5EFF00CA9A62 /* TagsController.swift in Sources */,
 				85AFB5A1238C504000CA9A62 /* SettingsViewController.swift in Sources */,
+				85A024AF23996AAE009E8FC9 /* StyleGuide.swift in Sources */,
 				8592EA2423985105001FD702 /* SkillsTagCollectionViewCell.swift in Sources */,
 				85AFB5A7238C512E00CA9A62 /* NotificationsViewController.swift in Sources */,
 				85AFB58E238C4D0700CA9A62 /* LoginViewController.swift in Sources */,

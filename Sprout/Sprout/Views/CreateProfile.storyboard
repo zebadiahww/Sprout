@@ -208,6 +208,7 @@
                                                                             </label>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZU-v4-Pah">
                                                                                 <rect key="frame" x="46" y="0.0" width="17.5" height="22"/>
+                                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <state key="normal" image="xmark" catalog="system"/>
                                                                                 <connections>
                                                                                     <action selector="deleteTagButtonTapped:" destination="fub-3u-fUy" eventType="touchUpInside" id="2YS-Q8-2Vm"/>
