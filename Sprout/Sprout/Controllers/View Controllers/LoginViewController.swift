@@ -12,7 +12,7 @@ import FirebaseAuth
 class LoginViewController: UIViewController {
     
     var isSignUp: Bool = true
-    
+    var forgotPassword: Bool = false
     var isMentor = false
     
     //MARK: - Outlets
@@ -28,6 +28,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailBorder: UIView!
     @IBOutlet weak var passwordBorder: UIView!
     @IBOutlet weak var haveAnAccountLabel: UILabel!
+    @IBOutlet weak var forgotPasswordButton: UIButton!
     
     
     //MARK: - View Did Load
@@ -47,13 +48,25 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonTapped(_ sender: Any) {
         guard let email = emailTextField.text, !email.isEmpty,
             let password = passwordTextField.text, !password.isEmpty else { return }
-        if isSignUp {
+        if isSignUp == true {
             UserController.shared.authenticateNewUser(email: email, password: password) { (success) in
-                
+                UserController.shared.sendEmailVerification { (success) in
+                    self.performSegue(withIdentifier: "toEmailVerify", sender: self)
+                }
             }
-            performSegue(withIdentifier: "toEmailVerify", sender: self)
-        } else {
-            
+        } else if isSignUp == false {
+            UserController.shared.manualSignIn(withEmail: email, password: password) { (success) in
+                if success {
+                    self.performSegue(withIdentifier: "toHome", sender: self)
+                }
+            }
+        } else if forgotPassword == true {
+            guard let email = emailTextField.text, !email.isEmpty else {return}
+            UserController.shared.sendResetPasswordEmail(to: email) { (success) in
+                if success {
+                    //segue to next screen
+                }
+            }
         }
     }
     
@@ -76,6 +89,13 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func forgotPasswordButtonTapped(_ sender: Any) {
+        UIView.animate(withDuration: 0.2 ) {
+        self.toggleToForgotPassword()
+        }
+    }
+    
     
     func showCreateProfileVC() {
         DispatchQueue.main.async {
@@ -104,6 +124,10 @@ class LoginViewController: UIViewController {
         self.actionButton.setTitle("Login", for: .normal)
         self.haveAnAccountLabel.text = "Don't have an account?"
         self.pageToggleButton.setTitle("Register now.", for: .normal)
+        self.forgotPasswordButton.isHidden = false
+        self.passwordBorder.isHidden = false
+        self.passwordBorderLabel.isHidden = false
+        forgotPassword = false
     }
     
     func toggleToSignUp() {
@@ -112,14 +136,25 @@ class LoginViewController: UIViewController {
         self.actionButton.setTitle("Sign Up", for: .normal)
         self.haveAnAccountLabel.text = "Already have an account?"
         self.pageToggleButton.setTitle("Login now.", for: .normal)
+        self.forgotPasswordButton.isHidden = true
+        self.passwordBorder.isHidden = false
+        self.passwordBorderLabel.isHidden = false
+        forgotPassword = false
+    }
+    
+    func toggleToForgotPassword() {
+        passwordBorder.isHidden = true
+        passwordBorderLabel.isHidden = true
+        forgotPasswordButton.isHidden = true
+        pageIDLabel.text = "reset password"
+        actionButton.setTitle("Send Email", for: .normal)
+        forgotPassword = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toEmailVerify" {
-            guard let email = emailTextField.text,
-                let destinationVC = segue.destination as? EmailVerifyViewController
+            guard let destinationVC = segue.destination as? EmailVerifyViewController
             else {return}
-            destinationVC.email = email
             destinationVC.isMentor = isMentor
         }
     }
