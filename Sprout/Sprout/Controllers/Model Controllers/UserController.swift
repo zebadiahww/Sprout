@@ -19,10 +19,11 @@ class UserController {
     
     //Creates a user and sends verification email
     func authenticateNewUser(email: String, password: String, completion: @escaping (Bool) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { (result, _) in
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if result != nil {
                 completion(true)
             } else {
+                print(error?.localizedDescription)
                 completion(false)
             }
         }
@@ -95,6 +96,8 @@ class UserController {
                 self.currentUser = user
                 completion(true)
             }
+            completion(false)
+            return
         }
     }
     

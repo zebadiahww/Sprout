@@ -140,12 +140,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxi-1y-DfV">
+                                <rect key="frame" x="269" y="608" width="123" height="30"/>
+                                <state key="normal" title="Forgot Password?">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="forgotPasswordButtonTapped:" destination="aXP-tm-f2h" eventType="touchUpInside" id="C7d-MZ-ZhI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ObU-cG-9in" firstAttribute="centerX" secondItem="Qeg-WE-uRY" secondAttribute="centerX" id="0U7-7F-2We"/>
                             <constraint firstItem="PcQ-an-acq" firstAttribute="centerX" secondItem="Qeg-WE-uRY" secondAttribute="centerX" id="31R-jZ-Ma1"/>
                             <constraint firstItem="PcQ-an-acq" firstAttribute="top" secondItem="x8b-km-fRn" secondAttribute="bottom" constant="-8" id="7It-G7-gDH"/>
+                            <constraint firstItem="rxi-1y-DfV" firstAttribute="top" secondItem="PcQ-an-acq" secondAttribute="bottom" constant="8" id="7aL-Qi-mF4"/>
+                            <constraint firstItem="rxi-1y-DfV" firstAttribute="trailing" secondItem="PcQ-an-acq" secondAttribute="trailing" id="8DL-wU-2OI"/>
                             <constraint firstItem="x8b-km-fRn" firstAttribute="leading" secondItem="PcQ-an-acq" secondAttribute="leading" constant="8" id="9aZ-Zq-UVJ"/>
                             <constraint firstItem="GeX-Ck-vQ2" firstAttribute="leading" secondItem="Qeg-WE-uRY" secondAttribute="leading" constant="22" id="G2t-8L-4yx"/>
                             <constraint firstItem="5W0-7S-8Dw" firstAttribute="top" secondItem="ObU-cG-9in" secondAttribute="bottom" constant="55" id="Ijy-Gs-nfA"/>
@@ -171,6 +182,7 @@
                         <outlet property="emailBorder" destination="GeX-Ck-vQ2" id="H2G-c1-r9j"/>
                         <outlet property="emailBorderLabel" destination="g9E-ux-Ok2" id="pFe-zb-rDe"/>
                         <outlet property="emailTextField" destination="Mza-5o-xFn" id="5pW-79-Hb0"/>
+                        <outlet property="forgotPasswordButton" destination="rxi-1y-DfV" id="F6a-MN-B8H"/>
                         <outlet property="haveAnAccountLabel" destination="Zv1-do-OQd" id="YhR-Qn-HgZ"/>
                         <outlet property="pageIDLabel" destination="CBn-6x-h4E" id="SiI-H5-cyp"/>
                         <outlet property="pageToggleButton" destination="Icv-W6-VOK" id="2X2-zx-Vf5"/>
@@ -179,7 +191,7 @@
                         <outlet property="passwordTextField" destination="jNC-Gc-kEi" id="eXy-fL-YnU"/>
                         <outlet property="userTypeSegmentedControl" destination="aMV-WU-Gqk" id="83D-8V-NYE"/>
                         <segue destination="hVF-M9-1pe" kind="presentation" identifier="toEmailVerify" modalPresentationStyle="fullScreen" id="Tnz-UE-i2C"/>
-                        <segue destination="9xB-0v-DhY" kind="presentation" modalPresentationStyle="fullScreen" id="rSy-v2-wLp"/>
+                        <segue destination="9xB-0v-DhY" kind="presentation" identifier="toHome" modalPresentationStyle="fullScreen" id="rSy-v2-wLp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJN-CS-yeI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
