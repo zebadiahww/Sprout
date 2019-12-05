@@ -13,6 +13,8 @@ class GoalController {
     
     var goals: [Goal] = []
     
+    static let shared = GoalController()
+    
     var currentUser: User?
     
     var firebaseDB = Firestore.firestore()
@@ -43,10 +45,12 @@ class GoalController {
         completion(true)
     }
     
-    func deleteGoal(goal: Goal, index: Int) {
+    func deleteGoal(goal: Goal, completion: @escaping(Bool) -> Void) {
         let ref = firebaseDB.collection(GoalConstants.typeKey).document(goal.uuid)
         ref.delete()
+        guard let index = goals.firstIndex(of: goal) else { return }
         goals.remove(at: index)
+        completion(true)
     }
     
     func fetchGoal( completion: @escaping(Bool) -> Void) {

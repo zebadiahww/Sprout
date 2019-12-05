@@ -110,6 +110,11 @@ class UserController {
         })
     }
     
+    func checkEmailVerification(completion: @escaping(Bool) -> Void) {
+        guard let isVerified = Auth.auth().currentUser?.isEmailVerified else { return }
+        completion(isVerified)
+    }
+    
     func sendResetPasswordEmail(to email: String, completion: @escaping (Bool) -> Void) {
         Auth.auth().sendPasswordReset(withEmail: email) { (error) in
             if let error = error {
