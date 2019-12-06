@@ -31,8 +31,8 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     @IBOutlet weak var nameBorder: UIView!
     @IBOutlet weak var bioTextView: UITextView!
     @IBOutlet weak var bioBorder: UIView!
-    @IBOutlet weak var OccupationTextField: UITextField!
-    @IBOutlet weak var OccupationBorder: UIView!
+    @IBOutlet weak var occupationTextField: UITextField!
+    @IBOutlet weak var occupationBorder: UIView!
     @IBOutlet weak var InterestExpertiseLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var categoryTextField: UITextField!
@@ -62,6 +62,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         categoryTextField.delegate = self
         addTagButton.isEnabled = false
         tagTextSearchBar.delegate = self
+        setupViews()
         
         //        TagsController.shared.tags = [
         //            Tag(title: "test", category: "testing"),
@@ -121,7 +122,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         guard let uuid = Auth.auth().currentUser?.uid,
             let name = nameTextField.text, !name.isEmpty,
             let bio = bioTextView.text, !bio.isEmpty,
-            let occupation = OccupationTextField.text, !occupation.isEmpty,
+            let occupation = occupationTextField.text, !occupation.isEmpty,
             let isMentor = isMentor
             else { return }
         
@@ -211,6 +212,27 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     
     func setupViews() {
         self.pageIDLabel.font = UIFont(name: "Avenir", size: 14)
+        self.nameBorder.layer.cornerRadius = nameBorder.frame.height/12
+        self.nameBorder.layer.borderWidth = 1
+        
+        self.bioBorder.layer.cornerRadius = bioBorder.frame.height/12
+        self.bioBorder.layer.borderWidth = 1
+        
+        self.occupationBorder.layer.cornerRadius = occupationBorder.frame.height/12
+        self.occupationBorder.layer.borderWidth = 1
+        
+        self.categoryBorder.layer.cornerRadius = self.categoryBorder.frame.height/12
+        self.categoryBorder.layer.borderWidth = 1
+        
+        self.tagBorder.layer.cornerRadius = tagBorder.frame.height/12
+        self.tagBorder.layer.borderWidth = 1
+        
+        self.linkedInBorder.layer.cornerRadius = linkedInBorder.frame.height/12
+        self.linkedInBorder.layer.borderWidth = 1
+        
+        self.websiteBorder.layer.cornerRadius = linkedInBorder.frame.height/12
+        self.websiteBorder.layer.borderWidth = 1
+        
     }
     
     // MARK: - Navigation

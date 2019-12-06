@@ -138,8 +138,8 @@
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Name  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGb-zM-zci">
-                                                            <rect key="frame" x="8" y="-7.5" width="41.5" height="15.5"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <rect key="frame" x="8" y="-7.5" width="42" height="15.5"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="11"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -170,7 +170,7 @@
                                                         </textView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Bio  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNK-Yp-ekX">
                                                             <rect key="frame" x="8" y="-7.5" width="28" height="15.5"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="11"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -197,6 +197,7 @@
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Occupation  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mE6-hv-JMk">
                                                             <rect key="frame" x="8" y="-7.5" width="69" height="15.5"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="11"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -370,6 +371,7 @@
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  LinkedIn  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfE-Bu-9rb">
                                                             <rect key="frame" x="8" y="-7.5" width="53" height="15.5"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="11"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -396,7 +398,8 @@
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="  URL  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0s-4d-0yq">
                                                             <rect key="frame" x="24" y="-8" width="42" height="21"/>
-                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="11"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -456,8 +459,6 @@
                     <navigationItem key="navigationItem" id="Qfw-gD-pdT"/>
                     <connections>
                         <outlet property="InterestExpertiseLabel" destination="aBn-OL-hpI" id="1bR-N6-74d"/>
-                        <outlet property="OccupationBorder" destination="oM5-tg-t8T" id="HyK-YV-gjo"/>
-                        <outlet property="OccupationTextField" destination="1ey-ah-GSh" id="OCc-xb-0DP"/>
                         <outlet property="addTagButton" destination="GQT-4Z-xLF" id="VJB-pb-ogW"/>
                         <outlet property="bioBorder" destination="oYR-Ns-gok" id="wK9-K5-EdL"/>
                         <outlet property="bioTextView" destination="BgW-oN-5Pg" id="Pb6-a4-IWo"/>
@@ -470,6 +471,8 @@
                         <outlet property="linkedInTextField" destination="AEn-fT-ys5" id="eax-gz-Q2O"/>
                         <outlet property="nameBorder" destination="KeI-cl-xsC" id="ABx-Dc-p56"/>
                         <outlet property="nameTextField" destination="og5-vA-ruf" id="5rJ-2j-wMk"/>
+                        <outlet property="occupationBorder" destination="oM5-tg-t8T" id="HyK-YV-gjo"/>
+                        <outlet property="occupationTextField" destination="1ey-ah-GSh" id="OCc-xb-0DP"/>
                         <outlet property="pageIDLabel" destination="lze-Pp-YQQ" id="LFZ-ZX-11p"/>
                         <outlet property="saveButton" destination="JLe-x7-TL2" id="5YU-Et-jfJ"/>
                         <outlet property="tagBorder" destination="tY3-jf-HVx" id="nmm-1P-F1l"/>
