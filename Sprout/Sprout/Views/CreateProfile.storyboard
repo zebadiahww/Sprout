@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Email Verify View Controller-->
+        <!--View Controller-->
         <scene sceneID="dVB-hd-QVa">
             <objects>
-                <viewController storyboardIdentifier="EmailVerifyViewController" id="5dc-tH-cf3" customClass="EmailVerifyViewController" customModule="Sprout" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmailVerifyViewController" id="5dc-tH-cf3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yEK-bi-a1f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,37 +35,17 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="continueButtonTapped:" destination="5dc-tH-cf3" eventType="touchUpInside" id="T9J-Iz-d8c"/>
+                                    <segue destination="4oI-oe-mh8" kind="presentation" modalPresentationStyle="fullScreen" id="zVW-WJ-tDk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwJ-zj-LEd">
-                                <rect key="frame" x="169" y="838" width="77" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
-                                <state key="normal" title="Resend email.">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="resendEmailButtonTapped:" destination="5dc-tH-cf3" eventType="touchUpInside" id="MaF-tJ-6hO"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iO9-wU-bcC">
-                                <rect key="frame" x="41.5" y="617" width="331" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.88235294119999996" green="0.94509803920000002" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="iO9-wU-bcC" firstAttribute="top" secondItem="qIx-Dn-nDR" secondAttribute="bottom" constant="43" id="1Ma-ZV-RtA"/>
                             <constraint firstItem="iEj-4n-z89" firstAttribute="centerX" secondItem="pMg-g0-Ax5" secondAttribute="centerX" id="4fi-kj-Sdq"/>
                             <constraint firstItem="V09-o0-lzd" firstAttribute="top" secondItem="iEj-4n-z89" secondAttribute="bottom" constant="20" id="5Hz-vV-NQW"/>
                             <constraint firstItem="qIx-Dn-nDR" firstAttribute="centerX" secondItem="V09-o0-lzd" secondAttribute="centerX" id="A5N-G8-NAw"/>
                             <constraint firstItem="iEj-4n-z89" firstAttribute="centerY" secondItem="pMg-g0-Ax5" secondAttribute="centerY" multiplier="0.8" id="Ecy-o9-DqI"/>
                             <constraint firstItem="iEj-4n-z89" firstAttribute="width" secondItem="yEK-bi-a1f" secondAttribute="width" multiplier="0.4" id="Pib-66-UJD"/>
-                            <constraint firstItem="iO9-wU-bcC" firstAttribute="centerX" secondItem="V09-o0-lzd" secondAttribute="centerX" id="QHm-Eh-Y5W"/>
-                            <constraint firstItem="iO9-wU-bcC" firstAttribute="width" secondItem="V09-o0-lzd" secondAttribute="width" id="SZA-J9-Gvv"/>
                             <constraint firstItem="qIx-Dn-nDR" firstAttribute="width" secondItem="V09-o0-lzd" secondAttribute="width" multiplier="0.5" id="hrO-eH-CsB"/>
                             <constraint firstItem="qIx-Dn-nDR" firstAttribute="top" secondItem="V09-o0-lzd" secondAttribute="bottom" constant="15" id="kYa-AU-egV"/>
                             <constraint firstItem="V09-o0-lzd" firstAttribute="width" secondItem="yEK-bi-a1f" secondAttribute="width" multiplier="0.8" id="luy-pz-dW1"/>
@@ -73,12 +53,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pMg-g0-Ax5"/>
                     </view>
-                    <connections>
-                        <outlet property="actionLabel" destination="iO9-wU-bcC" id="f2J-pU-Zoh"/>
-                        <outlet property="continueButton" destination="qIx-Dn-nDR" id="dOZ-rq-0su"/>
-                        <outlet property="resendEmailButton" destination="cwJ-zj-LEd" id="iu3-KT-KlP"/>
-                        <segue destination="4oI-oe-mh8" kind="presentation" identifier="toProfileCreation" modalPresentationStyle="fullScreen" id="k8W-BJ-Ys7"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGY-GS-Cy0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
