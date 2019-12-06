@@ -23,6 +23,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     var currentUser: User?
     var isMentor: Bool?
     var tags: Tag?
+    var selectedCategory: String?
     
     //MARK: - Outlets
     @IBOutlet weak var nameTextField: UITextField!
@@ -45,6 +46,8 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         super.viewDidLoad()
         tagCollectionView.delegate = self
         tagCollectionView.dataSource = self
+        setupPicker()
+        createToolBar()
         
         TagsController.shared.tags = [
             Tag(title: "test", category: "testing"),
@@ -103,10 +106,36 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         }
     }
     
+    func setupPicker() {
+        categoryPicker.delegate = self
+        categoryPicker.dataSource = self
+        categoryTextField.inputView = categoryPicker
+        categoryPicker.backgroundColor = .white
+    }
+    
     func photoSelectorViewControllerSelected(image: UIImage) {
         selectedImage = image
     }
     
+    func createToolBar() {
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        toolBar.tintColor = .darkGreen
+        
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(CreateProfileTableViewController.dismissKeyboard))
+        
+        
+        toolBar.setItems([spacer,
+                          doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        categoryTextField.inputAccessoryView = toolBar
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     
     // MARK: - Navigation
@@ -141,3 +170,24 @@ extension CreateProfileTableViewController: UICollectionViewDelegateFlowLayout, 
         return cell
     }
 }
+
+extension CreateProfileTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Categories.categories.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return Categories.categories[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+         selectedCategory = Categories.categories[row]
+         categoryTextField.text = selectedCategory
+    }
+}
+
+

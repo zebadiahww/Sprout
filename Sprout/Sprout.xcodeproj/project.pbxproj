@@ -17,6 +17,7 @@
 		55BB57A32395D39300962DA0 /* CreateProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BB57A22395D39300962DA0 /* CreateProfile.storyboard */; };
 		55BB57A52395D95300962DA0 /* CreateProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */; };
 		55BB57A72396C18200962DA0 /* PhotoSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BB57A62396C18200962DA0 /* PhotoSelectorViewController.swift */; };
+		850C30A12399C838005F49D1 /* CategoryArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C30A02399C838005F49D1 /* CategoryArray.swift */; };
 		853B92A623958B4C00D3E5F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 853B92A523958B4C00D3E5F0 /* GoogleService-Info.plist */; };
 		8592EA2423985105001FD702 /* SkillsTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8592EA2323985105001FD702 /* SkillsTagCollectionViewCell.swift */; };
 		85A024AB23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A024AA23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift */; };
@@ -55,6 +56,7 @@
 		55BB57A22395D39300962DA0 /* CreateProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProfile.storyboard; sourceTree = "<group>"; };
 		55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileTableViewController.swift; sourceTree = "<group>"; };
 		55BB57A62396C18200962DA0 /* PhotoSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorViewController.swift; sourceTree = "<group>"; };
+		850C30A02399C838005F49D1 /* CategoryArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryArray.swift; path = "Sprout/Controllers/View Controllers/Goals View Controllers/CategoryArray.swift"; sourceTree = SOURCE_ROOT; };
 		853B92A523958B4C00D3E5F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8592EA2323985105001FD702 /* SkillsTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		85A024AA23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				85A024AE23996AAE009E8FC9 /* StyleGuide.swift */,
+				850C30A02399C838005F49D1 /* CategoryArray.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				85A024AF23996AAE009E8FC9 /* StyleGuide.swift in Sources */,
 				8592EA2423985105001FD702 /* SkillsTagCollectionViewCell.swift in Sources */,
 				85AFB58E238C4D0700CA9A62 /* LoginViewController.swift in Sources */,
+				850C30A12399C838005F49D1 /* CategoryArray.swift in Sources */,
 				5510C79E2397170600B86ED3 /* EmailVerifyViewController.swift in Sources */,
 				85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */,
 				85AFB5C9238C5F1D00CA9A62 /* GoalController.swift in Sources */,
