@@ -17,7 +17,7 @@
 import UIKit
 import FirebaseAuth
 
-class CreateProfileTableViewController: UITableViewController, PhotoSelectorViewControllerDelegate {
+class CreateProfileTableViewController: UITableViewController, PhotoSelectorViewControllerDelegate, UITextFieldDelegate, UISearchBarDelegate {
     
     //MARK: Properties
     var currentUser: User?
@@ -26,20 +26,30 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     var selectedCategory: String?
     
     //MARK: - Outlets
+    @IBOutlet weak var pageIDLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nameBorder: UIView!
     @IBOutlet weak var bioTextView: UITextView!
-    @IBOutlet weak var OccupationTextField: UITextField!
+    @IBOutlet weak var bioBorder: UIView!
+    @IBOutlet weak var occupationTextField: UITextField!
+    @IBOutlet weak var occupationBorder: UIView!
     @IBOutlet weak var InterestExpertiseLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet var categoryPicker: UIPickerView!
-    @IBOutlet weak var tagTextField: UITextField!
+    @IBOutlet weak var categoryBorder: UIView!
+    @IBOutlet weak var tagTextSearchBar: UISearchBar!
     @IBOutlet weak var addTagButton: UIButton!
+    @IBOutlet weak var tagBorder: UIView!
     @IBOutlet weak var tagCollectionView: UICollectionView!
     @IBOutlet weak var linkedInTextField: UITextField!
+    @IBOutlet weak var linkedInBorder: UIView!
     @IBOutlet weak var websiteTextField: UITextField!
+    @IBOutlet weak var websiteBorder: UIView!
     @IBOutlet weak var saveButton: UIButton!
     
+    @IBOutlet weak var isMentorSegmentedColor:
+    UISegmentedControl!
     var selectedImage: UIImage?
     
     override func viewDidLoad() {
@@ -48,21 +58,26 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         tagCollectionView.dataSource = self
         setupPicker()
         createToolBar()
+        tagTextSearchBar.isHidden = true
+        categoryTextField.delegate = self
+        addTagButton.isEnabled = false
+        tagTextSearchBar.delegate = self
+        setupViews()
         
-        TagsController.shared.tags = [
-            Tag(title: "test", category: "testing"),
-            Tag(title: "test1", category: "testing"),
-            Tag(title: "test123456789", category: "testing"),
-            Tag(title: "test34567892", category: "testing"),
-            Tag(title: "test2", category: "testing"),
-            Tag(title: "teertyst2", category: "testing"),
-            Tag(title: "test", category: "testing"),
-            Tag(title: "test1", category: "testing"),
-            Tag(title: "test123456789", category: "testing"),
-            Tag(title: "test34567892", category: "testing"),
-            Tag(title: "test2", category: "testing"),
-            Tag(title: "teertyst2", category: "testing")
-        ]
+        //        TagsController.shared.tags = [
+        //            Tag(title: "test", category: "testing"),
+        //            Tag(title: "test1", category: "testing"),
+        //            Tag(title: "test123456789", category: "testing"),
+        //            Tag(title: "test34567892", category: "testing"),
+        //            Tag(title: "test2", category: "testing"),
+        //            Tag(title: "teertyst2", category: "testing"),
+        //            Tag(title: "test", category: "testing"),
+        //            Tag(title: "test1", category: "testing"),
+        //            Tag(title: "test123456789", category: "testing"),
+        //            Tag(title: "test34567892", category: "testing"),
+        //            Tag(title: "test2", category: "testing"),
+        //            Tag(title: "teertyst2", category: "testing")
+        //        ]
     }
     
     
@@ -70,18 +85,30 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     
     //MARK: - Actions
     @IBAction func addTagButtonTapped(_ sender: UIButton) {
-        guard let newTag = tagTextField.text, !newTag.isEmpty,
+        guard let newTag = tagTextSearchBar.text, !newTag.isEmpty,
             let category = categoryTextField.text, !category.isEmpty,
-            let userIDs = currentUser?.uuid
+            let userIDs = Auth.auth().currentUser?.uid
             else { return }
         
-        TagsController.shared.searchAndFetchTag(with: newTag) { (success) in
+        TagsController.shared.searchAndFetchTag(with: newTag, category: category) { (success) in
             if success {
                 self.tags?.userIDs?.append(userIDs)
+                DispatchQueue.main.async {
+                    self.tagCollectionView.reloadData()
+                    self.categoryTextField.text = ""
+                    self.tagTextSearchBar.text = ""
+                    self.tagTextSearchBar.isHidden = true
+                    self.addTagButton.isEnabled = false
+                }
+                
             } else {
-                TagsController.shared.createTag(with: newTag, category: category, userID: userIDs) { (success) in
+                TagsController.shared.createTag(with: newTag, category: category) { (success) in
                     DispatchQueue.main.async {
                         self.tagCollectionView.reloadData()
+                        self.categoryTextField.text = ""
+                        self.tagTextSearchBar.text = ""
+                        self.tagTextSearchBar.isHidden = true
+                        self.addTagButton.isEnabled = false
                         print("successfully created new tag")
                     }
                 }
@@ -95,9 +122,17 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         guard let uuid = Auth.auth().currentUser?.uid,
             let name = nameTextField.text, !name.isEmpty,
             let bio = bioTextView.text, !bio.isEmpty,
-            let occupation = OccupationTextField.text, !occupation.isEmpty,
+            let occupation = occupationTextField.text, !occupation.isEmpty,
             let isMentor = isMentor
             else { return }
+        
+        for tag in TagsController.shared.tags {
+            TagsController.shared.updateTag(tag: tag, UserID: uuid) { (success) in
+                if success {
+                    print("success")
+                }
+            }
+        }
         
         UserController.shared.createUser(uuid: uuid , name: name, bio: bio, occupation: occupation, isMentor: isMentor, profileImage: selectedImage, website: website, linkedInURL: linkedIn) { (success) in
             DispatchQueue.main.async {
@@ -105,6 +140,11 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
             }
         }
     }
+    
+    @IBAction func isMentorToggled(_ sender: Any) {
+    }
+    
+    
     
     func setupPicker() {
         categoryPicker.delegate = self
@@ -137,6 +177,63 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         view.endEditing(true)
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        guard let text = categoryTextField.text else { return }
+        if text.isEmpty {
+            categoryTextField.text = "Administrative"
+            categoryPicker.selectRow(0, inComponent: 0, animated: false)
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let text = categoryTextField.text else { return }
+        if !text.isEmpty {
+            tagTextSearchBar.isHidden = false
+        }
+        guard let tagText = tagTextSearchBar.text else { return }
+        if !tagText.isEmpty && !text.isEmpty {
+            tagTextSearchBar.isHidden = false
+            addTagButton.isEnabled = true
+        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let tagText = tagTextSearchBar.text else { return }
+        if !tagText.isEmpty {
+            tagTextSearchBar.isHidden = false
+            addTagButton.isEnabled = true
+        } else {
+            addTagButton.isEnabled = false
+        }
+    }
+    
+    
+    //MARK: - UI Elements
+    
+    func setupViews() {
+        self.pageIDLabel.font = UIFont(name: "Avenir", size: 14)
+        self.nameBorder.layer.cornerRadius = nameBorder.frame.height/12
+        self.nameBorder.layer.borderWidth = 1
+        
+        self.bioBorder.layer.cornerRadius = bioBorder.frame.height/12
+        self.bioBorder.layer.borderWidth = 1
+        
+        self.occupationBorder.layer.cornerRadius = occupationBorder.frame.height/12
+        self.occupationBorder.layer.borderWidth = 1
+        
+        self.categoryBorder.layer.cornerRadius = self.categoryBorder.frame.height/12
+        self.categoryBorder.layer.borderWidth = 1
+        
+        self.tagBorder.layer.cornerRadius = tagBorder.frame.height/12
+        self.tagBorder.layer.borderWidth = 1
+        
+        self.linkedInBorder.layer.cornerRadius = linkedInBorder.frame.height/12
+        self.linkedInBorder.layer.borderWidth = 1
+        
+        self.websiteBorder.layer.cornerRadius = linkedInBorder.frame.height/12
+        self.websiteBorder.layer.borderWidth = 1
+        
+    }
     
     // MARK: - Navigation
     
@@ -163,12 +260,17 @@ extension CreateProfileTableViewController: UICollectionViewDelegateFlowLayout, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as? SkillsTagCollectionViewCell else { return UICollectionViewCell() }
         
+        cell.delegate = self
+        
         let tag = TagsController.shared.tags[indexPath.item]
+        cell.currentTag = tag
         cell.skillTagLabel.text = tag.title
         cell.backgroundColor = .middleGreen
         cell.layer.cornerRadius = 4
         return cell
     }
+    
+    
 }
 
 extension CreateProfileTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -185,9 +287,15 @@ extension CreateProfileTableViewController: UIPickerViewDelegate, UIPickerViewDa
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-         selectedCategory = Categories.categories[row]
-         categoryTextField.text = selectedCategory
+        selectedCategory = Categories.categories[row]
+        categoryTextField.text = selectedCategory
     }
 }
 
-
+extension CreateProfileTableViewController: deleteButtonTappedDelegate {
+    func reloadOnDeletion() {
+        self.tagCollectionView.reloadData()
+    }
+    
+    
+}

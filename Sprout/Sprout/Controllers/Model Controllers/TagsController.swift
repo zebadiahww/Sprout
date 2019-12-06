@@ -19,8 +19,8 @@ class TagsController {
     
     var firebaseDB = Firestore.firestore()
     
-    func createTag(with title: String, category: String, userID: String, completion: @escaping(Bool) -> Void) {
-        let newTag = Tag(title: title, category: category, userIDs: [userID])
+    func createTag(with title: String, category: String, completion: @escaping(Bool) -> Void) {
+        let newTag = Tag(title: title, category: category, userIDs: nil)
         let ref = firebaseDB.collection(TagConstants.typeKey).document(newTag.uuid)
         ref.setData(newTag.documentDictionary) { (error) in
             if let error = error {
@@ -34,15 +34,22 @@ class TagsController {
         }
     }
     
-    func searchAndFetchTag(with searchTerm: String, completion: @escaping(Bool) -> Void) {
-        let query = firebaseDB.collection(TagConstants.typeKey).whereField(TagConstants.titleKey, arrayContains: searchTerm.lowercased())
+    func searchAndFetchTag(with searchTerm: String, category: String, completion: @escaping(Bool) -> Void) {
+        let query = firebaseDB.collection(TagConstants.typeKey).whereField(TagConstants.titleKey, isEqualTo: searchTerm).whereField(TagConstants.categoryKey, isEqualTo: category)
         query.getDocuments { (snapshot, error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 completion(false)
                 return
             }
-            for document in snapshot!.documents {
+            guard let documents = snapshot?.documents else { completion(false); return }
+            
+            if documents.count == 0 {
+                completion(false)
+                return
+            }
+            
+            for document in documents {
                 
                 if let fetchedTag = Tag(dictionary: document.data()){
                     self.tags.append(fetchedTag)
@@ -72,11 +79,10 @@ class TagsController {
         }
     }
     
-    func updateTag(tag: Tag, title: String, completion: @escaping(Bool) -> Void) {
-        let tagToUpdate: [String : Any] = [TagConstants.titleKey : title]
+    func updateTag(tag: Tag, UserID: String, completion: @escaping(Bool) -> Void) {
         let ref = firebaseDB.collection(TagConstants.typeKey).document(tag.uuid)
-        ref.updateData(tagToUpdate)
-        tag.title = title
+        tag.userIDs?.append(UserID)
+        ref.updateData(tag.documentDictionary)
         completion(true)
     }
     

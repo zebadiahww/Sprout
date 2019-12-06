@@ -12,7 +12,7 @@ struct TagConstants {
     static let typeKey = "Tag"
     fileprivate static let uuidKey = "uuid"
     static let titleKey = "title"
-    fileprivate static let categoryKey = "category"
+    static let categoryKey = "category"
     static let userIDsKey = "userIDs"
 }
 
