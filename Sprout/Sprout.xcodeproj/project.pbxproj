@@ -15,6 +15,7 @@
 		5510C79E2397170600B86ED3 /* EmailVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510C79D2397170600B86ED3 /* EmailVerifyViewController.swift */; };
 		5510C7A3239AFCF300B86ED3 /* Mentor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5510C7A2239AFCF300B86ED3 /* Mentor.storyboard */; };
 		5510C7A5239AFDD800B86ED3 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5510C7A4239AFDD800B86ED3 /* Account.storyboard */; };
+		5510C7A7239EAB3200B86ED3 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510C7A6239EAB3200B86ED3 /* AccountTableViewController.swift */; };
 		55BB57A12395C92D00962DA0 /* SignInSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */; };
 		55BB57A32395D39300962DA0 /* CreateProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BB57A22395D39300962DA0 /* CreateProfile.storyboard */; };
 		55BB57A52395D95300962DA0 /* CreateProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */; };
@@ -56,6 +57,7 @@
 		5510C79D2397170600B86ED3 /* EmailVerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerifyViewController.swift; sourceTree = "<group>"; };
 		5510C7A2239AFCF300B86ED3 /* Mentor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mentor.storyboard; sourceTree = "<group>"; };
 		5510C7A4239AFDD800B86ED3 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		5510C7A6239EAB3200B86ED3 /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInSignUp.storyboard; sourceTree = "<group>"; };
 		55BB57A22395D39300962DA0 /* CreateProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProfile.storyboard; sourceTree = "<group>"; };
 		55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				55BB57A62396C18200962DA0 /* PhotoSelectorViewController.swift */,
 				5510C79B2396E03F00B86ED3 /* UserCheckViewController.swift */,
 				5510C79D2397170600B86ED3 /* EmailVerifyViewController.swift */,
+				5510C7A6239EAB3200B86ED3 /* AccountTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 			files = (
 				85A024BA23997B9A009E8FC9 /* GoalListTableViewController.swift in Sources */,
 				85A024AB23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
+				5510C7A7239EAB3200B86ED3 /* AccountTableViewController.swift in Sources */,
 				19F050BF238C56E600858EDC /* Goal.swift in Sources */,
 				19F050BD238C53A700858EDC /* Request.swift in Sources */,
 				55BB57A72396C18200962DA0 /* PhotoSelectorViewController.swift in Sources */,
