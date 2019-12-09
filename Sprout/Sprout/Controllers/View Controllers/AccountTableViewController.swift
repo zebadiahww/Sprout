@@ -51,6 +51,7 @@ class AccountTableViewController: UITableViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initialViewSetup()
     }
     
     // MARK: - Actions
@@ -75,6 +76,8 @@ class AccountTableViewController: UITableViewController, UITextViewDelegate {
         accountTypeLabel.text = currentUser.isMentor ? "Mentor" : "Pupil"
         accountTypeLabel.layer.borderWidth = 1
         accountTypeLabel.layer.borderColor = UIColor.black.cgColor
+        generalNameLabel.textAlignment = .left
+        generalNameLabel.text = UserController.shared.currentUser?.name
         bioTextView.layer.borderWidth = 1
         bioTextView.layer.cornerRadius = bioTextView.frame.height/12
         InterestsExpertiseLabel.text = currentUser.isMentor ? "Expertise" : "Interests"
