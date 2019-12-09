@@ -13,9 +13,11 @@ class GoalsHomeViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var addGoalButton: UIButton!
     @IBOutlet weak var editGoalButton: UIButton!
+    @IBOutlet weak var dailyGoalsButton: UIButton!
+    @IBOutlet weak var longTermGoalsButton: UIButton!
     
-    @IBOutlet weak var goalsLabel: UILabel!
-    @IBOutlet weak var dailyLongTermLabel: UILabel!
+    @IBOutlet weak var pageIDLabel: UILabel!
+    @IBOutlet weak var goalTypeLabel: UILabel!
     @IBOutlet weak var progressRingView: UIView!
     
     
@@ -31,12 +33,35 @@ class GoalsHomeViewController: UIViewController {
     
     
     
+    //MARK: - Class Methods
+    func setupViews() {
+        pageIDLabel.font = UIFont(name: "Avenir", size: 14)
+        pageIDLabel.text = "Goals"
+        
+        goalTypeLabel.font = UIFont(name: "Avenir", size: 11)
+        goalTypeLabel.text = "Daily Goals"
+
+
+        dailyGoalsButton.layer.cornerRadius = dailyGoalsButton.frame.height/2
+        dailyGoalsButton.backgroundColor = .middleGreen
+        
+        longTermGoalsButton.layer.cornerRadius = longTermGoalsButton.frame.height/2
+        longTermGoalsButton.backgroundColor = .lightGreen
+    }
+    
+    
     
     //MARK: - Actions
     @IBAction func addGoalButtonTapped(_ sender: Any) {
     }
     
     @IBAction func editGoalButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func dailyGoalsButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func longTermGoalsButtonTapped(_ sender: Any) {
     }
     
     
