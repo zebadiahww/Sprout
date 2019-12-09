@@ -33,6 +33,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     @IBOutlet weak var bioBorder: UIView!
     @IBOutlet weak var occupationTextField: UITextField!
     @IBOutlet weak var occupationBorder: UIView!
+    @IBOutlet weak var occupationLabel: UILabel!
     @IBOutlet weak var InterestExpertiseLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var categoryTextField: UITextField!
@@ -48,7 +49,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     @IBOutlet weak var websiteBorder: UIView!
     @IBOutlet weak var saveButton: UIButton!
     
-    @IBOutlet weak var isMentorSegmentedColor:
+    @IBOutlet weak var isMentorSegmentedController:
     UISegmentedControl!
     var selectedImage: UIImage?
     
@@ -62,6 +63,9 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         categoryTextField.delegate = self
         addTagButton.isEnabled = false
         tagTextSearchBar.delegate = self
+        tagBorder.isHidden = true
+        self.occupationBorder.isHidden = true
+        self.occupationLabel.isHidden = true
         setupViews()
         
         //        TagsController.shared.tags = [
@@ -142,6 +146,17 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     }
     
     @IBAction func isMentorToggled(_ sender: Any) {
+         if isMentorSegmentedController.selectedSegmentIndex  == 0 {
+            self.occupationBorder.isHidden = true
+            self.occupationLabel.isHidden = true
+            self.InterestExpertiseLabel.text = "Interests"
+            self.descriptionLabel.text = "Pick a field of interest"
+         } else if isMentorSegmentedController.selectedSegmentIndex == 1 {
+            self.occupationBorder.isHidden = false
+            self.occupationLabel.isHidden = false
+            self.InterestExpertiseLabel.text = "Expertise"
+            self.descriptionLabel.text = "Pick an area of expertise"
+        }
     }
     
     
@@ -189,10 +204,12 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         guard let text = categoryTextField.text else { return }
         if !text.isEmpty {
             tagTextSearchBar.isHidden = false
+            tagBorder.isHidden = false
         }
         guard let tagText = tagTextSearchBar.text else { return }
         if !tagText.isEmpty && !text.isEmpty {
             tagTextSearchBar.isHidden = false
+            tagBorder.isHidden = false
             addTagButton.isEnabled = true
         }
     }
@@ -232,6 +249,23 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         
         self.websiteBorder.layer.cornerRadius = linkedInBorder.frame.height/12
         self.websiteBorder.layer.borderWidth = 1
+        
+        self.isMentorSegmentedController.backgroundColor = .middleGreen
+        
+        self.tagTextSearchBar.searchTextField.borderStyle = .none
+        tagTextSearchBar.backgroundColor = .clear
+        let glassIcon = self.tagTextSearchBar.searchTextField.leftView as? UIImageView
+        glassIcon?.image = glassIcon?.image?.withRenderingMode(.alwaysTemplate)
+        glassIcon?.tintColor = .softBlack
+        if let textfield = tagTextSearchBar.value(forKey: "searchField") as? UITextField {
+            textfield.backgroundColor = .white
+        }
+        
+        self.saveButton.setTitle("Save", for: .normal)
+        self.saveButton.layer.cornerRadius = saveButton.frame.height/2
+        self.saveButton.backgroundColor = .middleGreen
+        self.saveButton.titleLabel?.textColor = .white
+        
         
     }
     
