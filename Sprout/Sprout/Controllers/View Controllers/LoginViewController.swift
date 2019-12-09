@@ -13,12 +13,12 @@ class LoginViewController: UIViewController {
     
     var isSignUp: Bool = true
     var forgotPassword: Bool = false
-    var isMentor = false
+    var isMentor: Bool = false
+    var isVerified: Bool = false
     
     //MARK: - Outlets
     
     @IBOutlet weak var pageIDLabel: UILabel!
-    @IBOutlet weak var userTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var actionButton: UIButton!
@@ -54,7 +54,7 @@ class LoginViewController: UIViewController {
                     self.performSegue(withIdentifier: "toEmailVerify", sender: self)
                 }
             }
-        } else if isSignUp == false {
+        } else if isSignUp == false && isVerified == true {
             UserController.shared.manualSignIn(withEmail: email, password: password) { (success) in
                 if success {
                     self.performSegue(withIdentifier: "toHome", sender: self)
@@ -64,7 +64,12 @@ class LoginViewController: UIViewController {
             guard let email = emailTextField.text, !email.isEmpty else {return}
             UserController.shared.sendResetPasswordEmail(to: email) { (success) in
                 if success {
-                    //segue to next screen
+                }
+            }
+        } else if isVerified == false && isSignUp == false {
+            UserController.shared.manualSignIn(withEmail: email, password: password) { (success) in
+                if success {
+                    self.performSegue(withIdentifier: "toLoginVerifyEmail", sender: self)
                 }
             }
         }
@@ -120,7 +125,6 @@ class LoginViewController: UIViewController {
     
     func toggleToLogin() {
         self.pageIDLabel.text = "login"
-        self.userTypeSegmentedControl.isHidden = true
         self.actionButton.setTitle("Login", for: .normal)
         self.haveAnAccountLabel.text = "Don't have an account?"
         self.pageToggleButton.setTitle("Register now.", for: .normal)
@@ -132,7 +136,6 @@ class LoginViewController: UIViewController {
     
     func toggleToSignUp() {
         self.pageIDLabel.text = "sign up"
-        self.userTypeSegmentedControl.isHidden = false
         self.actionButton.setTitle("Sign Up", for: .normal)
         self.haveAnAccountLabel.text = "Already have an account?"
         self.pageToggleButton.setTitle("Login now.", for: .normal)

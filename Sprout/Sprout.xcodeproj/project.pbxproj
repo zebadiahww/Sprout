@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		199252AC239ACD180032ACF1 /* verifyEmail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199252AB239ACD180032ACF1 /* verifyEmail.storyboard */; };
+		199252AE239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199252AD239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift */; };
 		19F050B7238C526D00858EDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050B6238C526D00858EDC /* User.swift */; };
 		19F050BB238C538A00858EDC /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BA238C538A00858EDC /* Tag.swift */; };
 		19F050BD238C53A700858EDC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BC238C53A700858EDC /* Request.swift */; };
@@ -46,6 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		199252AB239ACD180032ACF1 /* verifyEmail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = verifyEmail.storyboard; sourceTree = "<group>"; };
+		199252AD239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVerifyEmailViewController.swift; sourceTree = "<group>"; };
 		19F050B6238C526D00858EDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = SOURCE_ROOT; };
 		19F050BA238C538A00858EDC /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = SOURCE_ROOT; };
 		19F050BC238C53A700858EDC /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = SOURCE_ROOT; };
@@ -161,6 +165,8 @@
 				85AFB577238C449000CA9A62 /* Main.storyboard */,
 				55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */,
 				55BB57A22395D39300962DA0 /* CreateProfile.storyboard */,
+				85A024B323997A8E009E8FC9 /* Goals.storyboard */,
+				199252AB239ACD180032ACF1 /* verifyEmail.storyboard */,
 				85A024B323997A8E009E8FC9 /* Pupil.storyboard */,
 				5510C7A2239AFCF300B86ED3 /* Mentor.storyboard */,
 				5510C7A4239AFDD800B86ED3 /* Account.storyboard */,
@@ -211,6 +217,7 @@
 				55BB57A62396C18200962DA0 /* PhotoSelectorViewController.swift */,
 				5510C79B2396E03F00B86ED3 /* UserCheckViewController.swift */,
 				5510C79D2397170600B86ED3 /* EmailVerifyViewController.swift */,
+				199252AD239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -322,6 +329,7 @@
 			files = (
 				85AFB57E238C449000CA9A62 /* LaunchScreen.storyboard in Resources */,
 				85AFB57B238C449000CA9A62 /* Assets.xcassets in Resources */,
+				199252AC239ACD180032ACF1 /* verifyEmail.storyboard in Resources */,
 				5510C7A5239AFDD800B86ED3 /* Account.storyboard in Resources */,
 				55BB57A32395D39300962DA0 /* CreateProfile.storyboard in Resources */,
 				85AFB579238C449000CA9A62 /* Main.storyboard in Resources */,
@@ -398,6 +406,7 @@
 				85AFB58E238C4D0700CA9A62 /* LoginViewController.swift in Sources */,
 				850C30A12399C838005F49D1 /* CategoryArray.swift in Sources */,
 				5510C79E2397170600B86ED3 /* EmailVerifyViewController.swift in Sources */,
+				199252AE239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift in Sources */,
 				85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */,
 				85AFB5C9238C5F1D00CA9A62 /* GoalController.swift in Sources */,
 				85AFB5C1238C5EE700CA9A62 /* UserController.swift in Sources */,
