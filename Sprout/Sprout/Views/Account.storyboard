@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,15 +37,6 @@
                                                         <action selector="editProfileButtonTapped:" destination="jjx-Ss-SAd" eventType="touchUpInside" id="dQP-k8-szz"/>
                                                     </connections>
                                                 </button>
-                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mo5-Wj-Yqo">
-                                                    <rect key="frame" x="124" y="30" width="166" height="166"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="Mo5-Wj-Yqo" secondAttribute="height" multiplier="1:1" id="ote-sL-no0"/>
-                                                    </constraints>
-                                                    <connections>
-                                                        <segue destination="mtN-kI-JNh" kind="embed" id="JGJ-zH-4mQ"/>
-                                                    </connections>
-                                                </containerView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pupil/mentor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjN-58-HpU">
                                                     <rect key="frame" x="158.5" y="184.5" width="97.5" height="20.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -226,10 +218,10 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qRh-Xb-jdF">
-                                                    <rect key="frame" x="31" y="833" width="352" height="60"/>
+                                                    <rect key="frame" x="31" y="833" width="352" height="50"/>
                                                     <subviews>
                                                         <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="9DC-wn-q2w">
-                                                            <rect key="frame" x="0.0" y="0.0" width="352" height="60"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="352" height="50"/>
                                                             <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </searchBar>
@@ -238,20 +230,20 @@
                                                     <constraints>
                                                         <constraint firstItem="9DC-wn-q2w" firstAttribute="centerX" secondItem="qRh-Xb-jdF" secondAttribute="centerX" id="X1q-22-Aq8"/>
                                                         <constraint firstItem="9DC-wn-q2w" firstAttribute="centerY" secondItem="qRh-Xb-jdF" secondAttribute="centerY" id="amT-18-hW4"/>
-                                                        <constraint firstAttribute="height" constant="60" id="azk-z6-Fpl"/>
+                                                        <constraint firstAttribute="height" constant="50" id="azk-z6-Fpl"/>
                                                         <constraint firstItem="9DC-wn-q2w" firstAttribute="height" secondItem="qRh-Xb-jdF" secondAttribute="height" id="fdy-gR-JXQ"/>
                                                         <constraint firstItem="9DC-wn-q2w" firstAttribute="width" secondItem="qRh-Xb-jdF" secondAttribute="width" id="nf2-g3-Are"/>
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVn-OT-7EV">
-                                                    <rect key="frame" x="125" y="908" width="164" height="30"/>
+                                                    <rect key="frame" x="125" y="898" width="164" height="30"/>
                                                     <state key="normal" title="+ Add Interest Category"/>
                                                     <connections>
                                                         <action selector="addTagButtonTapped:" destination="jjx-Ss-SAd" eventType="touchUpInside" id="tMP-dd-e4m"/>
                                                     </connections>
                                                 </button>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dUR-jQ-gzP">
-                                                    <rect key="frame" x="31" y="953" width="352" height="128"/>
+                                                    <rect key="frame" x="31" y="943" width="352" height="128"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="128" id="kpZ-h2-UBL"/>
@@ -289,12 +281,21 @@
                                                     </cells>
                                                 </collectionView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0C-fc-PWj">
-                                                    <rect key="frame" x="72.5" y="1181" width="269" height="30"/>
+                                                    <rect key="frame" x="72.5" y="1171" width="269" height="30"/>
                                                     <state key="normal" title="Save"/>
                                                     <connections>
                                                         <action selector="saveButtonTapped:" destination="jjx-Ss-SAd" eventType="touchUpInside" id="FkP-wB-HAM"/>
                                                     </connections>
                                                 </button>
+                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mo5-Wj-Yqo">
+                                                    <rect key="frame" x="124" y="30" width="166" height="165.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Mo5-Wj-Yqo" secondAttribute="height" multiplier="1:1" id="ote-sL-no0"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <segue destination="mtN-kI-JNh" kind="embed" id="JGJ-zH-4mQ"/>
+                                                    </connections>
+                                                </containerView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="qRh-Xb-jdF" firstAttribute="centerX" secondItem="7l7-pl-eo9" secondAttribute="centerX" id="0Z1-Z9-Hpe"/>
@@ -425,25 +426,25 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="107" height="168"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b51-Or-804">
-                                                                                <rect key="frame" x="0.5" y="0.0" width="106" height="106"/>
+                                                                                <rect key="frame" x="4.5" y="0.0" width="98" height="98"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" secondItem="b51-Or-804" secondAttribute="height" multiplier="1:1" id="ryF-GP-IBf"/>
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geX-CV-rCV">
-                                                                                <rect key="frame" x="36" y="107" width="35.5" height="17"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                <rect key="frame" x="40" y="99" width="27" height="16"/>
+                                                                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="11"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8m-W4-6Tf">
-                                                                                <rect key="frame" x="40.5" y="125" width="26.5" height="12"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                                <rect key="frame" x="35" y="116" width="37" height="20.5"/>
+                                                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6OK-R3-QdS">
-                                                                                <rect key="frame" x="0.5" y="138" width="106" height="30"/>
+                                                                                <rect key="frame" x="4.5" y="137.5" width="98" height="30.5"/>
                                                                                 <state key="normal" title="View Profile"/>
                                                                             </button>
                                                                         </subviews>
@@ -496,11 +497,12 @@
                     </tableView>
                     <connections>
                         <outlet property="InterestsExpertiseLabel" destination="t9W-sW-PQl" id="tjR-90-yMA"/>
-                        <outlet property="accountTypeLogo" destination="PjN-58-HpU" id="Qmb-9o-gb9"/>
+                        <outlet property="accountTypeLabel" destination="PjN-58-HpU" id="yRf-F5-aBs"/>
                         <outlet property="addTagButton" destination="FVn-OT-7EV" id="nLW-Bi-2Dd"/>
                         <outlet property="bioFieldLabel" destination="eqb-Nk-1qk" id="mNN-uM-ezI"/>
                         <outlet property="bioTextView" destination="Ytp-ZZ-aXh" id="neN-V4-hVh"/>
                         <outlet property="categoryBorder" destination="zeU-Ky-1af" id="VC4-ey-aOG"/>
+                        <outlet property="categoryPickerView" destination="8Pn-Dd-VIO" id="txJ-eC-tTD"/>
                         <outlet property="categoryTextField" destination="TdK-1H-vhL" id="bfM-5c-Pmn"/>
                         <outlet property="confirmPasswordFieldLabel" destination="haj-IN-iXZ" id="vdr-Go-W6K"/>
                         <outlet property="confirmPasswordTextField" destination="qH3-vZ-w3R" id="M31-Ve-87s"/>
@@ -543,11 +545,11 @@
             <objects>
                 <viewController id="mtN-kI-JNh" customClass="PhotoSelectorViewController" customModule="Sprout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sqj-hD-lbb">
-                        <rect key="frame" x="0.0" y="0.0" width="166" height="166"/>
+                        <rect key="frame" x="0.0" y="0.0" width="166" height="165.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4iC-Hw-BbK">
-                                <rect key="frame" x="0.0" y="0.0" width="166" height="166"/>
+                                <rect key="frame" x="0.0" y="0.0" width="166" height="165.5"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -557,11 +559,12 @@
                             <constraint firstItem="4iC-Hw-BbK" firstAttribute="top" secondItem="Sqj-hD-lbb" secondAttribute="top" id="nxF-wx-2Az"/>
                             <constraint firstAttribute="bottom" secondItem="4iC-Hw-BbK" secondAttribute="bottom" id="rjC-3j-ctK"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="kyd-C1-nnW"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBO-Ny-auS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948" y="232"/>
+            <point key="canvasLocation" x="961" y="177"/>
         </scene>
     </scenes>
     <resources>
