@@ -21,30 +21,8 @@
                                     <constraint firstAttribute="width" secondItem="ObU-cG-9in" secondAttribute="height" multiplier="109:139" id="elq-9a-JOZ"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="5W0-7S-8Dw">
-                                <rect key="frame" x="99.5" y="360.5" width="215" height="62.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(sign up / sign in)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBn-6x-h4E">
-                                        <rect key="frame" x="0.0" y="0.0" width="215" height="19.5"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aMV-WU-Gqk">
-                                        <rect key="frame" x="0.0" y="31.5" width="215" height="32"/>
-                                        <segments>
-                                            <segment title="AS A PUPIL"/>
-                                            <segment title="AS A MENTOR"/>
-                                        </segments>
-                                        <color key="selectedSegmentTintColor" red="0.39215686274509803" green="0.63921568627450975" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <connections>
-                                            <action selector="accountTypeValueChanged:" destination="aXP-tm-f2h" eventType="valueChanged" id="eQQ-ae-JC2"/>
-                                        </connections>
-                                    </segmentedControl>
-                                </subviews>
-                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GeX-Ck-vQ2" userLabel="emailBorder">
-                                <rect key="frame" x="22" y="463" width="370" height="51"/>
+                                <rect key="frame" x="22" y="420" width="370" height="51"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mza-5o-xFn">
                                         <rect key="frame" x="8" y="8" width="354" height="35"/>
@@ -78,6 +56,7 @@
                                         </state>
                                         <connections>
                                             <action selector="loginButtonTapped:" destination="aXP-tm-f2h" eventType="touchUpInside" id="87g-ld-vYk"/>
+                                            <segue destination="5nO-px-m5k" kind="presentation" identifier="toLoginVerifyEmail" id="YlS-8x-F2u"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="dDa-Wz-wyy">
@@ -107,7 +86,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PcQ-an-acq" userLabel="passwordBorder">
-                                <rect key="frame" x="22" y="549" width="370" height="51"/>
+                                <rect key="frame" x="22" y="506" width="370" height="51"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jNC-Gc-kEi" userLabel="Password Text Field">
                                         <rect key="frame" x="8" y="8" width="354" height="35"/>
@@ -127,21 +106,21 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Password  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8b-km-fRn">
-                                <rect key="frame" x="30" y="541.5" width="57.5" height="15.5"/>
+                                <rect key="frame" x="30" y="498.5" width="57.5" height="15.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Email  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9E-ux-Ok2">
-                                <rect key="frame" x="30" y="455.5" width="38.5" height="15.5"/>
+                                <rect key="frame" x="30" y="412.5" width="38.5" height="15.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxi-1y-DfV">
-                                <rect key="frame" x="269" y="608" width="123" height="30"/>
+                                <rect key="frame" x="269" y="565" width="123" height="30"/>
                                 <state key="normal" title="Forgot Password?">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -149,6 +128,12 @@
                                     <action selector="forgotPasswordButtonTapped:" destination="aXP-tm-f2h" eventType="touchUpInside" id="C7d-MZ-ZhI"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(sign up / sign in)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBn-6x-h4E">
+                                <rect key="frame" x="153" y="360.5" width="108.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -159,20 +144,20 @@
                             <constraint firstItem="rxi-1y-DfV" firstAttribute="trailing" secondItem="PcQ-an-acq" secondAttribute="trailing" id="8DL-wU-2OI"/>
                             <constraint firstItem="x8b-km-fRn" firstAttribute="leading" secondItem="PcQ-an-acq" secondAttribute="leading" constant="8" id="9aZ-Zq-UVJ"/>
                             <constraint firstItem="GeX-Ck-vQ2" firstAttribute="leading" secondItem="Qeg-WE-uRY" secondAttribute="leading" constant="22" id="G2t-8L-4yx"/>
-                            <constraint firstItem="5W0-7S-8Dw" firstAttribute="top" secondItem="ObU-cG-9in" secondAttribute="bottom" constant="55" id="Ijy-Gs-nfA"/>
+                            <constraint firstItem="CBn-6x-h4E" firstAttribute="centerX" secondItem="Qeg-WE-uRY" secondAttribute="centerX" id="JAZ-rs-zMO"/>
                             <constraint firstItem="GeX-Ck-vQ2" firstAttribute="centerX" secondItem="Qeg-WE-uRY" secondAttribute="centerX" id="Jxq-z3-aP7"/>
                             <constraint firstItem="Qeg-WE-uRY" firstAttribute="trailing" secondItem="GeX-Ck-vQ2" secondAttribute="trailing" constant="22" id="Kup-hF-QVQ"/>
                             <constraint firstItem="PcQ-an-acq" firstAttribute="leading" secondItem="Qeg-WE-uRY" secondAttribute="leading" constant="22" id="LxU-dK-vsX"/>
                             <constraint firstItem="S09-cv-wA6" firstAttribute="centerX" secondItem="Qeg-WE-uRY" secondAttribute="centerX" id="S7g-RO-DLm"/>
+                            <constraint firstItem="GeX-Ck-vQ2" firstAttribute="top" secondItem="CBn-6x-h4E" secondAttribute="bottom" constant="40" id="SHJ-Wf-ZSd"/>
                             <constraint firstItem="ObU-cG-9in" firstAttribute="width" secondItem="j2Z-9q-RMm" secondAttribute="width" multiplier="0.3" id="Vz6-o6-FOu"/>
                             <constraint firstItem="PcQ-an-acq" firstAttribute="top" secondItem="GeX-Ck-vQ2" secondAttribute="bottom" constant="35" id="YcX-o3-N7J"/>
                             <constraint firstItem="S09-cv-wA6" firstAttribute="width" secondItem="j2Z-9q-RMm" secondAttribute="width" multiplier="0.6" id="aq9-j8-pxX"/>
-                            <constraint firstItem="5W0-7S-8Dw" firstAttribute="centerX" secondItem="Qeg-WE-uRY" secondAttribute="centerX" id="f4h-W9-AVO"/>
+                            <constraint firstItem="CBn-6x-h4E" firstAttribute="top" secondItem="ObU-cG-9in" secondAttribute="bottom" constant="55" id="bab-Aw-Q28"/>
                             <constraint firstItem="Qeg-WE-uRY" firstAttribute="bottom" secondItem="S09-cv-wA6" secondAttribute="bottom" constant="50" id="lTS-st-3Pq"/>
                             <constraint firstItem="Qeg-WE-uRY" firstAttribute="trailing" secondItem="PcQ-an-acq" secondAttribute="trailing" constant="22" id="qJG-i7-yLh"/>
                             <constraint firstItem="g9E-ux-Ok2" firstAttribute="leading" secondItem="GeX-Ck-vQ2" secondAttribute="leading" constant="8" id="uAl-Qv-RKl"/>
                             <constraint firstItem="GeX-Ck-vQ2" firstAttribute="top" secondItem="g9E-ux-Ok2" secondAttribute="bottom" constant="-8" id="wkF-ng-Ckd"/>
-                            <constraint firstItem="GeX-Ck-vQ2" firstAttribute="top" secondItem="5W0-7S-8Dw" secondAttribute="bottom" constant="40" id="yee-uR-wyj"/>
                             <constraint firstItem="ObU-cG-9in" firstAttribute="centerY" secondItem="Qeg-WE-uRY" secondAttribute="centerY" multiplier="0.5" id="zjj-6g-TvK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qeg-WE-uRY"/>
@@ -189,7 +174,6 @@
                         <outlet property="passwordBorder" destination="PcQ-an-acq" id="6bC-ap-Taa"/>
                         <outlet property="passwordBorderLabel" destination="x8b-km-fRn" id="oXw-uq-Hwd"/>
                         <outlet property="passwordTextField" destination="jNC-Gc-kEi" id="eXy-fL-YnU"/>
-                        <outlet property="userTypeSegmentedControl" destination="aMV-WU-Gqk" id="83D-8V-NYE"/>
                         <segue destination="hVF-M9-1pe" kind="presentation" identifier="toEmailVerify" modalPresentationStyle="fullScreen" id="Tnz-UE-i2C"/>
                         <segue destination="9xB-0v-DhY" kind="presentation" identifier="toHome" modalPresentationStyle="fullScreen" id="rSy-v2-wLp"/>
                     </connections>
@@ -197,6 +181,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJN-CS-yeI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+        </scene>
+        <!--verifyEmail-->
+        <scene sceneID="hf6-nx-EkV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="verifyEmail" id="5nO-px-m5k" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BuF-IQ-AW6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="787" y="286"/>
         </scene>
         <!--EmailVerifyViewController-->
         <scene sceneID="a5e-U5-P0c">
