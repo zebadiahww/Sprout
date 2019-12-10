@@ -35,6 +35,8 @@
 		85A024B423997A8E009E8FC9 /* Pupil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A024B323997A8E009E8FC9 /* Pupil.storyboard */; };
 		85A024B823997B7A009E8FC9 /* GoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A024B723997B7A009E8FC9 /* GoalTableViewCell.swift */; };
 		85A024BA23997B9A009E8FC9 /* GoalListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A024B923997B9A009E8FC9 /* GoalListTableViewController.swift */; };
+		85A81AF523A002C300207E77 /* FindMentorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A81AF423A002C300207E77 /* FindMentorViewController.swift */; };
+		85A81AF723A019BF00207E77 /* ProgressRingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A81AF623A019BF00207E77 /* ProgressRingViewController.swift */; };
 		85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB571238C449000CA9A62 /* AppDelegate.swift */; };
 		85AFB574238C449000CA9A62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB573238C449000CA9A62 /* SceneDelegate.swift */; };
 		85AFB579238C449000CA9A62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AFB577238C449000CA9A62 /* Main.storyboard */; };
@@ -82,6 +84,8 @@
 		85A024B323997A8E009E8FC9 /* Pupil.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pupil.storyboard; sourceTree = "<group>"; };
 		85A024B723997B7A009E8FC9 /* GoalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTableViewCell.swift; sourceTree = "<group>"; };
 		85A024B923997B9A009E8FC9 /* GoalListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListTableViewController.swift; sourceTree = "<group>"; };
+		85A81AF423A002C300207E77 /* FindMentorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMentorViewController.swift; sourceTree = "<group>"; };
+		85A81AF623A019BF00207E77 /* ProgressRingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRingViewController.swift; sourceTree = "<group>"; };
 		85AFB56E238C449000CA9A62 /* Sprout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sprout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AFB571238C449000CA9A62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85AFB573238C449000CA9A62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 				85A024B923997B9A009E8FC9 /* GoalListTableViewController.swift */,
 				854D3EC7239EF718000A49D2 /* CreateGoalTableViewController.swift */,
 				854D3ECE239F12AD000A49D2 /* EditGoalTableViewController.swift */,
+				85A81AF623A019BF00207E77 /* ProgressRingViewController.swift */,
 			);
 			path = "Goals View Controllers";
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 			children = (
 				856A7395239EC05B006D8E26 /* MentorsTabTableViewController.swift */,
 				85C6E5F1239EC96A00F38E11 /* MentorCollectionViewCell.swift */,
+				85A81AF423A002C300207E77 /* FindMentorViewController.swift */,
 			);
 			path = "Pupil View Controller";
 			sourceTree = "<group>";
@@ -430,6 +436,7 @@
 				5510C79E2397170600B86ED3 /* EmailVerifyViewController.swift in Sources */,
 				199252AE239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift in Sources */,
 				85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */,
+				85A81AF523A002C300207E77 /* FindMentorViewController.swift in Sources */,
 				854D3EC8239EF718000A49D2 /* CreateGoalTableViewController.swift in Sources */,
 				85AFB5C9238C5F1D00CA9A62 /* GoalController.swift in Sources */,
 				85AFB5C1238C5EE700CA9A62 /* UserController.swift in Sources */,
@@ -438,6 +445,7 @@
 				85A024B823997B7A009E8FC9 /* GoalTableViewCell.swift in Sources */,
 				856A7396239EC05B006D8E26 /* MentorsTabTableViewController.swift in Sources */,
 				5510C79C2396E03F00B86ED3 /* UserCheckViewController.swift in Sources */,
+				85A81AF723A019BF00207E77 /* ProgressRingViewController.swift in Sources */,
 				85AFB596238C4F2600CA9A62 /* GoalsHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,9 +22,20 @@ class EditGoalTableViewController: UITableViewController {
         super.viewDidLoad()
 
     }
+    
+    
+    func setupViews() {
+        pageIDLabel.font = UIFont(name: "Avenir", size: 14)
+        saveButton.setTitle("Save", for: .normal)
+        saveButton.layer.cornerRadius = saveButton.frame.height/2
+        saveButton.backgroundColor = .middleGreen
+        saveButton.titleLabel?.textColor = .white
+    }
 
     // MARK: - Actions
     @IBAction func saveButtonTapped(_ sender: Any) {
+        
+        navigationController?.popViewController(animated: true)
     }
     
 

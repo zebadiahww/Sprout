@@ -10,7 +10,7 @@ import Foundation
 
 struct TagConstants {
     static let typeKey = "Tag"
-    fileprivate static let uuidKey = "uuid"
+    static let uuidKey = "uuid"
     static let titleKey = "title"
     static let categoryKey = "category"
     static let userIDsKey = "userIDs"

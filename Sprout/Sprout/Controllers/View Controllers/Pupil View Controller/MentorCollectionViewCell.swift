@@ -19,22 +19,21 @@ class MentorCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Properties
     
+    
     func updateViews() {
         profileImage.layer.cornerRadius = profileImage.frame.height/2
         
         viewProfileButton.layer.cornerRadius = viewProfileButton.frame.height/2
         viewProfileButton.backgroundColor = .middleGreen
         viewProfileButton.titleLabel?.textColor = .white
+        
     }
     
     
     
     //MARK: - Actions
     @IBAction func viewProfileButtonTapped(_ sender: Any) {
-        //if segue.identifier == "" {
-        // let destinationVC = segue.destination as?
-        //destinationVC.delegate = self
-        //      = destinationVC
+       // perform segue
     }
     
 }

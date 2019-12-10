@@ -26,6 +26,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     var selectedCategory: String?
     
     //MARK: - Outlets
+    @IBOutlet weak var profileImage: UIView!
     @IBOutlet weak var pageIDLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var nameBorder: UIView!
@@ -265,6 +266,9 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         self.saveButton.layer.cornerRadius = saveButton.frame.height/2
         self.saveButton.backgroundColor = .middleGreen
         self.saveButton.titleLabel?.textColor = .white
+        
+        profileImage.layer.cornerRadius = profileImage.frame.height/2
+
         
         
     }

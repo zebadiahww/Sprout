@@ -53,9 +53,11 @@ class GoalsHomeViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func addGoalButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "toCreateGoalVC", sender: self)
     }
     
     @IBAction func editGoalButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "toEditGoalsVC", sender: self)
     }
     
     @IBAction func dailyGoalsButtonTapped(_ sender: Any) {
@@ -64,14 +66,4 @@ class GoalsHomeViewController: UIViewController {
     @IBAction func longTermGoalsButtonTapped(_ sender: Any) {
     }
     
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    
-
-}
+} // END OF CLASS
