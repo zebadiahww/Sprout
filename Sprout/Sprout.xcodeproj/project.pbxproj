@@ -24,6 +24,10 @@
 		55BB57A72396C18200962DA0 /* PhotoSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BB57A62396C18200962DA0 /* PhotoSelectorViewController.swift */; };
 		850C30A12399C838005F49D1 /* CategoryArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C30A02399C838005F49D1 /* CategoryArray.swift */; };
 		853B92A623958B4C00D3E5F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 853B92A523958B4C00D3E5F0 /* GoogleService-Info.plist */; };
+		854D3EC8239EF718000A49D2 /* CreateGoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3EC7239EF718000A49D2 /* CreateGoalTableViewController.swift */; };
+		854D3ECA239F11F9000A49D2 /* EditGoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3EC9239F11F9000A49D2 /* EditGoalTableViewCell.swift */; };
+		854D3ECF239F12AD000A49D2 /* EditGoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3ECE239F12AD000A49D2 /* EditGoalTableViewController.swift */; };
+		856A7396239EC05B006D8E26 /* MentorsTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856A7395239EC05B006D8E26 /* MentorsTabTableViewController.swift */; };
 		8592EA2423985105001FD702 /* SkillsTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8592EA2323985105001FD702 /* SkillsTagCollectionViewCell.swift */; };
 		85A024AB23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A024AA23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift */; };
 		85A024AD239969C0009E8FC9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85A024AC239969C0009E8FC9 /* Colors.xcassets */; };
@@ -31,7 +35,8 @@
 		85A024B423997A8E009E8FC9 /* Pupil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A024B323997A8E009E8FC9 /* Pupil.storyboard */; };
 		85A024B823997B7A009E8FC9 /* GoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A024B723997B7A009E8FC9 /* GoalTableViewCell.swift */; };
 		85A024BA23997B9A009E8FC9 /* GoalListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A024B923997B9A009E8FC9 /* GoalListTableViewController.swift */; };
-		85A024BC23997F08009E8FC9 /* EditGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A024BB23997F08009E8FC9 /* EditGoalViewController.swift */; };
+		85A81AF523A002C300207E77 /* FindMentorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A81AF423A002C300207E77 /* FindMentorViewController.swift */; };
+		85A81AF723A019BF00207E77 /* ProgressRingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A81AF623A019BF00207E77 /* ProgressRingViewController.swift */; };
 		85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB571238C449000CA9A62 /* AppDelegate.swift */; };
 		85AFB574238C449000CA9A62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB573238C449000CA9A62 /* SceneDelegate.swift */; };
 		85AFB579238C449000CA9A62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AFB577238C449000CA9A62 /* Main.storyboard */; };
@@ -39,11 +44,11 @@
 		85AFB57E238C449000CA9A62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AFB57C238C449000CA9A62 /* LaunchScreen.storyboard */; };
 		85AFB58E238C4D0700CA9A62 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB58D238C4D0700CA9A62 /* LoginViewController.swift */; };
 		85AFB596238C4F2600CA9A62 /* GoalsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB595238C4F2600CA9A62 /* GoalsHomeViewController.swift */; };
-		85AFB5A3238C50B000CA9A62 /* PupilProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5A2238C50B000CA9A62 /* PupilProfileViewController.swift */; };
 		85AFB5C1238C5EE700CA9A62 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5C0238C5EE700CA9A62 /* UserController.swift */; };
 		85AFB5C5238C5EFF00CA9A62 /* TagsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5C4238C5EFF00CA9A62 /* TagsController.swift */; };
 		85AFB5C7238C5F1000CA9A62 /* RequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5C6238C5F1000CA9A62 /* RequestController.swift */; };
 		85AFB5C9238C5F1D00CA9A62 /* GoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFB5C8238C5F1D00CA9A62 /* GoalController.swift */; };
+		85C6E5F2239EC96A00F38E11 /* MentorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6E5F1239EC96A00F38E11 /* MentorCollectionViewCell.swift */; };
 		F27115270416BC0065962AD3 /* Pods_Sprout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4748504B035A5B323388EC /* Pods_Sprout.framework */; };
 		F312A56329994F1CC6CABC29 /* Pods_Sprout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389E15EEAE894E9970D3B5E0 /* Pods_Sprout.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +73,10 @@
 		55BB57A62396C18200962DA0 /* PhotoSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorViewController.swift; sourceTree = "<group>"; };
 		850C30A02399C838005F49D1 /* CategoryArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryArray.swift; path = "Sprout/Controllers/View Controllers/Goals View Controllers/CategoryArray.swift"; sourceTree = SOURCE_ROOT; };
 		853B92A523958B4C00D3E5F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		854D3EC7239EF718000A49D2 /* CreateGoalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalTableViewController.swift; sourceTree = "<group>"; };
+		854D3EC9239F11F9000A49D2 /* EditGoalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGoalTableViewCell.swift; sourceTree = "<group>"; };
+		854D3ECE239F12AD000A49D2 /* EditGoalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGoalTableViewController.swift; sourceTree = "<group>"; };
+		856A7395239EC05B006D8E26 /* MentorsTabTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorsTabTableViewController.swift; sourceTree = "<group>"; };
 		8592EA2323985105001FD702 /* SkillsTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		85A024AA23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		85A024AC239969C0009E8FC9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -75,7 +84,8 @@
 		85A024B323997A8E009E8FC9 /* Pupil.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pupil.storyboard; sourceTree = "<group>"; };
 		85A024B723997B7A009E8FC9 /* GoalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTableViewCell.swift; sourceTree = "<group>"; };
 		85A024B923997B9A009E8FC9 /* GoalListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListTableViewController.swift; sourceTree = "<group>"; };
-		85A024BB23997F08009E8FC9 /* EditGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGoalViewController.swift; sourceTree = "<group>"; };
+		85A81AF423A002C300207E77 /* FindMentorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMentorViewController.swift; sourceTree = "<group>"; };
+		85A81AF623A019BF00207E77 /* ProgressRingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRingViewController.swift; sourceTree = "<group>"; };
 		85AFB56E238C449000CA9A62 /* Sprout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sprout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AFB571238C449000CA9A62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85AFB573238C449000CA9A62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,11 +95,11 @@
 		85AFB57F238C449000CA9A62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85AFB58D238C4D0700CA9A62 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		85AFB595238C4F2600CA9A62 /* GoalsHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsHomeViewController.swift; sourceTree = "<group>"; };
-		85AFB5A2238C50B000CA9A62 /* PupilProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupilProfileViewController.swift; sourceTree = "<group>"; };
 		85AFB5C0238C5EE700CA9A62 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		85AFB5C4238C5EFF00CA9A62 /* TagsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsController.swift; sourceTree = "<group>"; };
 		85AFB5C6238C5F1000CA9A62 /* RequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestController.swift; sourceTree = "<group>"; };
 		85AFB5C8238C5F1D00CA9A62 /* GoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalController.swift; sourceTree = "<group>"; };
+		85C6E5F1239EC96A00F38E11 /* MentorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorCollectionViewCell.swift; sourceTree = "<group>"; };
 		88AA0FC379E4A57B0DB10459 /* Pods-Sprout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sprout.debug.xcconfig"; path = "Target Support Files/Pods-Sprout/Pods-Sprout.debug.xcconfig"; sourceTree = "<group>"; };
 		9C4748504B035A5B323388EC /* Pods_Sprout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sprout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,6 +124,15 @@
 			);
 			name = Frameworks;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		854D3ECD239F1213000A49D2 /* GoalCustom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				854D3EC9239F11F9000A49D2 /* EditGoalTableViewCell.swift */,
+				85A024B723997B7A009E8FC9 /* GoalTableViewCell.swift */,
+			);
+			path = "GoalCustom Cells";
 			sourceTree = "<group>";
 		};
 		85AFB565238C449000CA9A62 = {
@@ -167,7 +186,6 @@
 				85AFB577238C449000CA9A62 /* Main.storyboard */,
 				55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */,
 				55BB57A22395D39300962DA0 /* CreateProfile.storyboard */,
-				85A024B323997A8E009E8FC9 /* Goals.storyboard */,
 				199252AB239ACD180032ACF1 /* verifyEmail.storyboard */,
 				85A024B323997A8E009E8FC9 /* Pupil.storyboard */,
 				5510C7A2239AFCF300B86ED3 /* Mentor.storyboard */,
@@ -237,10 +255,12 @@
 		85AFB599238C4F8300CA9A62 /* Goals View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				854D3ECD239F1213000A49D2 /* GoalCustom Cells */,
 				85AFB595238C4F2600CA9A62 /* GoalsHomeViewController.swift */,
-				85A024B723997B7A009E8FC9 /* GoalTableViewCell.swift */,
 				85A024B923997B9A009E8FC9 /* GoalListTableViewController.swift */,
-				85A024BB23997F08009E8FC9 /* EditGoalViewController.swift */,
+				854D3EC7239EF718000A49D2 /* CreateGoalTableViewController.swift */,
+				854D3ECE239F12AD000A49D2 /* EditGoalTableViewController.swift */,
+				85A81AF623A019BF00207E77 /* ProgressRingViewController.swift */,
 			);
 			path = "Goals View Controllers";
 			sourceTree = "<group>";
@@ -248,7 +268,9 @@
 		85AFB59F238C4FFB00CA9A62 /* Pupil View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				85AFB5A2238C50B000CA9A62 /* PupilProfileViewController.swift */,
+				856A7395239EC05B006D8E26 /* MentorsTabTableViewController.swift */,
+				85C6E5F1239EC96A00F38E11 /* MentorCollectionViewCell.swift */,
+				85A81AF423A002C300207E77 /* FindMentorViewController.swift */,
 			);
 			path = "Pupil View Controller";
 			sourceTree = "<group>";
@@ -394,10 +416,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				85A024BA23997B9A009E8FC9 /* GoalListTableViewController.swift in Sources */,
+				85C6E5F2239EC96A00F38E11 /* MentorCollectionViewCell.swift in Sources */,
 				85A024AB23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				5510C7A7239EAB3200B86ED3 /* AccountTableViewController.swift in Sources */,
 				19F050BF238C56E600858EDC /* Goal.swift in Sources */,
 				19F050BD238C53A700858EDC /* Request.swift in Sources */,
+				854D3ECF239F12AD000A49D2 /* EditGoalTableViewController.swift in Sources */,
 				55BB57A72396C18200962DA0 /* PhotoSelectorViewController.swift in Sources */,
 				19F050B7238C526D00858EDC /* User.swift in Sources */,
 				55BB57A52395D95300962DA0 /* CreateProfileTableViewController.swift in Sources */,
@@ -412,14 +436,17 @@
 				5510C79E2397170600B86ED3 /* EmailVerifyViewController.swift in Sources */,
 				199252AE239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift in Sources */,
 				85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */,
+				85A81AF523A002C300207E77 /* FindMentorViewController.swift in Sources */,
+				854D3EC8239EF718000A49D2 /* CreateGoalTableViewController.swift in Sources */,
 				85AFB5C9238C5F1D00CA9A62 /* GoalController.swift in Sources */,
 				85AFB5C1238C5EE700CA9A62 /* UserController.swift in Sources */,
 				85AFB574238C449000CA9A62 /* SceneDelegate.swift in Sources */,
-				85AFB5A3238C50B000CA9A62 /* PupilProfileViewController.swift in Sources */,
+				854D3ECA239F11F9000A49D2 /* EditGoalTableViewCell.swift in Sources */,
 				85A024B823997B7A009E8FC9 /* GoalTableViewCell.swift in Sources */,
+				856A7396239EC05B006D8E26 /* MentorsTabTableViewController.swift in Sources */,
 				5510C79C2396E03F00B86ED3 /* UserCheckViewController.swift in Sources */,
+				85A81AF723A019BF00207E77 /* ProgressRingViewController.swift in Sources */,
 				85AFB596238C4F2600CA9A62 /* GoalsHomeViewController.swift in Sources */,
-				85A024BC23997F08009E8FC9 /* EditGoalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

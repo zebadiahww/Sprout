@@ -22,8 +22,12 @@ class GoalTableViewCell: UITableViewCell {
     //MARK: - Properties
     
     
-    
-    
+    //MARK: Class Methods
+    func updateViews() {
+        finishButton.layer.cornerRadius = finishButton.frame.height/2
+        finishButton.backgroundColor = .middleGreen
+        finishButton.titleLabel?.textColor = .white
+    }
     
     
     //MARK: - Actions

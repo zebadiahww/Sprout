@@ -9,11 +9,14 @@
 import UIKit
 
 struct UserConstants {
-    fileprivate static let uuidKey = "uuid"
+    static let typeKey = "User"
+    static let uuidKey = "uuid"
     fileprivate static let nameKey = "name"
     fileprivate static let bioKey = "bio"
     fileprivate static let isMentorKey = "isMentor"
     fileprivate static let occupationKey = "occupation"
+    static let pupilSearchDictKey = "pupilSearchDict"
+    static let mentorSearchDictKey = "mentorSearchDict"
     fileprivate static let linkedInKey = "linkedInURL"
     fileprivate static let websiteKey = "websiteURL"
     fileprivate static let blockedUsersKey = "blockedUsers"
@@ -27,7 +30,9 @@ class User {
     var isMentor: Bool
     var profilePicture: UIImage?
     var pupils: [User : Tag]?
+    var pupilSearchDict: [String : String]?
     var mentors: [User : Tag]?
+    var mentorSearchDict: [String : String]?
     var tags: [Tag]?
     var goals: [Goal]?
     var requests: [Request]?
@@ -44,6 +49,12 @@ class User {
         if let occupation = occupation {
             dict.updateValue(occupation, forKey: UserConstants.occupationKey)
         }
+        if let pupilSearchDict = pupilSearchDict {
+            dict.updateValue(pupilSearchDict, forKey: UserConstants.pupilSearchDictKey)
+        }
+        if let mentorSearchDict = mentorSearchDict {
+            dict.updateValue(mentorSearchDict, forKey: UserConstants.mentorSearchDictKey)
+        }
         if let linkedInURL = linkedInURL {
             dict.updateValue(linkedInURL, forKey: UserConstants.linkedInKey)
         }
@@ -57,7 +68,7 @@ class User {
         return dict
     }
     
-    init(uuid: String, name: String, bio: String, occupation: String?, isMentor: Bool, profileImage: UIImage? = nil, pupils: [User : Tag]? = nil, mentors: [User : Tag]? = nil, tags: [Tag]? = nil, goals: [Goal]? = nil, request: [Request]? = nil, linkedInURL: String?, website: String?, blockedUsers: [String]? = nil) {
+    init(uuid: String, name: String, bio: String, occupation: String?, isMentor: Bool, profileImage: UIImage? = nil, pupils: [User : Tag]? = nil, pupilSearchDict: [String : String]? = nil, mentors: [User : Tag]? = nil, mentorSearchDict: [String : String]? = nil, tags: [Tag]? = nil, goals: [Goal]? = nil, request: [Request]? = nil, linkedInURL: String?, website: String?, blockedUsers: [String]? = nil) {
         
         self.uuid = uuid
         self.name = name
@@ -66,7 +77,9 @@ class User {
         self.isMentor = isMentor
         self.profilePicture = profileImage
         self.pupils = pupils
+        self.pupilSearchDict = pupilSearchDict
         self.mentors = mentors
+        self.mentorSearchDict = mentorSearchDict
         self.tags = tags
         self.requests = request
         self.linkedInURL = linkedInURL
@@ -83,11 +96,13 @@ extension User {
             let isMentor = dictionary[UserConstants.isMentorKey] as? Bool
             else {return nil}
         let occupation = dictionary[UserConstants.occupationKey] as? String
+        let pupilSearchDict = dictionary[UserConstants.pupilSearchDictKey] as? [String : String]
+        let mentorSearchDict = dictionary[UserConstants.mentorSearchDictKey] as? [String : String]
         let linkedInURL = dictionary[UserConstants.linkedInKey] as? String
         let website = dictionary[UserConstants.websiteKey] as? String
         let blockedUsers = dictionary[UserConstants.blockedUsersKey] as? [String]
         
-        self.init(uuid: uuid, name: name, bio: bio, occupation: occupation, isMentor: isMentor, linkedInURL: linkedInURL, website: website, blockedUsers: blockedUsers)
+        self.init(uuid: uuid, name: name, bio: bio, occupation: occupation, isMentor: isMentor, pupilSearchDict: pupilSearchDict, mentorSearchDict: mentorSearchDict, linkedInURL: linkedInURL, website: website, blockedUsers: blockedUsers)
     }
 }
 
