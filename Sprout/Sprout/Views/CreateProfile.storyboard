@@ -484,6 +484,7 @@
                         <outlet property="occupationLabel" destination="mE6-hv-JMk" id="ZSp-pT-WzK"/>
                         <outlet property="occupationTextField" destination="1ey-ah-GSh" id="OCc-xb-0DP"/>
                         <outlet property="pageIDLabel" destination="lze-Pp-YQQ" id="LFZ-ZX-11p"/>
+                        <outlet property="profileImage" destination="Z2B-S8-e34" id="jkF-ve-Mf6"/>
                         <outlet property="saveButton" destination="JLe-x7-TL2" id="5YU-Et-jfJ"/>
                         <outlet property="tagBorder" destination="tY3-jf-HVx" id="nmm-1P-F1l"/>
                         <outlet property="tagCollectionView" destination="78c-Lg-39S" id="KFH-mv-z6l"/>

@@ -15,6 +15,8 @@ class UserController {
     
     var currentUser: User?
     
+    var searchedUsers: [User] = []
+    
     var firebaseDB = Firestore.firestore()
     
     //Creates a user and sends verification email
@@ -43,6 +45,141 @@ class UserController {
                 self.currentUser = newUser
                 completion(true)
             }
+        }
+    }
+    
+    func fetchUser(uuid: String, completion: @escaping(User?) ->Void) {
+        let query = firebaseDB.collection(UserConstants.typeKey).whereField(UserConstants.uuidKey, isEqualTo: uuid)
+        query.getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                completion(nil)
+                return
+            }
+            guard let documents = snapshot?.documents else { completion(nil); return }
+            
+            if documents.count == 0 {
+                completion(nil)
+                return
+            }
+            
+            var fetchedUser: User?
+            for document in documents {
+                if let user = User(dictionary: document.data()) {
+                    fetchedUser = user
+                }
+            }
+            completion(fetchedUser)
+        }
+    }
+    
+    func fetchMentorbyCategory(category: String, completion: @escaping(Bool) -> Void) {
+        let query = firebaseDB.collection(TagConstants.typeKey).whereField(TagConstants.categoryKey, isEqualTo: category)
+        query.getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                completion(false)
+                return
+            }
+            guard let documents = snapshot?.documents else { completion(false); return }
+            
+            if documents.count == 0 {
+                completion(false)
+                return
+            }
+            var mentors: [User] = []
+            
+            for document in documents {
+                guard let userIDs = document.value(forKey: TagConstants.userIDsKey) as? [String] else { return }
+                for uuid in userIDs {
+                    self.fetchUser(uuid: uuid) { (results) in
+                        if let results = results {
+                            mentors.append(results)
+                        }
+                    }
+                }
+            }
+            self.searchedUsers = mentors
+            completion(true)
+        }
+    }
+    
+    func fetchMentorsBySearchTerm(searchTerm: String, completion: @escaping(Bool) -> Void) {
+        let query = firebaseDB.collection(TagConstants.typeKey).whereField(TagConstants.categoryKey, isEqualTo: searchTerm).whereField(TagConstants.titleKey, isEqualTo: searchTerm)
+        query.getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                completion(false)
+                return
+            }
+            guard let documents = snapshot?.documents else { completion(false); return }
+            
+            if documents.count == 0 {
+                completion(false)
+                return
+            }
+            var mentors: [User] = []
+            
+            for document in documents {
+                guard let userIDs = document.value(forKey: TagConstants.userIDsKey) as? [String] else { return }
+                for uuid in userIDs {
+                    self.fetchUser(uuid: uuid) { (results) in
+                        if let results = results {
+                            mentors.append(results)
+                        }
+                    }
+                }
+            }
+            self.searchedUsers = mentors
+            completion(true)
+        }
+    }
+    
+    func fetchMentorForPupil(user: String, completion: @escaping(Bool) -> Void) {
+        guard let user = UserController.shared.currentUser,
+            let mentors = user.mentorSearchDict else {return}
+        var fetchedUsers: [User] = []
+        var fetchedTags: [Tag] = []
+        for mentor in mentors {
+            //            let query = firebaseDB.collection(UserConstants.typeKey).whereField(UserConstants.uuidKey, isEqualTo: mentor.key )
+            self.fetchUser(uuid: mentor.key) { (result) in
+                if let result = result {
+                    fetchedUsers.append(result)
+                }
+            }
+            TagsController.shared.fetchTagsWithTagID(uuid: mentor.value) { (result) in
+                if let result = result {
+                    fetchedTags.append(result)
+                }
+            }
+            
+            for num in 0...(fetchedUsers.count - 1) {
+                user.mentors?.updateValue(fetchedTags[num], forKey: fetchedUsers[num])
+            }
+        }
+    }
+    
+    func fetchPupilsForMentor(completion: @escaping(Bool) -> Void) {
+        guard let user = UserController.shared.currentUser,
+            let pupils = user.pupilSearchDict else {return}
+        var fetchedUsers: [User] = []
+        var fetchedTags: [Tag] = []
+        for pupil in pupils {
+            self.fetchUser(uuid: pupil.key) { (result) in
+                if let result = result {
+                    fetchedUsers.append(result)
+                }
+            }
+            TagsController.shared.fetchTagsWithTagID(uuid: pupil.value) { (result) in
+                if let result = result {
+                    fetchedTags.append(result)
+                }
+            }
+            
+            for num in 0...(fetchedUsers.count - 1) {
+                user.pupils?.updateValue(fetchedTags[num], forKey: fetchedUsers[num])
+            }
+            
         }
     }
     
@@ -193,7 +330,7 @@ class UserController {
             completion(true)
         }
     }
-
+    
     func updateUser(with name: String, bio: String, completion: @escaping(Bool) -> Void) {
         guard let userID = currentUser?.uuid else { return }
         firebaseDB.collection("users").document(userID).setData(["name" : name, "bio" : bio]) { (error) in
