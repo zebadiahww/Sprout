@@ -28,7 +28,8 @@ class GoalListTableViewController: UITableViewController {
         let goal = GoalController.shared.goals[indexPath.row]
         cell.goalTitleLabel.text = goal.title
         cell.isPublicLabel.text = "\(goal.isPrivate)"
-        cell.iconImageView.image = nil //figure this out
+        cell.iconImageView.image = nil // fix this
+        
 
         return cell
     }
@@ -46,25 +47,10 @@ class GoalListTableViewController: UITableViewController {
                 }
             }
             
-            
-            
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             
         }
     }
     
-
-
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    
-
-}
+} // END OF CLASS
