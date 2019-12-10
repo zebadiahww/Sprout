@@ -87,16 +87,19 @@ class UserController {
                 completion(false)
                 return
             }
+            var mentors: [User] = []
+            
             for document in documents {
                 guard let userIDs = document.value(forKey: TagConstants.userIDsKey) as? [String] else { return }
                 for uuid in userIDs {
                     self.fetchUser(uuid: uuid) { (results) in
                         if let results = results {
-                            self.searchedUsers = results
+                            mentors.append(results)
                         }
                     }
                 }
             }
+            self.searchedUsers = mentors
             completion(true)
         }
     }
@@ -115,16 +118,19 @@ class UserController {
                 completion(false)
                 return
             }
+            var mentors: [User] = []
+            
             for document in documents {
                 guard let userIDs = document.value(forKey: TagConstants.userIDsKey) as? [String] else { return }
                 for uuid in userIDs {
                     self.fetchUser(uuid: uuid) { (results) in
                         if let results = results {
-                            self.searchedUsers = results
+                            mentors.append(results)
                         }
                     }
                 }
             }
+            self.searchedUsers = mentors
             completion(true)
         }
     }
