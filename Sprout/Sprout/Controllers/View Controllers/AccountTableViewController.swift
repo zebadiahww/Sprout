@@ -8,14 +8,14 @@
 
 import UIKit
 
-class AccountTableViewController: UITableViewController {
+class AccountTableViewController: UITableViewController, UITextViewDelegate, PhotoSelectorViewControllerDelegate {
+    
+    
     
     // MARK: - Properties
-    
-    @IBOutlet weak var editProfileButton: UIButton!
+
     @IBOutlet weak var photoSelectorView: UIView!
     @IBOutlet weak var editPhotoButton: UIButton!
-    @IBOutlet weak var accountTypeLogo: UILabel!
     @IBOutlet weak var generalNameLabel: UILabel!
     @IBOutlet weak var personalDetailFieldsStackView: UIStackView!
     @IBOutlet weak var nameFieldLabel: UILabel!
@@ -34,28 +34,24 @@ class AccountTableViewController: UITableViewController {
     @IBOutlet weak var pickACategoryLabel: UILabel!
     @IBOutlet weak var categoryBorder: UIView!
     @IBOutlet weak var categoryTextField: UITextField!
+    @IBOutlet var categoryPickerView: UIPickerView!
     @IBOutlet weak var tagBorder: UIView!
     @IBOutlet weak var tagSearchBar: UISearchBar!
     @IBOutlet weak var addTagButton: UIButton!
     @IBOutlet weak var tagCollectionView: UICollectionView!
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var infoCell: UITableViewCell!
-    @IBOutlet weak var myGoalsLabel: UILabel!
-    @IBOutlet weak var goalsCollectionView: UICollectionView!
-    @IBOutlet weak var seeAllGoalsButton: UIButton!
-    @IBOutlet weak var myMentorsLabel: UILabel!
-    @IBOutlet weak var mentorPupilCollectionView: UICollectionView!
     
-    
+    var selectedImage: UIImage?
 
+    // MARK: - LifeCycle Functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        initialViewSetup()
     }
     
     // MARK: - Actions
-    
-    @IBAction func editProfileButtonTapped(_ sender: UIButton) {
-    }
+
     
     @IBAction func editPhotoButtonTapped(_ sender: UIButton) {
     }
@@ -67,5 +63,31 @@ class AccountTableViewController: UITableViewController {
     }
     
     
+    // MARK: - View Setup Functions
+    func initialViewSetup() {
+        guard let currentUser = UserController.shared.currentUser else {return}
+        photoSelectorView.layer.cornerRadius = photoSelectorView.frame.height/2
+        generalNameLabel.textAlignment = .left
+        generalNameLabel.text = UserController.shared.currentUser?.name
+        bioTextView.layer.borderWidth = 1
+        bioTextView.layer.cornerRadius = bioTextView.frame.height/12
+        InterestsExpertiseLabel.text = currentUser.isMentor ? "Expertise" : "Interests"
+        categoryBorder.layer.cornerRadius = categoryBorder.frame.height/12
+        categoryBorder.layer.borderWidth = 1
+        categoryBorder.layer.borderColor = UIColor.black.cgColor
+        tagBorder.layer.borderWidth = 1
+        tagBorder.layer.borderColor = UIColor.black.cgColor
+        saveButton.layer.cornerRadius = saveButton.frame.height/2
+    }
+    
+    func setViewForProfileDefault() {
+    }
+    
+    func setViewForProfileEdit() {
+    }
+    
+    func photoSelectorViewControllerSelected(image: UIImage) {
+        selectedImage = image
+    }
     
 }
