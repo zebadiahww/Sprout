@@ -18,6 +18,7 @@
 		5510C7A3239AFCF300B86ED3 /* Mentor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5510C7A2239AFCF300B86ED3 /* Mentor.storyboard */; };
 		5510C7A5239AFDD800B86ED3 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5510C7A4239AFDD800B86ED3 /* Account.storyboard */; };
 		5510C7A7239EAB3200B86ED3 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510C7A6239EAB3200B86ED3 /* AccountTableViewController.swift */; };
+		55449EA623A022D20020476E /* ViewProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55449EA523A022D20020476E /* ViewProfileTableViewController.swift */; };
 		55BB57A12395C92D00962DA0 /* SignInSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */; };
 		55BB57A32395D39300962DA0 /* CreateProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BB57A22395D39300962DA0 /* CreateProfile.storyboard */; };
 		55BB57A52395D95300962DA0 /* CreateProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */; };
@@ -62,6 +63,7 @@
 		5510C7A2239AFCF300B86ED3 /* Mentor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mentor.storyboard; sourceTree = "<group>"; };
 		5510C7A4239AFDD800B86ED3 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		5510C7A6239EAB3200B86ED3 /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
+		55449EA523A022D20020476E /* ViewProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProfileTableViewController.swift; sourceTree = "<group>"; };
 		55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInSignUp.storyboard; sourceTree = "<group>"; };
 		55BB57A22395D39300962DA0 /* CreateProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProfile.storyboard; sourceTree = "<group>"; };
 		55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -167,7 +169,6 @@
 				85AFB577238C449000CA9A62 /* Main.storyboard */,
 				55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */,
 				55BB57A22395D39300962DA0 /* CreateProfile.storyboard */,
-				85A024B323997A8E009E8FC9 /* Goals.storyboard */,
 				199252AB239ACD180032ACF1 /* verifyEmail.storyboard */,
 				85A024B323997A8E009E8FC9 /* Pupil.storyboard */,
 				5510C7A2239AFCF300B86ED3 /* Mentor.storyboard */,
@@ -221,6 +222,7 @@
 				5510C79D2397170600B86ED3 /* EmailVerifyViewController.swift */,
 				5510C7A6239EAB3200B86ED3 /* AccountTableViewController.swift */,
 				199252AD239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift */,
+				55449EA523A022D20020476E /* ViewProfileTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -415,6 +417,7 @@
 				85AFB5C9238C5F1D00CA9A62 /* GoalController.swift in Sources */,
 				85AFB5C1238C5EE700CA9A62 /* UserController.swift in Sources */,
 				85AFB574238C449000CA9A62 /* SceneDelegate.swift in Sources */,
+				55449EA623A022D20020476E /* ViewProfileTableViewController.swift in Sources */,
 				85AFB5A3238C50B000CA9A62 /* PupilProfileViewController.swift in Sources */,
 				85A024B823997B7A009E8FC9 /* GoalTableViewCell.swift in Sources */,
 				5510C79C2396E03F00B86ED3 /* UserCheckViewController.swift in Sources */,
