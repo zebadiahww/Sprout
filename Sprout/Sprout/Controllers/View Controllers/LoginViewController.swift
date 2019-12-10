@@ -75,11 +75,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func accountTypeValueChanged(_ sender: UISegmentedControl) {
-        isMentor = !isMentor
-        print(isMentor)
-    }
-    
     @IBAction func pageToggleTapped(_ sender: UIButton) {
         
         if isSignUp == false {
