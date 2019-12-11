@@ -18,7 +18,7 @@ struct Categories {
                              "Consulting",
                              "Design",
                              "Education",
-                             "Engineering & Technology",
+                             "Engineering",
                              "Entertainment Arts",
                              "Entrepreneurship",
                              "Finance",
@@ -31,6 +31,7 @@ struct Categories {
                              "Product Management",
                              "Real Estate",
                              "Research",
-                             "Sales"
+                             "Sales",
+                             "Technology"
     ]
 }
