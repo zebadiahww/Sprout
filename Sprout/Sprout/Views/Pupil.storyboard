@@ -171,6 +171,7 @@
                         <outlet property="dailyGoalsButton" destination="Bx9-dz-ai5" id="jy0-AL-eK1"/>
                         <outlet property="editGoalButton" destination="Q1m-6y-xBT" id="Odb-1x-IgO"/>
                         <outlet property="goalTypeLabel" destination="N5T-jd-Sjt" id="hhb-jH-dKt"/>
+                        <outlet property="goalsTableView" destination="Ljb-DF-2RL" id="s5S-UB-YtX"/>
                         <outlet property="longTermGoalsButton" destination="3Jl-PR-K12" id="Sp8-yU-e5G"/>
                         <outlet property="pageIDLabel" destination="lq0-EF-KZL" id="ZSD-WF-40g"/>
                         <outlet property="progressRingView" destination="mHU-pc-BUc" id="34J-xg-F20"/>
@@ -508,6 +509,9 @@
                                                 <segment title="First"/>
                                                 <segment title="Second"/>
                                             </segments>
+                                            <connections>
+                                                <action selector="privacySegmentedControllerToggled:" destination="yGh-hC-n3a" eventType="valueChanged" id="cDL-yR-CrE"/>
+                                            </connections>
                                         </segmentedControl>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="euL-AI-HoD">
                                             <rect key="frame" x="259" y="176" width="141.5" height="30"/>
@@ -540,6 +544,9 @@
                                                 <constraint firstAttribute="width" secondItem="bpO-Y6-zre" secondAttribute="height" multiplier="1:1.15" id="pkk-pP-p2A"/>
                                             </constraints>
                                             <state key="normal" image="ic_delete copy 8"/>
+                                            <connections>
+                                                <action selector="trashButtonTapped:" destination="yGh-hC-n3a" eventType="touchUpInside" id="JiU-WW-xNs"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -563,6 +570,7 @@
                                 <connections>
                                     <outlet property="calenderButton" destination="Dhg-Fs-cRa" id="yiK-aU-yV7"/>
                                     <outlet property="calnderButtonTapped" destination="Dhg-Fs-cRa" id="cje-SN-YG1"/>
+                                    <outlet property="dateTextField" destination="DiY-cG-1Wq" id="8xg-hc-RRb"/>
                                     <outlet property="descriptionBorder" destination="CsT-aS-26Z" id="L6G-NK-r7q"/>
                                     <outlet property="descriptionTextView" destination="3dC-UJ-PuF" id="LA0-b4-EiD"/>
                                     <outlet property="privacySegmentedController" destination="h2T-Yg-Dpc" id="eOz-bp-ELS"/>
@@ -658,6 +666,48 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oi2-ro-Cfk" id="GAL-en-G7L">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="287"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Mentors" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0he-7S-7aU">
+                                                    <rect key="frame" x="146" y="31" width="124" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="uUa-pQ-VCi"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P2m-jh-GeY">
+                                                    <rect key="frame" x="0.0" y="91" width="414" height="169"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="169" id="ep5-BY-Hqh"/>
+                                                    </constraints>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6B2-BJ-t1b">
+                                                        <size key="itemSize" width="135" height="159"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mentorCell" id="4VA-gZ-prS" customClass="MentorCollectionViewCell" customModule="Sprout" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="135" height="159"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8FJ-Zf-kFU">
+                                                                <rect key="frame" x="0.0" y="0.0" width="135" height="159"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </collectionViewCellContentView>
+                                                            <size key="customSize" width="135" height="159"/>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="P2m-jh-GeY" firstAttribute="top" secondItem="0he-7S-7aU" secondAttribute="bottom" constant="10" id="48v-fh-rWl"/>
+                                                <constraint firstItem="P2m-jh-GeY" firstAttribute="centerX" secondItem="GAL-en-G7L" secondAttribute="centerX" id="FcS-38-sQQ"/>
+                                                <constraint firstItem="0he-7S-7aU" firstAttribute="top" secondItem="GAL-en-G7L" secondAttribute="topMargin" constant="20" id="JgA-se-LwF"/>
+                                                <constraint firstItem="P2m-jh-GeY" firstAttribute="width" secondItem="GAL-en-G7L" secondAttribute="width" id="aSW-LU-0B1"/>
+                                                <constraint firstItem="0he-7S-7aU" firstAttribute="leading" secondItem="GAL-en-G7L" secondAttribute="leading" constant="146" id="hLh-28-e0h"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="139" id="5gz-s0-ksp">
@@ -730,7 +780,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9HD-WI-COH" customClass="MentorCollectionViewCell" customModule="Sprout" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mentorCell" id="9HD-WI-COH" customClass="MentorCollectionViewCell" customModule="Sprout" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="154" height="168"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="E4P-xW-o71">
@@ -829,7 +879,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Oh1-gP-yNE" customClass="MentorCollectionViewCell" customModule="Sprout" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mentorCell" id="Oh1-gP-yNE" customClass="MentorCollectionViewCell" customModule="Sprout" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="154" height="168"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RCe-DC-lyd">
@@ -925,7 +975,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="O0J-Ch-TOv" customClass="MentorCollectionViewCell" customModule="Sprout" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mentorCell" id="O0J-Ch-TOv" customClass="MentorCollectionViewCell" customModule="Sprout" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="154" height="168"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jlv-NF-YBa">
@@ -1004,6 +1054,7 @@
                     <connections>
                         <outlet property="entrepreneurshipCV" destination="Wkq-1p-UoT" id="FIY-zD-pr9"/>
                         <outlet property="financeCV" destination="S1A-rb-Txb" id="sMb-tv-XXx"/>
+                        <outlet property="myMentorsCV" destination="P2m-jh-GeY" id="0cr-ub-VhJ"/>
                         <outlet property="pageIDLabel" destination="5bd-LC-9nC" id="Pac-KU-tio"/>
                         <outlet property="techCV" destination="dvz-OF-4t3" id="AJL-Ob-413"/>
                         <segue destination="aeM-hW-jog" kind="presentation" identifier="toMentorSearchVC" modalPresentationStyle="fullScreen" id="3y5-5o-0mS"/>
@@ -1011,7 +1062,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tNe-eC-Eud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-652" y="-927"/>
+            <point key="canvasLocation" x="-652.17391304347836" y="-927.45535714285711"/>
         </scene>
         <!--Find Mentor View Controller-->
         <scene sceneID="Azp-fT-EQA">
@@ -1042,7 +1093,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find a Mentor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoh-Cq-5lB">
-                                        <rect key="frame" x="83" y="22" width="248" height="21"/>
+                                        <rect key="frame" x="83" y="22.5" width="248" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1063,19 +1114,59 @@
                                 <rect key="frame" x="0.0" y="172" width="414" height="690"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GXL-gu-3MG">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="157" height="177"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mentorCell" id="Ssn-e0-36T" customClass="MentorCollectionViewCell" customModule="Sprout" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="157" height="177"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yJF-dD-5Hs">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="157" height="177"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v9c-He-VZv">
+                                                    <rect key="frame" x="0.0" y="0.0" width="157" height="177"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mrb-Rq-1R0">
+                                                            <rect key="frame" x="23" y="0.0" width="111" height="110.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="mrb-Rq-1R0" secondAttribute="height" multiplier="1:1" id="hki-8u-PmZ"/>
+                                                                <constraint firstAttribute="height" constant="102" id="tYn-XQ-I0d"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sf-o4-BgR">
+                                                            <rect key="frame" x="65" y="110.5" width="27" height="15.5"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="11"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9HP-hb-d5e">
+                                                            <rect key="frame" x="60" y="126" width="37" height="21"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZq-FN-JJ7">
+                                                            <rect key="frame" x="23" y="147" width="111" height="30"/>
+                                                            <state key="normal" title="VIew Profile"/>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="VZq-FN-JJ7" firstAttribute="width" secondItem="mrb-Rq-1R0" secondAttribute="width" id="Rgx-np-n47"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="v9c-He-VZv" firstAttribute="centerX" secondItem="yJF-dD-5Hs" secondAttribute="centerX" id="Suc-Rf-iX3"/>
+                                                <constraint firstItem="v9c-He-VZv" firstAttribute="centerY" secondItem="yJF-dD-5Hs" secondAttribute="centerY" id="VEv-5m-Joc"/>
+                                                <constraint firstItem="v9c-He-VZv" firstAttribute="height" secondItem="yJF-dD-5Hs" secondAttribute="height" id="rYV-PD-xev"/>
+                                                <constraint firstItem="v9c-He-VZv" firstAttribute="width" secondItem="yJF-dD-5Hs" secondAttribute="width" id="uGe-Oc-3Ac"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="157" height="177"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -1094,6 +1185,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="AOJ-ux-6bf"/>
                     <connections>
+                        <outlet property="findMentorCollectionView" destination="w73-fM-IYs" id="7TD-F0-BbY"/>
                         <outlet property="mentorSearchBar" destination="hXG-Gn-1x3" id="ntw-GH-2I2"/>
                         <outlet property="pageIDLabel" destination="yoh-Cq-5lB" id="h2z-Pk-u1u"/>
                         <outlet property="searchBorder" destination="LK7-zn-HGP" id="HO8-eI-oBz"/>
@@ -1101,7 +1193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KzB-hy-QF8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="-925"/>
+            <point key="canvasLocation" x="128.98550724637681" y="-925.44642857142856"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="i4t-vx-M96">

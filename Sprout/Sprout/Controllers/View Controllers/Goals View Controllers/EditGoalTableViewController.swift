@@ -14,7 +14,7 @@ class EditGoalTableViewController: UITableViewController {
     @IBOutlet weak var pageIDLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet var editGoalDatePicker: UIDatePicker!
-    @IBOutlet weak var editGoalDateTextField: UITextField!
+
     
     
     
@@ -33,12 +33,21 @@ class EditGoalTableViewController: UITableViewController {
         saveButton.backgroundColor = .middleGreen
         saveButton.titleLabel?.textColor = .white
     }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // do some stuff here for picker
+    }
 
     // MARK: - Actions
     @IBAction func saveButtonTapped(_ sender: Any) {
-        
+     //delegate functionality to the Cell
         navigationController?.popViewController(animated: true)
     }
+    
     
 
 }

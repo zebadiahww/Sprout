@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol viewProfileButtonDelegate {
+    func segueToProfile(mentor: User)
+}
+
 class MentorCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Outlets
@@ -19,21 +23,26 @@ class MentorCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Properties
     
+    var delegate: viewProfileButtonDelegate?
+    var user: User?
     
-    func updateViews() {
+    func updateViews(mentor: User) {
         profileImage.layer.cornerRadius = profileImage.frame.height/2
         
         viewProfileButton.layer.cornerRadius = viewProfileButton.frame.height/2
         viewProfileButton.backgroundColor = .middleGreen
         viewProfileButton.titleLabel?.textColor = .white
         
+        nameLabel.text = mentor.name
+        occupationLabel.text = mentor.occupation
     }
     
     
     
     //MARK: - Actions
     @IBAction func viewProfileButtonTapped(_ sender: Any) {
-       // perform segue
+        guard let user = user else {return}
+        delegate?.segueToProfile(mentor: user)
     }
     
 }

@@ -18,7 +18,9 @@ class EditGoalTableViewCell: UITableViewCell {
     
     @IBOutlet weak var privacySegmentedController: UISegmentedControl!
     @IBOutlet weak var trashButton: UIButton!
-    @IBOutlet weak var calenderButton: UIButton!
+    @IBOutlet weak var dateTextField: UITextField!
+    
+    
     
     
     //MARK: - Properties
@@ -29,8 +31,11 @@ class EditGoalTableViewCell: UITableViewCell {
     
     
     //MARK: - Actions
-    @IBOutlet weak var privacyToggled: UISegmentedControl!
-    @IBOutlet weak var trashButtonTapped: UIButton!
-    @IBOutlet weak var calnderButtonTapped: UIButton!
+    @IBAction func trashButtonTapped(_ sender: Any) {
+    }
+    @IBAction func privacySegmentedControllerToggled(_ sender: Any) {
+    }
+    
+    
     
 }
