@@ -14,7 +14,8 @@ struct RequestConstants {
     fileprivate static let messageKey = "message"
     fileprivate static let isApprovedKey = "isApproved"
     fileprivate static let uuidKey = "uuid"
-    static let userIDKey = "UserID"
+    static let requestSenderIDKey = "requestSenderID"
+    static let mentorIDKey = "mentorID"
 }
 
 class Request {
@@ -22,25 +23,28 @@ class Request {
     var message: String
     var isApproved: Bool
     var uuid: String
-    var userID: String
+    var requestSenderID: String
+    var mentorID: String
     var documentDictionary: [String : Any] {
         let dict: [String : Any] = [
             RequestConstants.titleKey : title,
             RequestConstants.messageKey : message,
             RequestConstants.isApprovedKey : isApproved,
             RequestConstants.uuidKey : uuid,
-            RequestConstants.userIDKey : userID
+            RequestConstants.requestSenderIDKey : requestSenderID,
+            RequestConstants.mentorIDKey : mentorID
         ]
         
         return dict
     }
     
-    init(title: String, message: String, isApproved: Bool = false, uuid: String = UUID().uuidString, userID: String) {
+    init(title: String, message: String, isApproved: Bool = false, uuid: String = UUID().uuidString, requestSenderID: String, mentorID: String) {
         self.title = title
         self.message = message
         self.isApproved = isApproved
         self.uuid = uuid
-        self.userID = userID
+        self.requestSenderID = requestSenderID
+        self.mentorID = mentorID
     }
 }
 
@@ -50,10 +54,11 @@ extension Request {
             let message = dictionary[RequestConstants.messageKey] as? String,
             let isApproved = dictionary[RequestConstants.isApprovedKey] as? Bool,
             let uuid = dictionary[RequestConstants.uuidKey] as? String,
-            let userID = dictionary[RequestConstants.userIDKey] as? String
+            let requestSenderID = dictionary[RequestConstants.requestSenderIDKey] as? String,
+            let mentorID = dictionary[RequestConstants.mentorIDKey] as? String
             else {return nil}
         
-        self.init(title: title, message: message, isApproved: isApproved, uuid: uuid, userID: userID )
+        self.init(title: title, message: message, isApproved: isApproved, uuid: uuid, requestSenderID: requestSenderID, mentorID: mentorID )
     }
 }
 

@@ -11,7 +11,6 @@ import UIKit
 class EditGoalTableViewCell: UITableViewCell {
     
     //MARK: - Outlets
-    @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var descriptionTextView: UITextView!

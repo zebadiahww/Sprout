@@ -28,7 +28,6 @@ class GoalListTableViewController: UITableViewController {
         let goal = GoalController.shared.goals[indexPath.row]
         cell.goalTitleLabel.text = goal.title
         cell.isPublicLabel.text = "\(goal.isPrivate)"
-        cell.iconImageView.image = nil // fix this
         
 
         return cell

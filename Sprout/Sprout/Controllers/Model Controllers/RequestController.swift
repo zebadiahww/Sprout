@@ -19,8 +19,8 @@ class RequestController {
     
     var firebaseDB = Firestore.firestore()
     
-    func createRequest(titleText: String, messageText: String, userID: String,  completion: @escaping(Bool) -> Void) {
-        let requestToSave = Request(title: titleText, message: messageText, userID: userID)
+    func createRequest(titleText: String, messageText: String, requestSenderID: String, mentorID: String,  completion: @escaping(Bool) -> Void) {
+        let requestToSave = Request(title: titleText, message: messageText, requestSenderID: requestSenderID, mentorID: mentorID)
         let ref = firebaseDB.collection(RequestConstants.typeKey).document(requestToSave.uuid)
         ref.setData(requestToSave.documentDictionary) { (error) in
             if let error = error {
@@ -42,7 +42,7 @@ class RequestController {
     func fetchRequest(completion: @escaping(Bool) -> Void) {
         guard let user = currentUser else { return }
 
-        let query = firebaseDB.collection("Request").whereField("userID", isEqualTo: user.uuid)
+        let query = firebaseDB.collection(RequestConstants.typeKey).whereField(RequestConstants.mentorIDKey, isEqualTo: user.uuid)
             query.getDocuments { (snapshot, error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")

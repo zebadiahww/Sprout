@@ -31,8 +31,6 @@ class Goal {
     var isDaily: Bool
     var date: Date?
     var uuid: String
-    var icon: String
-    var iconColor: String
     var documentDictionary: [String : Any] {
         var dict: [String : Any] = [
             GoalConstants.titleKey : title,
@@ -42,8 +40,6 @@ class Goal {
             GoalConstants.isPrivateKey : isPrivate,
             GoalConstants.isDailyKey : isDaily,
             GoalConstants.uuidKey : uuid,
-            GoalConstants.iconKey : icon,
-            GoalConstants.iconColorKey : iconColor
         ]
         if let date = date {
             dict.updateValue(date, forKey: GoalConstants.dateKey)
@@ -51,7 +47,7 @@ class Goal {
         return dict
     }
     
-    init(title: String, body: String, userID: String, isComplete: Bool = false, isPrivate: Bool, isDaily: Bool, date: Date?, uuid: String = UUID().uuidString, icon: String, iconColor: String) {
+    init(title: String, body: String, userID: String, isComplete: Bool = false, isPrivate: Bool, isDaily: Bool, date: Date?, uuid: String = UUID().uuidString) {
         self.title = title
         self.body = body
         self.userID = userID
@@ -60,8 +56,6 @@ class Goal {
         self.isDaily = isDaily
         self.date = date
         self.uuid = uuid
-        self.icon = icon
-        self.iconColor = iconColor
     }
 }
 
@@ -73,13 +67,12 @@ extension Goal {
             let isComplete = dictionay[GoalConstants.isCompleteKey] as? Bool,
             let isPrivate = dictionay[GoalConstants.isPrivateKey] as? Bool,
             let isDaily = dictionay[GoalConstants.isDailyKey] as? Bool,
-            let uuid = dictionay[GoalConstants.uuidKey] as? String,
-            let icon = dictionay[GoalConstants.iconKey] as? String,
-            let iconColor = dictionay[GoalConstants.iconColorKey] as? String
+            let uuid = dictionay[GoalConstants.uuidKey] as? String
+           
             else {return nil}
         let date = dictionay[GoalConstants.dateKey] as? Date
         
-        self.init(title: title, body: body, userID: userID, isComplete: isComplete, isPrivate: isPrivate, isDaily: isDaily, date: date, uuid: uuid, icon: icon, iconColor: iconColor)
+        self.init(title: title, body: body, userID: userID, isComplete: isComplete, isPrivate: isPrivate, isDaily: isDaily, date: date, uuid: uuid)
     }
 }
 

@@ -22,12 +22,6 @@ class CreateGoalTableViewController: UITableViewController {
     @IBOutlet weak var goalTypeLabel: UILabel!
     @IBOutlet weak var goalTypeSegmentedController: UISegmentedControl!
     
-    @IBOutlet weak var goalStyleLabel: UILabel!
-    @IBOutlet weak var iconButton: UIButton!
-    @IBOutlet weak var colorButton: UIButton!
-    @IBOutlet weak var iconLabel: UILabel!
-    @IBOutlet weak var colorLabel: UILabel!
-    
     @IBOutlet weak var privacyLabel: UILabel!
     @IBOutlet weak var privacySegmentedController: UISegmentedControl!
     
@@ -37,7 +31,11 @@ class CreateGoalTableViewController: UITableViewController {
     
     @IBOutlet weak var saveButton: UIButton!
     
+    @IBOutlet weak var completeByLabel: UILabel!
+    @IBOutlet weak var completeBorder: UIView!
+    @IBOutlet weak var completeStackView: UIStackView!
     
+    @IBOutlet var createGoalDatePicker: UIDatePicker!
     
 
     override func viewDidLoad() {
@@ -46,14 +44,21 @@ class CreateGoalTableViewController: UITableViewController {
     }
     
     
+    func setupViews() {
+        saveButton.setTitle("Save", for: .normal)
+        saveButton.layer.cornerRadius = saveButton.frame.height/2
+        saveButton.backgroundColor = .middleGreen
+        saveButton.titleLabel?.textColor = .white
+        
+        completeStackView.isHidden = true
+    }
+    
+    
     
     //MARK: - Actions
     @IBAction func goalTypeToggled(_ sender: Any) {
     }
-    @IBAction func iconButtonTaped(_ sender: Any) {
-    }
-    @IBAction func colorButtonTapped(_ sender: Any) {
-    }
+    
     @IBAction func privacyToggled(_ sender: Any) {
     }
     @IBAction func notifySwitchToggled(_ sender: Any) {

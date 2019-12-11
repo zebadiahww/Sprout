@@ -20,9 +20,9 @@ class GoalController {
     var firebaseDB = Firestore.firestore()
     
     // TODO add new parameters into functions
-    func createGoal(title: String, body: String, userID: String, isComplete: Bool, isPrivate: Bool, isDaily: Bool, date: Date?, uuid: String, icon: String, iconColor: String, completion: @escaping(Bool) -> Void) {
+    func createGoal(title: String, body: String, userID: String, isComplete: Bool, isPrivate: Bool, isDaily: Bool, date: Date?, uuid: String, completion: @escaping(Bool) -> Void) {
         
-        let goalToSave = Goal(title: title, body: body, userID: userID, isComplete: isComplete, isPrivate: isPrivate, isDaily: isDaily, date: date, uuid: uuid, icon: icon, iconColor: iconColor)
+        let goalToSave = Goal(title: title, body: body, userID: userID, isComplete: isComplete, isPrivate: isPrivate, isDaily: isDaily, date: date, uuid: uuid)
         let ref = firebaseDB.collection(GoalConstants.typeKey).document(goalToSave.uuid)
         ref.setData(goalToSave.documentDictionary) { (error) in
             if let error = error {
