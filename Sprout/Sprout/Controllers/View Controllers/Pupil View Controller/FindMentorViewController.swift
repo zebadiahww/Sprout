@@ -29,7 +29,7 @@ class FindMentorViewController: UIViewController, UISearchBarDelegate {
     
     //MARK: - Actions
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        TagsController.shared.searchAndFetchTag(with: <#T##String#>, category: <#T##String#>, completion: <#T##(Bool) -> Void#>)
+        
     }
 
 } // END OF CLASS

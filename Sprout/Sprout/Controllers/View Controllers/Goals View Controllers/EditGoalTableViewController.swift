@@ -13,6 +13,8 @@ class EditGoalTableViewController: UITableViewController {
     //MARK: - Outlets
     @IBOutlet weak var pageIDLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet var editGoalDatePicker: UIDatePicker!
+    @IBOutlet weak var editGoalDateTextField: UITextField!
     
     
     

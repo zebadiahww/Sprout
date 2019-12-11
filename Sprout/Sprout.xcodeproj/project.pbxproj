@@ -23,6 +23,7 @@
 		55BB57A52395D95300962DA0 /* CreateProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */; };
 		55BB57A72396C18200962DA0 /* PhotoSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BB57A62396C18200962DA0 /* PhotoSelectorViewController.swift */; };
 		850C30A12399C838005F49D1 /* CategoryArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C30A02399C838005F49D1 /* CategoryArray.swift */; };
+		853207B823A161C800F8FE3C /* DateFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853207B723A161C800F8FE3C /* DateFormater.swift */; };
 		853B92A623958B4C00D3E5F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 853B92A523958B4C00D3E5F0 /* GoogleService-Info.plist */; };
 		854D3EC8239EF718000A49D2 /* CreateGoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3EC7239EF718000A49D2 /* CreateGoalTableViewController.swift */; };
 		854D3ECA239F11F9000A49D2 /* EditGoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3EC9239F11F9000A49D2 /* EditGoalTableViewCell.swift */; };
@@ -72,6 +73,7 @@
 		55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileTableViewController.swift; sourceTree = "<group>"; };
 		55BB57A62396C18200962DA0 /* PhotoSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorViewController.swift; sourceTree = "<group>"; };
 		850C30A02399C838005F49D1 /* CategoryArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryArray.swift; path = "Sprout/Controllers/View Controllers/Goals View Controllers/CategoryArray.swift"; sourceTree = SOURCE_ROOT; };
+		853207B723A161C800F8FE3C /* DateFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateFormater.swift; path = "Sprout/Controllers/View Controllers/Goals View Controllers/DateFormater.swift"; sourceTree = SOURCE_ROOT; };
 		853B92A523958B4C00D3E5F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		854D3EC7239EF718000A49D2 /* CreateGoalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalTableViewController.swift; sourceTree = "<group>"; };
 		854D3EC9239F11F9000A49D2 /* EditGoalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGoalTableViewCell.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			children = (
 				85A024AE23996AAE009E8FC9 /* StyleGuide.swift */,
 				850C30A02399C838005F49D1 /* CategoryArray.swift */,
+				853207B723A161C800F8FE3C /* DateFormater.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				85A81AF523A002C300207E77 /* FindMentorViewController.swift in Sources */,
 				854D3EC8239EF718000A49D2 /* CreateGoalTableViewController.swift in Sources */,
 				85AFB5C9238C5F1D00CA9A62 /* GoalController.swift in Sources */,
+				853207B823A161C800F8FE3C /* DateFormater.swift in Sources */,
 				85AFB5C1238C5EE700CA9A62 /* UserController.swift in Sources */,
 				85AFB574238C449000CA9A62 /* SceneDelegate.swift in Sources */,
 				854D3ECA239F11F9000A49D2 /* EditGoalTableViewCell.swift in Sources */,

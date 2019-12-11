@@ -14,10 +14,7 @@ class GoalTableViewCell: UITableViewCell {
     @IBOutlet weak var finishButton: UIButton!
     @IBOutlet weak var goalTitleLabel: UILabel!
     @IBOutlet weak var isPublicLabel: UILabel!
-    
-    @IBOutlet weak var iconImageView: UIImageView!
-    
-    
+        
     
     //MARK: - Properties
     
