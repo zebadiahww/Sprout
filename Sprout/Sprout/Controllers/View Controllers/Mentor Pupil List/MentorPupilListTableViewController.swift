@@ -12,7 +12,7 @@ class MentorPupilListTableViewController: UITableViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var mentorImage: UIImageView!
-    @IBOutlet weak var MentorLabel: UILabel!
+    @IBOutlet weak var mentorLabel: UILabel!
     @IBOutlet weak var myPupilsLabel: UILabel!
     @IBOutlet weak var numberOfPupilsLabel: UILabel!
     
@@ -44,11 +44,13 @@ class MentorPupilListTableViewController: UITableViewController {
     }
     
     //MARK: - Class Methods
-//    func setUpViews() {
-//        self.mentorImage.layer.cornerRadius = mentorImage.frame.height/2
-//        self.pupilImage.layer.cornerRadius = pupilImage.frame.height/2
-//        self.suggestGoalButton.layer.cornerRadius = suggestGoalButton.frame.height/2
-//        self.mentorLabel.layer.cornerRadius = mentorLabel.frame.height/6
-//    }
+    func setUpViews() {
+        self.mentorImage.layer.cornerRadius = mentorImage.frame.height/2
+        self.mentorLabel.layer.cornerRadius = mentorLabel.frame.height/6
+    }
+    
+    func fetchMentorData() {
+        // need mentor's profile image, the amount of pupils he has, and the maximum amount of pupils that the mentor can take on.
+    }
     
 } // End of Class

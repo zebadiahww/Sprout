@@ -11,7 +11,7 @@
         <!--Requests-->
         <scene sceneID="BYN-xd-N9n">
             <objects>
-                <viewController id="SUE-c5-SHY" customClass="MentorRequestTableViewController" customModule="Sprout" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SUE-c5-SHY" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PRg-Hs-8Zy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,11 +22,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vnb-x4-LpU">
-                                <rect key="frame" x="0.0" y="94" width="414" height="728"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vnb-x4-LpU">
+                                <rect key="frame" x="0.0" y="85" width="414" height="728"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pupilRequest" rowHeight="141" id="FBR-YC-omV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pupilRequest" rowHeight="141" id="FBR-YC-omV" customClass="MentorRequestTableViewCell" customModule="Sprout" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="141"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FBR-YC-omV" id="XSw-6q-9vF">
@@ -95,6 +95,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="acceptButton" destination="aN5-55-V7u" id="yJF-Rh-PUF"/>
+                                            <outlet property="declineButton" destination="5s4-Ei-b3b" id="T5L-4K-QAP"/>
+                                            <outlet property="pupilImage" destination="BJ7-R9-Hul" id="vFL-Jr-2L8"/>
+                                            <outlet property="pupilNameLabel" destination="brz-3p-nnl" id="01m-S9-Zcb"/>
+                                            <outlet property="pupilTagLabel" destination="ar7-uY-les" id="BUB-od-maP"/>
+                                            <outlet property="requestDescriptionLabel" destination="SyT-a7-ror" id="CeK-QY-AuV"/>
                                             <segue destination="0eo-6I-aJ2" kind="show" identifier="cellToPupilProfile" id="IaT-1F-St0"/>
                                         </connections>
                                     </tableViewCell>
@@ -170,10 +176,10 @@
                                 <rect key="frame" x="0.0" y="274.5" width="414" height="538.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pupilCell" rowHeight="140" id="B21-5D-lTd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pupilCell" rowHeight="140" id="B21-5D-lTd" customClass="MentorPupilListTableViewCell" customModule="Sprout" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B21-5D-lTd" id="ycF-x5-uNc">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B21-5D-lTd" id="ycF-x5-uNc" customClass="MentorPupilListTableViewCell" customModule="Sprout" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -208,10 +214,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <progressView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="0Lm-31-auX">
-                                                    <rect key="frame" x="285.5" y="66" width="124.5" height="8"/>
-                                                    <color key="progressTintColor" name="MiddleGreen"/>
-                                                </progressView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQJ-th-o7y">
                                                     <rect key="frame" x="219.5" y="86" width="182" height="38"/>
                                                     <color key="backgroundColor" name="MiddleGreen"/>
@@ -221,6 +223,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="suggestGoalButtonTapped:" destination="EJZ-UN-5GI" eventType="touchUpInside" id="Tau-aJ-wMl"/>
+                                                        <action selector="suggestGoalButtonTapped:" destination="B21-5D-lTd" eventType="touchUpInside" id="fhN-HR-9V0"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -228,20 +231,16 @@
                                                 <constraint firstItem="91x-tz-a6c" firstAttribute="centerY" secondItem="ycF-x5-uNc" secondAttribute="centerY" multiplier="0.54" id="3I5-J4-vxp"/>
                                                 <constraint firstItem="nY8-1j-TNG" firstAttribute="centerY" secondItem="ycF-x5-uNc" secondAttribute="centerY" multiplier="0.9" id="5g8-rr-KUU"/>
                                                 <constraint firstItem="reZ-pr-3KE" firstAttribute="centerY" secondItem="ycF-x5-uNc" secondAttribute="centerY" multiplier="0.8" id="EBd-Ol-dzM"/>
-                                                <constraint firstItem="0Lm-31-auX" firstAttribute="centerX" secondItem="ycF-x5-uNc" secondAttribute="centerX" multiplier="1.68" id="HSs-9K-AeI"/>
                                                 <constraint firstItem="g9U-li-4xa" firstAttribute="centerX" secondItem="ycF-x5-uNc" secondAttribute="centerX" multiplier="1.68" id="IEy-YG-tUg"/>
                                                 <constraint firstItem="FQJ-th-o7y" firstAttribute="centerY" secondItem="ycF-x5-uNc" secondAttribute="centerY" multiplier="1.5" id="K4U-yv-RgY"/>
                                                 <constraint firstItem="FQJ-th-o7y" firstAttribute="width" secondItem="ycF-x5-uNc" secondAttribute="width" multiplier="0.439614" id="SOd-3U-Ihq"/>
                                                 <constraint firstItem="reZ-pr-3KE" firstAttribute="width" secondItem="r79-ZP-rHe" secondAttribute="width" id="Shq-UN-2df"/>
-                                                <constraint firstItem="0Lm-31-auX" firstAttribute="width" secondItem="g9U-li-4xa" secondAttribute="width" id="Ui5-ag-R8L"/>
                                                 <constraint firstItem="FQJ-th-o7y" firstAttribute="centerX" secondItem="ycF-x5-uNc" secondAttribute="centerX" multiplier="1.5" id="V1V-T2-EXC"/>
                                                 <constraint firstItem="nY8-1j-TNG" firstAttribute="centerX" secondItem="ycF-x5-uNc" secondAttribute="centerX" multiplier="0.28" id="WpW-af-ClU"/>
                                                 <constraint firstItem="91x-tz-a6c" firstAttribute="width" secondItem="ycF-x5-uNc" secondAttribute="width" multiplier="0.3" id="XN3-e3-5dg"/>
                                                 <constraint firstItem="reZ-pr-3KE" firstAttribute="centerX" secondItem="ycF-x5-uNc" secondAttribute="centerX" multiplier="0.92" id="aZT-Re-Mgb"/>
-                                                <constraint firstItem="0Lm-31-auX" firstAttribute="centerY" secondItem="ycF-x5-uNc" secondAttribute="centerY" id="bbC-sB-9Mh"/>
                                                 <constraint firstItem="r79-ZP-rHe" firstAttribute="centerY" secondItem="ycF-x5-uNc" secondAttribute="centerY" multiplier="0.5" id="bom-l0-r0q"/>
                                                 <constraint firstItem="r79-ZP-rHe" firstAttribute="centerX" secondItem="ycF-x5-uNc" secondAttribute="centerX" multiplier="0.92" id="dVq-xf-pZr"/>
-                                                <constraint firstItem="0Lm-31-auX" firstAttribute="height" secondItem="g9U-li-4xa" secondAttribute="height" multiplier="0.5" id="das-gD-gds"/>
                                                 <constraint firstItem="g9U-li-4xa" firstAttribute="centerY" secondItem="ycF-x5-uNc" secondAttribute="centerY" multiplier="0.8" id="hd8-2J-GD0"/>
                                                 <constraint firstItem="91x-tz-a6c" firstAttribute="centerX" secondItem="ycF-x5-uNc" secondAttribute="centerX" multiplier="1.68" id="iOI-Uf-ZiA"/>
                                                 <constraint firstItem="r79-ZP-rHe" firstAttribute="width" secondItem="ycF-x5-uNc" secondAttribute="width" multiplier="0.425" id="jFo-ED-6dF"/>
@@ -249,6 +248,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="goalProgressLabel" destination="91x-tz-a6c" id="atv-wU-GXD"/>
+                                            <outlet property="goalsCompletedLabel" destination="g9U-li-4xa" id="Epd-hI-INQ"/>
+                                            <outlet property="pupilImage" destination="nY8-1j-TNG" id="CAn-Rt-AIc"/>
+                                            <outlet property="pupilNameLabel" destination="r79-ZP-rHe" id="8ll-fr-euo"/>
+                                            <outlet property="pupilTagLabel" destination="reZ-pr-3KE" id="nUH-LD-dfy"/>
+                                            <outlet property="suggestGoalButton" destination="FQJ-th-o7y" id="soV-dJ-CT9"/>
                                             <segue destination="nnT-vd-qoD" kind="show" identifier="cellToPupilProfile" id="MAO-3w-BqY"/>
                                         </connections>
                                     </tableViewCell>
@@ -282,8 +287,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="ic_home (1)" id="tiG-IC-5FE"/>
                     <connections>
-                        <outlet property="MentorLabel" destination="hyq-do-Pyf" id="Miv-Ey-a5B"/>
                         <outlet property="mentorImage" destination="v7A-Ni-AWs" id="vmk-rS-Rgm"/>
+                        <outlet property="mentorLabel" destination="hyq-do-Pyf" id="Miv-Ey-a5B"/>
                         <outlet property="myPupilsLabel" destination="TtS-0c-AgM" id="VKL-6W-tdp"/>
                         <outlet property="numberOfPupilsLabel" destination="aKq-vR-aDQ" id="Ult-Gv-4zi"/>
                         <segue destination="wNT-ts-VGc" kind="presentation" identifier="toCreateGoal" id="ojG-vJ-VlN"/>

@@ -127,6 +127,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		199372BA23A167F10037EC67 /* Mentor Pupil List */ = {
+			isa = PBXGroup;
+			children = (
+				199252AF239EF3C10032ACF1 /* MentorPupilListTableViewController.swift */,
+				1968796B23A05FF9002F05FC /* MentorPupilListTableViewCell.swift */,
+			);
+			path = "Mentor Pupil List";
+			sourceTree = "<group>";
+		};
+		199372BB23A1680C0037EC67 /* Mentor Request */ = {
+			isa = PBXGroup;
+			children = (
+				199252B1239EF4150032ACF1 /* MentorRequestTableViewController.swift */,
+				1968796D23A06013002F05FC /* MentorRequestTableViewCell.swift */,
+			);
+			path = "Mentor Request";
+			sourceTree = "<group>";
+		};
 		73351DB3B5523E7A11A59682 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,10 +267,8 @@
 				5510C79D2397170600B86ED3 /* EmailVerifyViewController.swift */,
 				5510C7A6239EAB3200B86ED3 /* AccountTableViewController.swift */,
 				199252AD239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift */,
-				199252AF239EF3C10032ACF1 /* MentorPupilListTableViewController.swift */,
-				1968796B23A05FF9002F05FC /* MentorPupilListTableViewCell.swift */,
-				199252B1239EF4150032ACF1 /* MentorRequestTableViewController.swift */,
-				1968796D23A06013002F05FC /* MentorRequestTableViewCell.swift */,
+				199372BA23A167F10037EC67 /* Mentor Pupil List */,
+				199372BB23A1680C0037EC67 /* Mentor Request */,
 				55449EA523A022D20020476E /* ViewProfileTableViewController.swift */,
 			);
 			path = "View Controllers";
@@ -460,7 +476,6 @@
 				85AFB5C1238C5EE700CA9A62 /* UserController.swift in Sources */,
 				85AFB574238C449000CA9A62 /* SceneDelegate.swift in Sources */,
 				55449EA623A022D20020476E /* ViewProfileTableViewController.swift in Sources */,
-				85AFB5A3238C50B000CA9A62 /* PupilProfileViewController.swift in Sources */,
 				854D3ECA239F11F9000A49D2 /* EditGoalTableViewCell.swift in Sources */,
 				85A024B823997B7A009E8FC9 /* GoalTableViewCell.swift in Sources */,
 				856A7396239EC05B006D8E26 /* MentorsTabTableViewController.swift in Sources */,
