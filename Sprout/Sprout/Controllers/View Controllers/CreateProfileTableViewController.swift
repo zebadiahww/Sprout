@@ -68,25 +68,8 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         self.occupationBorder.isHidden = true
         self.occupationLabel.isHidden = true
         setupViews()
-        
-        //        TagsController.shared.tags = [
-        //            Tag(title: "test", category: "testing"),
-        //            Tag(title: "test1", category: "testing"),
-        //            Tag(title: "test123456789", category: "testing"),
-        //            Tag(title: "test34567892", category: "testing"),
-        //            Tag(title: "test2", category: "testing"),
-        //            Tag(title: "teertyst2", category: "testing"),
-        //            Tag(title: "test", category: "testing"),
-        //            Tag(title: "test1", category: "testing"),
-        //            Tag(title: "test123456789", category: "testing"),
-        //            Tag(title: "test34567892", category: "testing"),
-        //            Tag(title: "test2", category: "testing"),
-        //            Tag(title: "teertyst2", category: "testing")
-        //        ]
+  
     }
-    
-    
-    
     
     //MARK: - Actions
     @IBAction func addTagButtonTapped(_ sender: UIButton) {
@@ -160,8 +143,6 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         }
     }
     
-    
-    
     func setupPicker() {
         categoryPicker.delegate = self
         categoryPicker.dataSource = self
@@ -225,7 +206,6 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         }
     }
     
-    
     //MARK: - UI Elements
     
     func setupViews() {
@@ -268,9 +248,6 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         self.saveButton.titleLabel?.textColor = .white
         
         profileImage.layer.cornerRadius = profileImage.frame.height/2
-
-        
-        
     }
     
     // MARK: - Navigation
@@ -307,8 +284,6 @@ extension CreateProfileTableViewController: UICollectionViewDelegateFlowLayout, 
         cell.layer.cornerRadius = 4
         return cell
     }
-    
-    
 }
 
 extension CreateProfileTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -334,6 +309,4 @@ extension CreateProfileTableViewController: deleteButtonTappedDelegate {
     func reloadOnDeletion() {
         self.tagCollectionView.reloadData()
     }
-    
-    
 }

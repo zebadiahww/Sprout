@@ -32,11 +32,9 @@ class MentorsTabTableViewController: UITableViewController, UISearchBarDelegate 
         super.viewDidLoad()
         setupCells()
         setupViews()
-        
     }
     
     //MARK: - Class Methods
-    
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         performSegue(withIdentifier: "toMentorSearchVC", sender: self)
@@ -113,7 +111,6 @@ extension MentorsTabTableViewController: UICollectionViewDelegateFlowLayout, UIC
         return cell
     }
 }
-
 
 extension MentorsTabTableViewController: viewProfileButtonDelegate {
     func segueToProfile(mentor: User) {

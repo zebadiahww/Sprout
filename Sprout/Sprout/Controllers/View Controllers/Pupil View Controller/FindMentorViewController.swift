@@ -24,9 +24,6 @@ class FindMentorViewController: UIViewController, UISearchBarDelegate {
 
     }
     
-    
-    
-    
     //MARK: - Actions
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchTerm = mentorSearchBar.text, mentorSearchBar.text!.isEmpty else {return}
