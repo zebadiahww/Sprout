@@ -180,6 +180,7 @@ class UserController {
                 user.pupils?.updateValue(fetchedTags[num], forKey: fetchedUsers[num])
             }
             
+            completion(true)
         }
     }
     
