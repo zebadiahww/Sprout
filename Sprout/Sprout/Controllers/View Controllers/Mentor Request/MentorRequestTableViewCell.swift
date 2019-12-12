@@ -7,13 +7,21 @@
 //
 
 import UIKit
+protocol AcceptButtonDelegate: class {
+    func toHomePage(_ sender: MentorRequestTableViewCell)
+}
+protocol DeclineButtonDelegate: class  {
+    func toHomePage(_ sender: MentorRequestTableViewCell)
+}
 
 class MentorRequestTableViewCell: UITableViewCell {
+    
+    weak var acceptDelegate: AcceptButtonDelegate?
+    weak var declineDelegate: DeclineButtonDelegate?
 
     //MARK: - Outlets
     @IBOutlet weak var pupilImage: UIImageView!
     @IBOutlet weak var pupilNameLabel: UILabel!
-    @IBOutlet weak var pupilTagLabel: UILabel!
     @IBOutlet weak var declineButton: UIButton!
     @IBOutlet weak var acceptButton: UIButton!
     @IBOutlet weak var requestDescriptionLabel: UILabel!
