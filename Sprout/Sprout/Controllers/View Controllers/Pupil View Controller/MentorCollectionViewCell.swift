@@ -20,7 +20,6 @@ class MentorCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var occupationLabel: UILabel!
     @IBOutlet weak var viewProfileButton: UIButton!
     
-    
     //MARK: - Properties
     
     var delegate: viewProfileButtonDelegate?
@@ -37,12 +36,9 @@ class MentorCollectionViewCell: UICollectionViewCell {
         occupationLabel.text = mentor.occupation
     }
     
-    
-    
     //MARK: - Actions
     @IBAction func viewProfileButtonTapped(_ sender: Any) {
         guard let user = user else {return}
         delegate?.segueToProfile(mentor: user)
     }
-    
 }

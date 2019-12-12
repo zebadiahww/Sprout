@@ -28,9 +28,10 @@ class GoalsHomeViewController: UIViewController {
     var longTermGoals: [Goal] = []
     var isDailySelected = true
     var dailyGoals: [Goal] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        longTermGoalsButton.isEnabled = false
         GoalController.shared.fetchGoal { (success) in
             if success {
                 self.longTermGoals = GoalController.shared.goals.filter({ $0.isDaily == false })
@@ -38,9 +39,6 @@ class GoalsHomeViewController: UIViewController {
                 self.goalsTableView.reloadData()
             }
         }
-        
-
-        // Do any additional setup after loading the view.
     }
     
     
@@ -52,8 +50,8 @@ class GoalsHomeViewController: UIViewController {
         
         goalTypeLabel.font = UIFont(name: "Avenir", size: 11)
         goalTypeLabel.text = "Daily Goals"
-
-
+        
+        
         dailyGoalsButton.layer.cornerRadius = dailyGoalsButton.frame.height/2
         dailyGoalsButton.backgroundColor = .middleGreen
         
@@ -73,10 +71,15 @@ class GoalsHomeViewController: UIViewController {
     }
     
     @IBAction func dailyGoalsButtonTapped(_ sender: Any) {
-        
+        isDailySelected = !isDailySelected
+        longTermGoalsButton.isEnabled = true
+        dailyGoalsButton.isEnabled = false
     }
     
     @IBAction func longTermGoalsButtonTapped(_ sender: Any) {
+        isDailySelected = !isDailySelected
+        longTermGoalsButton.isEnabled = false
+        dailyGoalsButton.isEnabled = true
     }
     
 } // END OF CLASS
@@ -93,11 +96,7 @@ extension GoalsHomeViewController: UITableViewDataSource {
         let goal = isDailySelected ? dailyGoals[indexPath.row] : longTermGoals[indexPath.row]
         cell.goalTitleLabel.text = goal.title
         cell.isPublicLabel.text = "\(goal.isPrivate)"
-    
+        
         return cell
     }
-    
-        
-    
-    
 }

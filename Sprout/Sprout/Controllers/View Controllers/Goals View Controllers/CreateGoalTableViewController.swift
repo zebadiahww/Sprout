@@ -41,10 +41,13 @@ class CreateGoalTableViewController: UITableViewController {
     var isDaily = true
     var isPrivate = false
     var willNotify = true
-
+    var goalReceiver: Goal?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if goalReceiver != nil {
+            pageIDLabel.text = "Edit Goal"
+        }
     }
     
     
@@ -85,10 +88,22 @@ class CreateGoalTableViewController: UITableViewController {
         } else {
             date = createGoalDatePicker.date
         }
-            
-        GoalController.shared.createGoal(title: title, body: body, userID: userID, isComplete: false, isPrivate: isPrivate, isDaily: isDaily, date: date, uuid: uuid) { (success) in
-            if success {
-                self.navigationController?.popViewController(animated: true)
+        
+        if let goal = goalReceiver {
+            GoalController.shared.updateGoal(goal: goal, title: title, date: date, body: body) { (success) in
+                if success {
+                    DispatchQueue.main.async {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+            }
+        } else {
+            GoalController.shared.createGoal(title: title, body: body, userID: userID, isComplete: false, isPrivate: isPrivate, isDaily: isDaily, date: date, uuid: uuid) { (success) in
+                if success {
+                    DispatchQueue.main.async {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
             }
         }
     }

@@ -90,6 +90,7 @@
                                             <outlet property="finishButton" destination="RTa-a1-v0X" id="1rm-Li-rb2"/>
                                             <outlet property="goalTitleLabel" destination="gin-hS-0DY" id="5RE-wE-ZS8"/>
                                             <outlet property="isPublicLabel" destination="L7c-6l-hht" id="DG5-Fk-KYq"/>
+                                            <segue destination="ffu-ee-NFv" kind="show" id="aeQ-fg-ciB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -131,14 +132,6 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1m-6y-xBT">
-                                <rect key="frame" x="334" y="203" width="36" height="36"/>
-                                <state key="normal" image="ic_edit"/>
-                                <connections>
-                                    <action selector="editGoalButtonTapped:" destination="hGg-Eo-xDo" eventType="touchUpInside" id="p0z-mS-arr"/>
-                                    <segue destination="yNf-aI-VP2" kind="show" identifier="toEditGoalsVC" id="qeR-1a-Du2"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -152,14 +145,12 @@
                             <constraint firstItem="V5r-p0-005" firstAttribute="centerX" secondItem="0Og-ed-i3e" secondAttribute="centerX" id="Nvm-wC-FgK"/>
                             <constraint firstItem="m6D-em-JLE" firstAttribute="top" secondItem="0Og-ed-i3e" secondAttribute="top" constant="15" id="OzZ-cT-Xze"/>
                             <constraint firstItem="Ljb-DF-2RL" firstAttribute="leading" secondItem="hw7-0y-nzG" secondAttribute="leadingMargin" id="R1H-4c-Cim"/>
-                            <constraint firstItem="Q1m-6y-xBT" firstAttribute="centerX" secondItem="0Og-ed-i3e" secondAttribute="centerX" multiplier="1.7" id="TFU-cl-RK7"/>
                             <constraint firstItem="lq0-EF-KZL" firstAttribute="width" secondItem="hw7-0y-nzG" secondAttribute="width" multiplier="0.4" id="VQw-Fc-jTM"/>
                             <constraint firstAttribute="bottom" secondItem="mHU-pc-BUc" secondAttribute="bottom" constant="520" id="XDO-W4-ZpY"/>
                             <constraint firstItem="N5T-jd-Sjt" firstAttribute="centerX" secondItem="lq0-EF-KZL" secondAttribute="centerX" id="XeL-XK-KtZ"/>
                             <constraint firstItem="lq0-EF-KZL" firstAttribute="top" secondItem="0Og-ed-i3e" secondAttribute="top" constant="15" id="fDg-eb-ach"/>
                             <constraint firstItem="N5T-jd-Sjt" firstAttribute="top" secondItem="lq0-EF-KZL" secondAttribute="bottom" constant="40" id="kgz-TZ-LPT"/>
                             <constraint firstItem="mHU-pc-BUc" firstAttribute="top" secondItem="V5r-p0-005" secondAttribute="bottom" constant="10" id="kh7-Vf-Ig2"/>
-                            <constraint firstItem="Q1m-6y-xBT" firstAttribute="bottom" secondItem="V5r-p0-005" secondAttribute="bottom" id="se2-I4-fnM"/>
                             <constraint firstItem="Ljb-DF-2RL" firstAttribute="top" secondItem="mHU-pc-BUc" secondAttribute="bottom" constant="10" id="wva-fJ-usy"/>
                             <constraint firstItem="N5T-jd-Sjt" firstAttribute="width" secondItem="lq0-EF-KZL" secondAttribute="width" id="zpB-M7-DA9"/>
                         </constraints>
@@ -169,7 +160,6 @@
                     <connections>
                         <outlet property="addGoalButton" destination="m6D-em-JLE" id="DYZ-pZ-drQ"/>
                         <outlet property="dailyGoalsButton" destination="Bx9-dz-ai5" id="jy0-AL-eK1"/>
-                        <outlet property="editGoalButton" destination="Q1m-6y-xBT" id="Odb-1x-IgO"/>
                         <outlet property="goalTypeLabel" destination="N5T-jd-Sjt" id="hhb-jH-dKt"/>
                         <outlet property="goalsTableView" destination="Ljb-DF-2RL" id="s5S-UB-YtX"/>
                         <outlet property="longTermGoalsButton" destination="3Jl-PR-K12" id="Sp8-yU-e5G"/>
@@ -437,169 +427,6 @@
                 </datePicker>
             </objects>
             <point key="canvasLocation" x="1362.3188405797102" y="-516.29464285714289"/>
-        </scene>
-        <!--Edit Goal Table View Controller-->
-        <scene sceneID="sJz-Om-S4r">
-            <objects>
-                <tableViewController id="yNf-aI-VP2" customClass="EditGoalTableViewController" customModule="Sprout" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="09H-QJ-ZVP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="KHf-ws-vgV">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Daily Goals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDO-L8-Ab7">
-                                    <rect key="frame" x="103.5" y="47.5" width="207" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3E-nL-vzQ">
-                                    <rect key="frame" x="331" y="42" width="62.5" height="31"/>
-                                    <state key="normal" title="Button"/>
-                                    <connections>
-                                        <action selector="saveButtonTapped:" destination="yNf-aI-VP2" eventType="touchUpInside" id="L6H-I8-Hwx"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            <constraints>
-                                <constraint firstItem="a3E-nL-vzQ" firstAttribute="width" secondItem="KHf-ws-vgV" secondAttribute="width" multiplier="0.15" id="0fU-1f-S4C"/>
-                                <constraint firstItem="a3E-nL-vzQ" firstAttribute="top" secondItem="KHf-ws-vgV" secondAttribute="top" constant="42" id="0zb-sx-xtw"/>
-                                <constraint firstItem="eDO-L8-Ab7" firstAttribute="centerX" secondItem="KHf-ws-vgV" secondAttribute="centerX" id="Aww-h8-YKZ"/>
-                                <constraint firstItem="a3E-nL-vzQ" firstAttribute="centerX" secondItem="KHf-ws-vgV" secondAttribute="centerX" multiplier="1.75" id="Pj1-Hm-cLS"/>
-                                <constraint firstItem="eDO-L8-Ab7" firstAttribute="centerY" secondItem="KHf-ws-vgV" secondAttribute="centerY" id="m3W-n0-Zmb"/>
-                                <constraint firstItem="eDO-L8-Ab7" firstAttribute="width" secondItem="KHf-ws-vgV" secondAttribute="width" multiplier="0.5" id="s8U-uX-gPr"/>
-                                <constraint firstItem="a3E-nL-vzQ" firstAttribute="centerY" secondItem="eDO-L8-Ab7" secondAttribute="centerY" id="w0A-Io-bdR"/>
-                            </constraints>
-                        </view>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="236" id="yGh-hC-n3a" customClass="EditGoalTableViewCell" customModule="Sprout" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="143" width="414" height="236"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yGh-hC-n3a" id="yB2-IS-3rG" customClass="EditGoalTableViewCell" customModule="Sprout" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="236"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CsT-aS-26Z">
-                                            <rect key="frame" x="31" y="56" width="228" height="100"/>
-                                            <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3dC-UJ-PuF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="228" height="100"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                            </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                            <constraints>
-                                                <constraint firstItem="3dC-UJ-PuF" firstAttribute="top" secondItem="CsT-aS-26Z" secondAttribute="top" id="Iqw-De-Jbo"/>
-                                                <constraint firstAttribute="trailing" secondItem="3dC-UJ-PuF" secondAttribute="trailing" id="a3h-Ue-pIl"/>
-                                                <constraint firstAttribute="bottom" secondItem="3dC-UJ-PuF" secondAttribute="bottom" id="b19-Dr-CYk"/>
-                                                <constraint firstAttribute="height" constant="100" id="fQi-q2-MJp"/>
-                                                <constraint firstItem="3dC-UJ-PuF" firstAttribute="leading" secondItem="CsT-aS-26Z" secondAttribute="leading" id="qbL-fD-ujk"/>
-                                            </constraints>
-                                        </view>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="h2T-Yg-Dpc">
-                                            <rect key="frame" x="31" y="176" width="198" height="31"/>
-                                            <segments>
-                                                <segment title="First"/>
-                                                <segment title="Second"/>
-                                            </segments>
-                                            <connections>
-                                                <action selector="privacySegmentedControllerToggled:" destination="yGh-hC-n3a" eventType="valueChanged" id="cDL-yR-CrE"/>
-                                            </connections>
-                                        </segmentedControl>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="euL-AI-HoD">
-                                            <rect key="frame" x="259" y="176" width="141.5" height="30"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhg-Fs-cRa">
-                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="Dhg-Fs-cRa" secondAttribute="height" multiplier="1:1" id="9Ns-ip-lXp"/>
-                                                        <constraint firstAttribute="height" constant="30" id="CTs-ae-H0J"/>
-                                                    </constraints>
-                                                    <state key="normal" image="ic_today"/>
-                                                </button>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DiY-cG-1Wq">
-                                                    <rect key="frame" x="30" y="0.0" width="111.5" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                        </stackView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K42-gX-I9D">
-                                            <rect key="frame" x="31" y="17.5" width="124.5" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpO-Y6-zre">
-                                            <rect key="frame" x="365.5" y="17.5" width="35" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="EpQ-s8-5Zo"/>
-                                                <constraint firstAttribute="width" secondItem="bpO-Y6-zre" secondAttribute="height" multiplier="1:1.15" id="pkk-pP-p2A"/>
-                                            </constraints>
-                                            <state key="normal" image="ic_delete copy 8"/>
-                                            <connections>
-                                                <action selector="trashButtonTapped:" destination="yGh-hC-n3a" eventType="touchUpInside" id="JiU-WW-xNs"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="euL-AI-HoD" firstAttribute="leading" secondItem="yB2-IS-3rG" secondAttribute="leading" constant="259" id="6A0-hv-FOx"/>
-                                        <constraint firstItem="bpO-Y6-zre" firstAttribute="top" secondItem="K42-gX-I9D" secondAttribute="top" id="AHV-dn-vgi"/>
-                                        <constraint firstItem="CsT-aS-26Z" firstAttribute="width" secondItem="yB2-IS-3rG" secondAttribute="width" multiplier="0.55" id="CnR-AD-rcr"/>
-                                        <constraint firstItem="h2T-Yg-Dpc" firstAttribute="top" secondItem="CsT-aS-26Z" secondAttribute="bottom" constant="20" id="Edl-jI-4Js"/>
-                                        <constraint firstItem="CsT-aS-26Z" firstAttribute="centerX" secondItem="yB2-IS-3rG" secondAttribute="centerX" multiplier="0.7" id="GDe-yy-aGm"/>
-                                        <constraint firstItem="bpO-Y6-zre" firstAttribute="centerX" secondItem="yB2-IS-3rG" secondAttribute="centerX" multiplier="1.85" id="JId-HB-V1l"/>
-                                        <constraint firstItem="CsT-aS-26Z" firstAttribute="top" secondItem="yB2-IS-3rG" secondAttribute="topMargin" constant="45" id="KOH-Ml-hlv"/>
-                                        <constraint firstItem="K42-gX-I9D" firstAttribute="width" secondItem="yB2-IS-3rG" secondAttribute="width" multiplier="0.3" id="Kxt-MO-Xbg"/>
-                                        <constraint firstItem="K42-gX-I9D" firstAttribute="leading" secondItem="CsT-aS-26Z" secondAttribute="leading" id="L3r-ZX-ccr"/>
-                                        <constraint firstItem="euL-AI-HoD" firstAttribute="trailing" secondItem="bpO-Y6-zre" secondAttribute="trailing" id="Yn5-L5-NzC"/>
-                                        <constraint firstItem="euL-AI-HoD" firstAttribute="centerY" secondItem="h2T-Yg-Dpc" secondAttribute="centerY" id="hqd-vh-HVH"/>
-                                        <constraint firstItem="euL-AI-HoD" firstAttribute="top" secondItem="h2T-Yg-Dpc" secondAttribute="top" id="jRe-rQ-9kE"/>
-                                        <constraint firstItem="CsT-aS-26Z" firstAttribute="top" secondItem="K42-gX-I9D" secondAttribute="bottom" constant="18" id="kcI-59-bLE"/>
-                                        <constraint firstItem="h2T-Yg-Dpc" firstAttribute="leading" secondItem="CsT-aS-26Z" secondAttribute="leading" id="qlv-Ym-yRU"/>
-                                        <constraint firstItem="euL-AI-HoD" firstAttribute="leading" secondItem="h2T-Yg-Dpc" secondAttribute="trailing" constant="30" id="ujY-fl-B9o"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="calenderButton" destination="Dhg-Fs-cRa" id="yiK-aU-yV7"/>
-                                    <outlet property="calnderButtonTapped" destination="Dhg-Fs-cRa" id="cje-SN-YG1"/>
-                                    <outlet property="dateTextField" destination="DiY-cG-1Wq" id="8xg-hc-RRb"/>
-                                    <outlet property="descriptionBorder" destination="CsT-aS-26Z" id="L6G-NK-r7q"/>
-                                    <outlet property="descriptionTextView" destination="3dC-UJ-PuF" id="LA0-b4-EiD"/>
-                                    <outlet property="privacySegmentedController" destination="h2T-Yg-Dpc" id="eOz-bp-ELS"/>
-                                    <outlet property="privacyToggled" destination="h2T-Yg-Dpc" id="dwE-At-HZ5"/>
-                                    <outlet property="titleLabel" destination="K42-gX-I9D" id="iAO-7q-iBy"/>
-                                    <outlet property="trashButton" destination="bpO-Y6-zre" id="YFs-6M-hIn"/>
-                                    <outlet property="trashButtonTapped" destination="bpO-Y6-zre" id="db4-8e-ISV"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="yNf-aI-VP2" id="g91-Gk-X6t"/>
-                            <outlet property="delegate" destination="yNf-aI-VP2" id="Ahy-1M-iRZ"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="L22-Wg-MSS"/>
-                    <connections>
-                        <outlet property="editGoalDatePicker" destination="xef-BN-DRj" id="1Kj-Cj-XF4"/>
-                        <outlet property="pageIDLabel" destination="eDO-L8-Ab7" id="uex-2t-qMm"/>
-                        <outlet property="saveButton" destination="a3E-nL-vzQ" id="acb-7d-gKN"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YRJ-T9-vAP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="xef-BN-DRj">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                </datePicker>
-            </objects>
-            <point key="canvasLocation" x="1362" y="415"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="adF-EQ-L4I">
@@ -1131,20 +958,20 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="157" height="177"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mrb-Rq-1R0">
-                                                            <rect key="frame" x="23" y="0.0" width="111" height="110.5"/>
+                                                            <rect key="frame" x="23" y="0.0" width="111" height="111"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="mrb-Rq-1R0" secondAttribute="height" multiplier="1:1" id="hki-8u-PmZ"/>
                                                                 <constraint firstAttribute="height" constant="102" id="tYn-XQ-I0d"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sf-o4-BgR">
-                                                            <rect key="frame" x="65" y="110.5" width="27" height="15.5"/>
+                                                            <rect key="frame" x="65" y="111" width="27" height="15.5"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="11"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9HP-hb-d5e">
-                                                            <rect key="frame" x="60" y="126" width="37" height="21"/>
+                                                            <rect key="frame" x="60" y="126.5" width="37" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1212,9 +1039,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_delete copy 8" width="64" height="80"/>
-        <image name="ic_edit" width="36" height="36"/>
-        <image name="ic_today" width="36" height="40"/>
         <image name="plus" width="66" height="66"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="vQA-zH-H4S"/>
+    </inferredMetricsTieBreakers>
 </document>

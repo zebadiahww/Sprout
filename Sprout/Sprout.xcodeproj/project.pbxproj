@@ -31,8 +31,6 @@
 		853207B823A161C800F8FE3C /* DateFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853207B723A161C800F8FE3C /* DateFormater.swift */; };
 		853B92A623958B4C00D3E5F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 853B92A523958B4C00D3E5F0 /* GoogleService-Info.plist */; };
 		854D3EC8239EF718000A49D2 /* CreateGoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3EC7239EF718000A49D2 /* CreateGoalTableViewController.swift */; };
-		854D3ECA239F11F9000A49D2 /* EditGoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3EC9239F11F9000A49D2 /* EditGoalTableViewCell.swift */; };
-		854D3ECF239F12AD000A49D2 /* EditGoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3ECE239F12AD000A49D2 /* EditGoalTableViewController.swift */; };
 		856A7396239EC05B006D8E26 /* MentorsTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856A7395239EC05B006D8E26 /* MentorsTabTableViewController.swift */; };
 		8592EA2423985105001FD702 /* SkillsTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8592EA2323985105001FD702 /* SkillsTagCollectionViewCell.swift */; };
 		85A024AB23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A024AA23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift */; };
@@ -86,8 +84,6 @@
 		853207B723A161C800F8FE3C /* DateFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateFormater.swift; path = "Sprout/Controllers/View Controllers/Goals View Controllers/DateFormater.swift"; sourceTree = SOURCE_ROOT; };
 		853B92A523958B4C00D3E5F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		854D3EC7239EF718000A49D2 /* CreateGoalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalTableViewController.swift; sourceTree = "<group>"; };
-		854D3EC9239F11F9000A49D2 /* EditGoalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGoalTableViewCell.swift; sourceTree = "<group>"; };
-		854D3ECE239F12AD000A49D2 /* EditGoalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGoalTableViewController.swift; sourceTree = "<group>"; };
 		856A7395239EC05B006D8E26 /* MentorsTabTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorsTabTableViewController.swift; sourceTree = "<group>"; };
 		8592EA2323985105001FD702 /* SkillsTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		85A024AA23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -141,7 +137,6 @@
 		854D3ECD239F1213000A49D2 /* GoalCustom Cells */ = {
 			isa = PBXGroup;
 			children = (
-				854D3EC9239F11F9000A49D2 /* EditGoalTableViewCell.swift */,
 				85A024B723997B7A009E8FC9 /* GoalTableViewCell.swift */,
 			);
 			path = "GoalCustom Cells";
@@ -277,7 +272,6 @@
 				85AFB595238C4F2600CA9A62 /* GoalsHomeViewController.swift */,
 				85A024B923997B9A009E8FC9 /* GoalListTableViewController.swift */,
 				854D3EC7239EF718000A49D2 /* CreateGoalTableViewController.swift */,
-				854D3ECE239F12AD000A49D2 /* EditGoalTableViewController.swift */,
 				85A81AF623A019BF00207E77 /* ProgressRingViewController.swift */,
 			);
 			path = "Goals View Controllers";
@@ -439,7 +433,6 @@
 				5510C7A7239EAB3200B86ED3 /* AccountTableViewController.swift in Sources */,
 				19F050BF238C56E600858EDC /* Goal.swift in Sources */,
 				19F050BD238C53A700858EDC /* Request.swift in Sources */,
-				854D3ECF239F12AD000A49D2 /* EditGoalTableViewController.swift in Sources */,
 				55BB57A72396C18200962DA0 /* PhotoSelectorViewController.swift in Sources */,
 				19F050B7238C526D00858EDC /* User.swift in Sources */,
 				199252B2239EF4150032ACF1 /* MentorRequestTableViewController.swift in Sources */,
@@ -464,8 +457,6 @@
 				85AFB5C1238C5EE700CA9A62 /* UserController.swift in Sources */,
 				85AFB574238C449000CA9A62 /* SceneDelegate.swift in Sources */,
 				55449EA623A022D20020476E /* ViewProfileTableViewController.swift in Sources */,
-				85AFB5A3238C50B000CA9A62 /* PupilProfileViewController.swift in Sources */,
-				854D3ECA239F11F9000A49D2 /* EditGoalTableViewCell.swift in Sources */,
 				85A024B823997B7A009E8FC9 /* GoalTableViewCell.swift in Sources */,
 				856A7396239EC05B006D8E26 /* MentorsTabTableViewController.swift in Sources */,
 				5510C79C2396E03F00B86ED3 /* UserCheckViewController.swift in Sources */,
