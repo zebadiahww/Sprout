@@ -68,6 +68,12 @@ class User {
         return dict
     }
     
+    var pupilsArray: [User] {
+        guard let pupils = pupils else { return [] }
+        
+        return pupils.compactMap({ $0.key })
+    }
+    
     init(uuid: String, name: String, bio: String, occupation: String?, isMentor: Bool, profileImage: UIImage? = nil, pupils: [User : Tag]? = nil, pupilSearchDict: [String : String]? = nil, mentors: [User : Tag]? = nil, mentorSearchDict: [String : String]? = nil, tags: [Tag]? = nil, goals: [Goal]? = nil, request: [Request]? = nil, linkedInURL: String?, website: String?, blockedUsers: [String]? = nil) {
         
         self.uuid = uuid

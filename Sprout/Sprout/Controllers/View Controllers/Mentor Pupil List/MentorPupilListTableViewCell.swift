@@ -7,14 +7,17 @@
 //
 
 import UIKit
+protocol GoalButtonCellDelegate: class {
+    func toGoalPage(_ sender: MentorPupilListTableViewCell)
+}
 
 class MentorPupilListTableViewCell: UITableViewCell {
 
+    weak var delegate: GoalButtonCellDelegate?
     
     //MARK: - Outlets
     @IBOutlet weak var pupilImage: UIImageView!
     @IBOutlet weak var pupilNameLabel: UILabel!
-    @IBOutlet weak var pupilTagLabel: UILabel!
     @IBOutlet weak var goalProgressLabel: UILabel!
     @IBOutlet weak var goalsCompletedLabel: UILabel!
     @IBOutlet weak var suggestGoalButton: UIButton!
@@ -25,7 +28,7 @@ class MentorPupilListTableViewCell: UITableViewCell {
     }
     
     @IBAction func suggestGoalButtonTapped(_ sender: Any) {
-        //segue to createGoals
+        delegate?.toGoalPage(self)
     }
     
     func fetchPupilData() {
