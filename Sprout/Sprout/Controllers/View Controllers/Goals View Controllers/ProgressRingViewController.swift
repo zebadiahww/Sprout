@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ProgressRingViewController: UIViewController {
     
     let shapeLayer = CAShapeLayer()
     
@@ -24,45 +24,43 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        animateWheel(newValue: 0.44)
         
         view.addSubview(percentageLabel)
         percentageLabel.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        percentageLabel.center = view.center
+        percentageLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            percentageLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            percentageLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            ])
         
         
-        // track later code
+        // track layer code
         let trackLayer = CAShapeLayer()
-        let circularPath = UIBezierPath(arcCenter: .zero, radius: 100, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: CGPoint(x: 10, y: 10), radius: 100, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
         trackLayer.path = circularPath.cgPath
         trackLayer.strokeColor = UIColor.lightGray.cgColor
         trackLayer.lineWidth = 10
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.lineCap = .round
-        trackLayer.position = view.center
         
-        view.layer.addSublayer(trackLayer)
+        percentageLabel.layer.addSublayer(trackLayer)
         
         //shape layer code
         shapeLayer.path = circularPath.cgPath
         
-        shapeLayer.strokeColor = UIColor.green.cgColor
+        shapeLayer.strokeColor = UIColor.softBlue.cgColor
         shapeLayer.lineWidth = 10
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineCap = .round
         shapeLayer.strokeEnd = 0
-        shapeLayer.position = view.center
         
-        shapeLayer.transform = CATransform3DMakeRotation(-CGFloat.pi / 2, 0, 0, 1)
+        //shapeLayer.transform = CATransform3DMakeRotation(-CGFloat.pi / 2, 0, 0, 1)
         
-        view.layer.addSublayer(shapeLayer)
+        percentageLabel.layer.addSublayer(shapeLayer)
         
-    }
-    
-    private func beginDownloadingFile() {
-        print("attempting to download")
     }
 
-    
     func animateWheel(newValue: Double) {
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         // if-else statement to get to 100%

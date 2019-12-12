@@ -12,7 +12,6 @@ class GoalsHomeViewController: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var addGoalButton: UIButton!
-    @IBOutlet weak var editGoalButton: UIButton!
     @IBOutlet weak var dailyGoalsButton: UIButton!
     @IBOutlet weak var longTermGoalsButton: UIButton!
     
@@ -31,7 +30,7 @@ class GoalsHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        longTermGoalsButton.isEnabled = false
+        setupViews()
         GoalController.shared.fetchGoal { (success) in
             if success {
                 self.longTermGoals = GoalController.shared.goals.filter({ $0.isDaily == false })
@@ -45,10 +44,10 @@ class GoalsHomeViewController: UIViewController {
     
     //MARK: - Class Methods
     func setupViews() {
-        pageIDLabel.font = UIFont(name: "Avenir", size: 14)
+        pageIDLabel.font = UIFont(name: "Avenir", size: 40)
         pageIDLabel.text = "Goals"
         
-        goalTypeLabel.font = UIFont(name: "Avenir", size: 11)
+        goalTypeLabel.font = UIFont(name: "Avenir", size: 20)
         goalTypeLabel.text = "Daily Goals"
         
         
@@ -62,24 +61,18 @@ class GoalsHomeViewController: UIViewController {
     
     
     //MARK: - Actions
-    @IBAction func addGoalButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "toCreateGoalVC", sender: self)
-    }
-    
-    @IBAction func editGoalButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "toEditGoalsVC", sender: self)
-    }
-    
     @IBAction func dailyGoalsButtonTapped(_ sender: Any) {
-        isDailySelected = !isDailySelected
         longTermGoalsButton.isEnabled = true
         dailyGoalsButton.isEnabled = false
+        longTermGoalsButton.backgroundColor = .lightGreen
+        dailyGoalsButton.backgroundColor = .middleGreen
     }
     
     @IBAction func longTermGoalsButtonTapped(_ sender: Any) {
-        isDailySelected = !isDailySelected
         longTermGoalsButton.isEnabled = false
         dailyGoalsButton.isEnabled = true
+        longTermGoalsButton.backgroundColor = .middleGreen
+        dailyGoalsButton.backgroundColor = .lightGreen
     }
     
 } // END OF CLASS

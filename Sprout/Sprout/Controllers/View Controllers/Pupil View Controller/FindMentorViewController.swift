@@ -18,14 +18,32 @@ class FindMentorViewController: UIViewController, UISearchBarDelegate {
     
     
     //MARK: - Properties
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupViews()
+        mentorSearchBar.delegate = self
+    }
+    
+    func setupViews() {
+        pageIDLabel.font = UIFont(name: "Avenir", size: 30)
+        
+        mentorSearchBar.searchTextField.borderStyle = .none
+        mentorSearchBar.backgroundColor = .clear
+        let glassIcon = self.mentorSearchBar.searchTextField.leftView as? UIImageView
+        glassIcon?.image = glassIcon?.image?.withRenderingMode(.alwaysTemplate)
+        glassIcon?.tintColor = .softBlack
+        if let textfield = mentorSearchBar.value(forKey: "searchField") as? UITextField {
+            textfield.backgroundColor = .white
+            
+            searchBorder.layer.cornerRadius = searchBorder.frame.height/12
+            searchBorder.layer.borderWidth = 1
+        }
     }
     
     //MARK: - Actions
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.resignFirstResponder()
         guard let searchTerm = mentorSearchBar.text, mentorSearchBar.text!.isEmpty else {return}
         UserController.shared.fetchMentorsBySearchTerm(searchTerm: searchTerm) { (success) in
             
@@ -53,7 +71,12 @@ class FindMentorViewController: UIViewController, UISearchBarDelegate {
             self.present(alert, animated: true)
         }
     }
-
+    
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        }
+    
+    
 } // END OF CLASS
 
 extension FindMentorViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -65,12 +88,12 @@ extension FindMentorViewController: UICollectionViewDelegateFlowLayout, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mentorCell", for: indexPath) as? MentorCollectionViewCell else { return UICollectionViewCell() }
         
-               
+        
         let user = UserController.shared.searchedUsers[indexPath.item]
         cell.nameLabel.text = user.name
         cell.occupationLabel.text = user.occupation
         cell.profileImage.image = user.profilePicture
-              
+        
         return cell
     }
 }
