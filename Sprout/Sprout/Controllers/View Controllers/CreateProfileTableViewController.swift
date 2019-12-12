@@ -233,7 +233,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         
         self.isMentorSegmentedController.backgroundColor = .middleGreen
         
-        self.tagTextSearchBar.searchTextField.borderStyle = .none
+        tagTextSearchBar.searchTextField.borderStyle = .none
         tagTextSearchBar.backgroundColor = .clear
         let glassIcon = self.tagTextSearchBar.searchTextField.leftView as? UIImageView
         glassIcon?.image = glassIcon?.image?.withRenderingMode(.alwaysTemplate)

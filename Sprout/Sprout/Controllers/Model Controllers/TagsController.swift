@@ -20,7 +20,7 @@ class TagsController {
     var firebaseDB = Firestore.firestore()
     
     func createTag(with title: String, category: String, completion: @escaping(Bool) -> Void) {
-        let newTag = Tag(title: title, category: category, userIDs: nil)
+        let newTag = Tag(title: title, category: category, userIDs: [])
         let ref = firebaseDB.collection(TagConstants.typeKey).document(newTag.uuid)
         ref.setData(newTag.documentDictionary) { (error) in
             if let error = error {
