@@ -52,4 +52,15 @@ class GoalListTableViewController: UITableViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "" {
+            guard let GoalTableViewCell = tableView.indexPathForSelectedRow,
+                let destinationVC = segue.destination as? CreateGoalTableViewController else { return }
+            
+            let goalToSend = GoalController.shared.goals[GoalTableViewCell.row]
+            
+            destinationVC.goalReceiver = goalToSend
+        }
+    }
+    
 } // END OF CLASS

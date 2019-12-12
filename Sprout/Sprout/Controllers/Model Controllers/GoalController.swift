@@ -17,6 +17,8 @@ class GoalController {
     
     var currentUser: User?
     
+    var newGoal: Goal?
+    
     var firebaseDB = Firestore.firestore()
     
     // TODO add new parameters into functions

@@ -20,15 +20,25 @@ class GoalsHomeViewController: UIViewController {
     @IBOutlet weak var goalTypeLabel: UILabel!
     @IBOutlet weak var progressRingView: UIView!
     
+    @IBOutlet weak var goalsTableView: UITableView!
     
     
     
     //MARK: - Properties
-
+    var longTermGoals: [Goal] = []
+    var isDailySelected = true
+    var dailyGoals: [Goal] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        longTermGoalsButton.isEnabled = false
+        GoalController.shared.fetchGoal { (success) in
+            if success {
+                self.longTermGoals = GoalController.shared.goals.filter({ $0.isDaily == false })
+                self.dailyGoals = GoalController.shared.goals.filter({  $0.isDaily == true })
+                self.goalsTableView.reloadData()
+            }
+        }
     }
     
     
@@ -40,8 +50,8 @@ class GoalsHomeViewController: UIViewController {
         
         goalTypeLabel.font = UIFont(name: "Avenir", size: 11)
         goalTypeLabel.text = "Daily Goals"
-
-
+        
+        
         dailyGoalsButton.layer.cornerRadius = dailyGoalsButton.frame.height/2
         dailyGoalsButton.backgroundColor = .middleGreen
         
@@ -61,9 +71,32 @@ class GoalsHomeViewController: UIViewController {
     }
     
     @IBAction func dailyGoalsButtonTapped(_ sender: Any) {
+        isDailySelected = !isDailySelected
+        longTermGoalsButton.isEnabled = true
+        dailyGoalsButton.isEnabled = false
     }
     
     @IBAction func longTermGoalsButtonTapped(_ sender: Any) {
+        isDailySelected = !isDailySelected
+        longTermGoalsButton.isEnabled = false
+        dailyGoalsButton.isEnabled = true
     }
     
 } // END OF CLASS
+
+
+extension GoalsHomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return isDailySelected ? dailyGoals.count : longTermGoals.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell", for: indexPath) as? GoalTableViewCell else { return UITableViewCell() }
+        
+        let goal = isDailySelected ? dailyGoals[indexPath.row] : longTermGoals[indexPath.row]
+        cell.goalTitleLabel.text = goal.title
+        cell.isPublicLabel.text = "\(goal.isPrivate)"
+        
+        return cell
+    }
+}

@@ -14,6 +14,7 @@ class FindMentorViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var pageIDLabel: UILabel!
     @IBOutlet weak var mentorSearchBar: UISearchBar!
     @IBOutlet weak var searchBorder: UIView!
+    @IBOutlet weak var findMentorCollectionView: UICollectionView!
     
     
     //MARK: - Properties
@@ -21,15 +22,36 @@ class FindMentorViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
-    
-    
-    
     
     //MARK: - Actions
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
+        guard let searchTerm = mentorSearchBar.text, mentorSearchBar.text!.isEmpty else {return}
+        UserController.shared.fetchMentorsBySearchTerm(searchTerm: searchTerm) { (success) in
+            
+            if success {
+                let dispatchGroup = DispatchGroup()
+                for mentor in UserController.shared.searchedUsers {
+                    dispatchGroup.enter()
+                    UserController.shared.fetchProfilePhoto(user: mentor) { (success) in
+                        dispatchGroup.leave()
+                        if success {
+                            print("successfully grabbed mentor photo")
+                        }
+                    }
+                }
+                
+                dispatchGroup.notify(queue: .main) {
+                    self.findMentorCollectionView.reloadData()
+                }
+            }
+            
+            let alert = UIAlertController(title: "User Not Found", message: nil, preferredStyle: .alert)
+            
+            let dismissAction = UIAlertAction(title: "Dismiss", style: .default)
+            alert.addAction(dismissAction)
+            self.present(alert, animated: true)
+        }
     }
 
 } // END OF CLASS
@@ -47,7 +69,7 @@ extension FindMentorViewController: UICollectionViewDelegateFlowLayout, UICollec
         let user = UserController.shared.searchedUsers[indexPath.item]
         cell.nameLabel.text = user.name
         cell.occupationLabel.text = user.occupation
-        cell.profileImage.image = nil //fix this
+        cell.profileImage.image = user.profilePicture
               
         return cell
     }

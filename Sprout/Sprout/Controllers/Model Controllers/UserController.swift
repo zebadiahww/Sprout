@@ -73,18 +73,18 @@ class UserController {
         }
     }
     
-    func fetchMentorbyCategory(category: String, completion: @escaping(Bool) -> Void) {
+    func fetchMentorbyCategory(category: String, completion: @escaping([User]) -> Void) {
         let query = firebaseDB.collection(TagConstants.typeKey).whereField(TagConstants.categoryKey, isEqualTo: category)
         query.getDocuments { (snapshot, error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-                completion(false)
+                completion([])
                 return
             }
-            guard let documents = snapshot?.documents else { completion(false); return }
+            guard let documents = snapshot?.documents else { completion([]); return }
             
             if documents.count == 0 {
-                completion(false)
+                completion([])
                 return
             }
             var mentors: [User] = []
@@ -99,8 +99,7 @@ class UserController {
                     }
                 }
             }
-            self.searchedUsers = mentors
-            completion(true)
+            completion(mentors)
         }
     }
     
@@ -137,49 +136,61 @@ class UserController {
     
     func fetchMentorForPupil(user: String, completion: @escaping(Bool) -> Void) {
         guard let user = UserController.shared.currentUser,
-            let mentors = user.mentorSearchDict else {return}
+            let mentors = user.mentorSearchDict else {return completion(false)}
         var fetchedUsers: [User] = []
         var fetchedTags: [Tag] = []
+        let dispatchGroup = DispatchGroup()
         for mentor in mentors {
-            //            let query = firebaseDB.collection(UserConstants.typeKey).whereField(UserConstants.uuidKey, isEqualTo: mentor.key )
+            dispatchGroup.enter()
             self.fetchUser(uuid: mentor.key) { (result) in
+                dispatchGroup.leave()
                 if let result = result {
                     fetchedUsers.append(result)
                 }
             }
+            dispatchGroup.enter()
             TagsController.shared.fetchTagsWithTagID(uuid: mentor.value) { (result) in
+                dispatchGroup.leave()
                 if let result = result {
                     fetchedTags.append(result)
                 }
             }
-            
+        }
+        dispatchGroup.notify(queue: .main) {
             for num in 0...(fetchedUsers.count - 1) {
                 user.mentors?.updateValue(fetchedTags[num], forKey: fetchedUsers[num])
             }
+            completion(true)
         }
     }
     
     func fetchPupilsForMentor(completion: @escaping(Bool) -> Void) {
         guard let user = UserController.shared.currentUser,
-            let pupils = user.pupilSearchDict else {return}
+            let pupils = user.pupilSearchDict else { return completion(false) }
         var fetchedUsers: [User] = []
         var fetchedTags: [Tag] = []
+        let dispatchGroup = DispatchGroup()
         for pupil in pupils {
+            dispatchGroup.enter()
             self.fetchUser(uuid: pupil.key) { (result) in
+                dispatchGroup.leave()
                 if let result = result {
                     fetchedUsers.append(result)
                 }
             }
+            dispatchGroup.enter()
             TagsController.shared.fetchTagsWithTagID(uuid: pupil.value) { (result) in
+                dispatchGroup.leave()
                 if let result = result {
                     fetchedTags.append(result)
                 }
             }
-            
+        }
+        dispatchGroup.notify(queue: .main) {
             for num in 0...(fetchedUsers.count - 1) {
                 user.pupils?.updateValue(fetchedTags[num], forKey: fetchedUsers[num])
             }
-            
+
             completion(true)
         }
     }
@@ -266,9 +277,8 @@ class UserController {
         }
     }
     
-    func fetchProfilePhoto(completion: @escaping(Bool) -> Void) {
-        guard let currentUser = currentUser else { return }
-        let storageRef = Storage.storage().reference(withPath: "profilepictures/\(currentUser.uuid).jpg")
+    func fetchProfilePhoto(user: User, completion: @escaping(Bool) -> Void) {
+        let storageRef = Storage.storage().reference(withPath: "profilepictures/\(user.uuid).jpg")
         storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
@@ -276,7 +286,7 @@ class UserController {
             }
             if let data = data {
                 let downloadedimage = UIImage(data: data)
-                currentUser.profilePicture = downloadedimage
+                user.profilePicture = downloadedimage
                 print("succesfully fetched image")
                 completion(true)
             }
