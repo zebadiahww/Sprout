@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5dc-tH-cf3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5dc-tH-cf3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -491,6 +491,8 @@
                         <outlet property="tagTextSearchBar" destination="hgW-ft-PhA" id="VJG-eV-NPg"/>
                         <outlet property="websiteBorder" destination="8xA-9T-oO4" id="M8k-FP-TLg"/>
                         <outlet property="websiteTextField" destination="OJS-Na-9ml" id="oy8-7i-yu5"/>
+                        <segue destination="HOE-IL-9ak" kind="presentation" identifier="toPupilHome" id="axW-Os-u4a"/>
+                        <segue destination="jTe-zo-XJS" kind="presentation" identifier="toMentorHome" id="cnm-fJ-HEs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="86F-bd-R47" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -541,6 +543,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZ7-iw-27w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="759" y="146"/>
+        </scene>
+        <!--Pupil-->
+        <scene sceneID="e5i-ii-ywj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Pupil" id="HOE-IL-9ak" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8yz-cL-MzS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="491" y="290"/>
+        </scene>
+        <!--Mentor-->
+        <scene sceneID="GYV-Zh-yPy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Mentor" id="jTe-zo-XJS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1UU-Db-LNF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="491" y="347"/>
         </scene>
     </scenes>
     <resources>

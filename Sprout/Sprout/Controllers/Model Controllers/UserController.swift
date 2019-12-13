@@ -203,9 +203,14 @@ class UserController {
                 return
             }
             
-            guard let user = result?.user else {return}
+            guard Auth.auth().currentUser == result?.user,
+                let user = Auth.auth().currentUser
+                else {
+                    completion(false)
+                    return
+                }
             
-            let ref = self.firebaseDB.collection("users").document(user.uid)
+            let ref = self.firebaseDB.collection("Users").document(user.uid)
             ref.getDocument { (snapshot, error) in
                 if let error = error {
                     print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")

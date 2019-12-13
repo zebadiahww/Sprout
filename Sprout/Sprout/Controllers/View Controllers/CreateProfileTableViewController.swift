@@ -21,7 +21,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     
     //MARK: Properties
     var currentUser: User?
-    var isMentor: Bool?
+    var isMentor: Bool = false
     var tags: Tag?
     var selectedCategory: String?
     
@@ -110,8 +110,8 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         guard let uuid = Auth.auth().currentUser?.uid,
             let name = nameTextField.text, !name.isEmpty,
             let bio = bioTextView.text, !bio.isEmpty,
-            let occupation = occupationTextField.text, !occupation.isEmpty,
-            let isMentor = isMentor
+            let occupation = occupationTextField.text, !occupation.isEmpty
+//            let isMentor = isMentor
             else { return }
         
         for tag in TagsController.shared.tags {
@@ -125,6 +125,17 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         UserController.shared.createUser(uuid: uuid , name: name, bio: bio, occupation: occupation, isMentor: isMentor, profileImage: selectedImage, website: website, linkedInURL: linkedIn) { (success) in
             DispatchQueue.main.async {
                 print("User created successfully")
+                if self.isMentor == true {
+                    let storyboard = UIStoryboard(name: "Mentor", bundle: nil)
+                    guard let initialVC = storyboard.instantiateInitialViewController() else { return }
+                    initialVC.modalPresentationStyle = .fullScreen
+                    self.present(initialVC, animated: true, completion: nil)
+                } else if self.isMentor == false {
+                    let storyboard = UIStoryboard(name: "Pupil", bundle: nil)
+                    guard let initialVC = storyboard.instantiateInitialViewController() else { return }
+                    initialVC.modalPresentationStyle = .fullScreen
+                    self.present(initialVC, animated: true, completion: nil)
+                }
             }
         }
     }
@@ -136,6 +147,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
             self.InterestExpertiseLabel.text = "Interests"
             self.descriptionLabel.text = "Pick a field of interest"
          } else if isMentorSegmentedController.selectedSegmentIndex == 1 {
+            isMentor = true
             self.occupationBorder.isHidden = false
             self.occupationLabel.isHidden = false
             self.InterestExpertiseLabel.text = "Expertise"

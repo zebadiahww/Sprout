@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1968796C23A05FF9002F05FC /* MentorPupilListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1968796B23A05FF9002F05FC /* MentorPupilListTableViewCell.swift */; };
 		1968796E23A06013002F05FC /* MentorRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1968796D23A06013002F05FC /* MentorRequestTableViewCell.swift */; };
+		198CB97F23A306F700C15876 /* MentorHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 198CB97E23A306F700C15876 /* MentorHome.storyboard */; };
 		199252AC239ACD180032ACF1 /* verifyEmail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199252AB239ACD180032ACF1 /* verifyEmail.storyboard */; };
 		199252AE239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199252AD239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift */; };
 		199252B0239EF3C10032ACF1 /* MentorPupilListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199252AF239EF3C10032ACF1 /* MentorPupilListTableViewController.swift */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		1968796B23A05FF9002F05FC /* MentorPupilListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorPupilListTableViewCell.swift; sourceTree = "<group>"; };
 		1968796D23A06013002F05FC /* MentorRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorRequestTableViewCell.swift; sourceTree = "<group>"; };
+		198CB97E23A306F700C15876 /* MentorHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MentorHome.storyboard; sourceTree = "<group>"; };
 		199252AB239ACD180032ACF1 /* verifyEmail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = verifyEmail.storyboard; sourceTree = "<group>"; };
 		199252AD239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVerifyEmailViewController.swift; sourceTree = "<group>"; };
 		199252AF239EF3C10032ACF1 /* MentorPupilListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorPupilListTableViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				85A024B323997A8E009E8FC9 /* Pupil.storyboard */,
 				5510C7A2239AFCF300B86ED3 /* Mentor.storyboard */,
 				5510C7A4239AFDD800B86ED3 /* Account.storyboard */,
+				198CB97E23A306F700C15876 /* MentorHome.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 			files = (
 				85AFB57E238C449000CA9A62 /* LaunchScreen.storyboard in Resources */,
 				85AFB57B238C449000CA9A62 /* Assets.xcassets in Resources */,
+				198CB97F23A306F700C15876 /* MentorHome.storyboard in Resources */,
 				199252AC239ACD180032ACF1 /* verifyEmail.storyboard in Resources */,
 				5510C7A5239AFDD800B86ED3 /* Account.storyboard in Resources */,
 				55BB57A32395D39300962DA0 /* CreateProfile.storyboard in Resources */,
@@ -477,7 +481,6 @@
 				85AFB5C1238C5EE700CA9A62 /* UserController.swift in Sources */,
 				85AFB574238C449000CA9A62 /* SceneDelegate.swift in Sources */,
 				55449EA623A022D20020476E /* ViewProfileTableViewController.swift in Sources */,
-
 				85A024B823997B7A009E8FC9 /* GoalTableViewCell.swift in Sources */,
 				856A7396239EC05B006D8E26 /* MentorsTabTableViewController.swift in Sources */,
 				5510C79C2396E03F00B86ED3 /* UserCheckViewController.swift in Sources */,
