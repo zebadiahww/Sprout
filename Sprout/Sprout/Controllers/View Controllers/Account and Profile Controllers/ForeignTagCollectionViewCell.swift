@@ -13,7 +13,8 @@ class ForeignTagCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var tagNameLabel: UILabel!
     
     func updateLabel(title:String) {
-        tagNameLabel.text = title
+        tagNameLabel.layer.cornerRadius = tagNameLabel.frame.height/12
+        tagNameLabel.text = "   \(title)   "
     }
     
 }

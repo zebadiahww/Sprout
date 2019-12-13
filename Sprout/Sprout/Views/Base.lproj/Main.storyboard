@@ -32,7 +32,8 @@
                     </view>
                     <connections>
                         <segue destination="0U4-Fs-aeN" kind="presentation" identifier="toLogin" modalPresentationStyle="fullScreen" id="XGt-lW-R7i"/>
-                        <segue destination="MFA-x9-FFU" kind="show" identifier="toHome" id="Thx-z4-CQw"/>
+                        <segue destination="MFA-x9-FFU" kind="presentation" identifier="toMentorHome" modalPresentationStyle="fullScreen" id="Thx-z4-CQw"/>
+                        <segue destination="47V-It-PH8" kind="presentation" identifier="toPupilHome" modalPresentationStyle="fullScreen" id="7Q9-Ga-H5S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GjL-db-4Nr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -49,10 +50,20 @@
             </objects>
             <point key="canvasLocation" x="1907" y="194"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--pupilHome-->
+        <scene sceneID="JZn-tI-Hdl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Pupil" referencedIdentifier="pupilHome" id="47V-It-PH8" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="52c-ey-3wz"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dWB-1f-eOt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1918" y="457"/>
+        </scene>
+        <!--mentorHome-->
         <scene sceneID="fKA-Zj-ChJ">
             <objects>
-                <viewControllerPlaceholder id="MFA-x9-FFU" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Mentor" referencedIdentifier="mentorHome" id="MFA-x9-FFU" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ROL-SD-T2f"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y2b-qH-X7j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

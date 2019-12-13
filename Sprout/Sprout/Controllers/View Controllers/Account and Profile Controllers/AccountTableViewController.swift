@@ -66,7 +66,7 @@ class AccountTableViewController: UITableViewController, UITextViewDelegate, Pho
     // MARK: - View Setup Functions
     func initialViewSetup() {
         guard let currentUser = UserController.shared.currentUser else {return}
-        photoSelectorView.layer.cornerRadius = photoSelectorView.frame.height/2
+       // photoSelectorView.layer.cornerRadius = photoSelectorView.frame.height/2
         generalNameLabel.textAlignment = .left
         generalNameLabel.text = UserController.shared.currentUser?.name
         bioTextView.layer.borderWidth = 1

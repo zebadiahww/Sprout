@@ -9,10 +9,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Account-->
         <scene sceneID="Qhp-iS-Osf">
             <objects>
-                <navigationController id="Anl-1M-7F5" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Account" id="Anl-1M-7F5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Account" image="person" catalog="system" id="Lmq-F7-hzx"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VB8-Sn-bcg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -25,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-2317" y="177"/>
         </scene>
-        <!--View Controller-->
+        <!--Account Menu View Controller-->
         <scene sceneID="lJ8-Aj-Y2j">
             <objects>
-                <viewController id="zed-8y-87x" sceneMemberID="viewController">
+                <viewController id="zed-8y-87x" customClass="AccountMenuViewController" customModule="Sprout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sPG-8z-ADf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,7 +187,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6O-x1-cKR">
-                                <rect key="frame" x="132" y="460" width="150" height="30"/>
+                                <rect key="frame" x="132" y="435.5" width="150" height="30"/>
                                 <state key="normal" title="Terms and Conditions"/>
                             </button>
                         </subviews>
@@ -203,6 +205,10 @@
                         <viewLayoutGuide key="safeArea" id="PYT-mo-DiK"/>
                     </view>
                     <navigationItem key="navigationItem" id="3kW-rS-u2C"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="wSH-Ue-jsN" id="gK2-ZG-HrZ"/>
+                        <outlet property="profileImageView" destination="DuR-o6-bQT" id="ENP-7D-sEg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZe-7G-C6b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -221,7 +227,7 @@
                                 <color key="backgroundColor" name="lightGreen"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2dw-ET-4ka">
-                                <rect key="frame" x="20.5" y="251" width="373" height="448"/>
+                                <rect key="frame" x="20.5" y="226.5" width="373" height="448"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6h-Wy-0fv">
                                         <rect key="frame" x="114" y="30" width="145" height="36"/>
@@ -296,7 +302,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMB-J5-fha">
-                                <rect key="frame" x="114" y="749" width="186" height="30"/>
+                                <rect key="frame" x="114" y="724.5" width="186" height="30"/>
                                 <state key="normal" title="Save"/>
                             </button>
                         </subviews>
@@ -322,7 +328,7 @@
             </objects>
             <point key="canvasLocation" x="-584" y="423"/>
         </scene>
-        <!--View Profile Table View Controller-->
+        <!--Profile-->
         <scene sceneID="Dh2-PA-Xk6">
             <objects>
                 <tableViewController id="aQs-hX-H7i" customClass="ViewProfileTableViewController" customModule="Sprout" customModuleProvider="target" sceneMemberID="viewController">
@@ -361,7 +367,7 @@
                                                     </constraints>
                                                     <state key="normal" image="ic_edit"/>
                                                     <connections>
-                                                        <segue destination="jjx-Ss-SAd" kind="presentation" identifier="toEditProfile" modalPresentationStyle="fullScreen" id="EKP-ry-PKx"/>
+                                                        <segue destination="jjx-Ss-SAd" kind="show" identifier="toEditProfile" id="EKP-ry-PKx"/>
                                                     </connections>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Pvj-nz-nJB">
@@ -428,20 +434,39 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="128" id="7V3-8R-wWN"/>
                                                     </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oKY-Hp-S0E">
-                                                        <size key="itemSize" width="50" height="50"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="30" id="oKY-Hp-S0E">
+                                                        <size key="itemSize" width="214" height="55"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ukv-kg-kWt">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tagCell" id="ukv-kg-kWt" customClass="ForeignTagCollectionViewCell" customModule="Sprout" customModuleProvider="target">
+                                                            <rect key="frame" x="58.5" y="0.0" width="214" height="55"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NEW-8v-t7a">
-                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="214" height="55"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvg-Oa-v4C">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="214" height="55"/>
+                                                                        <color key="backgroundColor" name="middleGreen"/>
+                                                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="Wvg-Oa-v4C" firstAttribute="leading" secondItem="NEW-8v-t7a" secondAttribute="leading" id="WvZ-f0-DOF"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Wvg-Oa-v4C" secondAttribute="bottom" id="XBb-fh-WBT"/>
+                                                                    <constraint firstItem="Wvg-Oa-v4C" firstAttribute="top" secondItem="NEW-8v-t7a" secondAttribute="top" id="dB1-Oi-jjT"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Wvg-Oa-v4C" secondAttribute="trailing" id="tqr-tH-B7J"/>
+                                                                </constraints>
                                                             </collectionViewCellContentView>
+                                                            <size key="customSize" width="214" height="55"/>
+                                                            <connections>
+                                                                <outlet property="tagNameLabel" destination="Wvg-Oa-v4C" id="2QC-nP-3HX"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
@@ -619,7 +644,7 @@
                             <outlet property="delegate" destination="aQs-hX-H7i" id="QPl-GJ-y0a"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="F1p-SK-hjO"/>
+                    <navigationItem key="navigationItem" title="Profile" largeTitleDisplayMode="always" id="F1p-SK-hjO"/>
                     <connections>
                         <outlet property="accountTypeLabel" destination="bBZ-rD-ee9" id="mLl-Fq-P2j"/>
                         <outlet property="bioTextView" destination="BXk-zq-6o4" id="nkb-wq-2Ra"/>
@@ -630,13 +655,15 @@
                         <outlet property="nameLabel" destination="5dU-Vf-3w7" id="AyN-so-nHe"/>
                         <outlet property="profileImageView" destination="m56-Qy-wnJ" id="Ip4-T7-SZT"/>
                         <outlet property="seeAllGoalsButton" destination="24q-gV-fsz" id="ugK-Tx-QcJ"/>
+                        <outlet property="tagTypeLabel" destination="AUT-Br-fwk" id="DFp-z2-QI8"/>
+                        <outlet property="tagsCollectionView" destination="04h-HS-0LL" id="znx-aK-9Xi"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CLY-ze-6go" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-584.05797101449275" y="-226.33928571428569"/>
         </scene>
-        <!--Account Table View Controller-->
+        <!--Edit Profile-->
         <scene sceneID="Eaz-f6-EwE">
             <objects>
                 <tableViewController id="jjx-Ss-SAd" customClass="AccountTableViewController" customModule="Sprout" customModuleProvider="target" sceneMemberID="viewController">
@@ -897,7 +924,7 @@
                                                         <action selector="saveButtonTapped:" destination="jjx-Ss-SAd" eventType="touchUpInside" id="FkP-wB-HAM"/>
                                                     </connections>
                                                 </button>
-                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mo5-Wj-Yqo">
+                                                <containerView opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mo5-Wj-Yqo">
                                                     <rect key="frame" x="145" y="30" width="124" height="124"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Mo5-Wj-Yqo" secondAttribute="height" multiplier="1:1" id="ote-sL-no0"/>
@@ -948,7 +975,7 @@
                             <outlet property="delegate" destination="jjx-Ss-SAd" id="FR1-0P-EWh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="9eX-cv-0PD"/>
+                    <navigationItem key="navigationItem" title="Edit Profile" largeTitleDisplayMode="always" id="9eX-cv-0PD"/>
                     <connections>
                         <outlet property="InterestsExpertiseLabel" destination="t9W-sW-PQl" id="tjR-90-yMA"/>
                         <outlet property="addTagButton" destination="FVn-OT-7EV" id="nLW-Bi-2Dd"/>
@@ -1008,12 +1035,12 @@
                         <constraints>
                             <constraint firstItem="4iC-Hw-BbK" firstAttribute="leading" secondItem="Sqj-hD-lbb" secondAttribute="leading" id="QJ0-Ko-xM7"/>
                             <constraint firstAttribute="trailing" secondItem="4iC-Hw-BbK" secondAttribute="trailing" id="Vb8-N2-vQF"/>
-                            <constraint firstItem="VTG-DN-oaq" firstAttribute="leading" secondItem="kyd-C1-nnW" secondAttribute="leading" id="WEF-0q-Sg8"/>
-                            <constraint firstItem="VTG-DN-oaq" firstAttribute="top" secondItem="4iC-Hw-BbK" secondAttribute="top" id="kQX-58-CWT"/>
+                            <constraint firstItem="VTG-DN-oaq" firstAttribute="leading" secondItem="Sqj-hD-lbb" secondAttribute="leading" id="WEF-0q-Sg8"/>
+                            <constraint firstItem="VTG-DN-oaq" firstAttribute="top" secondItem="Sqj-hD-lbb" secondAttribute="top" id="kQX-58-CWT"/>
                             <constraint firstItem="4iC-Hw-BbK" firstAttribute="top" secondItem="Sqj-hD-lbb" secondAttribute="top" id="nxF-wx-2Az"/>
                             <constraint firstAttribute="bottom" secondItem="4iC-Hw-BbK" secondAttribute="bottom" id="rjC-3j-ctK"/>
-                            <constraint firstItem="kyd-C1-nnW" firstAttribute="bottom" secondItem="VTG-DN-oaq" secondAttribute="bottom" id="tN2-Us-I7V"/>
-                            <constraint firstItem="kyd-C1-nnW" firstAttribute="trailing" secondItem="VTG-DN-oaq" secondAttribute="trailing" id="v5Z-gA-K6J"/>
+                            <constraint firstAttribute="bottom" secondItem="VTG-DN-oaq" secondAttribute="bottom" id="tN2-Us-I7V"/>
+                            <constraint firstAttribute="trailing" secondItem="VTG-DN-oaq" secondAttribute="trailing" id="v5Z-gA-K6J"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kyd-C1-nnW"/>
                     </view>
@@ -1032,8 +1059,12 @@
         <image name="chevron-right" width="16" height="28"/>
         <image name="flag" catalog="system" width="64" height="60"/>
         <image name="ic_edit" width="36" height="36"/>
+        <image name="person" catalog="system" width="64" height="58"/>
         <namedColor name="lightGreen">
             <color red="0.88235294117647056" green="0.94509803921568625" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="middleGreen">
+            <color red="0.39215686274509803" green="0.63921568627450975" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

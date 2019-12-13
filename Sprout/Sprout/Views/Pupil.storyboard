@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q5g-oJ-0bV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q5g-oJ-0bV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -39,7 +39,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ljb-DF-2RL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ljb-DF-2RL">
                                 <rect key="frame" x="20" y="279" width="374" height="585"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -381,7 +381,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="adF-EQ-L4I">
             <objects>
-                <tabBarController id="q5g-oJ-0bV" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="pupilHome" id="q5g-oJ-0bV" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="559-kB-TSZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -389,19 +389,19 @@
                     </tabBar>
                     <connections>
                         <segue destination="p7y-3B-zsd" kind="relationship" relationship="viewControllers" id="xIS-nO-qaw"/>
-                        <segue destination="pkx-gn-5KC" kind="relationship" relationship="viewControllers" id="d3K-96-DBX"/>
                         <segue destination="RZ4-y1-676" kind="relationship" relationship="viewControllers" id="iaq-23-3ok"/>
+                        <segue destination="pkx-gn-5KC" kind="relationship" relationship="viewControllers" id="8cg-Im-yAT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EpI-1N-LnB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1677" y="-417"/>
         </scene>
-        <!--Item-->
+        <!--Goals-->
         <scene sceneID="XaA-GW-OfH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p7y-3B-zsd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="IjS-Lk-joE"/>
+                    <tabBarItem key="tabBarItem" title="Goals" image="Group" id="IjS-Lk-joE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YSc-po-L54">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -419,14 +419,14 @@
         <!--Account-->
         <scene sceneID="YO1-mx-tEx">
             <objects>
-                <viewControllerPlaceholder storyboardName="Account" id="pkx-gn-5KC" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Account" referencedIdentifier="Account" id="pkx-gn-5KC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Bh9-7Z-iqa"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sXo-J8-yBm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-378" y="487"/>
         </scene>
-        <!--Item-->
+        <!--Mentors-->
         <scene sceneID="B5w-gY-3CF">
             <objects>
                 <tableViewController id="RZ4-y1-676" customClass="MentorsTabTableViewController" customModule="Sprout" customModuleProvider="target" sceneMemberID="viewController">
@@ -827,7 +827,7 @@
                             <outlet property="delegate" destination="RZ4-y1-676" id="zf6-1G-hM6"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="ZiB-pD-yjT"/>
+                    <tabBarItem key="tabBarItem" title="Mentors" image="ic_local_library" id="ZiB-pD-yjT"/>
                     <connections>
                         <outlet property="entrepreneurshipCV" destination="Wkq-1p-UoT" id="FIY-zD-pr9"/>
                         <outlet property="entrepreneurshipLabel" destination="yPd-Iq-eJH" id="6hi-RO-gPU"/>
@@ -991,6 +991,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Group" width="30" height="30"/>
+        <image name="ic_local_library" width="26" height="30"/>
         <image name="plus" width="66" height="66"/>
     </resources>
     <inferredMetricsTieBreakers>

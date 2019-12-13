@@ -9,7 +9,7 @@
 import UIKit
 
 struct UserConstants {
-    static let typeKey = "User"
+    static let typeKey = "Users"
     static let uuidKey = "uuid"
     fileprivate static let nameKey = "name"
     fileprivate static let bioKey = "bio"

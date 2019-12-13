@@ -21,6 +21,7 @@ class PhotoSelectorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectedPhotoImageView.layer.cornerRadius = selectedPhotoImageView.frame.height/2
     }
     
     override func viewDidDisappear(_ animated: Bool) {

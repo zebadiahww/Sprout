@@ -36,7 +36,7 @@ class UserController {
         let newUser = User(uuid: uuid, name: name, bio: bio, occupation: occupation, isMentor: isMentor, profileImage: profileImage, tags: TagsController.shared.tags, linkedInURL: linkedInURL, website: website)
         let userToSave : [String : Any] = newUser.documentDictionary
         
-        let ref = firebaseDB.collection("Users").document(newUser.uuid)
+        let ref = firebaseDB.collection(UserConstants.typeKey).document(newUser.uuid)
         ref.setData(userToSave) { (error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
@@ -210,7 +210,7 @@ class UserController {
                     return
                 }
             
-            let ref = self.firebaseDB.collection("Users").document(user.uid)
+            let ref = self.firebaseDB.collection(UserConstants.typeKey).document(user.uid)
             ref.getDocument { (snapshot, error) in
                 if let error = error {
                     print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
@@ -233,7 +233,7 @@ class UserController {
             completion(false)
             return
         }
-        let ref = firebaseDB.collection("users").document(user.uid)
+        let ref = firebaseDB.collection(UserConstants.typeKey).document(user.uid)
         ref.getDocument { (snapshot, error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
@@ -248,6 +248,7 @@ class UserController {
                 let user = User(dictionary: documentDictionary)
                 self.currentUser = user
                 completion(true)
+                return
             }
             completion(false)
             return
@@ -340,7 +341,7 @@ class UserController {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 completion(false)
             }
-            self.firebaseDB.collection("users").document(currentUser.uuid).setData([ "profilePicture" : "profilepicture/\(currentUser.uuid).jpg"])
+            self.firebaseDB.collection(UserConstants.typeKey).document(currentUser.uuid).setData([ "profilePicture" : "profilepicture/\(currentUser.uuid).jpg"])
             currentUser.profilePicture = picture
             print("picture successfully uploaded")
             completion(true)
@@ -348,8 +349,8 @@ class UserController {
     }
     
     func updateUser(with name: String, bio: String, completion: @escaping(Bool) -> Void) {
-        guard let userID = currentUser?.uuid else { return }
-        firebaseDB.collection("users").document(userID).setData(["name" : name, "bio" : bio]) { (error) in
+        guard let currentUser = UserController.shared.currentUser else {return}
+        firebaseDB.collection(UserConstants.typeKey).document(currentUser.uuid).setData(currentUser.documentDictionary) { (error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 completion(false)
@@ -364,7 +365,7 @@ class UserController {
         guard let currentUser = currentUser else {return}
         currentUser.blockedUsers?.append(user.uuid)
         
-        firebaseDB.collection("users").document(currentUser.uuid).setData(currentUser.documentDictionary) { (error) in
+        firebaseDB.collection(UserConstants.typeKey).document(currentUser.uuid).setData(currentUser.documentDictionary) { (error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 return completion(false)

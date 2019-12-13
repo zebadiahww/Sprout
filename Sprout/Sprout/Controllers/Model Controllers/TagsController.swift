@@ -85,7 +85,7 @@ class TagsController {
     }
     
     func fetchTag(completion: @escaping(Bool) -> Void) {
-        guard let user = currentUser else { return }
+        guard let user = UserController.shared.currentUser else { return }
         let query = firebaseDB.collection(TagConstants.typeKey).whereField(TagConstants.userIDsKey, arrayContains: user.uuid)
         query.getDocuments { (snapshot, error) in
             if let error = error {
@@ -93,13 +93,15 @@ class TagsController {
                 completion(false)
                 return
             }
+            var fetchedTags: [Tag] = []
             for document in snapshot!.documents {
               
                 if let fetchedTag = Tag(dictionary: document.data()) {
-                    user.tags?.append(fetchedTag)
+                    fetchedTags.append(fetchedTag)
                     print(fetchedTag.title)
                 }
             }
+            user.tags = fetchedTags
             completion(true)
         }
     }

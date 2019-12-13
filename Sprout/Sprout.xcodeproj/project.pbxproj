@@ -24,6 +24,7 @@
 		5510C7A3239AFCF300B86ED3 /* Mentor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5510C7A2239AFCF300B86ED3 /* Mentor.storyboard */; };
 		5510C7A5239AFDD800B86ED3 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5510C7A4239AFDD800B86ED3 /* Account.storyboard */; };
 		5510C7A7239EAB3200B86ED3 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510C7A6239EAB3200B86ED3 /* AccountTableViewController.swift */; };
+		551A45DA23A3703C00E9C20D /* AccountMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551A45D923A3703C00E9C20D /* AccountMenuViewController.swift */; };
 		55449EA623A022D20020476E /* ViewProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55449EA523A022D20020476E /* ViewProfileTableViewController.swift */; };
 		556197A123A2A94300CDD437 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556197A023A2A94300CDD437 /* Profile.storyboard */; };
 		556197A323A2D83300CDD437 /* MentorProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556197A223A2D83300CDD437 /* MentorProfileTableViewController.swift */; };
@@ -83,6 +84,7 @@
 		5510C7A2239AFCF300B86ED3 /* Mentor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mentor.storyboard; sourceTree = "<group>"; };
 		5510C7A4239AFDD800B86ED3 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		5510C7A6239EAB3200B86ED3 /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
+		551A45D923A3703C00E9C20D /* AccountMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMenuViewController.swift; sourceTree = "<group>"; };
 		55449EA523A022D20020476E /* ViewProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProfileTableViewController.swift; sourceTree = "<group>"; };
 		556197A023A2A94300CDD437 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		556197A223A2D83300CDD437 /* MentorProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,39 @@
 				1968796D23A06013002F05FC /* MentorRequestTableViewCell.swift */,
 			);
 			path = "Mentor Request";
+			sourceTree = "<group>";
+		};
+		556197A823A361EA00CDD437 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				5510C79B2396E03F00B86ED3 /* UserCheckViewController.swift */,
+				85AFB58D238C4D0700CA9A62 /* LoginViewController.swift */,
+				5510C79D2397170600B86ED3 /* EmailVerifyViewController.swift */,
+				199252AD239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		556197A923A3625000CDD437 /* Account Creation */ = {
+			isa = PBXGroup;
+			children = (
+				55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */,
+				8592EA2323985105001FD702 /* SkillsTagCollectionViewCell.swift */,
+			);
+			path = "Account Creation";
+			sourceTree = "<group>";
+		};
+		556197AB23A362D900CDD437 /* Account and Profile Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				556197A423A2EFF200CDD437 /* PupilCollectionViewCell.swift */,
+				556197A623A2F4F900CDD437 /* ForeignTagCollectionViewCell.swift */,
+				5510C7A6239EAB3200B86ED3 /* AccountTableViewController.swift */,
+				55449EA523A022D20020476E /* ViewProfileTableViewController.swift */,
+				556197A223A2D83300CDD437 /* MentorProfileTableViewController.swift */,
+				551A45D923A3703C00E9C20D /* AccountMenuViewController.swift */,
+			);
+			path = "Account and Profile Controllers";
 			sourceTree = "<group>";
 		};
 		73351DB3B5523E7A11A59682 /* Frameworks */ = {
@@ -268,23 +303,13 @@
 		85AFB58A238C450100CA9A62 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				85AFB58D238C4D0700CA9A62 /* LoginViewController.swift */,
+				556197A823A361EA00CDD437 /* Authentication */,
+				556197A923A3625000CDD437 /* Account Creation */,
 				85AFB599238C4F8300CA9A62 /* Goals View Controllers */,
 				85AFB59F238C4FFB00CA9A62 /* Pupil View Controller */,
-				55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */,
-				8592EA2323985105001FD702 /* SkillsTagCollectionViewCell.swift */,
-				556197A423A2EFF200CDD437 /* PupilCollectionViewCell.swift */,
-				556197A623A2F4F900CDD437 /* ForeignTagCollectionViewCell.swift */,
-				85A024AA23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift */,
-				55BB57A62396C18200962DA0 /* PhotoSelectorViewController.swift */,
-				5510C79B2396E03F00B86ED3 /* UserCheckViewController.swift */,
-				5510C79D2397170600B86ED3 /* EmailVerifyViewController.swift */,
-				5510C7A6239EAB3200B86ED3 /* AccountTableViewController.swift */,
-				199252AD239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift */,
+				556197AB23A362D900CDD437 /* Account and Profile Controllers */,
 				199372BA23A167F10037EC67 /* Mentor Pupil List */,
 				199372BB23A1680C0037EC67 /* Mentor Request */,
-				55449EA523A022D20020476E /* ViewProfileTableViewController.swift */,
-				556197A223A2D83300CDD437 /* MentorProfileTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -293,6 +318,8 @@
 			isa = PBXGroup;
 			children = (
 				85A024AE23996AAE009E8FC9 /* StyleGuide.swift */,
+				85A024AA23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift */,
+				55BB57A62396C18200962DA0 /* PhotoSelectorViewController.swift */,
 				850C30A02399C838005F49D1 /* CategoryArray.swift */,
 				853207B723A161C800F8FE3C /* DateFormater.swift */,
 			);
@@ -478,6 +505,7 @@
 				556197A323A2D83300CDD437 /* MentorProfileTableViewController.swift in Sources */,
 				85AFB5C5238C5EFF00CA9A62 /* TagsController.swift in Sources */,
 				85A024AF23996AAE009E8FC9 /* StyleGuide.swift in Sources */,
+				551A45DA23A3703C00E9C20D /* AccountMenuViewController.swift in Sources */,
 				8592EA2423985105001FD702 /* SkillsTagCollectionViewCell.swift in Sources */,
 				85AFB58E238C4D0700CA9A62 /* LoginViewController.swift in Sources */,
 				850C30A12399C838005F49D1 /* CategoryArray.swift in Sources */,
