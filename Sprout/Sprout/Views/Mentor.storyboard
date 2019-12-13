@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ORB-1w-zDD">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -66,12 +66,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Design" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ar7-uY-les">
-                                                    <rect key="frame" x="102.5" y="46.5" width="176" height="19.5"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="SyT-a7-ror" firstAttribute="height" secondItem="XSw-6q-9vF" secondAttribute="height" multiplier="0.325" id="1xf-Nh-Gcx"/>
@@ -81,12 +75,9 @@
                                                 <constraint firstItem="SyT-a7-ror" firstAttribute="centerY" secondItem="XSw-6q-9vF" secondAttribute="centerY" multiplier="1.6" id="Gid-i4-g49"/>
                                                 <constraint firstItem="5s4-Ei-b3b" firstAttribute="width" secondItem="XSw-6q-9vF" secondAttribute="width" multiplier="0.0724638" id="Lhp-pT-mry"/>
                                                 <constraint firstItem="aN5-55-V7u" firstAttribute="centerY" secondItem="XSw-6q-9vF" secondAttribute="centerY" multiplier="0.65" id="Luo-gp-FOT"/>
-                                                <constraint firstItem="ar7-uY-les" firstAttribute="centerY" secondItem="XSw-6q-9vF" secondAttribute="centerY" multiplier="0.8" id="MCd-Pe-cCN"/>
-                                                <constraint firstItem="ar7-uY-les" firstAttribute="centerX" secondItem="XSw-6q-9vF" secondAttribute="centerX" multiplier="0.92" id="NNU-UX-cDm"/>
                                                 <constraint firstItem="aN5-55-V7u" firstAttribute="centerX" secondItem="XSw-6q-9vF" secondAttribute="centerX" multiplier="1.75" id="R66-oX-OBL"/>
                                                 <constraint firstItem="SyT-a7-ror" firstAttribute="width" secondItem="XSw-6q-9vF" secondAttribute="width" multiplier="0.903382" id="Ukh-lr-bN3"/>
                                                 <constraint firstItem="5s4-Ei-b3b" firstAttribute="centerY" secondItem="XSw-6q-9vF" secondAttribute="centerY" multiplier="0.65" id="etM-rA-HVK"/>
-                                                <constraint firstItem="ar7-uY-les" firstAttribute="width" secondItem="brz-3p-nnl" secondAttribute="width" id="iwc-vI-GJo"/>
                                                 <constraint firstItem="brz-3p-nnl" firstAttribute="centerX" secondItem="XSw-6q-9vF" secondAttribute="centerX" multiplier="0.92" id="kem-s8-Vwe"/>
                                                 <constraint firstItem="BJ7-R9-Hul" firstAttribute="centerY" secondItem="XSw-6q-9vF" secondAttribute="centerY" multiplier="0.65" id="mni-8e-aeD"/>
                                                 <constraint firstItem="5s4-Ei-b3b" firstAttribute="centerX" secondItem="XSw-6q-9vF" secondAttribute="centerX" multiplier="1.5" id="obr-mG-xb9"/>
@@ -99,7 +90,6 @@
                                             <outlet property="declineButton" destination="5s4-Ei-b3b" id="T5L-4K-QAP"/>
                                             <outlet property="pupilImage" destination="BJ7-R9-Hul" id="vFL-Jr-2L8"/>
                                             <outlet property="pupilNameLabel" destination="brz-3p-nnl" id="01m-S9-Zcb"/>
-                                            <outlet property="pupilTagLabel" destination="ar7-uY-les" id="BUB-od-maP"/>
                                             <outlet property="requestDescriptionLabel" destination="SyT-a7-ror" id="CeK-QY-AuV"/>
                                             <segue destination="0eo-6I-aJ2" kind="show" identifier="cellToPupilProfile" id="IaT-1F-St0"/>
                                         </connections>
@@ -148,7 +138,7 @@
         <!--Home-->
         <scene sceneID="JVv-4x-FN0">
             <objects>
-                <viewController id="EJZ-UN-5GI" customClass="MentorPupilListTableViewController" customModule="Sprout" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EJZ-UN-5GI" customClass="MentorProfileViewController" customModule="Sprout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IQE-ww-Wg5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -166,14 +156,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pupils 4/5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKq-vR-aDQ">
-                                <rect key="frame" x="177" y="225" width="60.5" height="19.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BCw-Ff-rwY">
-                                <rect key="frame" x="0.0" y="274.5" width="414" height="538.5"/>
+                                <rect key="frame" x="0.0" y="247" width="414" height="566"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pupilCell" rowHeight="140" id="B21-5D-lTd" customClass="MentorPupilListTableViewCell" customModule="Sprout" customModuleProvider="target">
@@ -186,12 +170,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pupil Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r79-ZP-rHe">
                                                     <rect key="frame" x="102.5" y="22.5" width="176" height="25"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Design" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reZ-pr-3KE">
-                                                    <rect key="frame" x="102.5" y="46.5" width="176" height="19.5"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -224,21 +202,19 @@
                                                     <connections>
                                                         <action selector="suggestGoalButtonTapped:" destination="EJZ-UN-5GI" eventType="touchUpInside" id="Tau-aJ-wMl"/>
                                                         <action selector="suggestGoalButtonTapped:" destination="B21-5D-lTd" eventType="touchUpInside" id="fhN-HR-9V0"/>
+                                                        <segue destination="wNT-ts-VGc" kind="show" identifier="toCreateGoalVC" id="dwO-AU-wpm"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="91x-tz-a6c" firstAttribute="centerY" secondItem="ycF-x5-uNc" secondAttribute="centerY" multiplier="0.54" id="3I5-J4-vxp"/>
                                                 <constraint firstItem="nY8-1j-TNG" firstAttribute="centerY" secondItem="ycF-x5-uNc" secondAttribute="centerY" multiplier="0.9" id="5g8-rr-KUU"/>
-                                                <constraint firstItem="reZ-pr-3KE" firstAttribute="centerY" secondItem="ycF-x5-uNc" secondAttribute="centerY" multiplier="0.8" id="EBd-Ol-dzM"/>
                                                 <constraint firstItem="g9U-li-4xa" firstAttribute="centerX" secondItem="ycF-x5-uNc" secondAttribute="centerX" multiplier="1.68" id="IEy-YG-tUg"/>
                                                 <constraint firstItem="FQJ-th-o7y" firstAttribute="centerY" secondItem="ycF-x5-uNc" secondAttribute="centerY" multiplier="1.5" id="K4U-yv-RgY"/>
                                                 <constraint firstItem="FQJ-th-o7y" firstAttribute="width" secondItem="ycF-x5-uNc" secondAttribute="width" multiplier="0.439614" id="SOd-3U-Ihq"/>
-                                                <constraint firstItem="reZ-pr-3KE" firstAttribute="width" secondItem="r79-ZP-rHe" secondAttribute="width" id="Shq-UN-2df"/>
                                                 <constraint firstItem="FQJ-th-o7y" firstAttribute="centerX" secondItem="ycF-x5-uNc" secondAttribute="centerX" multiplier="1.5" id="V1V-T2-EXC"/>
                                                 <constraint firstItem="nY8-1j-TNG" firstAttribute="centerX" secondItem="ycF-x5-uNc" secondAttribute="centerX" multiplier="0.28" id="WpW-af-ClU"/>
                                                 <constraint firstItem="91x-tz-a6c" firstAttribute="width" secondItem="ycF-x5-uNc" secondAttribute="width" multiplier="0.3" id="XN3-e3-5dg"/>
-                                                <constraint firstItem="reZ-pr-3KE" firstAttribute="centerX" secondItem="ycF-x5-uNc" secondAttribute="centerX" multiplier="0.92" id="aZT-Re-Mgb"/>
                                                 <constraint firstItem="r79-ZP-rHe" firstAttribute="centerY" secondItem="ycF-x5-uNc" secondAttribute="centerY" multiplier="0.5" id="bom-l0-r0q"/>
                                                 <constraint firstItem="r79-ZP-rHe" firstAttribute="centerX" secondItem="ycF-x5-uNc" secondAttribute="centerX" multiplier="0.92" id="dVq-xf-pZr"/>
                                                 <constraint firstItem="g9U-li-4xa" firstAttribute="centerY" secondItem="ycF-x5-uNc" secondAttribute="centerY" multiplier="0.8" id="hd8-2J-GD0"/>
@@ -252,15 +228,14 @@
                                             <outlet property="goalsCompletedLabel" destination="g9U-li-4xa" id="Epd-hI-INQ"/>
                                             <outlet property="pupilImage" destination="nY8-1j-TNG" id="CAn-Rt-AIc"/>
                                             <outlet property="pupilNameLabel" destination="r79-ZP-rHe" id="8ll-fr-euo"/>
-                                            <outlet property="pupilTagLabel" destination="reZ-pr-3KE" id="nUH-LD-dfy"/>
                                             <outlet property="suggestGoalButton" destination="FQJ-th-o7y" id="soV-dJ-CT9"/>
                                             <segue destination="nnT-vd-qoD" kind="show" identifier="cellToPupilProfile" id="MAO-3w-BqY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v7A-Ni-AWs">
-                                <rect key="frame" x="168" y="93" width="77" height="77"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v7A-Ni-AWs">
+                                <rect key="frame" x="168.5" y="94" width="77" height="77"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="v7A-Ni-AWs" secondAttribute="height" multiplier="1:1" id="toN-qb-avX"/>
                                 </constraints>
@@ -270,13 +245,11 @@
                         <constraints>
                             <constraint firstItem="BCw-Ff-rwY" firstAttribute="leading" secondItem="zaD-oN-cNL" secondAttribute="leading" id="GSn-PF-ieI"/>
                             <constraint firstItem="TtS-0c-AgM" firstAttribute="top" secondItem="hyq-do-Pyf" secondAttribute="bottom" constant="15" id="IEO-yz-Uh6"/>
-                            <constraint firstItem="BCw-Ff-rwY" firstAttribute="top" secondItem="aKq-vR-aDQ" secondAttribute="bottom" constant="30" id="IW7-uG-u8T"/>
                             <constraint firstItem="TtS-0c-AgM" firstAttribute="centerX" secondItem="zaD-oN-cNL" secondAttribute="centerX" id="NPl-dt-CUV"/>
                             <constraint firstItem="BCw-Ff-rwY" firstAttribute="trailing" secondItem="zaD-oN-cNL" secondAttribute="trailing" id="Pbc-t8-cVp"/>
-                            <constraint firstItem="aKq-vR-aDQ" firstAttribute="centerX" secondItem="zaD-oN-cNL" secondAttribute="centerX" id="Wl6-1K-rai"/>
                             <constraint firstItem="hyq-do-Pyf" firstAttribute="centerX" secondItem="zaD-oN-cNL" secondAttribute="centerX" id="aL3-fC-LPY"/>
                             <constraint firstItem="v7A-Ni-AWs" firstAttribute="centerX" secondItem="zaD-oN-cNL" secondAttribute="centerX" id="h8g-6a-YTD"/>
-                            <constraint firstItem="aKq-vR-aDQ" firstAttribute="top" secondItem="TtS-0c-AgM" secondAttribute="bottom" id="hP7-Bs-MSt"/>
+                            <constraint firstItem="BCw-Ff-rwY" firstAttribute="top" secondItem="TtS-0c-AgM" secondAttribute="bottom" constant="22" id="hfj-CR-TCw"/>
                             <constraint firstItem="hyq-do-Pyf" firstAttribute="top" secondItem="v7A-Ni-AWs" secondAttribute="bottom" constant="-8" id="kJT-L9-TjH"/>
                             <constraint firstItem="v7A-Ni-AWs" firstAttribute="top" secondItem="zaD-oN-cNL" secondAttribute="top" constant="50" id="luV-6j-x0h"/>
                             <constraint firstItem="hyq-do-Pyf" firstAttribute="width" secondItem="v7A-Ni-AWs" secondAttribute="width" multiplier="0.9" id="njH-70-ynS"/>
@@ -287,21 +260,22 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="ic_home (1)" id="tiG-IC-5FE"/>
                     <connections>
-                        <outlet property="mentorImage" destination="v7A-Ni-AWs" id="vmk-rS-Rgm"/>
-                        <outlet property="mentorLabel" destination="hyq-do-Pyf" id="Miv-Ey-a5B"/>
-                        <outlet property="myPupilsLabel" destination="TtS-0c-AgM" id="VKL-6W-tdp"/>
-                        <outlet property="numberOfPupilsLabel" destination="aKq-vR-aDQ" id="Ult-Gv-4zi"/>
-                        <segue destination="wNT-ts-VGc" kind="presentation" identifier="toCreateGoal" id="ojG-vJ-VlN"/>
+                        <outlet property="mentorImage" destination="v7A-Ni-AWs" id="cQp-q6-Z1s"/>
+                        <outlet property="mentorLabel" destination="hyq-do-Pyf" id="cLA-kL-GQb"/>
+                        <outlet property="myPupilsLabel" destination="TtS-0c-AgM" id="NC9-lv-bWd"/>
+                        <outlet property="pupilListTableView" destination="BCw-Ff-rwY" id="2yV-G4-MaO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Atn-8F-ku7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-459.4202898550725" y="-782.14285714285711"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--createGoalVC-->
         <scene sceneID="XzJ-KL-RMR">
             <objects>
-                <viewControllerPlaceholder id="wNT-ts-VGc" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Pupil" referencedIdentifier="createGoalVC" id="wNT-ts-VGc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="gD0-zI-v6w"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JKk-bY-1Zv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="207" y="-710"/>
@@ -317,23 +291,23 @@
             <point key="canvasLocation" x="207" y="-877"/>
         </scene>
         <!--Tab Bar Controller-->
-        <scene sceneID="jcf-wd-qQH">
+        <scene sceneID="oEd-d0-ai9">
             <objects>
-                <tabBarController id="bjv-2l-93q" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UIs-lV-uif">
+                <tabBarController id="ORB-1w-zDD" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0f1-Ja-AWH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="EJZ-UN-5GI" kind="relationship" relationship="viewControllers" id="sDd-5N-zZg"/>
-                        <segue destination="SUE-c5-SHY" kind="relationship" relationship="viewControllers" id="rTP-PJ-HHh"/>
-                        <segue destination="GLL-zg-Kcl" kind="relationship" relationship="viewControllers" id="VTy-zr-ORx"/>
+                        <segue destination="EJZ-UN-5GI" kind="relationship" relationship="viewControllers" id="wJH-Oh-GdS"/>
+                        <segue destination="SUE-c5-SHY" kind="relationship" relationship="viewControllers" id="S0M-k8-zid"/>
+                        <segue destination="GLL-zg-Kcl" kind="relationship" relationship="viewControllers" id="bAi-0k-Uol"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JoT-BH-19J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="edr-6l-cmt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1378" y="-109"/>
+            <point key="canvasLocation" x="-1887" y="-359"/>
         </scene>
     </scenes>
     <resources>

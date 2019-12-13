@@ -21,7 +21,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     
     //MARK: Properties
     var currentUser: User?
-    var isMentor: Bool?
+    var isMentor: Bool = false
     var tags: Tag?
     var selectedCategory: String?
     
@@ -67,26 +67,10 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         tagBorder.isHidden = true
         self.occupationBorder.isHidden = true
         self.occupationLabel.isHidden = true
+        self.descriptionLabel.text = "Pick a field of interest"
         setupViews()
-        
-        //        TagsController.shared.tags = [
-        //            Tag(title: "test", category: "testing"),
-        //            Tag(title: "test1", category: "testing"),
-        //            Tag(title: "test123456789", category: "testing"),
-        //            Tag(title: "test34567892", category: "testing"),
-        //            Tag(title: "test2", category: "testing"),
-        //            Tag(title: "teertyst2", category: "testing"),
-        //            Tag(title: "test", category: "testing"),
-        //            Tag(title: "test1", category: "testing"),
-        //            Tag(title: "test123456789", category: "testing"),
-        //            Tag(title: "test34567892", category: "testing"),
-        //            Tag(title: "test2", category: "testing"),
-        //            Tag(title: "teertyst2", category: "testing")
-        //        ]
+  
     }
-    
-    
-    
     
     //MARK: - Actions
     @IBAction func addTagButtonTapped(_ sender: UIButton) {
@@ -124,11 +108,11 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         let linkedIn = linkedInTextField.text
         let website = websiteTextField.text
+        let occupation = occupationTextField.text
         guard let uuid = Auth.auth().currentUser?.uid,
             let name = nameTextField.text, !name.isEmpty,
-            let bio = bioTextView.text, !bio.isEmpty,
-            let occupation = occupationTextField.text, !occupation.isEmpty,
-            let isMentor = isMentor
+            let bio = bioTextView.text, !bio.isEmpty
+//            let isMentor = isMentor
             else { return }
         
         for tag in TagsController.shared.tags {
@@ -142,6 +126,17 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         UserController.shared.createUser(uuid: uuid , name: name, bio: bio, occupation: occupation, isMentor: isMentor, profileImage: selectedImage, website: website, linkedInURL: linkedIn) { (success) in
             DispatchQueue.main.async {
                 print("User created successfully")
+                if self.isMentor == true {
+                    let storyboard = UIStoryboard(name: "MentorHome", bundle: nil)
+                    guard let initialVC = storyboard.instantiateInitialViewController() else { return }
+                    initialVC.modalPresentationStyle = .fullScreen
+                    self.present(initialVC, animated: true, completion: nil)
+                } else if self.isMentor == false {
+                    let storyboard = UIStoryboard(name: "Pupil", bundle: nil)
+                    guard let initialVC = storyboard.instantiateInitialViewController() else { return }
+                    initialVC.modalPresentationStyle = .fullScreen
+                    self.present(initialVC, animated: true, completion: nil)
+                }
             }
         }
     }
@@ -153,14 +148,13 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
             self.InterestExpertiseLabel.text = "Interests"
             self.descriptionLabel.text = "Pick a field of interest"
          } else if isMentorSegmentedController.selectedSegmentIndex == 1 {
+            isMentor = true
             self.occupationBorder.isHidden = false
             self.occupationLabel.isHidden = false
             self.InterestExpertiseLabel.text = "Expertise"
             self.descriptionLabel.text = "Pick an area of expertise"
         }
     }
-    
-    
     
     func setupPicker() {
         categoryPicker.delegate = self
@@ -225,7 +219,6 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         }
     }
     
-    
     //MARK: - UI Elements
     
     func setupViews() {
@@ -253,7 +246,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         
         self.isMentorSegmentedController.backgroundColor = .middleGreen
         
-        self.tagTextSearchBar.searchTextField.borderStyle = .none
+        tagTextSearchBar.searchTextField.borderStyle = .none
         tagTextSearchBar.backgroundColor = .clear
         let glassIcon = self.tagTextSearchBar.searchTextField.leftView as? UIImageView
         glassIcon?.image = glassIcon?.image?.withRenderingMode(.alwaysTemplate)
@@ -268,9 +261,6 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         self.saveButton.titleLabel?.textColor = .white
         
         profileImage.layer.cornerRadius = profileImage.frame.height/2
-
-        
-        
     }
     
     // MARK: - Navigation
@@ -307,8 +297,6 @@ extension CreateProfileTableViewController: UICollectionViewDelegateFlowLayout, 
         cell.layer.cornerRadius = 4
         return cell
     }
-    
-    
 }
 
 extension CreateProfileTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -334,6 +322,4 @@ extension CreateProfileTableViewController: deleteButtonTappedDelegate {
     func reloadOnDeletion() {
         self.tagCollectionView.reloadData()
     }
-    
-    
 }

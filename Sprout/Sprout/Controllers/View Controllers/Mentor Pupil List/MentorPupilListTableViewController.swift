@@ -19,18 +19,26 @@ class MentorPupilListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UserController.shared.fetchPupilsForMentor { (success) in
+            self.tableView.reloadData()
+        }
     }
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return UserController.shared.currentUser?.pupils?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "pupilCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "pupilCell", for: indexPath) as? MentorPupilListTableViewCell,
+            let currentUser = UserController.shared.currentUser
+        else { return UITableViewCell() }
 
-        // Configure the cell...
+        let pupil = currentUser.pupilsArray[indexPath.row]
+        cell.pupilImage.image = pupil.profilePicture
+        cell.pupilNameLabel.text = pupil.name
 
         return cell
     }
@@ -54,3 +62,9 @@ class MentorPupilListTableViewController: UITableViewController {
     }
     
 } // End of Class
+
+extension MentorPupilListTableViewController: GoalButtonCellDelegate {
+    func toGoalPage(_ sender: MentorPupilListTableViewCell) {
+       
+    }
+}

@@ -1,8 +1,8 @@
 //
-//  ProgressRingViewController.swift
-//  Sprout
+//  ViewController.swift
+//  ProgressRing
 //
-//  Created by Zebadiah Watson on 12/10/19.
+//  Created by Zebadiah Watson on 11/18/19.
 //  Copyright © 2019 Zebadiah Watson. All rights reserved.
 //
 
@@ -11,6 +11,8 @@ import UIKit
 class ProgressRingViewController: UIViewController {
     
     let shapeLayer = CAShapeLayer()
+    
+    var currentValue = 0.0
     
     let percentageLabel: UILabel = {
         let label = UILabel()
@@ -22,23 +24,29 @@ class ProgressRingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        animateWheel(newValue: 0.44)
         
         view.addSubview(percentageLabel)
         percentageLabel.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        percentageLabel.center = view.center
+        percentageLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            percentageLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            percentageLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            ])
         
         
+        // track layer code
         let trackLayer = CAShapeLayer()
-        let circularPath = UIBezierPath(arcCenter: .zero, radius: 100, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: CGPoint(x: 10, y: 10), radius: 100, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
         trackLayer.path = circularPath.cgPath
-        trackLayer.strokeColor = UIColor.clear.cgColor
+        trackLayer.strokeColor = UIColor.lightGray.cgColor
         trackLayer.lineWidth = 10
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.lineCap = .round
-        trackLayer.position = view.center
         
-        view.layer.addSublayer(trackLayer)
+        percentageLabel.layer.addSublayer(trackLayer)
         
+        //shape layer code
         shapeLayer.path = circularPath.cgPath
         
         shapeLayer.strokeColor = UIColor.softBlue.cgColor
@@ -46,65 +54,51 @@ class ProgressRingViewController: UIViewController {
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineCap = .round
         shapeLayer.strokeEnd = 0
-        shapeLayer.position = view.center
         
-        shapeLayer.transform = CATransform3DMakeRotation(-CGFloat.pi / 2, 0, 0, 1)
+        //shapeLayer.transform = CATransform3DMakeRotation(-CGFloat.pi / 2, 0, 0, 1)
         
-        view.layer.addSublayer(shapeLayer)
+        percentageLabel.layer.addSublayer(shapeLayer)
+        
     }
-    
-    
-    
-    @IBAction func completeButtonTapped(_ sender: Any) {
+
+    func animateWheel(newValue: Double) {
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         // if-else statement to get to 100%
-        basicAnimation.toValue = 0.33
+        basicAnimation.fromValue = currentValue
+        basicAnimation.toValue = newValue
         
-        basicAnimation.duration = 2
-        basicAnimation.fillMode = .forwards
+        basicAnimation.duration = 1
+        if currentValue < newValue {
+            basicAnimation.fillMode = .forwards
+        } else {
+            basicAnimation.fillMode = .forwards
+        }
         basicAnimation.isRemovedOnCompletion = false
         
         shapeLayer.add(basicAnimation, forKey: "basicString")
         
+        currentValue = newValue
+        
         DispatchQueue.main.async {
-            self.percentageLabel.text = "33%"
+            self.percentageLabel.text = String(self.currentValue)
         }
+    }
+    
+    @IBAction func completeButtonTapped(_ sender: Any) {
+
+        animateWheel(newValue: 0.10)
     }
     
     @IBAction func completeTwoButtonTapped(_ sender: Any) {
-        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        // if-else statement to get to 100%
-        basicAnimation.fromValue = 0.33
-        basicAnimation.toValue = 0.66
-        
-        basicAnimation.duration = 2
-        basicAnimation.fillMode = .forwards
-        basicAnimation.isRemovedOnCompletion = false
-        
-        shapeLayer.add(basicAnimation, forKey: "basicString")
-        
-        DispatchQueue.main.async {
-            self.percentageLabel.text = "66%"
-        }
+        animateWheel(newValue: 0.44)
     }
     
     @IBAction func completeThreeButtonTapped(_ sender: Any) {
-        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        // if-else statement to get to 100%
-        basicAnimation.fromValue = 0.66
-        basicAnimation.toValue = 1
-        
-        basicAnimation.duration = 2
-        basicAnimation.fillMode = .forwards
-        basicAnimation.isRemovedOnCompletion = false
-        
-        shapeLayer.add(basicAnimation, forKey: "basicString")
-        
-        DispatchQueue.main.async {
-            self.percentageLabel.text = "100%"
-        }
+        animateWheel(newValue: 0.99)
+
     }
+
     
     
-} // END OF CLASS
+}// End of Class
 

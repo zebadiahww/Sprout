@@ -30,6 +30,9 @@ class GoalTableViewCell: UITableViewCell {
     //MARK: - Actions
     @IBAction func finishButtonTapped(_ sender: Any) {
         
+        finishButton.titleLabel?.text = "Completed"
+        finishButton.backgroundColor = .lightGreen
+        finishButton.isEnabled = false
     }
     
 

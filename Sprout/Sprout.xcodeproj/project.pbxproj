@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		1968796C23A05FF9002F05FC /* MentorPupilListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1968796B23A05FF9002F05FC /* MentorPupilListTableViewCell.swift */; };
 		1968796E23A06013002F05FC /* MentorRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1968796D23A06013002F05FC /* MentorRequestTableViewCell.swift */; };
+		198CB97F23A306F700C15876 /* MentorHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 198CB97E23A306F700C15876 /* MentorHome.storyboard */; };
 		199252AC239ACD180032ACF1 /* verifyEmail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199252AB239ACD180032ACF1 /* verifyEmail.storyboard */; };
 		199252AE239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199252AD239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift */; };
 		199252B0239EF3C10032ACF1 /* MentorPupilListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199252AF239EF3C10032ACF1 /* MentorPupilListTableViewController.swift */; };
-		199252B2239EF4150032ACF1 /* MentorRequestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199252B1239EF4150032ACF1 /* MentorRequestTableViewController.swift */; };
+		19C9EF2123A2B8E600F6D61A /* MentorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9EF2023A2B8E600F6D61A /* MentorProfileViewController.swift */; };
+		19C9EF2323A2C1C900F6D61A /* MentorRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9EF2223A2C1C900F6D61A /* MentorRequestViewController.swift */; };
 		19F050B7238C526D00858EDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050B6238C526D00858EDC /* User.swift */; };
 		19F050BB238C538A00858EDC /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BA238C538A00858EDC /* Tag.swift */; };
 		19F050BD238C53A700858EDC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F050BC238C53A700858EDC /* Request.swift */; };
@@ -35,8 +37,6 @@
 		853207B823A161C800F8FE3C /* DateFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853207B723A161C800F8FE3C /* DateFormater.swift */; };
 		853B92A623958B4C00D3E5F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 853B92A523958B4C00D3E5F0 /* GoogleService-Info.plist */; };
 		854D3EC8239EF718000A49D2 /* CreateGoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3EC7239EF718000A49D2 /* CreateGoalTableViewController.swift */; };
-		854D3ECA239F11F9000A49D2 /* EditGoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3EC9239F11F9000A49D2 /* EditGoalTableViewCell.swift */; };
-		854D3ECF239F12AD000A49D2 /* EditGoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D3ECE239F12AD000A49D2 /* EditGoalTableViewController.swift */; };
 		856A7396239EC05B006D8E26 /* MentorsTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856A7395239EC05B006D8E26 /* MentorsTabTableViewController.swift */; };
 		8592EA2423985105001FD702 /* SkillsTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8592EA2323985105001FD702 /* SkillsTagCollectionViewCell.swift */; };
 		85A024AB23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A024AA23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift */; };
@@ -66,10 +66,12 @@
 /* Begin PBXFileReference section */
 		1968796B23A05FF9002F05FC /* MentorPupilListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorPupilListTableViewCell.swift; sourceTree = "<group>"; };
 		1968796D23A06013002F05FC /* MentorRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorRequestTableViewCell.swift; sourceTree = "<group>"; };
+		198CB97E23A306F700C15876 /* MentorHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MentorHome.storyboard; sourceTree = "<group>"; };
 		199252AB239ACD180032ACF1 /* verifyEmail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = verifyEmail.storyboard; sourceTree = "<group>"; };
 		199252AD239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVerifyEmailViewController.swift; sourceTree = "<group>"; };
 		199252AF239EF3C10032ACF1 /* MentorPupilListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorPupilListTableViewController.swift; sourceTree = "<group>"; };
-		199252B1239EF4150032ACF1 /* MentorRequestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorRequestTableViewController.swift; sourceTree = "<group>"; };
+		19C9EF2023A2B8E600F6D61A /* MentorProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorProfileViewController.swift; sourceTree = "<group>"; };
+		19C9EF2223A2C1C900F6D61A /* MentorRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorRequestViewController.swift; sourceTree = "<group>"; };
 		19F050B6238C526D00858EDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = SOURCE_ROOT; };
 		19F050BA238C538A00858EDC /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = SOURCE_ROOT; };
 		19F050BC238C53A700858EDC /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = SOURCE_ROOT; };
@@ -94,8 +96,6 @@
 		853207B723A161C800F8FE3C /* DateFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateFormater.swift; path = "Sprout/Controllers/View Controllers/Goals View Controllers/DateFormater.swift"; sourceTree = SOURCE_ROOT; };
 		853B92A523958B4C00D3E5F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		854D3EC7239EF718000A49D2 /* CreateGoalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalTableViewController.swift; sourceTree = "<group>"; };
-		854D3EC9239F11F9000A49D2 /* EditGoalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGoalTableViewCell.swift; sourceTree = "<group>"; };
-		854D3ECE239F12AD000A49D2 /* EditGoalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGoalTableViewController.swift; sourceTree = "<group>"; };
 		856A7395239EC05B006D8E26 /* MentorsTabTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorsTabTableViewController.swift; sourceTree = "<group>"; };
 		8592EA2323985105001FD702 /* SkillsTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		85A024AA23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -140,6 +140,7 @@
 		199372BA23A167F10037EC67 /* Mentor Pupil List */ = {
 			isa = PBXGroup;
 			children = (
+				19C9EF2023A2B8E600F6D61A /* MentorProfileViewController.swift */,
 				199252AF239EF3C10032ACF1 /* MentorPupilListTableViewController.swift */,
 				1968796B23A05FF9002F05FC /* MentorPupilListTableViewCell.swift */,
 			);
@@ -149,7 +150,7 @@
 		199372BB23A1680C0037EC67 /* Mentor Request */ = {
 			isa = PBXGroup;
 			children = (
-				199252B1239EF4150032ACF1 /* MentorRequestTableViewController.swift */,
+				19C9EF2223A2C1C900F6D61A /* MentorRequestViewController.swift */,
 				1968796D23A06013002F05FC /* MentorRequestTableViewCell.swift */,
 			);
 			path = "Mentor Request";
@@ -167,7 +168,6 @@
 		854D3ECD239F1213000A49D2 /* GoalCustom Cells */ = {
 			isa = PBXGroup;
 			children = (
-				854D3EC9239F11F9000A49D2 /* EditGoalTableViewCell.swift */,
 				85A024B723997B7A009E8FC9 /* GoalTableViewCell.swift */,
 			);
 			path = "GoalCustom Cells";
@@ -229,6 +229,7 @@
 				5510C7A2239AFCF300B86ED3 /* Mentor.storyboard */,
 				5510C7A4239AFDD800B86ED3 /* Account.storyboard */,
 				556197A023A2A94300CDD437 /* Profile.storyboard */,
+				198CB97E23A306F700C15876 /* MentorHome.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -305,7 +306,6 @@
 				85AFB595238C4F2600CA9A62 /* GoalsHomeViewController.swift */,
 				85A024B923997B9A009E8FC9 /* GoalListTableViewController.swift */,
 				854D3EC7239EF718000A49D2 /* CreateGoalTableViewController.swift */,
-				854D3ECE239F12AD000A49D2 /* EditGoalTableViewController.swift */,
 				85A81AF623A019BF00207E77 /* ProgressRingViewController.swift */,
 			);
 			path = "Goals View Controllers";
@@ -400,6 +400,7 @@
 			files = (
 				85AFB57E238C449000CA9A62 /* LaunchScreen.storyboard in Resources */,
 				85AFB57B238C449000CA9A62 /* Assets.xcassets in Resources */,
+				198CB97F23A306F700C15876 /* MentorHome.storyboard in Resources */,
 				199252AC239ACD180032ACF1 /* verifyEmail.storyboard in Resources */,
 				5510C7A5239AFDD800B86ED3 /* Account.storyboard in Resources */,
 				55BB57A32395D39300962DA0 /* CreateProfile.storyboard in Resources */,
@@ -468,10 +469,8 @@
 				5510C7A7239EAB3200B86ED3 /* AccountTableViewController.swift in Sources */,
 				19F050BF238C56E600858EDC /* Goal.swift in Sources */,
 				19F050BD238C53A700858EDC /* Request.swift in Sources */,
-				854D3ECF239F12AD000A49D2 /* EditGoalTableViewController.swift in Sources */,
 				55BB57A72396C18200962DA0 /* PhotoSelectorViewController.swift in Sources */,
 				19F050B7238C526D00858EDC /* User.swift in Sources */,
-				199252B2239EF4150032ACF1 /* MentorRequestTableViewController.swift in Sources */,
 				55BB57A52395D95300962DA0 /* CreateProfileTableViewController.swift in Sources */,
 				85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */,
 				19F050BB238C538A00858EDC /* Tag.swift in Sources */,
@@ -482,7 +481,9 @@
 				8592EA2423985105001FD702 /* SkillsTagCollectionViewCell.swift in Sources */,
 				85AFB58E238C4D0700CA9A62 /* LoginViewController.swift in Sources */,
 				850C30A12399C838005F49D1 /* CategoryArray.swift in Sources */,
+				19C9EF2323A2C1C900F6D61A /* MentorRequestViewController.swift in Sources */,
 				1968796C23A05FF9002F05FC /* MentorPupilListTableViewCell.swift in Sources */,
+				19C9EF2123A2B8E600F6D61A /* MentorProfileViewController.swift in Sources */,
 				5510C79E2397170600B86ED3 /* EmailVerifyViewController.swift in Sources */,
 				199252AE239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift in Sources */,
 				85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */,
@@ -496,7 +497,6 @@
 				85AFB5C1238C5EE700CA9A62 /* UserController.swift in Sources */,
 				85AFB574238C449000CA9A62 /* SceneDelegate.swift in Sources */,
 				55449EA623A022D20020476E /* ViewProfileTableViewController.swift in Sources */,
-				854D3ECA239F11F9000A49D2 /* EditGoalTableViewCell.swift in Sources */,
 				85A024B823997B7A009E8FC9 /* GoalTableViewCell.swift in Sources */,
 				856A7396239EC05B006D8E26 /* MentorsTabTableViewController.swift in Sources */,
 				5510C79C2396E03F00B86ED3 /* UserCheckViewController.swift in Sources */,

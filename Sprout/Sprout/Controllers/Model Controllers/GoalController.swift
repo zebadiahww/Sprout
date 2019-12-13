@@ -17,6 +17,8 @@ class GoalController {
     
     var currentUser: User?
     
+    var newGoal: Goal?
+    
     var firebaseDB = Firestore.firestore()
     
     // TODO add new parameters into functions
@@ -54,9 +56,9 @@ class GoalController {
     }
     
     func fetchGoal( completion: @escaping(Bool) -> Void) {
-        guard let user = currentUser else { return }
+        guard let user = UserController.shared.currentUser else { return }
 
-        let query = firebaseDB.collection("Goal").whereField("userID", isEqualTo: user.uuid)
+        let query = firebaseDB.collection(GoalConstants.typeKey).whereField(GoalConstants.userIDKey, isEqualTo: user.uuid)
             query.getDocuments { (snapshot, error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
