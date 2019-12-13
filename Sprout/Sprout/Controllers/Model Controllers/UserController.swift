@@ -343,4 +343,18 @@ class UserController {
             print("updated user info")
         }
     }
+    
+    func blockUser(user: User, completion: @escaping(Bool) -> Void) {
+        guard let currentUser = currentUser else {return}
+        currentUser.blockedUsers?.append(user.uuid)
+        
+        firebaseDB.collection("users").document(currentUser.uuid).setData(currentUser.documentDictionary) { (error) in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                return completion(false)
+            }
+            print("User updated successfully")
+            completion(true)
+        }
+    }
 } // END OF CLASS

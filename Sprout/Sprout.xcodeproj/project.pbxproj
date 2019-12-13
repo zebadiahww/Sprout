@@ -23,6 +23,10 @@
 		5510C7A5239AFDD800B86ED3 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5510C7A4239AFDD800B86ED3 /* Account.storyboard */; };
 		5510C7A7239EAB3200B86ED3 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510C7A6239EAB3200B86ED3 /* AccountTableViewController.swift */; };
 		55449EA623A022D20020476E /* ViewProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55449EA523A022D20020476E /* ViewProfileTableViewController.swift */; };
+		556197A123A2A94300CDD437 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556197A023A2A94300CDD437 /* Profile.storyboard */; };
+		556197A323A2D83300CDD437 /* MentorProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556197A223A2D83300CDD437 /* MentorProfileTableViewController.swift */; };
+		556197A523A2EFF200CDD437 /* PupilCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556197A423A2EFF200CDD437 /* PupilCollectionViewCell.swift */; };
+		556197A723A2F4F900CDD437 /* ForeignTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556197A623A2F4F900CDD437 /* ForeignTagCollectionViewCell.swift */; };
 		55BB57A12395C92D00962DA0 /* SignInSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */; };
 		55BB57A32395D39300962DA0 /* CreateProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BB57A22395D39300962DA0 /* CreateProfile.storyboard */; };
 		55BB57A52395D95300962DA0 /* CreateProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */; };
@@ -78,6 +82,10 @@
 		5510C7A4239AFDD800B86ED3 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		5510C7A6239EAB3200B86ED3 /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		55449EA523A022D20020476E /* ViewProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProfileTableViewController.swift; sourceTree = "<group>"; };
+		556197A023A2A94300CDD437 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		556197A223A2D83300CDD437 /* MentorProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorProfileTableViewController.swift; sourceTree = "<group>"; };
+		556197A423A2EFF200CDD437 /* PupilCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupilCollectionViewCell.swift; sourceTree = "<group>"; };
+		556197A623A2F4F900CDD437 /* ForeignTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInSignUp.storyboard; sourceTree = "<group>"; };
 		55BB57A22395D39300962DA0 /* CreateProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProfile.storyboard; sourceTree = "<group>"; };
 		55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +228,7 @@
 				85A024B323997A8E009E8FC9 /* Pupil.storyboard */,
 				5510C7A2239AFCF300B86ED3 /* Mentor.storyboard */,
 				5510C7A4239AFDD800B86ED3 /* Account.storyboard */,
+				556197A023A2A94300CDD437 /* Profile.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -263,6 +272,8 @@
 				85AFB59F238C4FFB00CA9A62 /* Pupil View Controller */,
 				55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */,
 				8592EA2323985105001FD702 /* SkillsTagCollectionViewCell.swift */,
+				556197A423A2EFF200CDD437 /* PupilCollectionViewCell.swift */,
+				556197A623A2F4F900CDD437 /* ForeignTagCollectionViewCell.swift */,
 				85A024AA23986DAA009E8FC9 /* LeftAlignedCollectionViewFlowLayout.swift */,
 				55BB57A62396C18200962DA0 /* PhotoSelectorViewController.swift */,
 				5510C79B2396E03F00B86ED3 /* UserCheckViewController.swift */,
@@ -272,6 +283,7 @@
 				199372BA23A167F10037EC67 /* Mentor Pupil List */,
 				199372BB23A1680C0037EC67 /* Mentor Request */,
 				55449EA523A022D20020476E /* ViewProfileTableViewController.swift */,
+				556197A223A2D83300CDD437 /* MentorProfileTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -392,6 +404,7 @@
 				5510C7A5239AFDD800B86ED3 /* Account.storyboard in Resources */,
 				55BB57A32395D39300962DA0 /* CreateProfile.storyboard in Resources */,
 				85AFB579238C449000CA9A62 /* Main.storyboard in Resources */,
+				556197A123A2A94300CDD437 /* Profile.storyboard in Resources */,
 				853B92A623958B4C00D3E5F0 /* GoogleService-Info.plist in Resources */,
 				85A024B423997A8E009E8FC9 /* Pupil.storyboard in Resources */,
 				55BB57A12395C92D00962DA0 /* SignInSignUp.storyboard in Resources */,
@@ -463,6 +476,7 @@
 				85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */,
 				19F050BB238C538A00858EDC /* Tag.swift in Sources */,
 				85AFB5C7238C5F1000CA9A62 /* RequestController.swift in Sources */,
+				556197A323A2D83300CDD437 /* MentorProfileTableViewController.swift in Sources */,
 				85AFB5C5238C5EFF00CA9A62 /* TagsController.swift in Sources */,
 				85A024AF23996AAE009E8FC9 /* StyleGuide.swift in Sources */,
 				8592EA2423985105001FD702 /* SkillsTagCollectionViewCell.swift in Sources */,
@@ -473,6 +487,8 @@
 				199252AE239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift in Sources */,
 				85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */,
 				1968796E23A06013002F05FC /* MentorRequestTableViewCell.swift in Sources */,
+				556197A523A2EFF200CDD437 /* PupilCollectionViewCell.swift in Sources */,
+				556197A723A2F4F900CDD437 /* ForeignTagCollectionViewCell.swift in Sources */,
 				85A81AF523A002C300207E77 /* FindMentorViewController.swift in Sources */,
 				854D3EC8239EF718000A49D2 /* CreateGoalTableViewController.swift in Sources */,
 				85AFB5C9238C5F1D00CA9A62 /* GoalController.swift in Sources */,
