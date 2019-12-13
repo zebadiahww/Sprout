@@ -104,9 +104,8 @@ class CreateGoalTableViewController: UITableViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let title = titleLabel.text, !title.isEmpty,
-            let body = descriptionTextView.text, !body.isEmpty,
-            let userID = UserController.shared.currentUser?.uuid,
-            let uuid = GoalController.shared.newGoal?.uuid
+        let body = descriptionTextView.text, !body.isEmpty,
+        let userID = UserController.shared.currentUser?.uuid
             
             else {return}
         let date: Date?
@@ -125,7 +124,7 @@ class CreateGoalTableViewController: UITableViewController {
                 }
             }
         } else {
-            GoalController.shared.createGoal(title: title, body: body, userID: userID, isComplete: false, isPrivate: isPrivate, isDaily: isDaily, date: date, uuid: uuid) { (success) in
+            GoalController.shared.createGoal(title: title, body: body, userID: userID, isComplete: false, isPrivate: isPrivate, isDaily: isDaily, date: date, uuid: UUID().uuidString) { (success) in
                 if success {
                     DispatchQueue.main.async {
                         self.navigationController?.popViewController(animated: true)
