@@ -26,7 +26,7 @@ class LoginVerifyEmailViewController: UIViewController {
     @IBAction func continueButtonTapped(_ sender: Any) {
         UserController.shared.checkEmailVerification { (success) in
             if success {
-                self.performSegue(withIdentifier: "toHome", sender: sender)
+//                self.performSegue(withIdentifier: "toHome", sender: sender)
             } else {
                 self.actionLabel.isHidden = false
                 self.actionLabel.text = "Your e-mail has not been verified. Please check your spam folder just in case"

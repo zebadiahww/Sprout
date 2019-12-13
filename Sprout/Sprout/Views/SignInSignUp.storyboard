@@ -56,7 +56,6 @@
                                         </state>
                                         <connections>
                                             <action selector="loginButtonTapped:" destination="aXP-tm-f2h" eventType="touchUpInside" id="87g-ld-vYk"/>
-                                            <segue destination="5nO-px-m5k" kind="presentation" identifier="toLoginVerifyEmail" id="YlS-8x-F2u"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="dDa-Wz-wyy">
@@ -174,37 +173,38 @@
                         <outlet property="passwordBorder" destination="PcQ-an-acq" id="6bC-ap-Taa"/>
                         <outlet property="passwordBorderLabel" destination="x8b-km-fRn" id="oXw-uq-Hwd"/>
                         <outlet property="passwordTextField" destination="jNC-Gc-kEi" id="eXy-fL-YnU"/>
-                        <segue destination="hVF-M9-1pe" kind="presentation" identifier="toEmailVerify" modalPresentationStyle="fullScreen" id="Tnz-UE-i2C"/>
-                        <segue destination="9xB-0v-DhY" kind="presentation" identifier="toHome" modalPresentationStyle="fullScreen" id="rSy-v2-wLp"/>
+                        <segue destination="wZ5-q0-5j4" kind="presentation" identifier="toMentorHome" id="AEr-PP-qlc"/>
+                        <segue destination="00y-SS-WRf" kind="presentation" identifier="toPupilHome" id="Iua-77-gRk"/>
+                        <segue destination="HnF-FC-Ltq" kind="presentation" identifier="toVerifyEmail" id="9FE-jG-lpD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJN-CS-yeI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
+        <!--Pupil-->
+        <scene sceneID="teR-Yk-spU">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="mentorHomeVC" storyboardName="Pupil" id="wZ5-q0-5j4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7FO-IL-7bp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="907" y="50"/>
+        </scene>
+        <!--Pupil-->
+        <scene sceneID="rsv-7M-dfF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Pupil" id="00y-SS-WRf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0pr-yb-Jhb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="907" y="117"/>
+        </scene>
         <!--verifyEmail-->
-        <scene sceneID="hf6-nx-EkV">
+        <scene sceneID="gsk-Lv-fOq">
             <objects>
-                <viewControllerPlaceholder storyboardName="verifyEmail" id="5nO-px-m5k" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BuF-IQ-AW6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="verifyEmail" id="HnF-FC-Ltq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ix-nK-mUH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="787" y="286"/>
-        </scene>
-        <!--EmailVerifyViewController-->
-        <scene sceneID="a5e-U5-P0c">
-            <objects>
-                <viewControllerPlaceholder storyboardName="CreateProfile" referencedIdentifier="EmailVerifyViewController" id="hVF-M9-1pe" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8AI-5S-aaz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="853" y="84"/>
-        </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="zZc-rE-RFT">
-            <objects>
-                <viewControllerPlaceholder id="9xB-0v-DhY" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BzY-3X-Qho" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="834" y="230"/>
+            <point key="canvasLocation" x="907" y="182"/>
         </scene>
     </scenes>
     <resources>

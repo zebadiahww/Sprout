@@ -35,7 +35,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        
+        guard let isVerified = Auth.auth().currentUser?.isEmailVerified else { return }
+        self.isVerified = isVerified
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,13 +52,19 @@ class LoginViewController: UIViewController {
         if isSignUp == true {
             UserController.shared.authenticateNewUser(email: email, password: password) { (success) in
                 UserController.shared.sendEmailVerification { (success) in
-                    self.performSegue(withIdentifier: "toEmailVerify", sender: self)
+                    self.performSegue(withIdentifier: "toVerifyEmail", sender: self)
                 }
             }
         } else if isSignUp == false && isVerified == true {
             UserController.shared.manualSignIn(withEmail: email, password: password) { (success) in
                 if success {
-                    self.performSegue(withIdentifier: "toHome", sender: self)
+                    if let _ = UserController.shared.currentUser?.isMentor {
+                        DispatchQueue.main.async {
+                            self.performSegue(withIdentifier: "toMentorHome", sender: nil)
+                        }
+                    } else {
+                        self.performSegue(withIdentifier: "toPupilHome", sender: nil)
+                    }
                 }
             }
         } else if forgotPassword == true {
@@ -69,7 +76,7 @@ class LoginViewController: UIViewController {
         } else if isVerified == false && isSignUp == false {
             UserController.shared.manualSignIn(withEmail: email, password: password) { (success) in
                 if success {
-                    self.performSegue(withIdentifier: "toLoginVerifyEmail", sender: self)
+                    self.performSegue(withIdentifier: "toVerifyEmail", sender: self)
                 }
             }
         }

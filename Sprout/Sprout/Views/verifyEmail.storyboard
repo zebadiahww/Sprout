@@ -37,6 +37,7 @@
                                 <connections>
                                     <action selector="continueButton:" destination="7ZA-Db-8yb" eventType="touchUpInside" id="7g6-vQ-rTF"/>
                                     <action selector="continueButtonTapped:" destination="M2U-sG-xlV" eventType="touchUpInside" id="XMM-n3-zTz"/>
+                                    <segue destination="ssC-kA-rye" kind="show" identifier="toHome" id="QQM-R1-eTy"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cxb-uC-wNn">
@@ -70,6 +71,16 @@
                 <exit id="7ZA-Db-8yb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="113.04347826086958" y="124.55357142857142"/>
+        </scene>
+        <!--Mentor-->
+        <scene sceneID="lSf-F0-NUK">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="mentorHomeTabBar" storyboardName="Mentor" id="ssC-kA-rye" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="NFZ-1k-M7h"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9G4-Gr-GN0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="767" y="116"/>
         </scene>
     </scenes>
     <resources>
