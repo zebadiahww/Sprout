@@ -23,6 +23,7 @@ class GoalTableViewCell: UITableViewCell {
     func updateViews() {
         finishButton.layer.cornerRadius = finishButton.frame.height/2
         finishButton.backgroundColor = .middleGreen
+        finishButton.titleLabel?.text = "Finish"
         finishButton.titleLabel?.textColor = .white
     }
     
@@ -30,7 +31,7 @@ class GoalTableViewCell: UITableViewCell {
     //MARK: - Actions
     @IBAction func finishButtonTapped(_ sender: Any) {
         
-        finishButton.titleLabel?.text = "Completed"
+        finishButton.setTitle("Complete", for: .normal)
         finishButton.backgroundColor = .lightGreen
         finishButton.isEnabled = false
     }

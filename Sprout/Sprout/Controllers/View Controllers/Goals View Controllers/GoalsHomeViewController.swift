@@ -42,7 +42,12 @@ class GoalsHomeViewController: UIViewController {
         }
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.longTermGoals = GoalController.shared.goals.filter({ $0.isDaily == false })
+        self.dailyGoals = GoalController.shared.goals.filter({  $0.isDaily == true })
+        goalsTableView.reloadData()
+    }
     
     //MARK: - Class Methods
     func setupViews() {
@@ -58,6 +63,8 @@ class GoalsHomeViewController: UIViewController {
         
         longTermGoalsButton.layer.cornerRadius = longTermGoalsButton.frame.height/2
         longTermGoalsButton.backgroundColor = .lightGreen
+        
+        
     }
     
     
@@ -70,12 +77,12 @@ class GoalsHomeViewController: UIViewController {
         dailyGoalsButton.backgroundColor = .middleGreen
         goalTypeLabel.text = "Daily Goals"
         GoalController.shared.fetchGoal { (success) in
-                  if success {
-                      self.longTermGoals = GoalController.shared.goals.filter({ $0.isDaily == false })
-                      self.dailyGoals = GoalController.shared.goals.filter({  $0.isDaily == true })
-                      self.goalsTableView.reloadData()
-                  }
-              }
+            if success {
+                self.longTermGoals = GoalController.shared.goals.filter({ $0.isDaily == false })
+                self.dailyGoals = GoalController.shared.goals.filter({  $0.isDaily == true })
+                self.goalsTableView.reloadData()
+            }
+        }
     }
     
     @IBAction func longTermGoalsButtonTapped(_ sender: Any) {
@@ -85,12 +92,12 @@ class GoalsHomeViewController: UIViewController {
         dailyGoalsButton.backgroundColor = .lightGreen
         goalTypeLabel.text = "Milestone Goals"
         GoalController.shared.fetchGoal { (success) in
-                  if success {
-                      self.longTermGoals = GoalController.shared.goals.filter({ $0.isDaily == false })
-                      self.dailyGoals = GoalController.shared.goals.filter({  $0.isDaily == true })
-                      self.goalsTableView.reloadData()
-                  }
-              }
+            if success {
+                self.longTermGoals = GoalController.shared.goals.filter({ $0.isDaily == false })
+                self.dailyGoals = GoalController.shared.goals.filter({  $0.isDaily == true })
+                self.goalsTableView.reloadData()
+            }
+        }
     }
     
 } // END OF CLASS
@@ -101,17 +108,44 @@ extension GoalsHomeViewController: UITableViewDataSource, UITableViewDelegate {
         return isDailySelected ? dailyGoals.count : longTermGoals.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        120
+        
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            let goalToDelete = GoalController.shared.goals[indexPath.row]
+//            guard let index = GoalController.shared.goals.firstIndex(of: goalToDelete)
+//                else { return }
+            GoalController.shared.deleteGoal(goal: goalToDelete) { (success) in
+                if success {
+//                    GoalController.shared.goals.remove(at: index)
+                    self.isDailySelected ?
+                        self.dailyGoals.remove(at: indexPath.row) :
+                        self.longTermGoals.remove(at: indexPath.row)
+                    DispatchQueue.main.async {
+                        tableView.deleteRows(at: [indexPath], with: .automatic)
+                    }
+                }
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GoalCell", for: indexPath) as? GoalTableViewCell else { return UITableViewCell() }
         
         let goal = isDailySelected ? dailyGoals[indexPath.row] : longTermGoals[indexPath.row]
         
         cell.goalTitleLabel.text = goal.title
-        cell.isPublicLabel.text = "\(goal.isPrivate)"
+        cell.isPublicLabel.text = goal.isPrivate ? "Private" : "Public"
         
         cell.finishButton.layer.cornerRadius = cell.finishButton.frame.height/2
         cell.finishButton.backgroundColor = .middleGreen
+        cell.finishButton.titleLabel?.text = "Finish"
         cell.finishButton.titleLabel?.textColor = .white
+        cell.finishButton.tintColor = .white
         
         return cell
     }

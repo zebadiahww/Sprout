@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q5g-oJ-0bV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q5g-oJ-0bV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -51,23 +51,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTa-a1-v0X">
-                                                    <rect key="frame" x="292" y="25" width="46" height="30"/>
-                                                    <state key="normal" title="Button"/>
+                                                    <rect key="frame" x="254.5" y="25" width="93.5" height="30"/>
+                                                    <state key="normal" title="Finish">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="finishButtonTapped:" destination="nyF-qv-HeU" eventType="touchUpInside" id="FZc-tH-3C4"/>
                                                     </connections>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TTx-R7-uWQ">
-                                                    <rect key="frame" x="37.5" y="17" width="224.5" height="46"/>
+                                                    <rect key="frame" x="37.5" y="17" width="187" height="46"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gin-hS-0DY">
-                                                            <rect key="frame" x="0.0" y="0.0" width="224.5" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="187" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7c-6l-hht">
-                                                            <rect key="frame" x="0.0" y="25.5" width="224.5" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="25.5" width="187" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -77,10 +79,11 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="TTx-R7-uWQ" firstAttribute="centerY" secondItem="EjL-v7-N8o" secondAttribute="centerY" id="033-YS-N00"/>
+                                                <constraint firstItem="RTa-a1-v0X" firstAttribute="width" secondItem="EjL-v7-N8o" secondAttribute="width" multiplier="0.25" id="Fpm-0z-n1e"/>
                                                 <constraint firstItem="RTa-a1-v0X" firstAttribute="centerY" secondItem="EjL-v7-N8o" secondAttribute="centerY" id="L5l-YQ-Y0v"/>
                                                 <constraint firstItem="RTa-a1-v0X" firstAttribute="leading" secondItem="TTx-R7-uWQ" secondAttribute="trailing" constant="30" id="lIx-g6-lBZ"/>
-                                                <constraint firstItem="TTx-R7-uWQ" firstAttribute="centerX" secondItem="EjL-v7-N8o" secondAttribute="centerX" multiplier="0.8" id="oXl-vC-46c"/>
-                                                <constraint firstItem="TTx-R7-uWQ" firstAttribute="width" secondItem="EjL-v7-N8o" secondAttribute="width" multiplier="0.6" id="yml-Ql-woI"/>
+                                                <constraint firstItem="TTx-R7-uWQ" firstAttribute="centerX" secondItem="EjL-v7-N8o" secondAttribute="centerX" multiplier="0.7" id="oXl-vC-46c"/>
+                                                <constraint firstItem="TTx-R7-uWQ" firstAttribute="width" secondItem="EjL-v7-N8o" secondAttribute="width" multiplier="0.5" id="yml-Ql-woI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

@@ -65,6 +65,7 @@ class GoalController {
                 completion(false)
                 return
             }
+                self.goals.removeAll()
             for document in snapshot!.documents {
                 
                 if let fetchedGoal = Goal(dictionay: document.data()) {
