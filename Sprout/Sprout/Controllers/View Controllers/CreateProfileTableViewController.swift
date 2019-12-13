@@ -67,6 +67,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         tagBorder.isHidden = true
         self.occupationBorder.isHidden = true
         self.occupationLabel.isHidden = true
+        self.descriptionLabel.text = "Pick a field of interest"
         setupViews()
   
     }
@@ -107,10 +108,10 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         let linkedIn = linkedInTextField.text
         let website = websiteTextField.text
+        let occupation = occupationTextField.text
         guard let uuid = Auth.auth().currentUser?.uid,
             let name = nameTextField.text, !name.isEmpty,
-            let bio = bioTextView.text, !bio.isEmpty,
-            let occupation = occupationTextField.text, !occupation.isEmpty
+            let bio = bioTextView.text, !bio.isEmpty
 //            let isMentor = isMentor
             else { return }
         
@@ -126,7 +127,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
             DispatchQueue.main.async {
                 print("User created successfully")
                 if self.isMentor == true {
-                    let storyboard = UIStoryboard(name: "Mentor", bundle: nil)
+                    let storyboard = UIStoryboard(name: "MentorHome", bundle: nil)
                     guard let initialVC = storyboard.instantiateInitialViewController() else { return }
                     initialVC.modalPresentationStyle = .fullScreen
                     self.present(initialVC, animated: true, completion: nil)
