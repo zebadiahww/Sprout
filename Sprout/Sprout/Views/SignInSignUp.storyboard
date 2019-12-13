@@ -182,10 +182,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
-        <!--Pupil-->
+        <!--MentorHome-->
         <scene sceneID="teR-Yk-spU">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="mentorHomeVC" storyboardName="Pupil" id="wZ5-q0-5j4" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="mentorHomeVC" storyboardName="MentorHome" id="wZ5-q0-5j4" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7FO-IL-7bp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="907" y="50"/>

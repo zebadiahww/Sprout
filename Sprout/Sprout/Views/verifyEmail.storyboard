@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="113.04347826086958" y="124.55357142857142"/>
         </scene>
-        <!--Mentor-->
+        <!--CreateProfile-->
         <scene sceneID="lSf-F0-NUK">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="mentorHomeTabBar" storyboardName="Mentor" id="ssC-kA-rye" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="mentorHomeTabBar" storyboardName="CreateProfile" id="ssC-kA-rye" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="NFZ-1k-M7h"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9G4-Gr-GN0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
