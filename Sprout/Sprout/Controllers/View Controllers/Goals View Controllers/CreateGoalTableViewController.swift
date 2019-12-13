@@ -103,7 +103,7 @@ class CreateGoalTableViewController: UITableViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        guard let title = titleLabel.text, !title.isEmpty,
+        guard let title = goalTitleTextField.text, !title.isEmpty,
         let body = descriptionTextView.text, !body.isEmpty,
         let userID = UserController.shared.currentUser?.uuid
             

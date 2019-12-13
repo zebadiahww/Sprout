@@ -33,11 +33,13 @@ class FindMentorViewController: UIViewController, UISearchBarDelegate {
         let glassIcon = self.mentorSearchBar.searchTextField.leftView as? UIImageView
         glassIcon?.image = glassIcon?.image?.withRenderingMode(.alwaysTemplate)
         glassIcon?.tintColor = .softBlack
+        mentorSearchBar.searchTextField.layer.cornerRadius = mentorSearchBar.searchTextField.frame.height/2
+        mentorSearchBar.layer.borderWidth = 1
+        searchBorder.layer.cornerRadius = searchBorder.frame.height/2
+        searchBorder.layer.borderWidth = 1
         if let textfield = mentorSearchBar.value(forKey: "searchField") as? UITextField {
             textfield.backgroundColor = .white
             
-            searchBorder.layer.cornerRadius = searchBorder.frame.height/12
-            searchBorder.layer.borderWidth = 1
         }
     }
     

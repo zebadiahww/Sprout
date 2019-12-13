@@ -88,18 +88,28 @@ class UserController {
                 return
             }
             var mentors: [User] = []
-            
+            var fetchedTags: [Tag] = []
+            let dispatchGroup = DispatchGroup()
             for document in documents {
-                guard let userIDs = document.value(forKey: TagConstants.userIDsKey) as? [String] else { return }
-                for uuid in userIDs {
+                if let fetchedTag = Tag(dictionary: document.data()) {
+                    fetchedTags.append(fetchedTag)
+                }
+            }
+            for tag in fetchedTags {
+                guard let tagUsers = tag.userIDs else {return}
+                for uuid in tagUsers {
+                    dispatchGroup.enter()
                     self.fetchUser(uuid: uuid) { (results) in
                         if let results = results {
                             mentors.append(results)
+                            dispatchGroup.leave()
                         }
                     }
                 }
             }
-            completion(mentors)
+            dispatchGroup.notify(queue: .main) {
+                completion(mentors)
+            }
         }
     }
     
