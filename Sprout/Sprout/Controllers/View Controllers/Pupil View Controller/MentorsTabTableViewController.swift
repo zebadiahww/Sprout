@@ -17,6 +17,11 @@ class MentorsTabTableViewController: UITableViewController, UISearchBarDelegate 
     @IBOutlet weak var financeCV: UICollectionView!
     @IBOutlet weak var pageIDLabel: UILabel!
     @IBOutlet weak var myMentorsCV: UICollectionView!
+    @IBOutlet weak var myMentorsLabel: UILabel!
+    @IBOutlet weak var entrepreneurshipLabel: UILabel!
+    @IBOutlet weak var techLabel: UILabel!
+    @IBOutlet weak var financeLabel: UILabel!
+    @IBOutlet weak var searchBorder: UIView!
     
     
     
@@ -32,6 +37,8 @@ class MentorsTabTableViewController: UITableViewController, UISearchBarDelegate 
         super.viewDidLoad()
         setupCells()
         setupViews()
+        mentorSearchBar.delegate = self
+        
     }
     
     //MARK: - Class Methods
@@ -41,8 +48,23 @@ class MentorsTabTableViewController: UITableViewController, UISearchBarDelegate 
     }
     
     func setupViews() {
-        self.pageIDLabel.font = UIFont(name: "Avenir", size: 14)
+        pageIDLabel.font = UIFont(name: "Avenir", size: 30)
+        myMentorsLabel.font = UIFont(name: "Avenir", size: 20)
+        entrepreneurshipLabel.font = UIFont(name: "Avenir", size: 20)
+        techLabel.font = UIFont(name: "Avenir", size: 20)
+        financeLabel.font = UIFont(name: "Avenir", size: 20)
         
+        searchBorder.layer.cornerRadius = searchBorder.frame.height/12
+        searchBorder.layer.borderWidth = 1
+        
+        mentorSearchBar.searchTextField.borderStyle = .none
+        mentorSearchBar.backgroundColor = .clear
+        let glassIcon = self.mentorSearchBar.searchTextField.leftView as? UIImageView
+        glassIcon?.image = glassIcon?.image?.withRenderingMode(.alwaysTemplate)
+        glassIcon?.tintColor = .softBlack
+        if let textfield = mentorSearchBar.value(forKey: "searchField") as? UITextField {
+            textfield.backgroundColor = .white
+        }
     }
     
     func setupCells() {
@@ -83,6 +105,10 @@ extension MentorsTabTableViewController: UICollectionViewDelegateFlowLayout, UIC
         default :
             return 0
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(0.0)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
