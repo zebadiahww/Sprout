@@ -24,8 +24,8 @@ class UserController {
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if result != nil {
                 completion(true)
-            } else {
-                print(error?.localizedDescription)
+            } else if let error = error {
+                print(error.localizedDescription)
                 completion(false)
             }
         }
