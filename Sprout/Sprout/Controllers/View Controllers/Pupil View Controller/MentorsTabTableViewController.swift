@@ -54,11 +54,13 @@ class MentorsTabTableViewController: UITableViewController, UISearchBarDelegate 
         techLabel.font = UIFont(name: "Avenir", size: 20)
         financeLabel.font = UIFont(name: "Avenir", size: 20)
         
-        searchBorder.layer.cornerRadius = searchBorder.frame.height/12
+        searchBorder.layer.cornerRadius = searchBorder.frame.height/2
         searchBorder.layer.borderWidth = 1
         
         mentorSearchBar.searchTextField.borderStyle = .none
         mentorSearchBar.backgroundColor = .clear
+        mentorSearchBar.searchTextField.layer.cornerRadius = mentorSearchBar.searchTextField.frame.height/2
+
         let glassIcon = self.mentorSearchBar.searchTextField.leftView as? UIImageView
         glassIcon?.image = glassIcon?.image?.withRenderingMode(.alwaysTemplate)
         glassIcon?.tintColor = .softBlack

@@ -506,7 +506,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sl3-U9-EUu">
                                                     <rect key="frame" x="41.5" y="54" width="331" height="50"/>
                                                     <subviews>
-                                                        <searchBar contentMode="redraw" placeholder="Search by industry (tech, SEO, marketing...)" translatesAutoresizingMaskIntoConstraints="NO" id="zq1-Dk-1Qy">
+                                                        <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search by industry (tech, SEO, marketing...)" translatesAutoresizingMaskIntoConstraints="NO" id="zq1-Dk-1Qy">
                                                             <rect key="frame" x="0.0" y="0.0" width="331" height="50"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </searchBar>
@@ -864,7 +864,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LK7-zn-HGP">
                                         <rect key="frame" x="41.5" y="68" width="331" height="50"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hXG-Gn-1x3">
+                                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="hXG-Gn-1x3">
                                                 <rect key="frame" x="0.0" y="0.0" width="331" height="50"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </searchBar>
