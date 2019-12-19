@@ -51,8 +51,10 @@ class LoginViewController: UIViewController {
             let password = passwordTextField.text, !password.isEmpty else { return }
         if isSignUp == true {
             UserController.shared.authenticateNewUser(email: email, password: password) { (success) in
-                UserController.shared.sendEmailVerification { (success) in
-                    self.performSegue(withIdentifier: "toVerifyEmail", sender: self)
+                if success {
+                    UserController.shared.sendEmailVerification { (success) in
+                        self.performSegue(withIdentifier: "toVerifyEmail", sender: self)
+                    }
                 }
             }
         } else if isSignUp == false && isVerified == true {
