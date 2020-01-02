@@ -73,8 +73,33 @@ class UserController {
         }
     }
     
-    func fetchMentorbyCategory(category: String, completion: @escaping([User]) -> Void) {
-        let query = firebaseDB.collection(TagConstants.typeKey).whereField(TagConstants.categoryKey, isEqualTo: category)
+    func fetchUserWith(uuid: String, andIsMentor isMentor: Bool, completion: @escaping(User?) ->Void) {
+        let query = firebaseDB.collection(UserConstants.typeKey).whereField(UserConstants.uuidKey, isEqualTo: uuid).whereField(UserConstants.isMentorKey, isEqualTo: isMentor)
+        query.getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                completion(nil)
+                return
+            }
+            guard let documents = snapshot?.documents else { completion(nil); return }
+            
+            if documents.count == 0 {
+                completion(nil)
+                return
+            }
+            
+            var fetchedUser: User?
+            for document in documents {
+                if let user = User(dictionary: document.data()) {
+                    fetchedUser = user
+                }
+            }
+            completion(fetchedUser)
+        }
+    }
+    
+    func fetchMentorsbyCategoryWith(searchTerm: String, completion: @escaping([User]) -> Void) {
+        let query = firebaseDB.collection(TagConstants.typeKey).whereField(TagConstants.categoryKey, isEqualTo: searchTerm)
         query.getDocuments { (snapshot, error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
@@ -99,7 +124,7 @@ class UserController {
                 guard let tagUsers = tag.userIDs else {return}
                 for uuid in tagUsers {
                     dispatchGroup.enter()
-                    self.fetchUser(uuid: uuid) { (results) in
+                    self.fetchUserWith(uuid: uuid, andIsMentor: true) { (results) in
                         if let results = results {
                             mentors.append(results)
                             dispatchGroup.leave()
@@ -113,35 +138,69 @@ class UserController {
         }
     }
     
-    func fetchMentorsBySearchTerm(searchTerm: String, completion: @escaping(Bool) -> Void) {
-        let query = firebaseDB.collection(TagConstants.typeKey).whereField(TagConstants.categoryKey, isEqualTo: searchTerm).whereField(TagConstants.titleKey, isEqualTo: searchTerm)
+    func fetchMentorsByTagTitleWith(searchTerm: String, completion: @escaping([User]) -> Void) {
+        let query = firebaseDB.collection(TagConstants.typeKey).whereField(TagConstants.titleKey, isEqualTo: searchTerm)
         query.getDocuments { (snapshot, error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-                completion(false)
+                completion([])
                 return
             }
-            guard let documents = snapshot?.documents else { completion(false); return }
+            guard let documents = snapshot?.documents else { completion([]); return }
             
             if documents.count == 0 {
-                completion(false)
+                completion([])
                 return
             }
             var mentors: [User] = []
-            
+            var fetchedTags: [Tag] = []
+            let dispatchGroup = DispatchGroup()
             for document in documents {
-                guard let userIDs = document.value(forKey: TagConstants.userIDsKey) as? [String] else { return }
-                for uuid in userIDs {
-                    self.fetchUser(uuid: uuid) { (results) in
+                if let fetchedTag = Tag(dictionary: document.data()) {
+                    fetchedTags.append(fetchedTag)
+                }
+            }
+            for tag in fetchedTags {
+                guard let tagUsers = tag.userIDs else {return}
+                for uuid in tagUsers {
+                    dispatchGroup.enter()
+                    self.fetchUserWith(uuid: uuid, andIsMentor: true) { (results) in
                         if let results = results {
                             mentors.append(results)
+                            dispatchGroup.leave()
                         }
                     }
                 }
             }
-            self.searchedUsers = mentors
-            completion(true)
+            dispatchGroup.notify(queue: .main) {
+                completion(mentors)
+            }
         }
+    }
+    
+    func fetchMentorsByNameWith(searchTerm: String, completion: @escaping([User]) -> Void) {
+        let query = firebaseDB.collection("Users").whereField(UserConstants.nameKey, isEqualTo: searchTerm)
+        query.getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                completion([])
+                return
+            }
+            guard let documents = snapshot?.documents else { completion([]); return }
+            
+            if documents.count == 0 {
+                completion([])
+                return
+            }
+            var mentors: [User] = []
+            for document in documents {
+                if let mentor = User(dictionary: document.data()) {
+                    mentors.append(mentor)
+                }
+            }
+            completion(mentors)
+        }
+        
     }
     
     func fetchMentorForPupil(user: String, completion: @escaping(Bool) -> Void) {
@@ -200,7 +259,7 @@ class UserController {
             for num in 0...(fetchedUsers.count - 1) {
                 user.pupils?.updateValue(fetchedTags[num], forKey: fetchedUsers[num])
             }
-
+            
             completion(true)
         }
     }
@@ -218,7 +277,7 @@ class UserController {
                 else {
                     completion(false)
                     return
-                }
+            }
             
             let ref = self.firebaseDB.collection(UserConstants.typeKey).document(user.uid)
             ref.getDocument { (snapshot, error) in
