@@ -22,6 +22,10 @@ class MentorsTabTableViewController: UITableViewController, UISearchBarDelegate 
     @IBOutlet weak var techLabel: UILabel!
     @IBOutlet weak var financeLabel: UILabel!
     @IBOutlet weak var searchBorder: UIView!
+    @IBOutlet weak var noMentorsLabel: UILabel!
+    @IBOutlet weak var entNoResultsLabel: UILabel!
+    @IBOutlet weak var techNoResultsLabel: UILabel!
+    @IBOutlet weak var financeNoResultsLabel: UILabel!
     
     
     
@@ -54,6 +58,11 @@ class MentorsTabTableViewController: UITableViewController, UISearchBarDelegate 
         techLabel.font = UIFont(name: "Avenir", size: 20)
         financeLabel.font = UIFont(name: "Avenir", size: 20)
         
+        noMentorsLabel.isHidden = false
+        entNoResultsLabel.isHidden = false
+        techNoResultsLabel.isHidden = false
+        financeNoResultsLabel.isHidden = false
+        
         searchBorder.layer.cornerRadius = searchBorder.frame.height/2
         searchBorder.layer.borderWidth = 1
         
@@ -71,14 +80,29 @@ class MentorsTabTableViewController: UITableViewController, UISearchBarDelegate 
     
     func setupCells() {
         
-        UserController.shared.fetchMentorbyCategory(category: "Finance") { (financeMentors) in
+        UserController.shared.fetchMentorsbyCategoryWith(searchTerm: "Finance") { (financeMentors) in
             self.financeArray = financeMentors
+            if self.financeArray.isEmpty {
+                self.financeNoResultsLabel.isHidden = false
+            } else {
+                self.financeNoResultsLabel.isHidden = true
+            }
         }
-        UserController.shared.fetchMentorbyCategory(category: "Technology") { (techMentors) in
+        UserController.shared.fetchMentorsbyCategoryWith(searchTerm: "Technology") { (techMentors) in
             self.techArray = techMentors
+            if self.techArray.isEmpty {
+                self.techNoResultsLabel.isHidden = false
+            } else {
+                self.techNoResultsLabel.isHidden = true
+            }
         }
-        UserController.shared.fetchMentorbyCategory(category: "Entrepreneurship") { (entMentors) in
+        UserController.shared.fetchMentorsbyCategoryWith(searchTerm: "Entrepreneurship") { (entMentors) in
             self.entArray = entMentors
+            if self.entArray.isEmpty {
+                self.entNoResultsLabel.isHidden = false
+            } else {
+                self.entNoResultsLabel.isHidden = true
+            }
         }
         
     }
@@ -119,19 +143,19 @@ extension MentorsTabTableViewController: UICollectionViewDelegateFlowLayout, UIC
         switch collectionView {
         case entrepreneurshipCV:
             let mentor = entArray[indexPath.item]
-            cell.updateViews(mentor: mentor)
+            cell.updateViews()
             cell.user = mentor
         case techCV:
             let mentor = techArray[indexPath.item]
-            cell.updateViews(mentor: mentor)
+            cell.updateViews()
             cell.user = mentor
         case financeCV:
             let mentor = financeArray[indexPath.item]
-            cell.updateViews(mentor: mentor)
+            cell.updateViews()
             cell.user = mentor
         case myMentorsCV:
             let mentor = myMentorsArray[indexPath.item]
-            cell.updateViews(mentor: mentor)
+            cell.updateViews()
             cell.user = mentor
         default:
             return cell

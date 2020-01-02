@@ -11,9 +11,9 @@ import UIKit
 struct UserConstants {
     static let typeKey = "Users"
     static let uuidKey = "uuid"
-    fileprivate static let nameKey = "name"
+    static let nameKey = "name"
     fileprivate static let bioKey = "bio"
-    fileprivate static let isMentorKey = "isMentor"
+    static let isMentorKey = "isMentor"
     fileprivate static let occupationKey = "occupation"
     static let pupilSearchDictKey = "pupilSearchDict"
     static let mentorSearchDictKey = "mentorSearchDict"

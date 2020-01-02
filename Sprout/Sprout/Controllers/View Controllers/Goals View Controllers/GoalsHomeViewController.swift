@@ -73,31 +73,23 @@ class GoalsHomeViewController: UIViewController {
     @IBAction func dailyGoalsButtonTapped(_ sender: Any) {
         longTermGoalsButton.isEnabled = true
         dailyGoalsButton.isEnabled = false
+        isDailySelected = !isDailySelected
         longTermGoalsButton.backgroundColor = .lightGreen
         dailyGoalsButton.backgroundColor = .middleGreen
         goalTypeLabel.text = "Daily Goals"
-        GoalController.shared.fetchGoal { (success) in
-            if success {
-                self.longTermGoals = GoalController.shared.goals.filter({ $0.isDaily == false })
-                self.dailyGoals = GoalController.shared.goals.filter({  $0.isDaily == true })
-                self.goalsTableView.reloadData()
-            }
-        }
+        self.goalsTableView.reloadData()
+
     }
     
     @IBAction func longTermGoalsButtonTapped(_ sender: Any) {
         longTermGoalsButton.isEnabled = false
         dailyGoalsButton.isEnabled = true
+        isDailySelected = !isDailySelected
         longTermGoalsButton.backgroundColor = .middleGreen
         dailyGoalsButton.backgroundColor = .lightGreen
         goalTypeLabel.text = "Milestone Goals"
-        GoalController.shared.fetchGoal { (success) in
-            if success {
-                self.longTermGoals = GoalController.shared.goals.filter({ $0.isDaily == false })
-                self.dailyGoals = GoalController.shared.goals.filter({  $0.isDaily == true })
-                self.goalsTableView.reloadData()
-            }
-        }
+        
+        self.goalsTableView.reloadData()
     }
     
 } // END OF CLASS
@@ -117,11 +109,11 @@ extension GoalsHomeViewController: UITableViewDataSource, UITableViewDelegate {
         if editingStyle == .delete {
             
             let goalToDelete = GoalController.shared.goals[indexPath.row]
-//            guard let index = GoalController.shared.goals.firstIndex(of: goalToDelete)
-//                else { return }
+            //            guard let index = GoalController.shared.goals.firstIndex(of: goalToDelete)
+            //                else { return }
             GoalController.shared.deleteGoal(goal: goalToDelete) { (success) in
                 if success {
-//                    GoalController.shared.goals.remove(at: index)
+                    //                    GoalController.shared.goals.remove(at: index)
                     self.isDailySelected ?
                         self.dailyGoals.remove(at: indexPath.row) :
                         self.longTermGoals.remove(at: indexPath.row)
@@ -148,5 +140,16 @@ extension GoalsHomeViewController: UITableViewDataSource, UITableViewDelegate {
         cell.finishButton.tintColor = .white
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toEditGoalVC" {
+            guard let GoalTableViewCell = goalsTableView.indexPathForSelectedRow,
+                let destinationVC = segue.destination as? CreateGoalTableViewController else { return }
+            
+            let goalToSend = GoalController.shared.goals[GoalTableViewCell.row]
+            
+            destinationVC.goalReceiver = goalToSend
+        }
     }
 }

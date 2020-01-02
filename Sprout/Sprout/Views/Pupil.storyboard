@@ -90,7 +90,7 @@
                                             <outlet property="finishButton" destination="RTa-a1-v0X" id="1rm-Li-rb2"/>
                                             <outlet property="goalTitleLabel" destination="gin-hS-0DY" id="5RE-wE-ZS8"/>
                                             <outlet property="isPublicLabel" destination="L7c-6l-hht" id="DG5-Fk-KYq"/>
-                                            <segue destination="ffu-ee-NFv" kind="show" id="aeQ-fg-ciB"/>
+                                            <segue destination="ffu-ee-NFv" kind="show" identifier="toEditGoalVC" id="aeQ-fg-ciB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -161,7 +161,7 @@
                         <sections>
                             <tableViewSection id="v0w-Kh-Bad">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="2" id="Wgh-bB-Yve">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="2" id="Wgh-bB-Yve">
                                         <rect key="frame" x="0.0" y="28" width="414" height="2"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wgh-bB-Yve" id="4i2-UR-HDq">
@@ -169,7 +169,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="1096" id="Rm5-E7-d9p">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="1096" id="Rm5-E7-d9p">
                                         <rect key="frame" x="0.0" y="30" width="414" height="1096"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rm5-E7-d9p" id="3Ea-Ed-8vl">
@@ -379,7 +379,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                 </datePicker>
             </objects>
-            <point key="canvasLocation" x="1362.3188405797102" y="-516.29464285714289"/>
+            <point key="canvasLocation" x="1571" y="-407"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="adF-EQ-L4I">
@@ -480,13 +480,23 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Have No Mentors" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r53-d0-7sj">
+                                                    <rect key="frame" x="0.0" y="165" width="414" height="21"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="P2m-jh-GeY" firstAttribute="top" secondItem="0he-7S-7aU" secondAttribute="bottom" constant="10" id="48v-fh-rWl"/>
                                                 <constraint firstItem="0he-7S-7aU" firstAttribute="centerX" secondItem="GAL-en-G7L" secondAttribute="centerX" id="EBt-N0-WIx"/>
                                                 <constraint firstItem="P2m-jh-GeY" firstAttribute="centerX" secondItem="GAL-en-G7L" secondAttribute="centerX" id="FcS-38-sQQ"/>
                                                 <constraint firstItem="0he-7S-7aU" firstAttribute="top" secondItem="GAL-en-G7L" secondAttribute="topMargin" constant="20" id="JgA-se-LwF"/>
+                                                <constraint firstItem="r53-d0-7sj" firstAttribute="centerY" secondItem="P2m-jh-GeY" secondAttribute="centerY" id="Obg-Dl-nL9"/>
+                                                <constraint firstItem="r53-d0-7sj" firstAttribute="centerX" secondItem="P2m-jh-GeY" secondAttribute="centerX" id="RP8-fp-YJX"/>
                                                 <constraint firstItem="P2m-jh-GeY" firstAttribute="width" secondItem="GAL-en-G7L" secondAttribute="width" id="aSW-LU-0B1"/>
+                                                <constraint firstItem="r53-d0-7sj" firstAttribute="width" secondItem="P2m-jh-GeY" secondAttribute="width" id="zL7-cx-xLT"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -619,13 +629,23 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWK-ag-zRw">
+                                                    <rect key="frame" x="0.0" y="151.5" width="414" height="20.5"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="lWK-ag-zRw" firstAttribute="centerY" secondItem="Wkq-1p-UoT" secondAttribute="centerY" id="Beu-Xf-3WQ"/>
                                                 <constraint firstItem="yPd-Iq-eJH" firstAttribute="top" secondItem="7vV-OR-wMH" secondAttribute="top" constant="17" id="G9L-sw-zH6"/>
                                                 <constraint firstItem="yPd-Iq-eJH" firstAttribute="width" secondItem="7vV-OR-wMH" secondAttribute="width" multiplier="0.8" id="GXh-PW-PLM"/>
                                                 <constraint firstItem="Wkq-1p-UoT" firstAttribute="top" secondItem="yPd-Iq-eJH" secondAttribute="bottom" constant="10" id="I1W-8S-Rqu"/>
+                                                <constraint firstItem="lWK-ag-zRw" firstAttribute="centerX" secondItem="Wkq-1p-UoT" secondAttribute="centerX" id="MeV-ob-biJ"/>
                                                 <constraint firstItem="yPd-Iq-eJH" firstAttribute="centerX" secondItem="7vV-OR-wMH" secondAttribute="centerX" id="Wsa-bO-j2D"/>
                                                 <constraint firstItem="Wkq-1p-UoT" firstAttribute="centerX" secondItem="7vV-OR-wMH" secondAttribute="centerX" id="cuj-D9-5l9"/>
+                                                <constraint firstItem="lWK-ag-zRw" firstAttribute="width" secondItem="Wkq-1p-UoT" secondAttribute="width" id="fB8-RV-8Sz"/>
                                                 <constraint firstItem="Wkq-1p-UoT" firstAttribute="width" secondItem="7vV-OR-wMH" secondAttribute="width" id="gJh-iO-F2I"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -715,9 +735,19 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wev-Oz-5jJ">
+                                                    <rect key="frame" x="0.0" y="151.5" width="414" height="20.5"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Wev-Oz-5jJ" firstAttribute="width" secondItem="dvz-OF-4t3" secondAttribute="width" id="00L-lp-UlN"/>
+                                                <constraint firstItem="Wev-Oz-5jJ" firstAttribute="centerX" secondItem="dvz-OF-4t3" secondAttribute="centerX" id="B7G-kh-3db"/>
                                                 <constraint firstItem="9Kc-MN-Shb" firstAttribute="centerX" secondItem="Hpl-Tm-uwZ" secondAttribute="centerX" id="F5U-5t-m6f"/>
+                                                <constraint firstItem="Wev-Oz-5jJ" firstAttribute="centerY" secondItem="dvz-OF-4t3" secondAttribute="centerY" id="KXh-X8-add"/>
                                                 <constraint firstItem="9Kc-MN-Shb" firstAttribute="width" secondItem="Hpl-Tm-uwZ" secondAttribute="width" multiplier="0.8" id="LFx-Z6-f21"/>
                                                 <constraint firstItem="dvz-OF-4t3" firstAttribute="top" secondItem="9Kc-MN-Shb" secondAttribute="bottom" constant="10" id="Vb3-YL-iCI"/>
                                                 <constraint firstItem="dvz-OF-4t3" firstAttribute="width" secondItem="Hpl-Tm-uwZ" secondAttribute="width" id="XsL-D9-Tc3"/>
@@ -811,9 +841,19 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYK-Bi-Uhr">
+                                                    <rect key="frame" x="0.0" y="151.5" width="414" height="20.5"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="CYK-Bi-Uhr" firstAttribute="centerY" secondItem="S1A-rb-Txb" secondAttribute="centerY" id="EGy-xv-7va"/>
                                                 <constraint firstItem="AOy-Si-VF5" firstAttribute="width" secondItem="bxl-eS-Tzc" secondAttribute="width" multiplier="0.8" id="HlS-5H-fZa"/>
+                                                <constraint firstItem="CYK-Bi-Uhr" firstAttribute="centerX" secondItem="S1A-rb-Txb" secondAttribute="centerX" id="IcT-Fj-A0e"/>
+                                                <constraint firstItem="CYK-Bi-Uhr" firstAttribute="width" secondItem="S1A-rb-Txb" secondAttribute="width" id="Vtg-gz-h7y"/>
                                                 <constraint firstItem="S1A-rb-Txb" firstAttribute="width" secondItem="bxl-eS-Tzc" secondAttribute="width" id="Wux-OJ-WRZ"/>
                                                 <constraint firstItem="AOy-Si-VF5" firstAttribute="top" secondItem="bxl-eS-Tzc" secondAttribute="top" constant="17" id="fbm-tF-4CZ"/>
                                                 <constraint firstItem="S1A-rb-Txb" firstAttribute="centerX" secondItem="bxl-eS-Tzc" secondAttribute="centerX" id="fi5-bl-Ob7"/>
@@ -832,17 +872,21 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Mentors" image="ic_local_library" id="ZiB-pD-yjT"/>
                     <connections>
+                        <outlet property="entNoResultsLabel" destination="lWK-ag-zRw" id="NHx-10-fJq"/>
                         <outlet property="entrepreneurshipCV" destination="Wkq-1p-UoT" id="FIY-zD-pr9"/>
                         <outlet property="entrepreneurshipLabel" destination="yPd-Iq-eJH" id="6hi-RO-gPU"/>
                         <outlet property="financeCV" destination="S1A-rb-Txb" id="sMb-tv-XXx"/>
                         <outlet property="financeLabel" destination="AOy-Si-VF5" id="dp9-FN-UTn"/>
+                        <outlet property="financeNoResultsLabel" destination="CYK-Bi-Uhr" id="skf-Z2-QjW"/>
                         <outlet property="mentorSearchBar" destination="zq1-Dk-1Qy" id="prl-Gb-7Pa"/>
                         <outlet property="myMentorsCV" destination="P2m-jh-GeY" id="0cr-ub-VhJ"/>
                         <outlet property="myMentorsLabel" destination="0he-7S-7aU" id="5RK-hi-pPQ"/>
+                        <outlet property="noMentorsLabel" destination="r53-d0-7sj" id="GL7-1Z-Kdw"/>
                         <outlet property="pageIDLabel" destination="5bd-LC-9nC" id="Pac-KU-tio"/>
                         <outlet property="searchBorder" destination="Sl3-U9-EUu" id="BD7-kX-vfK"/>
                         <outlet property="techCV" destination="dvz-OF-4t3" id="AJL-Ob-413"/>
                         <outlet property="techLabel" destination="9Kc-MN-Shb" id="B7R-t8-CyD"/>
+                        <outlet property="techNoResultsLabel" destination="Wev-Oz-5jJ" id="VS2-RT-RNA"/>
                         <segue destination="aeM-hW-jog" kind="presentation" identifier="toMentorSearchVC" modalPresentationStyle="fullScreen" id="3y5-5o-0mS"/>
                     </connections>
                 </tableViewController>
@@ -864,7 +908,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LK7-zn-HGP">
                                         <rect key="frame" x="41.5" y="68" width="331" height="50"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="hXG-Gn-1x3">
+                                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search by industry (tech, SEO, marketing...)" translatesAutoresizingMaskIntoConstraints="NO" id="hXG-Gn-1x3">
                                                 <rect key="frame" x="0.0" y="0.0" width="331" height="50"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </searchBar>
@@ -920,7 +964,6 @@
                                                             <rect key="frame" x="23" y="0.0" width="111" height="111"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="mrb-Rq-1R0" secondAttribute="height" multiplier="1:1" id="hki-8u-PmZ"/>
-                                                                <constraint firstAttribute="height" constant="102" id="tYn-XQ-I0d"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sf-o4-BgR">
@@ -953,6 +996,12 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="157" height="177"/>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="0Sf-o4-BgR" id="a1E-TI-jDU"/>
+                                            <outlet property="occupationLabel" destination="9HP-hb-d5e" id="lXY-DL-opD"/>
+                                            <outlet property="profileImage" destination="mrb-Rq-1R0" id="cfj-iK-rP0"/>
+                                            <outlet property="viewProfileButton" destination="VZq-FN-JJ7" id="m6z-oF-cRV"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
