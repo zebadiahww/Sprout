@@ -451,8 +451,8 @@
                         <outlet property="tagTextSearchBar" destination="hgW-ft-PhA" id="VJG-eV-NPg"/>
                         <outlet property="websiteBorder" destination="8xA-9T-oO4" id="M8k-FP-TLg"/>
                         <outlet property="websiteTextField" destination="OJS-Na-9ml" id="oy8-7i-yu5"/>
-                        <segue destination="HOE-IL-9ak" kind="presentation" identifier="toPupilHome" id="axW-Os-u4a"/>
-                        <segue destination="jTe-zo-XJS" kind="presentation" identifier="toMentorHome" id="cnm-fJ-HEs"/>
+                        <segue destination="HOE-IL-9ak" kind="show" identifier="toPupilHome" id="axW-Os-u4a"/>
+                        <segue destination="jTe-zo-XJS" kind="show" identifier="toMentorHome" id="cnm-fJ-HEs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="86F-bd-R47" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -507,7 +507,9 @@
         <!--Pupil-->
         <scene sceneID="e5i-ii-ywj">
             <objects>
-                <viewControllerPlaceholder storyboardName="Pupil" id="HOE-IL-9ak" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Pupil" id="HOE-IL-9ak" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="3kK-ci-rZQ"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yz-cL-MzS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="491" y="290"/>
@@ -515,7 +517,9 @@
         <!--Mentor-->
         <scene sceneID="GYV-Zh-yPy">
             <objects>
-                <viewControllerPlaceholder storyboardName="Mentor" id="jTe-zo-XJS" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Mentor" id="jTe-zo-XJS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="0d8-pT-q8x"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1UU-Db-LNF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="491" y="347"/>

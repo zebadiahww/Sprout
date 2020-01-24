@@ -21,6 +21,7 @@ class MentorPupilListTableViewCell: UITableViewCell {
     @IBOutlet weak var goalProgressLabel: UILabel!
     @IBOutlet weak var goalsCompletedLabel: UILabel!
     @IBOutlet weak var suggestGoalButton: UIButton!
+    @IBOutlet weak var noPupilsLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,5 +45,10 @@ class MentorPupilListTableViewCell: UITableViewCell {
     func viewDidLoad() {
         self.pupilImage.layer.cornerRadius = pupilImage.frame.height/2
         self.suggestGoalButton.layer.cornerRadius = suggestGoalButton.frame.height/2
+        if UserController.shared.currentUser?.pupils?.count == 0 || UserController.shared.currentUser?.pupils?.count == nil {
+            self.noPupilsLabel.isHidden = false
+        } else {
+            self.noPupilsLabel.isHidden = true
+        }
     }
 }
