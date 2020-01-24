@@ -30,6 +30,7 @@
 		556197A323A2D83300CDD437 /* MentorProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556197A223A2D83300CDD437 /* MentorProfileTableViewController.swift */; };
 		556197A523A2EFF200CDD437 /* PupilCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556197A423A2EFF200CDD437 /* PupilCollectionViewCell.swift */; };
 		556197A723A2F4F900CDD437 /* ForeignTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556197A623A2F4F900CDD437 /* ForeignTagCollectionViewCell.swift */; };
+		5584AE3423AC44F8000958F5 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584AE3323AC44F8000958F5 /* ContactUsViewController.swift */; };
 		55BB57A12395C92D00962DA0 /* SignInSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */; };
 		55BB57A32395D39300962DA0 /* CreateProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BB57A22395D39300962DA0 /* CreateProfile.storyboard */; };
 		55BB57A52395D95300962DA0 /* CreateProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */; };
@@ -90,6 +91,7 @@
 		556197A223A2D83300CDD437 /* MentorProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorProfileTableViewController.swift; sourceTree = "<group>"; };
 		556197A423A2EFF200CDD437 /* PupilCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupilCollectionViewCell.swift; sourceTree = "<group>"; };
 		556197A623A2F4F900CDD437 /* ForeignTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignTagCollectionViewCell.swift; sourceTree = "<group>"; };
+		5584AE3323AC44F8000958F5 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInSignUp.storyboard; sourceTree = "<group>"; };
 		55BB57A22395D39300962DA0 /* CreateProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProfile.storyboard; sourceTree = "<group>"; };
 		55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				55449EA523A022D20020476E /* ViewProfileTableViewController.swift */,
 				556197A223A2D83300CDD437 /* MentorProfileTableViewController.swift */,
 				551A45D923A3703C00E9C20D /* AccountMenuViewController.swift */,
+				5584AE3323AC44F8000958F5 /* ContactUsViewController.swift */,
 			);
 			path = "Account and Profile Controllers";
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				1968796C23A05FF9002F05FC /* MentorPupilListTableViewCell.swift in Sources */,
 				19C9EF2123A2B8E600F6D61A /* MentorProfileViewController.swift in Sources */,
 				5510C79E2397170600B86ED3 /* EmailVerifyViewController.swift in Sources */,
+				5584AE3423AC44F8000958F5 /* ContactUsViewController.swift in Sources */,
 				199252AE239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift in Sources */,
 				85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */,
 				1968796E23A06013002F05FC /* MentorRequestTableViewCell.swift in Sources */,
@@ -676,7 +680,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GQHR9QPNK6;
+				DEVELOPMENT_TEAM = QP48FW2MG5;
 				INFOPLIST_FILE = "$(SRCROOT)/Sprout/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -696,7 +700,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GQHR9QPNK6;
+				DEVELOPMENT_TEAM = QP48FW2MG5;
 				INFOPLIST_FILE = "$(SRCROOT)/Sprout/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
