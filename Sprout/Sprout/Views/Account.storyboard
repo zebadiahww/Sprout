@@ -168,6 +168,9 @@
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QzT-ap-DLj">
                                                         <rect key="frame" x="0.0" y="0.0" width="373" height="50"/>
+                                                        <connections>
+                                                            <action selector="signOutButtonTapped:" destination="zed-8y-87x" eventType="touchUpInside" id="Nhj-jU-UUe"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -214,10 +217,10 @@
             </objects>
             <point key="canvasLocation" x="-1436.2318840579712" y="176.78571428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Contact Us View Controller-->
         <scene sceneID="UcT-WZ-Qqb">
             <objects>
-                <viewController id="7x1-oN-kNG" sceneMemberID="viewController">
+                <viewController id="7x1-oN-kNG" customClass="ContactUsViewController" customModule="Sprout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q4a-7t-C86">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -304,6 +307,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMB-J5-fha">
                                 <rect key="frame" x="114" y="724.5" width="186" height="30"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="7x1-oN-kNG" eventType="touchUpInside" id="G0E-ov-FrW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -323,6 +329,11 @@
                         <viewLayoutGuide key="safeArea" id="qHT-fK-7yX"/>
                     </view>
                     <navigationItem key="navigationItem" id="ONr-zq-QD9"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="1QI-dH-0Cp" id="xaO-Cw-bJv"/>
+                        <outlet property="messageTextField" destination="vIy-J7-SCR" id="nZK-Ra-nG2"/>
+                        <outlet property="subjectTextField" destination="bZS-76-gkC" id="szx-v1-6uy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Phz-7v-xN1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -346,7 +357,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="406"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m56-Qy-wnJ">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m56-Qy-wnJ">
                                                     <rect key="frame" x="124" y="30" width="166" height="165.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="m56-Qy-wnJ" secondAttribute="height" multiplier="1:1" id="klp-B6-UFM"/>
@@ -1021,7 +1032,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4iC-Hw-BbK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4iC-Hw-BbK">
                                 <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTG-DN-oaq">
