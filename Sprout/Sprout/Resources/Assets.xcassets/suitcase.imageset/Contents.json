@@ -2,11 +2,25 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "suitcase.png",
       "scale" : "1x"
     },
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 1,
+          "height" : 14
+        },
+        "cap-insets" : {
+          "bottom" : 14,
+          "top" : 14,
+          "right" : 25,
+          "left" : 20
+        }
+      },
       "idiom" : "universal",
+      "filename" : "suitcase.png",
       "scale" : "2x"
     },
     {
