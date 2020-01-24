@@ -173,19 +173,21 @@
                         <outlet property="passwordBorder" destination="PcQ-an-acq" id="6bC-ap-Taa"/>
                         <outlet property="passwordBorderLabel" destination="x8b-km-fRn" id="oXw-uq-Hwd"/>
                         <outlet property="passwordTextField" destination="jNC-Gc-kEi" id="eXy-fL-YnU"/>
-                        <segue destination="wZ5-q0-5j4" kind="presentation" identifier="toMentorHome" id="AEr-PP-qlc"/>
-                        <segue destination="00y-SS-WRf" kind="presentation" identifier="toPupilHome" id="Iua-77-gRk"/>
-                        <segue destination="HnF-FC-Ltq" kind="presentation" identifier="toVerifyEmail" id="9FE-jG-lpD"/>
+                        <segue destination="wZ5-q0-5j4" kind="show" identifier="toMentorHome" id="AEr-PP-qlc"/>
+                        <segue destination="00y-SS-WRf" kind="show" identifier="toPupilHome" id="Iua-77-gRk"/>
+                        <segue destination="HnF-FC-Ltq" kind="show" identifier="toVerifyEmail" id="9FE-jG-lpD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJN-CS-yeI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
-        <!--MentorHome-->
+        <!--Mentor-->
         <scene sceneID="teR-Yk-spU">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="mentorHomeVC" storyboardName="MentorHome" id="wZ5-q0-5j4" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="mentorHomeVC" storyboardName="Mentor" id="wZ5-q0-5j4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="rYS-gZ-4Bk"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7FO-IL-7bp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="907" y="50"/>
@@ -193,7 +195,9 @@
         <!--Pupil-->
         <scene sceneID="rsv-7M-dfF">
             <objects>
-                <viewControllerPlaceholder storyboardName="Pupil" id="00y-SS-WRf" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Pupil" id="00y-SS-WRf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="xsO-g0-M6E"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pr-yb-Jhb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="907" y="117"/>
@@ -201,7 +205,9 @@
         <!--verifyEmail-->
         <scene sceneID="gsk-Lv-fOq">
             <objects>
-                <viewControllerPlaceholder storyboardName="verifyEmail" id="HnF-FC-Ltq" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="verifyEmail" id="HnF-FC-Ltq" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Oq0-sQ-RAz"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ix-nK-mUH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="907" y="182"/>

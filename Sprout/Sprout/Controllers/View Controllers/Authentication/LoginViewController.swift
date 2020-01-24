@@ -37,6 +37,8 @@ class LoginViewController: UIViewController {
         setupViews()
         guard let isVerified = Auth.auth().currentUser?.isEmailVerified else { return }
         self.isVerified = isVerified
+        self.emailTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
     }
     
     override func viewDidAppear(_ animated: Bool) {
