@@ -313,8 +313,8 @@
     <resources>
         <image name="Accept" width="84" height="84"/>
         <image name="Decline" width="84" height="84"/>
-        <image name="ic_home (1)" width="40" height="36"/>
-        <image name="suitcase" width="46" height="42"/>
+        <image name="ic_home (1)" width="20" height="18"/>
+        <image name="suitcase" width="23" height="21"/>
         <namedColor name="MiddleGreen">
             <color red="0.39215686274509803" green="0.63921568627450975" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
