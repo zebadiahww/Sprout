@@ -245,6 +245,8 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
         self.websiteBorder.layer.borderWidth = 1
         
         self.isMentorSegmentedController.backgroundColor = .middleGreen
+        self.isMentorSegmentedController.setTitle("Pupil", forSegmentAt: 0)
+        self.isMentorSegmentedController.setTitle("Mentor", forSegmentAt: 1)
         
         tagTextSearchBar.searchTextField.borderStyle = .none
         tagTextSearchBar.backgroundColor = .clear

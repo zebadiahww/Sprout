@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateGoalTableViewController: UITableViewController {
+class CreateGoalTableViewController: UITableViewController, UITextFieldDelegate {
     
     //MARK: - Outlets
     @IBOutlet weak var pageIDLabel: UILabel!
@@ -39,11 +39,24 @@ class CreateGoalTableViewController: UITableViewController {
     var isDaily = true
     var isPrivate = false
     var willNotify = true
-    var goalReceiver: Goal?
+    var goalReceiver: Goal? {
+        didSet {
+            DispatchQueue.main.async {
+                self.loadViewIfNeeded()
+                self.updateViews()
+            }
+        }
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        updateViews()
+        goalTitleTextField.delegate = self
+        goalTitleTextField.resignFirstResponder()
+        selectDateTextField.delegate = self
         selectDateTextField.resignFirstResponder()
         if goalReceiver != nil {
             pageIDLabel.text = "Edit Goal"
@@ -77,8 +90,16 @@ class CreateGoalTableViewController: UITableViewController {
         completeStackView.isHidden = true
         
         selectDateTextField.inputView = createGoalDatePicker
+        
+        createGoalDatePicker.resignFirstResponder()
     }
     
+    private func updateViews() {
+        guard let goal = goalReceiver else { return }
+        
+        goalTitleTextField.text = goal.title
+        descriptionTextView.text = goal.body
+    }
     
     
     //MARK: - Actions
@@ -104,8 +125,8 @@ class CreateGoalTableViewController: UITableViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let title = goalTitleTextField.text, !title.isEmpty,
-        let body = descriptionTextView.text, !body.isEmpty,
-        let userID = UserController.shared.currentUser?.uuid
+            let body = descriptionTextView.text, !body.isEmpty,
+            let userID = UserController.shared.currentUser?.uuid
             
             else {return}
         let date: Date?

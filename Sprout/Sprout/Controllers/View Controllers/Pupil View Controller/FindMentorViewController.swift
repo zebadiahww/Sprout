@@ -19,10 +19,15 @@ class FindMentorViewController: UIViewController, UISearchBarDelegate {
     
     //MARK: - Properties
     
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        mentorSearchBar.becomeFirstResponder()
         setupViews()
         mentorSearchBar.delegate = self
+        findMentorCollectionView.delegate = self
+        findMentorCollectionView.dataSource = self
     }
     
     func setupViews() {
@@ -45,37 +50,39 @@ class FindMentorViewController: UIViewController, UISearchBarDelegate {
     //MARK: - Actions
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.resignFirstResponder()
-        guard let searchTerm = mentorSearchBar.text, mentorSearchBar.text!.isEmpty else {return}
-        UserController.shared.fetchMentorsBySearchTerm(searchTerm: searchTerm) { (success) in
-            
-            if success {
-                let dispatchGroup = DispatchGroup()
-                for mentor in UserController.shared.searchedUsers {
-                    dispatchGroup.enter()
-                    UserController.shared.fetchProfilePhoto(user: mentor) { (success) in
-                        dispatchGroup.leave()
-                        if success {
-                            print("successfully grabbed mentor photo")
+        guard let searchTerm = mentorSearchBar.text, !searchTerm.isEmpty else {return}
+        var mentors: [User] = []
+        UserController.shared.fetchMentorsByTagTitleWith(searchTerm: searchTerm) { (users) in
+            mentors = users
+            UserController.shared.fetchMentorsbyCategoryWith(searchTerm: searchTerm) { (users) in
+                for user in users {
+                    mentors.append(user)
+                }
+                UserController.shared.fetchMentorsByNameWith(searchTerm: searchTerm) { (users) in
+                    for user in users {
+                        mentors.append(user)
+                    }
+                    let finalMentors = Set(mentors)
+                    UserController.shared.searchedUsers = Array(finalMentors)
+                    DispatchQueue.main.async {
+                        print(UserController.shared.searchedUsers.count)
+                        if UserController.shared.searchedUsers.count == 0 {
+                            let alert = UIAlertController(title: "User Not Found", message: nil, preferredStyle: .alert)
+
+                            let dismissAction = UIAlertAction(title: "Dismiss", style: .default)
+                            alert.addAction(dismissAction)
+                            self.present(alert, animated: true)
                         }
+                        self.findMentorCollectionView.reloadData()
                     }
                 }
-                
-                dispatchGroup.notify(queue: .main) {
-                    self.findMentorCollectionView.reloadData()
-                }
             }
-            
-            let alert = UIAlertController(title: "User Not Found", message: nil, preferredStyle: .alert)
-            
-            let dismissAction = UIAlertAction(title: "Dismiss", style: .default)
-            alert.addAction(dismissAction)
-            self.present(alert, animated: true)
         }
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-        }
+    }
     
     
 } // END OF CLASS
@@ -88,13 +95,15 @@ extension FindMentorViewController: UICollectionViewDelegateFlowLayout, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mentorCell", for: indexPath) as? MentorCollectionViewCell else { return UICollectionViewCell() }
-        
-        
         let user = UserController.shared.searchedUsers[indexPath.item]
-        cell.nameLabel.text = user.name
-        cell.occupationLabel.text = user.occupation
-        cell.profileImage.image = user.profilePicture
-        
+        cell.delegate = self
+        cell.user = user 
         return cell
+    }
+}
+
+extension FindMentorViewController: viewProfileButtonDelegate {
+    func segueToProfile(mentor: User) {
+        
     }
 }

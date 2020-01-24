@@ -20,12 +20,26 @@ class MentorCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var occupationLabel: UILabel!
     @IBOutlet weak var viewProfileButton: UIButton!
     
+    
     //MARK: - Properties
     
-    var delegate: viewProfileButtonDelegate?
-    var user: User?
     
-    func updateViews(mentor: User) {
+//    override func awakeFromNib() {
+//       super.awakeFromNib()
+//           DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 10000000000)) {
+//            self.updateViews()
+//           }
+//       }
+    
+    var delegate: viewProfileButtonDelegate?
+    var user: User? {
+        didSet {
+           updateViews()
+        }
+    }
+    
+    func updateViews() {
+        guard let mentor = user else { return }
         profileImage.layer.cornerRadius = profileImage.frame.height/2
         
         viewProfileButton.layer.cornerRadius = viewProfileButton.frame.height/2
@@ -34,6 +48,7 @@ class MentorCollectionViewCell: UICollectionViewCell {
         
         nameLabel.text = mentor.name
         occupationLabel.text = mentor.occupation
+        
     }
     
     //MARK: - Actions
