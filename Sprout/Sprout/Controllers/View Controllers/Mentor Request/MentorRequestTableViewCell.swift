@@ -25,6 +25,7 @@ class MentorRequestTableViewCell: UITableViewCell {
     @IBOutlet weak var declineButton: UIButton!
     @IBOutlet weak var acceptButton: UIButton!
     @IBOutlet weak var requestDescriptionLabel: UILabel!
+    @IBOutlet weak var noRequestsLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,5 +40,10 @@ class MentorRequestTableViewCell: UITableViewCell {
     
     func viewDidLoad() {
         self.pupilImage.layer.cornerRadius = pupilImage.frame.height/2
+        if UserController.shared.currentUser?.requests?.count == 0 || UserController.shared.currentUser?.requests?.count == nil {
+            self.noRequestsLabel.isHidden = false
+        } else {
+            self.noRequestsLabel.isHidden = true
+        }
     }
 }

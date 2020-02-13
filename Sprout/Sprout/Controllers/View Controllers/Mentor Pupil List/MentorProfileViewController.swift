@@ -26,11 +26,13 @@ class MentorProfileViewController: UIViewController {
     func setUpViews() {
         self.mentorImage.layer.cornerRadius = mentorImage.frame.height/2
         self.mentorLabel.layer.cornerRadius = mentorLabel.frame.height/6
+
     }
       
       func fetchMentorData() {
           // need mentor's profile image
       }
+
     /*
      // MARK: - Navigation
      

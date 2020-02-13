@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		1968796C23A05FF9002F05FC /* MentorPupilListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1968796B23A05FF9002F05FC /* MentorPupilListTableViewCell.swift */; };
 		1968796E23A06013002F05FC /* MentorRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1968796D23A06013002F05FC /* MentorRequestTableViewCell.swift */; };
-		198CB97F23A306F700C15876 /* MentorHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 198CB97E23A306F700C15876 /* MentorHome.storyboard */; };
 		199252AC239ACD180032ACF1 /* verifyEmail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199252AB239ACD180032ACF1 /* verifyEmail.storyboard */; };
-		199252AE239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199252AD239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift */; };
 		199252B0239EF3C10032ACF1 /* MentorPupilListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199252AF239EF3C10032ACF1 /* MentorPupilListTableViewController.swift */; };
 		19C9EF2123A2B8E600F6D61A /* MentorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9EF2023A2B8E600F6D61A /* MentorProfileViewController.swift */; };
 		19C9EF2323A2C1C900F6D61A /* MentorRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9EF2223A2C1C900F6D61A /* MentorRequestViewController.swift */; };
@@ -30,6 +28,7 @@
 		556197A323A2D83300CDD437 /* MentorProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556197A223A2D83300CDD437 /* MentorProfileTableViewController.swift */; };
 		556197A523A2EFF200CDD437 /* PupilCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556197A423A2EFF200CDD437 /* PupilCollectionViewCell.swift */; };
 		556197A723A2F4F900CDD437 /* ForeignTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556197A623A2F4F900CDD437 /* ForeignTagCollectionViewCell.swift */; };
+		5584AE3423AC44F8000958F5 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584AE3323AC44F8000958F5 /* ContactUsViewController.swift */; };
 		55BB57A12395C92D00962DA0 /* SignInSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */; };
 		55BB57A32395D39300962DA0 /* CreateProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BB57A22395D39300962DA0 /* CreateProfile.storyboard */; };
 		55BB57A52395D95300962DA0 /* CreateProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */; };
@@ -66,9 +65,7 @@
 /* Begin PBXFileReference section */
 		1968796B23A05FF9002F05FC /* MentorPupilListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorPupilListTableViewCell.swift; sourceTree = "<group>"; };
 		1968796D23A06013002F05FC /* MentorRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorRequestTableViewCell.swift; sourceTree = "<group>"; };
-		198CB97E23A306F700C15876 /* MentorHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MentorHome.storyboard; sourceTree = "<group>"; };
 		199252AB239ACD180032ACF1 /* verifyEmail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = verifyEmail.storyboard; sourceTree = "<group>"; };
-		199252AD239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVerifyEmailViewController.swift; sourceTree = "<group>"; };
 		199252AF239EF3C10032ACF1 /* MentorPupilListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorPupilListTableViewController.swift; sourceTree = "<group>"; };
 		19C9EF2023A2B8E600F6D61A /* MentorProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorProfileViewController.swift; sourceTree = "<group>"; };
 		19C9EF2223A2C1C900F6D61A /* MentorRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorRequestViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +86,7 @@
 		556197A223A2D83300CDD437 /* MentorProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorProfileTableViewController.swift; sourceTree = "<group>"; };
 		556197A423A2EFF200CDD437 /* PupilCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupilCollectionViewCell.swift; sourceTree = "<group>"; };
 		556197A623A2F4F900CDD437 /* ForeignTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignTagCollectionViewCell.swift; sourceTree = "<group>"; };
+		5584AE3323AC44F8000958F5 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		55BB57A02395C92D00962DA0 /* SignInSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInSignUp.storyboard; sourceTree = "<group>"; };
 		55BB57A22395D39300962DA0 /* CreateProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProfile.storyboard; sourceTree = "<group>"; };
 		55BB57A42395D95300962DA0 /* CreateProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -162,7 +160,6 @@
 				5510C79B2396E03F00B86ED3 /* UserCheckViewController.swift */,
 				85AFB58D238C4D0700CA9A62 /* LoginViewController.swift */,
 				5510C79D2397170600B86ED3 /* EmailVerifyViewController.swift */,
-				199252AD239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -185,6 +182,7 @@
 				55449EA523A022D20020476E /* ViewProfileTableViewController.swift */,
 				556197A223A2D83300CDD437 /* MentorProfileTableViewController.swift */,
 				551A45D923A3703C00E9C20D /* AccountMenuViewController.swift */,
+				5584AE3323AC44F8000958F5 /* ContactUsViewController.swift */,
 			);
 			path = "Account and Profile Controllers";
 			sourceTree = "<group>";
@@ -262,7 +260,6 @@
 				5510C7A2239AFCF300B86ED3 /* Mentor.storyboard */,
 				5510C7A4239AFDD800B86ED3 /* Account.storyboard */,
 				556197A023A2A94300CDD437 /* Profile.storyboard */,
-				198CB97E23A306F700C15876 /* MentorHome.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -424,7 +421,6 @@
 			files = (
 				85AFB57E238C449000CA9A62 /* LaunchScreen.storyboard in Resources */,
 				85AFB57B238C449000CA9A62 /* Assets.xcassets in Resources */,
-				198CB97F23A306F700C15876 /* MentorHome.storyboard in Resources */,
 				199252AC239ACD180032ACF1 /* verifyEmail.storyboard in Resources */,
 				5510C7A5239AFDD800B86ED3 /* Account.storyboard in Resources */,
 				55BB57A32395D39300962DA0 /* CreateProfile.storyboard in Resources */,
@@ -510,6 +506,7 @@
 				1968796C23A05FF9002F05FC /* MentorPupilListTableViewCell.swift in Sources */,
 				19C9EF2123A2B8E600F6D61A /* MentorProfileViewController.swift in Sources */,
 				5510C79E2397170600B86ED3 /* EmailVerifyViewController.swift in Sources */,
+				5584AE3423AC44F8000958F5 /* ContactUsViewController.swift in Sources */,
 				199252AE239EB3A10032ACF1 /* LoginVerifyEmailViewController.swift in Sources */,
 				85AFB572238C449000CA9A62 /* AppDelegate.swift in Sources */,
 				1968796E23A06013002F05FC /* MentorRequestTableViewCell.swift in Sources */,
@@ -672,7 +669,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GQHR9QPNK6;
+				DEVELOPMENT_TEAM = QP48FW2MG5;
 				INFOPLIST_FILE = "$(SRCROOT)/Sprout/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -692,7 +689,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GQHR9QPNK6;
+				DEVELOPMENT_TEAM = QP48FW2MG5;
 				INFOPLIST_FILE = "$(SRCROOT)/Sprout/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -37,6 +37,8 @@ class LoginViewController: UIViewController {
         setupViews()
         guard let isVerified = Auth.auth().currentUser?.isEmailVerified else { return }
         self.isVerified = isVerified
+        self.emailTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,8 +53,10 @@ class LoginViewController: UIViewController {
             let password = passwordTextField.text, !password.isEmpty else { return }
         if isSignUp == true {
             UserController.shared.authenticateNewUser(email: email, password: password) { (success) in
-                UserController.shared.sendEmailVerification { (success) in
-                    self.performSegue(withIdentifier: "toVerifyEmail", sender: self)
+                if success {
+                    UserController.shared.sendEmailVerification { (success) in
+                        self.performSegue(withIdentifier: "toVerifyEmail", sender: self)
+                    }
                 }
             }
         } else if isSignUp == false && isVerified == true {

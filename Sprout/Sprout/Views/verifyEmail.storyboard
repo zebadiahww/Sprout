@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M2U-sG-xlV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M2U-sG-xlV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -37,10 +37,9 @@
                                 <connections>
                                     <action selector="continueButton:" destination="7ZA-Db-8yb" eventType="touchUpInside" id="7g6-vQ-rTF"/>
                                     <action selector="continueButtonTapped:" destination="M2U-sG-xlV" eventType="touchUpInside" id="XMM-n3-zTz"/>
-                                    <segue destination="ssC-kA-rye" kind="show" identifier="toHome" id="QQM-R1-eTy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cxb-uC-wNn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cxb-uC-wNn">
                                 <rect key="frame" x="50" y="530" width="314" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -65,6 +64,9 @@
                         <outlet property="actionLabel" destination="Cxb-uC-wNn" id="9ak-f6-SCv"/>
                         <outlet property="continueButton" destination="8w9-Zt-4nu" id="SyG-WO-GXF"/>
                         <outlet property="resendEmailButton" destination="W0X-Oh-vaP" id="Gac-PI-Q8B"/>
+                        <segue destination="ssC-kA-rye" kind="show" identifier="toProfileCreation" id="NJO-Ag-B0h"/>
+                        <segue destination="6JF-a7-zgT" kind="show" identifier="toMentorHome" id="kYy-HZ-kMP"/>
+                        <segue destination="RwK-3R-z1m" kind="show" identifier="toPupilHome" id="zSy-YR-SaY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ei1-YF-fUX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -80,7 +82,27 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9G4-Gr-GN0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="767" y="116"/>
+            <point key="canvasLocation" x="736" y="62"/>
+        </scene>
+        <!--Mentor-->
+        <scene sceneID="9H4-OM-qYU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Mentor" id="6JF-a7-zgT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="BDg-wg-ASI"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A5N-LZ-b8K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="709" y="125"/>
+        </scene>
+        <!--Pupil-->
+        <scene sceneID="3rW-PJ-Ei2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Pupil" id="RwK-3R-z1m" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="x5r-gL-NmF"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ea4-Sz-Zo3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="699" y="197"/>
         </scene>
     </scenes>
     <resources>

@@ -127,7 +127,7 @@ class CreateProfileTableViewController: UITableViewController, PhotoSelectorView
             DispatchQueue.main.async {
                 print("User created successfully")
                 if self.isMentor == true {
-                    let storyboard = UIStoryboard(name: "MentorHome", bundle: nil)
+                    let storyboard = UIStoryboard(name: "Mentor", bundle: nil)
                     guard let initialVC = storyboard.instantiateInitialViewController() else { return }
                     initialVC.modalPresentationStyle = .fullScreen
                     self.present(initialVC, animated: true, completion: nil)
